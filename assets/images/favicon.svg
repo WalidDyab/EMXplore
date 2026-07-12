@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#06101f"/>
+  <text x="4" y="22" font-family="Georgia, serif" font-size="14" font-style="italic" fill="#0098b3" font-weight="bold">EM</text>
+  <text x="20" y="22" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#eaf0ff">X</text>
+</svg>
