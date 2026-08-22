@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observations, Results, and Data — EMXplore Radio Astronomy</title>
+  <meta name="description" content="Radio Astronomy observations, scientific result summaries, and planned data products.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html">Overview</a><a href="lecture.html">Lecture</a><a href="software.html">Software</a><a href="data.html" aria-current="page">Data</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-compact-hero"><div class="wrap"><p class="eyebrow">Observations &amp; Results</p><h1>Signals, spectra, calibration, and Milky Way products</h1><p class="hero-intro">A research-focused view of project observations, published transit-scan context, and future public data products.</p><nav class="ra-subnav"><a href="#results">Scientific Results</a><a href="#pipeline">Processing Levels</a><a href="#datasets">Dataset Registry</a></nav></div></section>
+    <section class="section" id="results"><div class="wrap"><div class="section-heading"><p class="section-kicker">Selected Results</p><h2>What the observations show</h2><p>Each result is summarized rather than republishing complete paper pages.</p></div><div class="ra-figure-grid">
+      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-036.png" alt="Raw spectrum recording workflow slide" loading="lazy"></figure><h3>Signal Processing Result</h3><p><strong>What is shown:</strong> A raw spectrum stage in the H I observation workflow.</p><p><strong>Why it matters:</strong> It places SDR acquisition and FFT-based spectral extraction at the center of the platform. The project is presented as a complete measurement chain, not only as a reflector build.</p><p class="ra-source-note">Source: Project lecture material; related signal-processing workflow is described in the 2025 IEEE publication.</p></article>
+      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-017.png" alt="Calibration and first survey result slide" loading="lazy"></figure><h3>PSU Transit Survey and Calibration Context</h3><p><strong>What is shown:</strong> Calibration and first survey products from the project lecture.</p><p><strong>Why it matters:</strong> Transit observations connect time/frequency measurements to sky structure as Earth rotates through the beam. Published scans should be interpreted as normalized signal strength or relative H I response unless an absolute calibration is explicitly stated.</p><p class="ra-source-note">Source: Project lecture material; published transit-scan context - IEEE Antennas and Propagation Magazine, 2025.</p></article>
+      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-020.png" alt="H I survey and position velocity interpretation concept slide" loading="lazy"></figure><h3>From Sky Survey to Position-Velocity Interpretation</h3><p><strong>What is shown:</strong> A project concept linking survey observations, calibration context, and sky/velocity interpretation.</p><p><strong>Why it matters:</strong> The model <span class="ra-equation" data-tex="T_B(\alpha,\delta,v_{\mathrm{LSR}})" data-display="false"><code>\(T_B(\alpha,\delta,v_{\mathrm{LSR}})\)</code></span> is the scientific endpoint used to connect sky position, H I intensity, and radial velocity. This figure should not be read as a complete calibrated 3D brightness-temperature cube by itself.</p><p class="ra-source-note">Source: Project lecture material.</p></article>
+      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-052.png" alt="H I 21 cm line example from KAU slide" loading="lazy"></figure><h3>H I 21-cm Line Example</h3><p><strong>What is shown:</strong> A real H I line example included in the lecture material.</p><p><strong>Why it matters:</strong> The line profile is the observational signature that lets students connect antenna temperature, calibration, velocity, and Galactic hydrogen science.</p><p class="ra-source-note">Source: Project lecture material.</p></article>
+    </div></div></section>
+    <section class="section ra-light" id="pipeline"><div class="wrap"><div class="section-heading"><p class="section-kicker">Data Processing Levels</p><h2>From receiver output to science product</h2><p>The dataset area is prepared for future public releases without inventing downloadable files.</p></div><ol class="ra-chain"><li>Raw receiver output</li><li>Spectrum</li><li>Calibrated measurement</li><li>H I line product</li><li>Position / velocity dataset</li><li>Scientific visualization</li></ol></div></section>
+    <section class="section" id="datasets"><div class="wrap"><div class="section-heading"><p class="section-kicker">Dataset Registry</p><h2>Available and planned data products</h2><p>Observation datasets will be added as they are prepared for public release.</p></div><div class="ra-table-wrap"><table class="ra-resource-table"><thead><tr><th>Dataset title</th><th>Description</th><th>Observation type</th><th>Coordinates</th><th>Frequency coverage</th><th>Format</th><th>Status</th></tr></thead><tbody data-ra-dataset-list><tr><td>Raw receiver output</td><td>Receiver captures before public packaging.</td><td>Receiver acquisition</td><td>In preparation</td><td>H I observing band</td><td>Coming soon</td><td><span class="ra-status-pill ra-status-prep">In Preparation</span></td></tr><tr><td>H I spectra</td><td>Spectral products after FFT, averaging, and processing.</td><td>Hydrogen-line spectrum</td><td>In preparation</td><td>Near 1.42 GHz</td><td>Coming soon</td><td><span class="ra-status-pill ra-status-prep">In Preparation</span></td></tr><tr><td>Position / velocity products</td><td>Future science products connecting sky coordinates and velocity.</td><td>H I line product</td><td>RA / Dec planned</td><td>Coming soon</td><td>Coming soon</td><td><span class="ra-status-pill ra-status-coming">Coming Soon</span></td></tr></tbody></table></div></div></section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="lecture.html">Lecture</a> · <a href="software.html">Software</a> · <a href="data.html">Data</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research</h4>
+        <p><a href="publications.html">Publication</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Back to EMXplore</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site-config.js"></script><script src="../assets/js/main.js"></script><script src="assets/vendor/katex/katex.min.js"></script><script src="assets/js/math-render.js"></script><script src="assets/js/radio-astronomy.js"></script>
+</body>
+</html>

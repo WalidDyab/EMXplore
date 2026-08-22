@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Radio Astronomy — EMXplore</title>
+  <meta name="description" content="EMXplore Radio Astronomy project hub for H I 21-cm telescope engineering, observations, publications, software, data, and education.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html" aria-current="page">Overview</a><a href="lecture.html">Lecture</a><a href="software.html">Software</a><a href="data.html">Data</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero">
+      <div class="wrap ra-hero-grid">
+        <div>
+          <p class="eyebrow">Radio Astronomy Project Overview</p>
+          <h1>Observing the Milky Way through the H I 21-cm Line</h1>
+          <p class="hero-intro">An educational and research radio astronomy platform combining a 5 m parabolic reflector, software-defined radio, signal processing, calibration, sky observations, and Galactic hydrogen-line analysis.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="project.html">Explore the Full Project Story</a>
+            <a class="button button-ghost" href="data.html">View Scientific Results</a>
+            <a class="button button-ghost" href="publications.html">Open Publication</a>
+            <a class="button button-ghost" href="lecture.html">Open Interactive Lecture</a>
+          </div>
+          <nav class="ra-subnav" aria-label="Project shortcuts">
+            <a href="#system">Telescope System</a>
+            <a href="#science">Engineering to Science</a>
+            <a href="#portals">Portal Map</a>
+            <a href="#arabic">بالعربية</a>
+          </nav>
+        </div>
+        <figure class="ra-feature-slide">
+          <img src="assets/images/lecture/slide-017.png" alt="Project calibration and first survey result slide from the radio astronomy lecture">
+          <figcaption>Project-generated lecture material: calibration and first survey results.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section ra-light">
+      <div class="wrap">
+        <div class="ra-stats" aria-label="Project highlights">
+          <div><strong>5 m</strong><span>parabolic reflector used in the educational telescope platform</span></div>
+          <div><strong>1.42 GHz</strong><span>hydrogen-line observing band around the H I 21-cm transition</span></div>
+          <div><strong>SDR</strong><span>software-defined receiver chain for acquisition and spectral processing</span></div>
+          <div><strong>2025</strong><span>published IEEE Antennas and Propagation Magazine article</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="system">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Telescope System</p>
+          <h2>Not just a dish: an integrated radio astronomy platform</h2>
+          <p>This overview summarizes the project at a glance: what it is, how the engineering platform works, what scientific observations it supports, how the system evolved, and where to continue into the full lecture, data, software, publication, and Arabic resources.</p>
+        </div>
+        <div class="ra-system-grid">
+          <article class="ra-panel">
+            <h3>Published implementation reported in the 2025 IEEE paper</h3>
+            <dl class="ra-spec-list">
+              <div><dt>Reflector</dt><dd>5 m parabolic reflector with approximately f/D = 0.35.</dd></div>
+              <div><dt>Feed</dt><dd>Choke-horn/feed and low-noise receiving chain.</dd></div>
+              <div><dt>Performance</dt><dd>Approximately 35 dBi gain and approximately 2.5° beamwidth.</dd></div>
+              <div><dt>Method</dt><dd>Fixed zenith transit-scan observations using Earth rotation.</dd></div>
+            </dl>
+          </article>
+          <article class="ra-panel">
+            <h3>Current project status</h3>
+            <p>Later project material also documents moving-telescope development, integrated control, calibration, survey work, and a growing educational portal. These later states extend the published fixed-system work rather than contradicting it.</p>
+            <p><a class="project-link" href="project.html">Explore the full development story</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-light" id="science">
+      <div class="wrap">
+        <div class="ra-dark-panel">
+          <p class="section-kicker">Engineering to Science</p>
+          <h2>From radio emission to Milky Way structure</h2>
+          <div class="ra-pathway" aria-label="Engineering to science pathway">
+            <span>Radio emission</span><span>Received signal</span><span>Digital spectrum</span><span>Calibration</span>
+            <span>H I measurement</span><span>Sky position + velocity</span><span>Milky Way science</span><span>Educational insight</span>
+          </div>
+          <p>The conceptual endpoint is the H I brightness-temperature data product (<span class="ra-equation" data-tex="T_B(\alpha,\delta,v_{\mathrm{LSR}})" data-display="false"><code>\(T_B(\alpha,\delta,v_{\mathrm{LSR}})\)</code></span>), connecting signal processing to sky coordinates and velocity.</p>
+          <dl class="ra-definition-grid">
+            <div><dt>α</dt><dd>Right Ascension</dd></div>
+            <div><dt>δ</dt><dd>Declination</dd></div>
+            <div><dt>v<sub>LSR</sub></dt><dd>Radial velocity relative to the Local Standard of Rest</dd></div>
+            <div><dt>T<sub>B</sub></dt><dd>H I brightness temperature</dd></div>
+          </dl>
+          <p><a class="project-link" href="lecture.html#slide-020">Explore this in the full lecture</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portals">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Portal Map</p>
+          <h2>Engineering, science, publication, software, data, and education</h2>
+          <p>The hub summarizes and directs. The lecture remains the detailed educational layer.</p>
+        </div>
+        <div class="project-grid">
+          <a class="project-card project-card-featured" href="project.html"><div class="project-meta"><span class="project-status status-live">Available</span><span>Project Story</span></div><h3>Development from initiative to platform</h3><p>Timeline, telescope system, pointing concept, and links into selected lecture anchors.</p><span class="project-link">Open project story</span></a>
+          <a class="project-card" href="data.html"><div class="project-meta"><span class="project-status status-research">Available</span><span>Observations &amp; Results</span></div><h3>Signals, spectra, surveys, and maps</h3><p>Scientific result summaries using real project lecture imagery and carefully marked publication context.</p><span class="project-link">View results</span></a>
+          <a class="project-card" href="publications.html"><div class="project-meta"><span class="project-status status-live">Published</span><span>IEEE</span></div><h3>Peer-reviewed publication</h3><p>Full citation, DOI, BibTeX, and publisher link for the 2025 IEEE Antennas and Propagation Magazine paper.</p><span class="project-link">Read publication entry</span></a>
+          <a class="project-card" href="software.html"><div class="project-meta"><span class="project-status status-coming">Coming Soon</span><span>Software</span></div><h3>Control, acquisition, analysis, visualization</h3><p>Project software for telescope control, acquisition, H I analysis, and visualization will be shared as it becomes publicly available.</p><span class="project-link">View software area</span></a>
+          <a class="project-card" href="data.html#datasets"><div class="project-meta"><span class="project-status status-coming">In Preparation</span><span>Data</span></div><h3>Dataset readiness</h3><p>Processing levels and future dataset metadata fields for scientific observations.</p><span class="project-link">View data plan</span></a>
+          <a class="project-card" href="lecture.html"><div class="project-meta"><span class="project-status status-educational">Available</span><span>52 slides</span></div><h3>Interactive lecture</h3><p>The stable educational lecture with slide images, navigation, interpretations, and KaTeX equations.</p><span class="project-link">Open lecture</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-light" id="arabic">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">بالعربية</p>
+          <h2>Arabic project resources</h2>
+          <p>Arabic readers can access a formal project overview and an accessible feature story.</p>
+        </div>
+        <div class="project-grid">
+          <a class="project-card" href="project-ar.html" lang="ar" dir="rtl"><div class="project-meta"><span class="project-status status-educational">Available</span><span>نظرة تقنية</span></div><h3>نظرة عامة على المشروع</h3><p>ملخص عربي مؤسسي وتقني لمنصة التلسكوب الراديوي وأهدافها التعليمية والعلمية.</p><span class="project-link">افتح الصفحة</span></a>
+          <a class="project-card" href="campus-to-milky-way-ar.html" lang="ar" dir="rtl"><div class="project-meta"><span class="project-status status-educational">Available</span><span>قصة عامة</span></div><h3>من الحرم الجامعي إلى درب التبانة</h3><p>مقال سردي مبسط عن تجربة الطلبة مع علم الفلك الراديوي وإشارة الهيدروجين عند 1.42 GHz.</p><span class="project-link">اقرأ المقال</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="lecture.html">Lecture</a> · <a href="software.html">Software</a> · <a href="data.html">Data</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research</h4>
+        <p><a href="publications.html">Publication</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Back to EMXplore</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/vendor/katex/katex.min.js"></script>
+  <script src="assets/js/math-render.js"></script>
+  <script src="assets/js/radio-astronomy.js"></script>
+</body>
+</html>

@@ -95,3 +95,101 @@ The main hero image is stored at `assets/images/emxplore-hero.png`. This is the 
 ## License
 
 © 2026 Dr. Walid Dyab. All rights reserved.
+
+## Radio Astronomy Portal
+
+The `/radio-astronomy/` section is the permanent EMXplore home for the Radio Telescope / H I 21-cm Radio Astronomy Project.
+
+### Structure
+
+```text
+radio-astronomy/
+├── index.html              # Portal landing page
+├── lecture.html            # 52-slide interactive lecture
+├── project.html            # Project timeline and telescope system overview
+├── data.html               # Observations and result showcase
+├── publications.html       # IEEE publication citation, DOI, and BibTeX
+├── software.html           # Software-resource registry
+├── resources.html          # Organized learning/research/software/data resources
+├── project-ar.html         # Arabic formal project overview
+├── campus-to-milky-way-ar.html # Arabic public feature story
+├── assets/css/             # Radio Astronomy-specific styles
+├── assets/js/              # Lecture navigation and portal scripts
+├── assets/images/lecture/  # Exported slide images named slide-001.png ... slide-052.png
+└── source/                 # Private authoring/source material
+```
+
+### Radio Astronomy page roles
+
+- `index.html` is the main project hub: project story, telescope system, observations, publication, software, data, and lecture entry points.
+- `project.html` summarizes the engineering/project timeline and links selectively into stable lecture anchors.
+- `data.html` presents current result summaries and future dataset metadata without fabricating downloads.
+- `publications.html` presents the IEEE publication, DOI, copyable citation, and BibTeX. It links to the DOI/publisher page only.
+- `software.html` defines future software categories: telescope control, SDR acquisition, H I signal analysis, and visualization.
+- `resources.html` organizes resources into Learn, Research, Software, Data, and Project Material.
+- `project-ar.html` and `campus-to-milky-way-ar.html` are the two restrained Arabic resource pages.
+- `lecture.html` is the stable detailed educational layer and should not be redesigned during hub updates.
+
+### Publication configuration
+
+Publication metadata is centralized in `assets/js/site-config.js` under `SITE_CONFIG.projects.radioAstronomy.publication`.
+
+Current public publication:
+
+```text
+W. M. Dyab, M. S. Ibrahim, Y. M. Allawi, M. S. Darwish, T. Alrefay and P. B. Alfaisal,
+"An Educational Radio Telescope Optimized for Hydrogen Line Astronomy: Its implementation in academic institutes in the Kingdom of Saudi Arabia. [Education Corner],"
+IEEE Antennas and Propagation Magazine, vol. 67, no. 6, pp. 72-95, Dec. 2025,
+doi: 10.1109/MAP.2025.3621127.
+```
+
+To add another publication:
+
+1. Add the metadata to `assets/js/site-config.js`.
+2. Add a publication card to `radio-astronomy/publications.html`.
+3. Link to the publisher DOI page unless the author explicitly approves hosting a local public file.
+
+### Software-resource configuration
+
+Software categories are configured under `SITE_CONFIG.projects.radioAstronomy.softwareResources`.
+
+Use these fields when real resources are supplied:
+
+```text
+Name, Purpose, GitHub, Release / Download, Documentation, Platform, Version, License, Status
+```
+
+Keep unknown values visitor-safe as `Coming Soon`. Do not create fake GitHub, release, or documentation URLs.
+
+### Dataset configuration
+
+Dataset metadata is configured under `SITE_CONFIG.projects.radioAstronomy.datasets`.
+
+Use these fields when public datasets are supplied:
+
+```text
+Dataset title, Description, Observation type, Coordinates, Frequency coverage, Format, Size, Download, Documentation, Usage / citation
+```
+
+The public data page distinguishes available datasets from planned/in-preparation products. Do not link private working data unless explicitly approved.
+
+### Project assets and source material
+
+- Public images belong in `radio-astronomy/assets/images/`.
+- Lecture slide exports belong in `radio-astronomy/assets/images/lecture/`.
+- Private authoring/source files belong in `radio-astronomy/source/`.
+- The IEEE PDF, source DOCX files, and source PowerPoint should not be linked publicly unless explicitly authorized.
+
+### Future lecture downloads
+
+The HTML lecture is public. PowerPoint and PDF download states are prepared in `SITE_CONFIG.projects.radioAstronomy.lectureDownloads`, but the public download URLs remain disabled until explicitly approved.
+
+### Updating lecture slides
+
+1. Update `radio-astronomy/source/radio_telescope-lecture.pptx`.
+2. Export slides with Microsoft PowerPoint as `radio-astronomy/assets/images/lecture/slide-001.png` through `slide-052.png`.
+3. Update the matching `<article class="ra-slide" id="slide-001">` section in `lecture.html`.
+4. Keep slide anchors stable so student links do not break.
+5. Keep Arabic development-story slides RTL and preserve established scientific notation such as H I, `T_A`, `T_B`, RA/Dec, and `v_LSR`.
+
+Unknown repository, software, lecture-download, and dataset URLs are centralized in `assets/js/site-config.js` as empty unavailable values. Do not fabricate external links.

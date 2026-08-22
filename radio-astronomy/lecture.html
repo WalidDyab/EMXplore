@@ -1,0 +1,1379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Lecture — EMXplore</title>
+  <meta name="description" content="Radio Astronomy lecture rebuilt from the actual PowerPoint deck.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+</head>
+<body class="ra-body">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html">Overview</a><a href="lecture.html" aria-current="page">Lecture</a><a href="software.html">Software</a><a href="data.html">Data</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+
+    <section class="ra-hero ra-compact-hero">
+      <div class="wrap">
+        <p class="eyebrow">Interactive Lecture</p>
+        <h1>The Story, the System, and the Science</h1>
+        <p class="hero-intro">A 52-slide web version of the Radio Telescope / H I 21-cm lecture, rebuilt from the actual PowerPoint deck with original slide images, extracted slide text, chapter navigation, and interpretation panels.</p>
+      </div>
+    </section>
+    <section class="ra-lecture-shell wrap">
+      <button class="ra-mobile-toc-toggle" type="button" aria-expanded="false" aria-controls="lecture-toc">Chapters / Slides</button>
+      <aside class="ra-toc" id="lecture-toc" aria-label="Lecture chapter navigation">
+        <h2>Chapters</h2>
+        <section class="ra-chapter" id="chapter-01"><button type="button" aria-expanded="true"><span>THE STORY</span>Origins and first decisions</button><ol><li><a href="#slide-001">Slide 001</a></li><li><a href="#slide-002">Slide 002</a></li><li><a href="#slide-003">Slide 003</a></li><li><a href="#slide-004">Slide 004</a></li></ol></section>
+<section class="ra-chapter" id="chapter-02"><button type="button" aria-expanded="true"><span>THE STORY</span>Local reflector design and first 5 m telescope</button><ol><li><a href="#slide-005">Slide 005</a></li><li><a href="#slide-006">Slide 006</a></li></ol></section>
+<section class="ra-chapter" id="chapter-03"><button type="button" aria-expanded="true"><span>THE STORY</span>From prototype to national network</button><ol><li><a href="#slide-007">Slide 007</a></li><li><a href="#slide-008">Slide 008</a></li><li><a href="#slide-009">Slide 009</a></li><li><a href="#slide-010">Slide 010</a></li><li><a href="#slide-011">Slide 011</a></li></ol></section>
+<section class="ra-chapter" id="chapter-04"><button type="button" aria-expanded="true"><span>THE SYSTEM</span>From fixed telescope to moving telescope</button><ol><li><a href="#slide-012">Slide 012</a></li><li><a href="#slide-013">Slide 013</a></li><li><a href="#slide-014">Slide 014</a></li><li><a href="#slide-015">Slide 015</a></li><li><a href="#slide-016">Slide 016</a></li></ol></section>
+<section class="ra-chapter" id="chapter-05"><button type="button" aria-expanded="true"><span>THE SYSTEM</span>Engineering-to-science handoff</button><ol><li><a href="#slide-017">Slide 017</a></li><li><a href="#slide-018">Slide 018</a></li><li><a href="#slide-019">Slide 019</a></li><li><a href="#slide-020">Slide 020</a></li></ol></section>
+<section class="ra-chapter" id="chapter-06"><button type="button" aria-expanded="true"><span>THE SCIENCE</span>Why the H I 21-cm line matters</button><ol><li><a href="#slide-021">Slide 021</a></li><li><a href="#slide-022">Slide 022</a></li><li><a href="#slide-023">Slide 023</a></li><li><a href="#slide-024">Slide 024</a></li><li><a href="#slide-025">Slide 025</a></li><li><a href="#slide-026">Slide 026</a></li><li><a href="#slide-027">Slide 027</a></li><li><a href="#slide-028">Slide 028</a></li><li><a href="#slide-029">Slide 029</a></li><li><a href="#slide-030">Slide 030</a></li><li><a href="#slide-031">Slide 031</a></li><li><a href="#slide-032">Slide 032</a></li></ol></section>
+<section class="ra-chapter" id="chapter-07"><button type="button" aria-expanded="true"><span>THE SCIENCE</span>Observation workflow and calibration</button><ol><li><a href="#slide-033">Slide 033</a></li><li><a href="#slide-034">Slide 034</a></li><li><a href="#slide-035">Slide 035</a></li><li><a href="#slide-036">Slide 036</a></li><li><a href="#slide-037">Slide 037</a></li><li><a href="#slide-038">Slide 038</a></li><li><a href="#slide-039">Slide 039</a></li></ol></section>
+<section class="ra-chapter" id="chapter-08"><button type="button" aria-expanded="true"><span>THE SCIENCE</span>Signal cleanup, brightness temperature, and pointing</button><ol><li><a href="#slide-040">Slide 040</a></li><li><a href="#slide-041">Slide 041</a></li><li><a href="#slide-042">Slide 042</a></li><li><a href="#slide-043">Slide 043</a></li></ol></section>
+<section class="ra-chapter" id="chapter-09"><button type="button" aria-expanded="true"><span>THE SCIENCE</span>Moment maps and the H I data cube</button><ol><li><a href="#slide-044">Slide 044</a></li><li><a href="#slide-045">Slide 045</a></li><li><a href="#slide-046">Slide 046</a></li><li><a href="#slide-047">Slide 047</a></li><li><a href="#slide-048">Slide 048</a></li><li><a href="#slide-049">Slide 049</a></li><li><a href="#slide-050">Slide 050</a></li><li><a href="#slide-051">Slide 051</a></li><li><a href="#slide-052">Slide 052</a></li></ol></section>
+      </aside>
+      <section class="ra-lecture-main" aria-label="Lecture slides">
+        <div class="ra-progress" aria-live="polite">
+          <span data-progress>Slide 1 / 52</span>
+          <a href="#main-content">Back to top</a>
+        </div>
+        
+          <article class="ra-slide" id="slide-001" data-slide="1" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 001 / 052</span>
+              <h2>قصة تطوير التلسكوب الراديوي</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-001.png" alt="Original PowerPoint slide 001: قصة تطوير التلسكوب الراديوي" loading="eager" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-001-understanding">
+              <h3 id="slide-001-understanding">شرح الشريحة</h3>
+              <p>تفتح الشريحة المحاضرة بوصفها قصة تطور مشروع، لا مجرد شرح علمي منفصل. ظهور الجهات المشاركة يضع المشروع في سياقه الوطني والتطوعي، ويُمهّد لتتبع الرحلة من الفكرة إلى منظومة رصد قادرة على إنتاج بيانات فلكية.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>قصة تطوير التلسكوب الراديوي</li>
+<li>من مبادرة تطوعية إلى مشروع علمي وطني — الرحلة خطوة بخطوة</li>
+<li>بمشاركة</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-001">Previous</a>
+              <a class="button button-primary" href="#slide-002">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-002" data-slide="2" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 002 / 052</span>
+              <h2>تأسيس الجمعية ووضع الاستراتيجية</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-002.png" alt="Original PowerPoint slide 002: تأسيس الجمعية ووضع الاستراتيجية" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-002-understanding">
+              <h3 id="slide-002-understanding">شرح الشريحة</h3>
+              <p>توضح الشريحة نقطة البداية المؤسسية: تأسيس الجمعية عام 1437هـ / 2016م وصياغة استراتيجية لخدمة المجتمع عبر خبرات الأعضاء وساعات التطوع. هذه الخلفية مهمة لأنها تفسر لماذا بدأ المشروع بروح مبادرة محلية قبل أن يتحول إلى عمل هندسي وعلمي أوسع.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>تأسيس الجمعية ووضع الاستراتيجية</li>
+<li>1437</li>
+<li>هـ</li>
+<li>الموافق 2016م</li>
+<li>بعد تأسيس الجمعية وُضعت استراتيجية تهدف إلى المساهمة مع القطاع الحكومي في خدمة المجتمع، عبر ثلاثة محاور:</li>
+<li>1</li>
+<li>شراكة مع القطاع الحكومي</li>
+<li>التكامل مع الجهات الحكومية والقطاع غير الربحي في خدمة المجتمع.</li>
+<li>2</li>
+<li>استثمار الخبرات والمهارات</li>
+<li>توظيف قدرات أعضاء الجمعية التقنية واللاسلكية في مشاريع ذات أثر.</li>
+<li>3</li>
+<li>ساعات التطوع رافداً للجهود</li>
+<li>الاستفادة من ساعات العمل التطوعي في دعم وتنفيذ المبادرات.</li>
+<li>التأسيس 1437هـ</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-001">Previous</a>
+              <a class="button button-primary" href="#slide-003">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-003" data-slide="3" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 003 / 052</span>
+              <h2>الاجتماع التأسيسي وانطلاق المشروع</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-003.png" alt="Original PowerPoint slide 003: الاجتماع التأسيسي وانطلاق المشروع" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-003-understanding">
+              <h3 id="slide-003-understanding">شرح الشريحة</h3>
+              <p>تسجل هذه الشريحة لحظة انطلاق المشروع عملياً من اجتماع مدينة الملك عبدالعزيز للعلوم والتقنية في العيينة. الأهم هنا هو توزيع الأدوار: تطوير الهوائيات وأجهزة الراديو من جهة، والبحث وتحليل الإشارة والتطوير من جهة أخرى، وهو التقسيم الذي سيظهر أثره لاحقاً في تكامل المنظومة.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>الاجتماع التأسيسي وانطلاق المشروع</li>
+<li>بدأت قصة مشروع التلسكوب الراديوي باجتماعٍ عُقد في مدينة الملك عبدالعزيز للعلوم والتقنية بقرية العيينة، اتُّفق فيه على إنشاء المشروع وتوزيع الأدوار بين الجهتين.</li>
+<li>المكان: قرية العيينة — مدينة الملك عبدالعزيز للعلوم والتقنية</li>
+<li>بحضور: الاتحاد الدولي لهواة اللاسلكي (IARU)</li>
+<li>دور الجمعية</li>
+<li>تطوير هوائيات الاستقبال وأجهزة الراديو المستقبِلة للإشارات.</li>
+<li>هوائيات الاستقبال</li>
+<li>أجهزة الراديو والمستقبِلات</li>
+<li>دور المدينة</li>
+<li>إجراء البحوث لتحليل الإشارة، والتطوير، والنشر العلمي للنتائج.</li>
+<li>تحليل الإشارة</li>
+<li>البحث والتطوير</li>
+<li>النشر العلمي</li>
+<li>الاجتماع والاتفاق</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-002">Previous</a>
+              <a class="button button-primary" href="#slide-004">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-004" data-slide="4" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 004 / 052</span>
+              <h2>اجتماعات التنسيق والقرار المفصلي</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-004.png" alt="Original PowerPoint slide 004: اجتماعات التنسيق والقرار المفصلي" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-004-understanding">
+              <h3 id="slide-004-understanding">شرح الشريحة</h3>
+              <p>تبيّن الشريحة أن المسار لم يكن شراء حل جاهز، بل قراراً مفصلياً بالتصميم والبناء محلياً بعد أن ظهرت كلفة الاستشارات العالمية خارج قدرة الجمعية. هذه اللحظة حوّلت المشروع إلى تحدٍ هندسي تعليمي قائم على التعلم والتجريب.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>اجتماعات التنسيق والقرار المفصلي</li>
+<li>بمشاركة الدكتور عبدالرحمن ملاوي</li>
+<li>عُقدت اجتماعات متتالية جرى فيها التنسيق للاجتماع مع الجامعات العالمية لوضع آلية بداية المشروع.</li>
+<li>1</li>
+<li>اجتماعات متتالية</li>
+<li>تنسيق مستمر لوضع آلية انطلاق المشروع والتواصل مع الجهات العلمية.</li>
+<li>2</li>
+<li>استشارات عالمية مكلفة</li>
+<li>عروض الجامعات العالمية جاءت بملايين الريالات، وهي خارج قدرة الجمعية.</li>
+<li>3</li>
+<li>القرار: التصنيع محلياً</li>
+<li>الدخول في تصميم وبناء الهوائيات من الصفر اعتماداً على المعادلات الهندسية.</li>
+<li>الجامعات والقرار</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-003">Previous</a>
+              <a class="button button-primary" href="#slide-005">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-005" data-slide="5" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 005 / 052</span>
+              <h2>من المعادلات إلى التصميم</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-005.png" alt="Original PowerPoint slide 005: من المعادلات إلى التصميم" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-005-understanding">
+              <h3 id="slide-005-understanding">شرح الشريحة</h3>
+              <p>هنا يبدأ التصميم الهندسي الحقيقي للطبق المكافئ. اختيار النسبة <span class="ra-equation" data-tex="\frac{f}{D}=0.35" data-display="false"><code>\(\frac{f}{D}=0.35\)</code></span> يعني تحديد علاقة البعد البؤري بقطر الطبق بحيث تُجمع الإشارة الراديوية عند نقطة التركيز. الشريحة تربط بين معادلات التصميم ومقارنة أطباق عالمية مثل FAST، ثم تختار قيمة عملية كبداية للتصنيع المحلي.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>من المعادلات إلى التصميم</li>
+<li>بالاستناد إلى معادلات تصميم الهوائي ذي القطع المكافئ، ومراجعة أطباق التلسكوبات الراديوية العالمية — منها FAST في الصين — حُدِّدت النسبة بين البعد البؤري والقطر.</li>
+<li>مبدأ الطبق المكافئ: تجميع الإشارة في نقطة التركيز</li>
+<li>النسبة المختارة لبداية التصميم</li>
+<li>f / D = 0.35</li>
+<li>المدى المستخلص من الأطباق الراديوية العالمية</li>
+<li>35%</li>
+<li>20%</li>
+<li>40%</li>
+<li>المرجع: مقارنة أطباق تلسكوبات راديوية عالمية، منها FAST في الصين ومواقع أخرى.</li>
+<li>معادلات التصميم</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-004">Previous</a>
+              <a class="button button-primary" href="#slide-006">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-006" data-slide="6" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 006 / 052</span>
+              <h2>الخطوة الخامسة</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-006.png" alt="Original PowerPoint slide 006: الخطوة الخامسة" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-006-understanding">
+              <h3 id="slide-006-understanding">شرح الشريحة</h3>
+              <p>تعرض الشريحة نتيجة التحول من الحساب إلى التصنيع: أول تلسكوب راديوي محلي بقطر 5 أمتار. فترة الاختبار لثلاثة أشهر مهمة لأنها تشير إلى أن النموذج لم يكن شكلياً فقط، بل خضع لتجربة عملية أثبتت جدواه قبل التوسع.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>الخطوة الخامسة</li>
+<li>أول تلسكوب راديوي مُصنَّع محلياً</li>
+<li>باستخدام معادلات القطع المكافئ أُنتج أول تلسكوب راديوي مُصنَّع محلياً بقطر 5 أمتار، وخضع للتجربة ثلاثة أشهر أثبت خلالها جدارته.</li>
+<li>النموذج المُصنَّع محلياً في مقر الجمعية</li>
+<li>5 أمتار</li>
+<li>قطر الطبق — أول تلسكوب راديوي مُصنَّع محلياً</li>
+<li>3 أشهر</li>
+<li>فترة التجارب التشغيلية المتواصلة</li>
+<li>✓</li>
+<li>النتيجة: أثبت جدارته وكفاءته التشغيلية</li>
+<li>أول تلسكوب 5م</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-005">Previous</a>
+              <a class="button button-primary" href="#slide-007">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-007" data-slide="7" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 007 / 052</span>
+              <h2>من نموذج واحد إلى انتشار وطني</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-007.png" alt="Original PowerPoint slide 007: من نموذج واحد إلى انتشار وطني" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-007-understanding">
+              <h3 id="slide-007-understanding">شرح الشريحة</h3>
+              <p>تنتقل الشريحة من نموذج واحد إلى فكرة الانتشار الوطني داخل الجامعات السعودية. دور التواصل المؤسسي هنا أساسي؛ فنجاح التلسكوب الأول فتح باب تحويله إلى برنامج تعليمي وبحثي أوسع بدلاً من بقائه تجربة منفردة.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>من نموذج واحد إلى انتشار وطني</li>
+<li>تضافرت الجهود لنقل المشروع من تجربة واحدة إلى برنامج وطني داخل الجامعات السعودية.</li>
+<li>ث</li>
+<li>د. ثامر الرفاعي</li>
+<li>مستشار الجمعية</li>
+<li>جهود كبيرة مع وزارة التعليم للحصول على موافقة معالي الوزير على نشر المشروع في جميع الجامعات السعودية.</li>
+<li>دون أي التزام على الوزارة</li>
+<li>هـ</li>
+<li>هيئة الاتصالات</li>
+<li>شريك تمكين</li>
+<li>جهود كبيرة في إقناع الجامعات ببدء تركيب محطات الاستقبال لدى كل جامعة.</li>
+<li>انطلاق مرحلة التركيب</li>
+<li>النتيجة: انتقال المشروع من نموذج واحد إلى انتشار وطني داخل الجامعات السعودية</li>
+<li>الانتشار الوطني</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-006">Previous</a>
+              <a class="button button-primary" href="#slide-008">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-008" data-slide="8" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 008 / 052</span>
+              <h2>مواقع تركيب محطات التلسكوب الراديوي</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-008.png" alt="Original PowerPoint slide 008: مواقع تركيب محطات التلسكوب الراديوي" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-008-understanding">
+              <h3 id="slide-008-understanding">شرح الشريحة</h3>
+              <p>توثق الشريحة مواقع تركيب محطات التلسكوب الراديوي كما يعرضها المصدر: ست جامعات سعودية إضافة إلى منارة حائل الفضائية ومدينة الملك عبدالعزيز للعلوم والتقنية في العيينة. هذه الخريطة الميدانية تجعل المشروع شبكة رصد وتدريب، لا جهازاً واحداً فقط.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>مواقع تركيب محطات التلسكوب الراديوي</li>
+<li>رُكِّبت محطات التلسكوب الراديوي في ثماني جهات: ست جامعات سعودية، ومنارة حائل الفضائية، ومدينة الملك عبدالعزيز للعلوم والتقنية بالعيينة.</li>
+<li>جامعة الملك سعود</li>
+<li>جامعة الأمير سلطان</li>
+<li>جامعة الملك فهد للبترول والمعادن</li>
+<li>جامعة الملك خالد</li>
+<li>جامعة حائل</li>
+<li>جامعة الأميرة نورة بنت عبدالرحمن</li>
+<li>منارة حائل الفضائية</li>
+<li>مدينة الملك عبدالعزيز — العيينة</li>
+<li>مواقع التركيب</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-007">Previous</a>
+              <a class="button button-primary" href="#slide-009">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-009" data-slide="9" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 009 / 052</span>
+              <h2>نماذج المحطات المُركَّبة على أرض الواقع</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-009.png" alt="Original PowerPoint slide 009: نماذج المحطات المُركَّبة على أرض الواقع" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-009-understanding">
+              <h3 id="slide-009-understanding">شرح الشريحة</h3>
+              <p>تُظهر الصور أن المحطات لم تبقَ على مستوى المخطط؛ بل وصلت إلى مواقع فعلية مثل مقر الجمعية وجامعة حائل وجامعة الأمير سلطان. قيمة هذه الشريحة أنها تقدم دليلاً بصرياً على التنفيذ والتركيب في بيئات متعددة.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>نماذج المحطات المُركَّبة على أرض الواقع</li>
+<li>مقر الجمعية</li>
+<li>جامعة حائل</li>
+<li>جامعة الأمير سلطان</li>
+<li>جامعة الملك خالد</li>
+<li>جامعة الملك فهد</li>
+<li>جامعة الأميرة نورة</li>
+<li>مواقع التركيب</li>
+<li>منارة</li>
+<li>منارة</li>
+<li>حائل الفضائية</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-008">Previous</a>
+              <a class="button button-primary" href="#slide-010">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-010" data-slide="10" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 010 / 052</span>
+              <h2>أول ورقة علمية في هذا المجال</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-010.png" alt="Original PowerPoint slide 010: أول ورقة علمية في هذا المجال" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-010-understanding">
+              <h3 id="slide-010-understanding">شرح الشريحة</h3>
+              <p>تربط الشريحة بين البنية الميدانية والناتج العلمي. نشر ورقة علمية بالاستفادة من المحطات يعني أن المشروع بدأ ينتقل من البناء والتدريب إلى إنتاج معرفة قابلة للنشر والمراجعة.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>أول ورقة علمية في هذا المجال</li>
+<li>تميّزت جامعة الأمير سلطان بنشر أول ورقة علمية في هذا المجال بالاستفادة من جميع المحطات، وكذلك أسهمت جامعة الأميرة نورة بنت عبدالرحمن.</li>
+<li>جامعة</li>
+<li>الأمير</li>
+<li>سلطان</li>
+<li>الدتور</li>
+<li>وليد دياب</li>
+<li>نشر أول ورقة علمية في مجال التلسكوب الراديوي بالاستفادة من بيانات جميع المحطات.</li>
+<li>الأولى من نوعها</li>
+<li>جامعة الأميرة نورة</li>
+<li>بنت</li>
+<li>عبدالرحمن</li>
+<li>الدكتور يزن</li>
+<li>إسهام في النشر العلمي المستند إلى بيانات شبكة المحطات.</li>
+<li>نشر علمي</li>
+<li>الشبكة الوطنية تثمر: بيانات ثماني محطات استقبال تتحوّل إلى إنتاج علمي منشور</li>
+<li>أول ورقة علمية</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-009">Previous</a>
+              <a class="button button-primary" href="#slide-011">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-011" data-slide="11" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 011 / 052</span>
+              <h2>قدرة محلية متكاملة: التصنيع وتحليل الإشارة</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-011.png" alt="Original PowerPoint slide 011: قدرة محلية متكاملة: التصنيع وتحليل الإشارة" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-011-understanding">
+              <h3 id="slide-011-understanding">شرح الشريحة</h3>
+              <p>توضح الشريحة اكتمال قدرتين محليتين مترابطتين: تصنيع هوائي الاستقبال وتحليل إشارة خط الهيدروجين. واجهة البرنامج مهمة لأنها تمثل انتقال المشروع من استقبال الإشارة فقط إلى تحويلها إلى طيف قابل للفهم العلمي.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>قدرة محلية متكاملة: التصنيع وتحليل الإشارة</li>
+<li>من الإمكانات التي وفّرتها جامعة الأمير سلطان تطوير برنامج محلي لتحليل إشارة المجرة، فاكتملت للمشروع قدرتان: تصنيع هوائي الاستقبال، وتحليل إشارة خط الهيدروجين.</li>
+<li>واجهة البرنامج المطوَّر محلياً — رصد خط الهيدروجين عند 1420 ميجاهرتز</li>
+<li>مخطط الشلال: شدة الإشارة عبر التصعيد المستقيم على مدار 24 ساعة</li>
+<li>تصنيع هوائي الاستقبال</li>
+<li>تصميم وبناء الأطباق محلياً</li>
+<li>تحليل خط الهيدروجين</li>
+<li>برنامج رصد وتحليل</li>
+<li>مطوَّر</li>
+<li>محلياً</li>
+<li>الدكتور مراد</li>
+<li>قدرات محلية</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-010">Previous</a>
+              <a class="button button-primary" href="#slide-012">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-012" data-slide="12" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 012 / 052</span>
+              <h2>الطموح: نحو تلسكوب راديوي متحرك</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-012.png" alt="Original PowerPoint slide 012: الطموح: نحو تلسكوب راديوي متحرك" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-012-understanding">
+              <h3 id="slide-012-understanding">شرح الشريحة</h3>
+              <p>تشرح الشريحة لماذا أصبح التلسكوب المتحرك ضرورة: التلسكوب الثابت يرصد خطاً محدوداً من السماء عند السمت فقط. الحركة تعني فتح مساحة أكبر من السماء للرصد، وبالتالي الانتقال من تجربة استقبال محدودة إلى مسح فلكي أوسع.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>الطموح: نحو تلسكوب راديوي متحرك</li>
+<li>على مدى أربع سنوات ظل الحلم والحماس قائمين لتطوير تلسكوب راديوي متحرك، لأن التلسكوب الثابت يقتصر على الرصد والاستقبال من خط واحد من المجرة عند زاوية 90 درجة — السمت (Zenith).</li>
+<li>4</li>
+<li>سنوات</li>
+<li>من العمل المتواصل والطموح المستمر</li>
+<li>الوضع الحالي — تلسكوب ثابت</li>
+<li>الرصد من خط واحد من المجرة فقط، عند زاوية 90</li>
+<li>درجة</li>
+<li>السمت</li>
+<li>.</li>
+<li>الهدف — تلسكوب متحرك</li>
+<li>توجيه الطبق نحو زوايا متعددة لتغطية أوسع للسماء.</li>
+<li>نحو تلسكوب متحرك</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-011">Previous</a>
+              <a class="button button-primary" href="#slide-013">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-013" data-slide="13" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 013 / 052</span>
+              <h2>انطلاقة نظام التحكم الآلي</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-013.png" alt="Original PowerPoint slide 013: انطلاقة نظام التحكم الآلي" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-013-understanding">
+              <h3 id="slide-013-understanding">شرح الشريحة</h3>
+              <p>تُظهر الشريحة أن تطوير التحكم الآلي بدأ من تجربة على تلسكوب بصري في منارة الرياض الفضائية. أهمية ذلك أن مشكلة التوجيه حُلّت تدريجياً: تطوير برمجيات تحكم ثم نقل الفكرة إلى التلسكوب الراديوي المتحرك.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>انطلاقة نظام التحكم الآلي</li>
+<li>كانت الانطلاقة نحو التلسكوب المتحرك عند افتتاح منارة الرياض الفضائية في جامعة الأمير سلطان، حيث طُوِّر برنامج تحكم آلي على تلسكوب بصري.</li>
+<li>منارة الرياض الفضائية — جامعة الأمير سلطان</li>
+<li>1</li>
+<li>افتتاح منارة الرياض الفضائية</li>
+<li>الانطلاقة الفعلية نحو التلسكوب المتحرك من جامعة الأمير سلطان.</li>
+<li>2</li>
+<li>برنامج تحكم آلي</li>
+<li>تطوير تحكم آلي على تلسكوب بصري، وتجارب متواصلة استمرت أربعة أشهر.</li>
+<li>3</li>
+<li>نظام تحكم مكتمل</li>
+<li>جاهز للاستخدام في توجيه التلسكوب الراديوي المتحرك والتحكم به.</li>
+<li>نظام التحكم الآلي</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-012">Previous</a>
+              <a class="button button-primary" href="#slide-014">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-014" data-slide="14" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 014 / 052</span>
+              <h2>شرائح الفيبرجلاس: طبق أخف وأسهل تركيباً</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-014.png" alt="Original PowerPoint slide 014: شرائح الفيبرجلاس: طبق أخف وأسهل تركيباً" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-014-understanding">
+              <h3 id="slide-014-understanding">شرح الشريحة</h3>
+              <p>تركز الشريحة على تخفيف الطبق عبر شرائح فيبرجلاس مبطنة بمعدن عاكس. تقليل وزن كل قطعة إلى 11 كجم يجعل التركيب والحركة أكثر واقعية، لأن التلسكوب المتحرك يحتاج بنية أخف من الطبق الثابت.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>شرائح الفيبرجلاس: طبق أخف وأسهل تركيباً</li>
+<li>طوّر فريق منارة الرياض شرائح من الفيبرجلاس المبطّن بمعدن لعكس الإشارة، واستمر التطوير حتى الوصول إلى أخف قطعة ممكنة.</li>
+<li>الطبق المتحرك بقطر 5 أمتار — منارة الرياض الفضائية</li>
+<li>11 كجم</li>
+<li>وزن القطعة الواحدة</li>
+<li>11 قطعة</li>
+<li>لإكمال الطبق كاملاً</li>
+<li>5 أمتار</li>
+<li>قطر طبق الاستقبال</li>
+<li>المادة: فيبرجلاس مبطّن بمعدن عاكس للإشارة</li>
+<li>طبقة معدنية داخلية تعكس الإشارة، مع تطوير متواصل لخفض الوزن وتسهيل النقل والتركيب — يُجمَّع الطبق من إحدى عشرة شريحة.</li>
+<li>شرائح الفيبرجلاس</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-013">Previous</a>
+              <a class="button button-primary" href="#slide-015">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-015" data-slide="15" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 015 / 052</span>
+              <h2>تطوير تلسكوب شراعي قابل للطوي خاص بمحطات المدارس</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-015.png" alt="Original PowerPoint slide 015: تطوير تلسكوب شراعي قابل للطوي خاص بمحطات المدارس" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-015-understanding">
+              <h3 id="slide-015-understanding">شرح الشريحة</h3>
+              <p>هذه الشريحة لا تتحدث عن شرائح الفيبرجلاس السابقة، بل عن مفهوم مختلف: تلسكوب شراعي قابل للطي مصنوع من PVC ومناسب لمحطات المدارس. الفكرة التعليمية هنا هي جعل الرصد الراديوي أكثر قابلية للنقل والتركيب في بيئات مدرسية، حتى لو كان أبسط من منظومة الطبق المتحرك الكبيرة.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>تطوير تلسكوب شراعي قابل للطوي خاص بمحطات المدارس</li>
+<li>تطويرتلسكوب</li>
+<li>من مادة</li>
+<li>PVC</li>
+<li>شراعي مبطن بمعدن عاكس للإشارة  قابل للطوي والنقل الى أي منطقه والتركيب السريع والتكلفة الاقل</li>
+<li>.</li>
+<li>5 أمتار</li>
+<li>قطر طبق الاستقبال</li>
+<li>شرائح الفيبرجلاس</li>
+<li>PVC</li>
+<li>سهل النقل قابل للطوي</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-014">Previous</a>
+              <a class="button button-primary" href="#slide-016">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-016" data-slide="16" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 016 / 052</span>
+              <h2>اكتمال المنظومة: تصنيع وتحكم وتحليل</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-016.png" alt="Original PowerPoint slide 016: اكتمال المنظومة: تصنيع وتحكم وتحليل" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-016-understanding">
+              <h3 id="slide-016-understanding">شرح الشريحة</h3>
+              <p>تعرض الشريحة لحظة التكامل: برنامج تحليل الإشارة من جامعة الأمير سلطان يلتقي مع نظام التحكم من منارة الرياض. عند هذه النقطة يصبح المشروع منظومة واحدة تجمع التصنيع، التوجيه، والاستقبال والتحليل بدلاً من أجزاء منفصلة.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>اكتمال المنظومة: تصنيع وتحكم وتحليل</li>
+<li>دمج الفريق برنامج تحليل الإشارة المطوَّر في جامعة الأمير سلطان مع نظام التحكم من منارة الرياض، ليكتمل المشروع بالكامل.</li>
+<li>واجهة موحّدة: توجيه الطبق على خريطة السماء مع تحليل الطيف في الوقت نفسه</li>
+<li>1</li>
+<li>هوائي متحرك مُصنَّع محلياً</li>
+<li>طبق 5 أمتار من شرائح فيبرجلاس خفيفة.</li>
+<li>2</li>
+<li>نظام تحكم آلي</li>
+<li>توجيه الطبق نحو الهدف من منارة الرياض الفضائية.</li>
+<li>3</li>
+<li>برنامج تحليل الإشارة</li>
+<li>تحليل خط الهيدروجين من جامعة الأمير سلطان.</li>
+<li>اكتمال المنظومة</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-015">Previous</a>
+              <a class="button button-primary" href="#slide-017">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-017" data-slide="17" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 017 / 052</span>
+              <h2>المعايرة العلمية وأولى صور المسح</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-017.png" alt="Original PowerPoint slide 017: المعايرة العلمية وأولى صور المسح" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-017-understanding">
+              <h3 id="slide-017-understanding">شرح الشريحة</h3>
+              <p>تنتقل الشريحة إلى سؤال الدقة العلمية: هل يشير التلسكوب إلى المكان الصحيح، وهل تتوافق نتائجه مع مصادر مرجعية؟ صور المسح والمعايرة توضح بداية تحويل التلسكوب المتحرك إلى أداة يمكن الوثوق بقياساتها ومقارنتها.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>المعايرة العلمية وأولى صور المسح</li>
+<li>جارٍ الآن معايرة التوجيه ومطابقة النتائج مع المصادر العالمية والمحلية للوصول إلى آلية علمية موحّدة للمعايرة — وهذه أولى صور المسح للذراعين الخارجي والداخلي للمجرة.</li>
+<li>المسح بالتلسكوب الثابت — خط واحد عند السمت</li>
+<li>مسح المتحرك: صورة الذراعين الداخلي والخارجي</li>
+<li>المقارنة: شريط الثابت (2024) يخترق مسح المتحرك (2026)</li>
+<li>hot–cold load calibration</li>
+<li>معايرة</li>
+<li>الحرارة (Y-Factor): سماء باردة ↔ جدار</li>
+<li>معلوم</li>
+<li>الحرارة</li>
+<li>حيث ساهم اختيار مادة</li>
+<li>الفيبر</li>
+<li>جلاس في تخفيف حرارة سطح التلسكوب</li>
+<li>التلسكوب المتحرك قادر على تغطية أي منطقة في الفضاء آلياً — بعكس الثابت المحصور في خط السمت</li>
+<li>المعايرة العلمية</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-016">Previous</a>
+              <a class="button button-primary" href="#slide-018">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-018" data-slide="18" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 018 / 052</span>
+              <h2>معمل مخصص للتلسكوب الراديوي المتحرك</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-018.png" alt="Original PowerPoint slide 018: معمل مخصص للتلسكوب الراديوي المتحرك" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-018-understanding">
+              <h3 id="slide-018-understanding">شرح الشريحة</h3>
+              <p>تعرض الشريحة البنية المكانية التي تحمي التلسكوب المتحرك وتجعله جزءاً من منشأة تعليمية وبحثية. الحماية من الرياح والوصول المباشر من المعامل والمعارض يربطان بين المتطلبات الهندسية واستخدامات العرض والتعليم.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>معمل مخصص للتلسكوب الراديوي المتحرك</li>
+<li>جارٍ إنتاج معمل مخصص للتلسكوب الراديوي المتحرك ضمن تصميم فريد يحميه من الرياح، ويتيح الوصول المباشر إليه من جميع المعامل والمعارض داخل المنشأة.</li>
+<li>من الداخل: فتحة سماوية للرصد</li>
+<li>الغلاف الخارجي العازل للرياح</li>
+<li>المنشأة من الجو: معامل ومعارض متصلة</li>
+<li>حماية من الرياح</li>
+<li>غلاف خارجي يحمي التلسكوب المتحرك ويحافظ على دقة التوجيه أثناء الرصد.</li>
+<li>فتحة سماوية للرصد</li>
+<li>تصميم مفتوح نحو السماء يتيح للطبق المتحرك مسح أي منطقة من الفضاء.</li>
+<li>وصول مباشر من كل المعامل</li>
+<li>ممرات تصل جميع المعامل والمعارض بالتلسكوب مباشرة داخل هذا التصميم الفريد.</li>
+<li>المعمل المخصص</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-017">Previous</a>
+              <a class="button button-primary" href="#slide-019">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-019" data-slide="19" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 019 / 052</span>
+              <h2>منظومة وطنية متكاملة للتلسكوب الراديوي</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-019.png" alt="Original PowerPoint slide 019: منظومة وطنية متكاملة للتلسكوب الراديوي" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-019-understanding">
+              <h3 id="slide-019-understanding">شرح الشريحة</h3>
+              <p>تلخص الشريحة رحلة المشروع من مبادرة تطوعية عام 1437هـ إلى شبكة محطات وتصنيع محلي ونشر علمي ومنظومة متحركة. الأرقام المعروضة في الشريحة يجب أن تُقرأ كملخص موثق من العرض نفسه، لا كزخرفة إحصائية.</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>منظومة وطنية متكاملة للتلسكوب الراديوي</li>
+<li>من مبادرة تطوعية عام 1437هـ إلى تصنيع محلي، وشبكة محطات في الجامعات، ونشر علمي، ومنظومة متحركة متكاملة.</li>
+<li>11</li>
+<li>محطات استقبال</li>
+<li>9</li>
+<li>جامعات سعودية</li>
+<li>5 م</li>
+<li>قطر طبق الاستقبال</li>
+<li>2</li>
+<li>تلسكوب راديوي متحرك</li>
+<li>الجهات المشاركة</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-018">Previous</a>
+              <a class="button button-primary" href="#slide-020">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-020" data-slide="20" dir="rtl" lang="ar">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 020 / 052</span>
+              <h2>من النظام الهندسي إلى مكعب بيانات H I</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-020.png" alt="Original PowerPoint slide 020: من النظام الهندسي إلى مكعب بيانات H I" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-020-understanding">
+              <h3 id="slide-020-understanding">شرح الشريحة</h3>
+              <p>هذه هي نقطة التسليم من الهندسة إلى العلم: بعد أن أصبح لدينا طبق، توجيه، مستقبل، ومعايرة، يصبح السؤال هو ما البيانات الفلكية التي نريد بناءها. الهدف المركزي يمكن كتابته هكذا <span class="ra-equation" data-tex="T_B(\alpha,\delta,v_{\mathrm{LSR}})" data-display="false"><code>\(T_B(\alpha,\delta,v_{\mathrm{LSR}})\)</code></span> حيث α هو المطلع المستقيم Right Ascension، وδ هو الميل Declination، وv_LSR هي السرعة الشعاعية بالنسبة لمعيار السكون المحلي، وT_B هي درجة حرارة السطوع لانبعاث H I. بهذا تصبح المنظومة وسيلة لبناء مكعب بيانات: موضع في السماء + موضع في السماء + سرعة. والسؤال التالي هو: لماذا يكون خط H I بطول 21 سم مفيداً جداً في علم الفلك؟</p>
+              <details class="ra-transcript"><summary>النص المستخرج من الشريحة</summary><ul><li>hot–cold load calibration</li>
+<li>معايرة</li>
+<li>الحرارة (Y-Factor): سماء باردة ↔ جدار</li>
+<li>معلوم</li>
+<li>الحرارة</li>
+<li>حيث ساهم اختيار مادة</li>
+<li>الفيبر</li>
+<li>جلاس في تخفيف حرارة سطح التلسكوب</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-019">Previous</a>
+              <a class="button button-primary" href="#slide-021">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-021" data-slide="21">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 021 / 052</span>
+              <h2>Why Is the 21 cm Line Important in Astronomy?</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-021.png" alt="Original PowerPoint slide 021: Why Is the 21 cm Line Important in Astronomy?" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-021-understanding">
+              <h3 id="slide-021-understanding">Understanding this slide</h3>
+              <p>This slide begins the science part of the lecture. It shifts the reader from the telescope as an engineered system to the physical signal it is built to observe: the H I 21-cm line from neutral atomic hydrogen.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Why Is the 21 cm Line Important in Astronomy?</li>
+<li>Hyperfine hydrogen emission: physics, calibration, and observation workflow</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-020">Previous</a>
+              <a class="button button-primary" href="#slide-022">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-022" data-slide="22">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 022 / 052</span>
+              <h2>Hydrogen: The Most Common Element</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-022.png" alt="Original PowerPoint slide 022: Hydrogen: The Most Common Element" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-022-understanding">
+              <h3 id="slide-022-understanding">Understanding this slide</h3>
+              <p>Hydrogen is the most abundant element, and cold hydrogen clouds are often faint or invisible in ordinary optical light. The 21-cm line gives radio telescopes a way to detect that otherwise hidden material.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Hydrogen: The Most Common Element</li>
+<li>• Hydrogen is the most common element in the universe.</li>
+<li>• Cold hydrogen clouds are often not bright in visible light.</li>
+<li>• But they can emit the 21 cm radio line.</li>
+<li>• This makes cold, dark gas directly observable.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-021">Previous</a>
+              <a class="button button-primary" href="#slide-023">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-023" data-slide="23">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 023 / 052</span>
+              <h2>What Astronomers Study with the 21 cm Line</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-023.png" alt="Original PowerPoint slide 023: What Astronomers Study with the 21 cm Line" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-023-understanding">
+              <h3 id="slide-023-understanding">Understanding this slide</h3>
+              <p>The slide lists the scientific payoff of 21-cm observations: Galactic gas distribution, spiral structure, radial motion and Galactic rotation, interstellar clouds, and H I in external galaxies. In other words, the line is not just a detection tool; it is a tracer of structure and motion.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>What Astronomers Study with the 21 cm Line</li>
+<li>• Spiral arms of galaxies</li>
+<li>• Rotation of the Milky Way</li>
+<li>• Gas clouds between stars</li>
+<li>• Structure of other galaxies</li>
+<li>• Dark matter effects through galaxy rotation curves</li>
+<li>• Early universe hydrogen</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-022">Previous</a>
+              <a class="button button-primary" href="#slide-024">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-024" data-slide="24">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 024 / 052</span>
+              <h2>Seeing Through Dust</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-024.png" alt="Original PowerPoint slide 024: Seeing Through Dust" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-024-understanding">
+              <h3 id="slide-024-understanding">Understanding this slide</h3>
+              <p>Radio waves at 21 cm can pass through dust far better than visible light. This is why H I observations reveal obscured parts of the Milky Way, including gas and spiral structure that optical images may hide.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Seeing Through Dust</li>
+<li>• Radio waves with wavelength 21 cm pass through dust better than visible light.</li>
+<li>• They therefore reveal hidden regions of galaxies.</li>
+<li>• Obscured spiral structure and inner-galaxy gas become accessible.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-023">Previous</a>
+              <a class="button button-primary" href="#slide-025">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-025" data-slide="25">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 025 / 052</span>
+              <h2>Boltzmann State Populations</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-025.png" alt="Original PowerPoint slide 025: Boltzmann State Populations" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-025-understanding">
+              <h3 id="slide-025-understanding">Understanding this slide</h3>
+              <p>This slide introduces the population physics behind the line. The Boltzmann relation <span class="ra-equation ra-equation--display" data-tex="\frac{N_2}{N_1}=\frac{g_2}{g_1}\exp(-\frac{\Delta E}{kT})" data-display="true"><code>\[\frac{N_2}{N_1}=\frac{g_2}{g_1}\exp(-\frac{\Delta E}{kT})\]</code></span> tells us how atoms distribute between energy states at temperature T, which prepares the reader for the hydrogen hyperfine states.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Boltzmann State Populations</li>
+<li>• Atoms in a gas do not all have to be in the lowest energy state.</li>
+<li>• At temperature T, the number of atoms in two energy states follows the Boltzmann distribution.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-024">Previous</a>
+              <a class="button button-primary" href="#slide-026">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-026" data-slide="26">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 026 / 052</span>
+              <h2>Definition of Terms</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-026.png" alt="Original PowerPoint slide 026: Definition of Terms" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-026-understanding">
+              <h3 id="slide-026-understanding">Understanding this slide</h3>
+              <p>The slide defines the symbols used in the population ratio: upper- and lower-state atom numbers and their degeneracies. Getting these terms clear matters because the 21-cm line depends on the relative occupation of two very closely spaced hyperfine states.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Definition of Terms</li>
+<li>• N₂ = number of atoms in the higher-energy state</li>
+<li>• N₁ = number of atoms in the lower-energy state</li>
+<li>• g₂, g₁ = degeneracies — number of ways each state can occur</li>
+<li>• ΔE = energy difference between the states</li>
+<li>• k = Boltzmann constant</li>
+<li>• T = temperature in kelvin</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-025">Previous</a>
+              <a class="button button-primary" href="#slide-027">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-027" data-slide="27">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 027 / 052</span>
+              <h2>Hydrogen Hyperfine States</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-027.png" alt="Original PowerPoint slide 027: Hydrogen Hyperfine States" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-027-understanding">
+              <h3 id="slide-027-understanding">Understanding this slide</h3>
+              <p>Hydrogen’s upper hyperfine state has three allowed orientations, while the lower state has one. That 3:1 degeneracy is why, in the high-temperature limit, many more atoms occupy the upper state even though the energy difference is tiny.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Hydrogen Hyperfine States</li>
+<li>• Upper state F = 1 has degeneracy g₂ = 3</li>
+<li>• Lower state F = 0 has degeneracy g₁ = 1</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-026">Previous</a>
+              <a class="button button-primary" href="#slide-028">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-028" data-slide="28">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 028 / 052</span>
+              <h2>The High-Temperature Limit</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-028.png" alt="Original PowerPoint slide 028: The High-Temperature Limit" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-028-understanding">
+              <h3 id="slide-028-understanding">Understanding this slide</h3>
+              <p>Because the hyperfine energy gap is extremely small, many interstellar environments behave like the high-temperature limit for this transition. The result is a nearly 3:1 upper-to-lower population ratio, which helps make the line observable at astronomical scales.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>The High-Temperature Limit</li>
+<li>• Because ΔE is tiny, for many space temperatures:</li>
+<li>• About three times as many atoms sit in the upper hyperfine state as in the lower one.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-027">Previous</a>
+              <a class="button button-primary" href="#slide-029">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-029" data-slide="29">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 029 / 052</span>
+              <h2>Example: Interstellar Hydrogen at T = 100 K</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-029.png" alt="Original PowerPoint slide 029: Example: Interstellar Hydrogen at T = 100 K" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-029-understanding">
+              <h3 id="slide-029-understanding">Understanding this slide</h3>
+              <p>At T = 100 K, the hyperfine energy difference is tiny compared with thermal energy. The example shows why the population ratio is almost exactly 3:1 in typical cold interstellar hydrogen, reinforcing the high-temperature approximation.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Example: Interstellar Hydrogen at T = 100 K</li>
+<li>• The hyperfine energy difference corresponds to a temperature of about ΔE / k ≈ 0.068 K.</li>
+<li>• So the ratio is almost exactly 3 : 1.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-028">Previous</a>
+              <a class="button button-primary" href="#slide-030">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-030" data-slide="30">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 030 / 052</span>
+              <h2>Einstein Coefficients</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-030.png" alt="Original PowerPoint slide 030: Einstein Coefficients" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-030-understanding">
+              <h3 id="slide-030-understanding">Understanding this slide</h3>
+              <p>Einstein coefficients are bookkeeping constants for how atoms interact with radiation: absorption, stimulated emission, and spontaneous emission. The deck introduces them because the 21-cm line is governed by a very small spontaneous-emission probability.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Einstein Coefficients</li>
+<li>• Einstein coefficients describe how atoms interact with radiation between two energy levels.</li>
+<li>Coefficient</li>
+<li>Meaning</li>
+<li>A₂₁</li>
+<li>Spontaneous emission from upper to lower state</li>
+<li>B₂₁</li>
+<li>Stimulated emission caused by incoming radiation</li>
+<li>B₁₂</li>
+<li>Absorption from lower to upper state</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-029">Previous</a>
+              <a class="button button-primary" href="#slide-031">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-031" data-slide="31">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 031 / 052</span>
+              <h2>Spontaneous Emission: A₂₁</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-031.png" alt="Original PowerPoint slide 031: Spontaneous Emission: A₂₁" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-031-understanding">
+              <h3 id="slide-031-understanding">Understanding this slide</h3>
+              <p>The coefficient <span class="ra-equation" data-tex="A_{21}\approx2.85\times10^{-15}\,\mathrm{s^{-1}}" data-display="false"><code>\(A_{21}\approx2.85\times10^{-15}\,\mathrm{s^{-1}}\)</code></span> is the probability per second that an atom in the upper hyperfine state emits a 21-cm photon spontaneously. Its extremely small value means an individual atom rarely emits, which naturally leads to Slide 32’s long upper-state lifetime.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Spontaneous Emission: A₂₁</li>
+<li>• Spontaneous emission means the atom emits a photon without being forced by another photon.</li>
+<li>• For the 21 cm line:</li>
+<li>• This is an extremely small transition rate.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-030">Previous</a>
+              <a class="button button-primary" href="#slide-032">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-032" data-slide="32">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 032 / 052</span>
+              <h2>Lifetime of the Upper State</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-032.png" alt="Original PowerPoint slide 032: Lifetime of the Upper State" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-032-understanding">
+              <h3 id="slide-032-understanding">Understanding this slide</h3>
+              <p>A lifetime of roughly ten million years sounds too long to be useful, but the interstellar medium contains enormous numbers of hydrogen atoms. The line is observable because rare emission events become abundant when summed over vast clouds of gas.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Lifetime of the Upper State</li>
+<li>• A single hydrogen atom may wait about 10 million years before emitting a 21 cm photon spontaneously.</li>
+<li>• The line is observable only because interstellar space contains enormous numbers of atoms.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-031">Previous</a>
+              <a class="button button-primary" href="#slide-033">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-033" data-slide="33">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 033 / 052</span>
+              <h2>Example Hydrogen Observation Workflow (1–5)</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-033.png" alt="Original PowerPoint slide 033: Example Hydrogen Observation Workflow (1–5)" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-033-understanding">
+              <h3 id="slide-033-understanding">Understanding this slide</h3>
+              <p>The workflow starts with a pointing and a raw spectrum. At this stage the telescope is not yet producing a final map; it is collecting frequency-channel measurements that must still be calibrated and interpreted.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Example Hydrogen Observation Workflow (1–5)</li>
+<li>1. Point radio telescope at sky position</li>
+<li>↓</li>
+<li>2. Record raw spectrum: counts versus frequency</li>
+<li>↓</li>
+<li>3. Use hot–cold calibration</li>
+<li>↓</li>
+<li>4. Convert counts to antenna temperature</li>
+<li>↓</li>
+<li>5. Remove baseline and instrumental effects</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-032">Previous</a>
+              <a class="button button-primary" href="#slide-034">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-034" data-slide="34">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 034 / 052</span>
+              <h2>Example Hydrogen Observation Workflow (6–9)</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-034.png" alt="Original PowerPoint slide 034: Example Hydrogen Observation Workflow (6–9)" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-034-understanding">
+              <h3 id="slide-034-understanding">Understanding this slide</h3>
+              <p>This second workflow slide completes the transformation from raw frequency measurements to astronomical velocity products. Frequency shifts become Doppler velocities, and LSR correction puts those velocities into a frame useful for Galactic comparison.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Example Hydrogen Observation Workflow (6–9)</li>
+<li>6. Convert frequency to Doppler velocity</li>
+<li>↓</li>
+<li>7. Apply LSR correction</li>
+<li>↓</li>
+<li>8. Correct for beam efficiency and pointing errors</li>
+<li>↓</li>
+<li>9. Report brightness temperature versus LSR velocity</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-033">Previous</a>
+              <a class="button button-primary" href="#slide-035">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-035" data-slide="35">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 035 / 052</span>
+              <h2>Step 1: Point the Telescope at a Sky Position</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-035.png" alt="Original PowerPoint slide 035: Step 1: Point the Telescope at a Sky Position" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-035-understanding">
+              <h3 id="slide-035-understanding">Understanding this slide</h3>
+              <p>Azimuth and Altitude are local horizon coordinates: they describe where the telescope mount points from a specific site at a specific time. Right Ascension α and Declination δ are celestial coordinates fixed on the sky, so the control system must convert target RA/Dec into the local azimuth/altitude commands needed by the telescope.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Step 1: Point the Telescope at a Sky Position</li>
+<li>• Horizontal coordinates: Azimuth, Altitude</li>
+<li>• Equatorial coordinates: Right ascension α, Declination δ</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-034">Previous</a>
+              <a class="button button-primary" href="#slide-036">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-036" data-slide="36">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 036 / 052</span>
+              <h2>Step 2: Record the Raw Spectrum</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-036.png" alt="Original PowerPoint slide 036: Step 2: Record the Raw Spectrum" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-036-understanding">
+              <h3 id="slide-036-understanding">Understanding this slide</h3>
+              <p>This slide is deliberately still early in the measurement chain. The receiver output is counts versus frequency across spectral channels; repeated pointings begin to form position × position × frequency measurements before calibration and velocity conversion turn them into the final science cube.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Step 2: Record the Raw Spectrum</li>
+<li>• Output is counts versus frequency across many frequency channels.</li>
+<li>• Repeated pointings build a data cube: position, position, frequency.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-035">Previous</a>
+              <a class="button button-primary" href="#slide-037">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-037" data-slide="37">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 037 / 052</span>
+              <h2>Antenna Temperature</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-037.png" alt="Original PowerPoint slide 037: Antenna Temperature" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-037-understanding">
+              <h3 id="slide-037-understanding">Understanding this slide</h3>
+              <p>Antenna temperature is an equivalent way to express received radio power; it is not the physical temperature of the metal dish. The relation <span class="ra-equation ra-equation--display" data-tex="P=kT_A\Delta\nu" data-display="true"><code>\[P=kT_A\Delta\nu\]</code></span> says that received power depends on Boltzmann’s constant, antenna temperature T_A, and bandwidth Δν.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Antenna Temperature</li>
+<li>• Radio telescopes often measure antenna temperature, T_A.</li>
+<li>• This does not mean the metal antenna is physically that hot — it expresses received radio power as an equivalent temperature.</li>
+<li>• P = received power</li>
+<li>• k = Boltzmann&#x27;s constant</li>
+<li>• T_A = antenna temperature</li>
+<li>• Δν = bandwidth</li>
+<li>• A stronger radio signal corresponds to a larger T_A.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-036">Previous</a>
+              <a class="button button-primary" href="#slide-038">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-038" data-slide="38">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 038 / 052</span>
+              <h2>Step 3: Hot–Cold Calibration</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-038.png" alt="Original PowerPoint slide 038: Step 3: Hot–Cold Calibration" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-038-understanding">
+              <h3 id="slide-038-understanding">Understanding this slide</h3>
+              <p>Hot–cold calibration compares receiver output for known warm and cold references. The simple receiver model <span class="ra-equation ra-equation--display" data-tex="V=G(T+T_{\mathrm{rec}})" data-display="true"><code>\[V=G(T+T_{\mathrm{rec}})\]</code></span> says measured voltage or counts V are set by gain G multiplying the input temperature plus the receiver’s own noise temperature T_rec.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Step 3: Hot–Cold Calibration</li>
+<li>• The receiver itself adds noise, so the system must be calibrated.</li>
+<li>• The receiver is shown two known sources:</li>
+<li>– A hot load — often a room-temperature absorber</li>
+<li>– A cold load — often liquid nitrogen or the cold sky</li>
+<li>• Receiver output (counts or voltage-like units) is compared for both.</li>
+<li>• V = measured output   |   G = receiver gain   |   T = input source temperature   |   T_rec = receiver noise temperature</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-037">Previous</a>
+              <a class="button button-primary" href="#slide-039">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-039" data-slide="39">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 039 / 052</span>
+              <h2>Calibration Equations</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-039.png" alt="Original PowerPoint slide 039: Calibration Equations" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-039-understanding">
+              <h3 id="slide-039-understanding">Understanding this slide</h3>
+              <p>This slide is where the hot and cold measurements become calibration constants. By observing two known temperatures, the system solves for gain G and receiver temperature T_rec, allowing an unknown sky measurement to be converted from counts into temperature.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Calibration Equations</li>
+<li>• Once G and T_rec are known, any unknown sky measurement can be converted from counts into temperature.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-038">Previous</a>
+              <a class="button button-primary" href="#slide-040">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-040" data-slide="40">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 040 / 052</span>
+              <h2>Step 5: Remove Baseline and Instrumental Effects</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-040.png" alt="Original PowerPoint slide 040: Step 5: Remove Baseline and Instrumental Effects" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-040-understanding">
+              <h3 id="slide-040-understanding">Understanding this slide</h3>
+              <p>Baseline removal subtracts the slowly varying instrumental response from the measured spectrum so that the H I line can be distinguished from receiver slope and bandpass structure. The baseline should represent the instrumental/background trend rather than the astronomical line itself.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Step 5: Remove Baseline and Instrumental Effects</li>
+<li>• Subtract the instrumental baseline so only the hydrogen signal remains.</li>
+<li>[ Insert baseline-removal figure ]</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-039">Previous</a>
+              <a class="button button-primary" href="#slide-041">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-041" data-slide="41">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 041 / 052</span>
+              <h2>Brightness Temperature</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-041.png" alt="Original PowerPoint slide 041: Brightness Temperature" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-041-understanding">
+              <h3 id="slide-041-understanding">Understanding this slide</h3>
+              <p>Brightness temperature T_B expresses radio intensity as the temperature a blackbody would need to have to produce the same specific intensity at that frequency. In the Rayleigh–Jeans limit the relationship is <span class="ra-equation ra-equation--display" data-tex="I_\nu=\frac{2kT_B\nu^2}{c^2}" data-display="true"><code>\[I_\nu=\frac{2kT_B\nu^2}{c^2}\]</code></span>, which is why H I maps are commonly shown in kelvin.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Brightness Temperature</li>
+<li>• Hydrogen emission is often reported as brightness temperature, T_B.</li>
+<li>• &quot;What temperature would a perfect blackbody need to produce the observed radio brightness at this frequency?&quot;</li>
+<li>• At radio wavelengths the Rayleigh–Jeans approximation is used:</li>
+<li>• I_ν = specific intensity   |   T_B = brightness temperature   |   ν = observing frequency   |   c = speed of light</li>
+<li>• T_B directly describes hydrogen emission intensity in each direction and velocity channel.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-040">Previous</a>
+              <a class="button button-primary" href="#slide-042">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-042" data-slide="42">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 042 / 052</span>
+              <h2>Position Error Calibration</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-042.png" alt="Original PowerPoint slide 042: Position Error Calibration" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-042-understanding">
+              <h3 id="slide-042-understanding">Understanding this slide</h3>
+              <p>A pointing error moves the source away from the beam center and reduces the measured amplitude. For a Gaussian beam the response follows <span class="ra-equation ra-equation--display" data-tex="R(\theta)=\exp[-4\ln 2(\theta/\theta_{\mathrm{FWHM}})^2]" data-display="true"><code>\[R(\theta)=\exp[-4\ln 2(\theta/\theta_{\mathrm{FWHM}})^2]\]</code></span>, so the penalty depends on the pointing offset θ relative to the beam width θ_FWHM.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Position Error Calibration</li>
+<li>• A radio telescope must know exactly where it is pointing.</li>
+<li>• A small pointing error reduces the measured signal, especially for a narrow beam.</li>
+<li>• For a simple Gaussian beam, the response at angular offset θ is:</li>
+<li>)</li>
+<li>• R(θ) = fraction of peak response measured</li>
+<li>• θ = pointing error   |   θ_FWHM = beam width at half maximum</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-041">Previous</a>
+              <a class="button button-primary" href="#slide-043">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-043" data-slide="43">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 043 / 052</span>
+              <h2>Position Calibration and LSR Velocity Correction</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-043.png" alt="Original PowerPoint slide 043: Position Calibration and LSR Velocity Correction" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-043-understanding">
+              <h3 id="slide-043-understanding">Understanding this slide</h3>
+              <p>v_obs is the velocity inferred directly from the measured frequency shift at the observatory. v_LSR is the corrected velocity after accounting for Earth’s rotation, Earth’s orbit, and the Sun’s motion relative to nearby stars, which is necessary before comparing Galactic gas velocities.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Position Calibration and LSR Velocity Correction</li>
+<li>• Observe a bright source of known position: a strong radio source, a calibrator, the Sun (with proper safety and instrument limits), or a known hydrogen feature.</li>
+<li>• Scan across the source and find where the signal is strongest.</li>
+<li>• Measured frequency shift is affected by observer motion:</li>
+<li>– Earth&#x27;s rotation</li>
+<li>– Earth&#x27;s orbit around the Sun</li>
+<li>– The Sun&#x27;s motion relative to nearby stars</li>
+<li>• Correct velocities to the Local Standard of Rest (LSR) — the average motion of stars near the Sun.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-042">Previous</a>
+              <a class="button button-primary" href="#slide-044">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-044" data-slide="44">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 044 / 052</span>
+              <h2>Understanding Moment Maps</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-044.png" alt="Original PowerPoint slide 044: Understanding Moment Maps" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-044-understanding">
+              <h3 id="slide-044-understanding">Understanding this slide</h3>
+              <p>Moment maps are a way to summarize a spectral data cube into maps that are easier to inspect. This slide introduces moments 0 through 4 as different summaries of the line profile at each sky position.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Understanding Moment Maps</li>
+<li>Moment 0 to Moment 4</li>
+<li>H I 21 cm astronomy</li>
+<li>From spectral data cubes to physical maps</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-043">Previous</a>
+              <a class="button button-primary" href="#slide-045">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-045" data-slide="45">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 045 / 052</span>
+              <h2>Mapping the Galactic H I 21-cm Line</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-045.png" alt="Original PowerPoint slide 045: Mapping the Galactic H I 21-cm Line" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-045-understanding">
+              <h3 id="slide-045-understanding">Understanding this slide</h3>
+              <p>This slide frames the goal as mapping the Galactic H I 21-cm line. The web title corrects the slide’s visible typo while preserving the original slide image, and the scientific idea remains the same: turn spectra into spatial information about neutral hydrogen.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Maping</li>
+<li>Galactic HI 21 cm Line</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-044">Previous</a>
+              <a class="button button-primary" href="#slide-046">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-046" data-slide="46">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 046 / 052</span>
+              <h2>Why Moment Maps Are Useful</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-046.png" alt="Original PowerPoint slide 046: Why Moment Maps Are Useful" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-046-understanding">
+              <h3 id="slide-046-understanding">Understanding this slide</h3>
+              <p>Moment maps are useful because a full cube is rich but difficult to read all at once. They help identify where gas is located, how it is moving, and whether the line profiles are broad, asymmetric, or sharply peaked.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Why Moment Maps Are Useful</li>
+<li>Moment maps turn a full 3D data cube into simpler 2D maps.</li>
+<li>They help astronomers see:</li>
+<li>where the gas is;</li>
+<li>how the gas is moving;</li>
+<li>how broad or turbulent the gas is;</li>
+<li>whether line profiles are asymmetric;</li>
+<li>whether spectra have sharp peaks or broad wings</li>
+<li>.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-045">Previous</a>
+              <a class="button button-primary" href="#slide-047">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-047" data-slide="47">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 047 / 052</span>
+              <h2>What Is a Data Cube?</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-047.png" alt="Original PowerPoint slide 047: What Is a Data Cube?" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-047-understanding">
+              <h3 id="slide-047-understanding">Understanding this slide</h3>
+              <p>A data cube has two sky-position axes and a third frequency axis: x → sky position, y → sky position, and the third dimension → frequency. After calibration and frequency-to-velocity conversion, the same observational product becomes <span class="ra-equation" data-tex="T_B(\alpha,\delta,v_{\mathrm{LSR}})" data-display="false"><code>\(T_B(\alpha,\delta,v_{\mathrm{LSR}})\)</code></span>.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>What Is a Data Cube?</li>
+<li>Astronomers observing atomic hydrogen often collect a</li>
+<li>data cube</li>
+<li>.</li>
+<li>A data cube has:</li>
+<li>two sky-position axes;</li>
+<li>one velocity or frequency axis.</li>
+<li>For H I 21 cm observations:</li>
+<li>where:</li>
+<li>x,y</li>
+<li>: position on the sky;</li>
+<li>v: velocity, often LSR velocity;</li>
+<li>​: brightness temperature</li>
+<li>.</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-046">Previous</a>
+              <a class="button button-primary" href="#slide-048">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-048" data-slide="48">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 048 / 052</span>
+              <h2>Data Cube</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-048.png" alt="Original PowerPoint slide 048: Data Cube" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-048-understanding">
+              <h3 id="slide-048-understanding">Understanding this slide</h3>
+              <p>This slide makes the cube idea visual: each sky position has a spectrum, and stacking those spectra across the observed field creates a three-dimensional object. The key is that the science is not a single image or a single spectrum, but their combination.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Data Cube</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-047">Previous</a>
+              <a class="button button-primary" href="#slide-049">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-049" data-slide="49">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 049 / 052</span>
+              <h2>Overview of Moments</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-049.png" alt="Original PowerPoint slide 049: Overview of Moments" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-049-understanding">
+              <h3 id="slide-049-understanding">Understanding this slide</h3>
+              <p>The table defines moments as summaries along the spectral dimension. Moment 0 is integrated intensity, Moment 1 is intensity-weighted mean velocity, Moment 2 is velocity dispersion, Moment 3 is skewness, and Moment 4 is kurtosis.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Overview of Moments</li>
+<li>Moment</li>
+<li>Measures</li>
+<li>Simple Meaning</li>
+<li>Moment 0</li>
+<li>Total area under the line</li>
+<li>How much gas is there?</li>
+<li>Moment 1</li>
+<li>Weighted average velocity</li>
+<li>How fast is the gas moving?</li>
+<li>Moment 2</li>
+<li>Velocity spread</li>
+<li>How broad or turbulent is the gas?</li>
+<li>Moment 3</li>
+<li>Skewness</li>
+<li>Is the line lopsided?</li>
+<li>Moment 4</li>
+<li>Kurtosis</li>
+<li>Is the line sharp-peaked or broad-winged?</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-048">Previous</a>
+              <a class="button button-primary" href="#slide-050">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-050" data-slide="50">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 050 / 052</span>
+              <h2>Moments of an HI 21 cm Line Profile</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-050.png" alt="Original PowerPoint slide 050: Moments of an HI 21 cm Line Profile" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-050-understanding">
+              <h3 id="slide-050-understanding">Understanding this slide</h3>
+              <p>The line-profile figure shows what the moments measure on an actual spectral shape. Moments are powerful summaries, but they do not replace the original cube; they compress different aspects of the profile for interpretation.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>Moments of an HI 21 cm Line Profile</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-049">Previous</a>
+              <a class="button button-primary" href="#slide-051">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-051" data-slide="51">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 051 / 052</span>
+              <h2>H I Column Density and Galactic Mapping</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-051.png" alt="Original PowerPoint slide 051: H I Column Density and Galactic Mapping" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-051-understanding">
+              <h3 id="slide-051-understanding">Understanding this slide</h3>
+              <p>This slide connects H I brightness temperature to column density and Galactic mapping. For optically thin H I, <span class="ra-equation ra-equation--display" data-tex="N_{\mathrm{H\,I}}[\mathrm{cm^{-2}}]=1.823\times10^{18}\int T_B(v)\,dv" data-display="true"><code>\[N_{\mathrm{H\,I}}[\mathrm{cm^{-2}}]=1.823\times10^{18}\int T_B(v)\,dv\]</code></span>; with this numerical coefficient, T_B is in kelvin and dv is conventionally in km/s. The survey imagery shows how integrating spectra across velocity becomes a map of neutral hydrogen column density.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><p>No extractable text was found. Review the original slide image for image-only content.</p></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-050">Previous</a>
+              <a class="button button-primary" href="#slide-052">Next</a>
+            </nav>
+          </article>
+          <article class="ra-slide" id="slide-052" data-slide="52">
+            <header class="ra-slide-head">
+              <span class="ra-slide-number">Slide 052 / 052</span>
+              <h2>HI 21 cm Line from KAU</h2>
+            </header>
+            <figure class="ra-slide-image">
+              <img src="assets/images/lecture/slide-052.png" alt="Original PowerPoint slide 052: HI 21 cm Line from KAU" loading="lazy" width="1920" height="1080">
+            </figure>
+            <section class="ra-interpretation" aria-labelledby="slide-052-understanding">
+              <h3 id="slide-052-understanding">Understanding this slide</h3>
+              <p>The KAU slide shows an H I 21-cm sky map at 1.4187519 GHz. The horizontal axis is RA?ICRS in degrees, the vertical axis is Dec?ICRS in degrees, and the color scale is mean antenna temperature in kelvin; the bright curved H I feature marks stronger neutral-hydrogen emission across the mapped sky positions. The slide should be read as a spatial intensity map, without inventing acquisition details that are not shown.</p>
+              <details class="ra-transcript"><summary>Extracted slide text</summary><ul><li>HI 21 cm Line from KAU</li></ul></details>
+            </section>
+            <nav class="ra-slide-nav" aria-label="Slide navigation">
+              <a class="button button-ghost" href="#slide-051">Previous</a>
+              <a class="button button-primary" href="#slide-052">Next</a>
+            </nav>
+          </article>
+      </section>
+    </section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="lecture.html">Lecture</a> · <a href="software.html">Software</a> · <a href="data.html">Data</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research</h4>
+        <p><a href="publications.html">Publication</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Back to EMXplore</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/radio-astronomy.js"></script>
+  <script src="assets/vendor/katex/katex.min.js"></script>
+  <script src="assets/js/math-render.js"></script>
+  <script src="assets/js/lecture.js"></script>
+</body>
+</html>
