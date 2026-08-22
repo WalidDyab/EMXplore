@@ -109,12 +109,12 @@
 .ra-toc { position: sticky; top: 90px; max-height: calc(100vh - 110px); overflow: auto; align-self: start; background: #fff; border: 1px solid var(--border-light); border-radius: var(--radius-card); padding: 20px; box-shadow: 0 2px 12px rgba(15,26,46,.05); }
 .ra-toc h2 { color: var(--text-dark); font-size: 1.2rem; margin-bottom: 14px; }
 .ra-chapter { border-top: 1px solid var(--border-light); padding-top: 12px; margin-top: 12px; }
-.ra-chapter button { width: 100%; border: 0; background: transparent; color: var(--text-dark); font: inherit; font-weight: 700; text-align: left; padding: 0; cursor: pointer; }
-.ra-chapter button span { display: block; color: var(--primary); font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; margin-bottom: 3px; }
+.ra-chapter .ra-chapter-link { display: block; width: 100%; color: var(--text-dark); font: inherit; font-weight: 700; text-align: left; text-decoration: none; padding: 0; }
+.ra-chapter .ra-chapter-link span { display: block; color: var(--primary); font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; margin-bottom: 3px; }
 .ra-chapter ol { margin: 10px 0 0; padding-left: 22px; }
 .ra-chapter.is-collapsed ol { display: none; }
 .ra-chapter a { color: var(--text-body); text-decoration: none; font-size: .88rem; }
-.ra-chapter a.is-active, .ra-chapter a:hover { color: var(--primary); font-weight: 700; }
+.ra-chapter a.is-active, .ra-chapter a:hover, .ra-chapter a:focus-visible { color: var(--primary); font-weight: 700; outline: none; }
 .ra-lecture-main { min-width: 0; }
 .ra-progress { position: sticky; top: 78px; z-index: 3; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; padding: 12px 16px; border-radius: var(--radius-pill); background: rgba(6,16,31,.92); color: var(--text-light); box-shadow: 0 10px 30px rgba(0,0,0,.18); }
 .ra-progress a { color: var(--cyan); text-decoration: none; font-weight: 700; }

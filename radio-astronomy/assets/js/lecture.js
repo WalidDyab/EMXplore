@@ -42,5 +42,6 @@
     }, { rootMargin: '-20% 0px -65% 0px', threshold: [0.1, 0.35, 0.6] });
     slides.forEach((slide) => observer.observe(slide));
   }
-  setActive(document.querySelector(location.hash) || slides[0]);
+  const initialSlide = location.hash ? document.querySelector(location.hash) : null;
+  setActive(initialSlide || slides[0]);
 })();
