@@ -218,20 +218,6 @@ a   { color: inherit; }
   background: rgba(255, 255, 255, 0.10);
 }
 
-/* Explore Projects CTA in nav */
-.site-nav .nav-cta {
-  background: rgba(22, 215, 255, 0.10);
-  border: 1px solid rgba(22, 215, 255, 0.28);
-  border-radius: var(--radius-pill);
-  color: var(--cyan);
-  font-weight: 700;
-}
-.site-nav .nav-cta:hover {
-  background: rgba(22, 215, 255, 0.18);
-  border-color: rgba(22, 215, 255, 0.45);
-  color: #fff;
-}
-
 /* Hamburger toggle — hidden on desktop */
 .nav-toggle {
   display: none;
@@ -267,7 +253,7 @@ a   { color: inherit; }
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: min(86vh, 760px);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -922,15 +908,6 @@ a.project-card:hover {
     font-size: 0.92rem;
     border-radius: 0;
   }
-  .site-nav .nav-cta {
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--border-dark);
-    margin-top: 4px;
-    padding-top: 14px;
-  }
-
   /* Hero */
   .hero-content {
     padding-top: 100px;
@@ -980,4 +957,220 @@ a.project-card:hover {
   .hero-media.animate-drift img {
     animation: none;
   }
+}
+
+
+/* ==========================================================================
+   17. Ecosystem Components — Directions, Courses, Sub-sections
+   --------------------------------------------------------------------------
+   Shared, framework-free classes. These are intentionally portable so the
+   same header/footer/navigation language can be reproduced in the separate
+   courses.emxplore.com repository without a build step.
+   ========================================================================== */
+
+/* ── Anchor offset for the fixed global header ───────────── */
+
+main section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* ── Two primary directions: Projects & Courses ──────────── */
+
+.direction-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.direction-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 34px 32px;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-top: 3px solid var(--primary);
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 12px rgba(15, 26, 46, 0.05);
+}
+
+.direction-card.direction-courses {
+  border-top-color: var(--gold-dark);
+}
+
+.direction-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.direction-card h3 {
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  color: var(--text-dark);
+}
+
+.direction-card > p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+.direction-points {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.direction-points li {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--text-body);
+  background: var(--surface-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px;
+}
+
+.direction-actions {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+/* ── Course cards ────────────────────────────────────────── */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 24px;
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: 0 2px 12px rgba(15, 26, 46, 0.05);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 36px rgba(15, 26, 46, 0.10);
+  border-color: rgba(246, 196, 83, 0.55);
+}
+
+.course-code {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.course-card h3 {
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.course-card p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  flex: 1;
+}
+
+.course-card .project-link {
+  color: var(--gold-dark);
+}
+
+/* ── Sub-section heading (a group inside a section) ──────── */
+
+.subsection-heading {
+  margin: 56px 0 24px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-light);
+  max-width: 640px;
+}
+
+.subsection-heading h3 {
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.subsection-heading p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  max-width: 60ch;
+}
+
+/* ── Grid modifier: three columns ────────────────────────── */
+
+.project-grid.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── Centred section heading ─────────────────────────────── */
+
+.section-heading.is-centred {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.section-heading.is-centred p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Compact footer link rows ────────────────────────────── */
+
+.footer-inline {
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin: 0;
+}
+.footer-inline a {
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+.footer-inline a:hover,
+.footer-inline a:focus-visible {
+  color: var(--cyan);
+}
+.footer-inline .sep {
+  opacity: 0.45;
+  padding: 0 2px;
+}
+
+
+/* ==========================================================================
+   18. Ecosystem Components — Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .direction-grid { grid-template-columns: 1fr; }
+  .course-grid    { grid-template-columns: repeat(2, 1fr); }
+  .project-grid.grid-3 { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  .course-grid { grid-template-columns: 1fr; }
+  .direction-card { padding: 28px 22px; }
+  .subsection-heading { margin: 44px 0 20px; }
 }
