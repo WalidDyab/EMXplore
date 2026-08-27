@@ -4,14 +4,42 @@ EMXplore is a static website serving as a central gateway to electromagnetics th
 
 **Live site:** [emxplore.com](https://emxplore.com)
 
+## Ecosystem
+
+EMXplore is one identity delivered from two repositories:
+
+| Direction | Site | Repository |
+|---|---|---|
+| Projects (research, tools, facilities) | [emxplore.com](https://emxplore.com) | this repository |
+| Courses (teaching material) | [courses.emxplore.com](https://courses.emxplore.com/) | `emxplore-teaching` |
+
+Global navigation on every main-site page is **Home | About | Projects | Courses**.
+
+Courses is first-class navigation, not an external resource: no external-link arrow,
+no forced new tab. The canonical header/footer markup is plain semantic HTML using the
+shared classes `site-header` / `site-nav` / `site-footer` / `footer-inline`, so it can be
+duplicated into `emxplore-teaching` without a build step.
+
+### Information architecture
+
+```text
+EMXplore
+├── Projects (projects.html)
+│   ├── Project portfolio — Radio Astronomy · Riyadh Space Minaret · SAR & ISAR
+│   │   └── Public engineering portals — Ham Radio · Satellite Lecture
+│   ├── Simulation Tools   (#tools)
+│   └── Lab Facilities     (#facilities)
+└── Courses  → https://courses.emxplore.com/
+```
+
 ---
 
 ## Project Structure
 
 ```
 EMXplore/
-├── index.html                 # Homepage
-├── projects.html              # Projects & Portals
+├── index.html                 # Homepage — Projects / Courses split
+├── projects.html              # Projects · Simulation Tools · Lab Facilities
 ├── about.html                 # About EMXplore
 ├── README.md
 ├── .gitignore
@@ -77,13 +105,27 @@ The main hero image is stored at `assets/images/emxplore-hero.png`. This is the 
 
 ## Current Live Portals
 
-| Project | URL |
-|---|---|
-| Ham Radio | [waliddyab.github.io/Ham-Radio](https://waliddyab.github.io/Ham-Radio/) |
-| Satellite Lecture | [waliddyab.github.io/satellite-lecture](https://waliddyab.github.io/satellite-lecture/) |
-| Complex Numbers & Phasors | [waliddyab.github.io/Complex-Numbers](https://waliddyab.github.io/Complex-Numbers/) |
-| FSM Statistics | [waliddyab.github.io/statistical-analysis-of-FSM](https://waliddyab.github.io/statistical-analysis-of-FSM/) |
-| EMG Research | [emg.psu.edu.sa](https://emg.psu.edu.sa) |
+| Resource | Section | URL |
+|---|---|---|
+| Radio Astronomy | Projects | [`/radio-astronomy/`](radio-astronomy/) |
+| Ham Radio | Projects — public portals | [waliddyab.github.io/Ham-Radio](https://waliddyab.github.io/Ham-Radio/) |
+| Satellite Lecture | Projects — public portals | [waliddyab.github.io/satellite-lecture](https://waliddyab.github.io/satellite-lecture/) |
+| Complex Numbers & Phasors | Simulation Tools | [waliddyab.github.io/Complex-Numbers](https://waliddyab.github.io/Complex-Numbers/) |
+| EMG Research Group | Lab Facilities | [emg.psu.edu.sa](https://emg.psu.edu.sa) |
+| Radio Telescope Facility | Lab Facilities | [`radio-astronomy/project.html`](radio-astronomy/project.html) |
+
+### Teaching migration candidates (Phase 2 — not yet moved)
+
+| Resource | Current location | Destination | Recommendation |
+|---|---|---|---|
+| FSM Brute-Force Statistics (EE 322) | external repo `statistical-analysis-of-FSM` | courses.emxplore.com → Microprocessors Design | MOVE |
+| Ham Radio portal | external repo `Ham-Radio` | — | REVIEW MANUALLY |
+| Satellite Lecture portal | external repo `satellite-lecture` | — | REVIEW MANUALLY |
+| Complex Numbers & Phasors | external repo `Complex-Numbers` | — | KEEP SHARED |
+
+Nothing has been deleted. `assets/js/site-config.js` records each entry with a
+`taxonomy` field (`project` / `tool` / `facility` / `course`) and, where relevant,
+a `migration` note.
 
 ## Updating Safely
 

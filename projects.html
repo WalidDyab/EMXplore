@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — EMXplore</title>
-  <meta name="description" content="Explore EMXplore's collection of portals and projects across ham radio, satellites, radio astronomy, radar, waveguides, and engineering education.">
+  <meta name="description" content="EMXplore engineering projects: radio astronomy, the Riyadh Space Minaret, SAR and ISAR radar imaging, together with simulation tools and laboratory facilities.">
   <meta property="og:title" content="Projects — EMXplore">
-  <meta property="og:description" content="Educational portals, research tools, and engineering projects in electromagnetics.">
+  <meta property="og:description" content="Research projects, simulation tools, and laboratory facilities in electromagnetics and radio science.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#06101f">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
@@ -15,7 +15,7 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- ─── Header ─── -->
+  <!-- ═══ EMXplore global header ═══ -->
   <header class="site-header" id="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="EMXplore home">
@@ -29,44 +29,87 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         <a href="index.html">Home</a>
-        <a href="projects.html" aria-current="page">Projects</a>
         <a href="about.html">About</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="https://courses.emxplore.com/">Courses</a>
       </nav>
     </div>
   </header>
 
-  <!-- ─── Main Content ─── -->
+  <!-- ═══ Main content ═══ -->
   <main id="main-content">
 
-    <!-- Projects Hero (compact) -->
+    <!-- Projects hero (compact) -->
     <section class="projects-hero" aria-labelledby="projects-title">
       <div class="wrap">
-        <p class="eyebrow">Exploration Destinations</p>
-        <h1 id="projects-title">Projects &amp; Portals</h1>
+        <p class="eyebrow">Research &amp; Engineering</p>
+        <h1 id="projects-title">Projects</h1>
         <p class="hero-intro">
-          Every card below is a gateway into a different corner of electromagnetics —
-          from amateur radio to radar imaging, from satellite orbits to waveguide theory.
+          Research projects, experimental platforms, and scientific instrumentation —
+          together with the simulation tools and laboratory facilities that support
+          the engineering work behind them.
         </p>
       </div>
     </section>
 
-    <!-- ── Expeditions: Educational Portals ── -->
-    <section class="section" id="expeditions">
+    <!-- ══ A. Project portfolio ══ -->
+    <section class="section" id="portfolio" aria-labelledby="portfolio-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="section-kicker">Educational Portals</p>
-          <h2>Expeditions</h2>
-          <p>Interactive lectures and tools, built for students and curious explorers alike.</p>
+          <p class="section-kicker">Project portfolio</p>
+          <h2 id="portfolio-title">Three principal project directions</h2>
+          <p>Scientific instrumentation, space outreach, and radar imaging research.</p>
+        </div>
+
+        <div class="project-grid grid-3">
+          <a class="project-card" href="radio-astronomy/">
+            <div class="project-meta">
+              <span class="project-status status-live">Live</span>
+              <span>H I 21-cm Astronomy</span>
+            </div>
+            <h3>Radio Astronomy</h3>
+            <p>Development of a Saudi radio telescope system for H I 21-cm observations — telescope design, automated pointing, receiver development, calibration, Galactic hydrogen observations, software, data analysis, publications, and educational resources.</p>
+            <span class="project-link">Open project</span>
+          </a>
+
+          <article class="project-card" aria-label="Riyadh Space Minaret, in development">
+            <div class="project-meta">
+              <span class="project-status status-coming">In Development</span>
+              <span>Space Outreach</span>
+            </div>
+            <h3>Riyadh Space Minaret</h3>
+            <p>Radio astronomy, student projects, live telescope feeds, outreach, and space-science education from Riyadh.</p>
+            <span class="project-link muted">Project page in preparation</span>
+          </article>
+
+          <article class="project-card" aria-label="SAR and ISAR, research">
+            <div class="project-meta">
+              <span class="project-status status-research">Research</span>
+              <span>Radar Imaging</span>
+            </div>
+            <h3>SAR &amp; ISAR</h3>
+            <p>Electromagnetic simulation, synthetic echo datasets, visualisation, and radar imaging research for synthetic-aperture and inverse synthetic-aperture radar.</p>
+            <span class="project-link muted">Project page in preparation</span>
+          </article>
+        </div>
+
+        <!-- Public engineering portals developed alongside the research work -->
+        <div class="subsection-heading">
+          <h3>Public engineering portals</h3>
+          <p>
+            Standalone public portals developed alongside the research work. They are
+            open engineering resources rather than university course material.
+          </p>
         </div>
 
         <div class="project-grid">
-          <a class="project-card project-card-featured" href="https://waliddyab.github.io/Ham-Radio/" target="_blank" rel="noopener noreferrer">
+          <a class="project-card" href="https://waliddyab.github.io/Ham-Radio/" target="_blank" rel="noopener noreferrer">
             <div class="project-meta">
               <span class="project-status status-live">Live</span>
               <span>Radio Communication</span>
             </div>
             <h3>Ham Radio</h3>
-            <p>Lectures, license preparation, practical resources, and a growing portal for amateur radio. Covers regulations, equipment, operating procedures, and safety.</p>
+            <p>Lectures, license preparation, practical resources, and a growing portal for amateur radio — regulations, equipment, operating procedures, and safety.</p>
             <span class="project-link">Open portal <span aria-hidden="true">↗</span></span>
           </a>
 
@@ -77,9 +120,26 @@
             </div>
             <h3>Satellite Lecture</h3>
             <p>A bilingual visual portal on amateur satellite communication — tracking, antennas, Doppler correction, TLE data, LoRa, TinyGS, and student satellite missions.</p>
-            <span class="project-link">Open lecture <span aria-hidden="true">↗</span></span>
+            <span class="project-link">Open portal <span aria-hidden="true">↗</span></span>
           </a>
+        </div>
+      </div>
+    </section>
 
+    <!-- ══ B. Simulation & engineering tools ══ -->
+    <section class="section" id="tools" aria-labelledby="tools-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Simulation Tools</p>
+          <h2 id="tools-title">Simulation &amp; engineering tools</h2>
+          <p>
+            Engineering utilities, calculators, simulators, and interactive visualisers
+            for working with electromagnetic systems. These are general engineering
+            resources used across the research and design work.
+          </p>
+        </div>
+
+        <div class="project-grid grid-3">
           <a class="project-card" href="https://waliddyab.github.io/Complex-Numbers/" target="_blank" rel="noopener noreferrer">
             <div class="project-meta">
               <span class="project-status status-live">Live</span>
@@ -87,145 +147,100 @@
             </div>
             <h3>Complex Numbers &amp; Phasors</h3>
             <p>From algebra and Argand diagrams to phasors and AC circuits, with an interactive visualiser and quiz.</p>
-            <span class="project-link">Open module <span aria-hidden="true">↗</span></span>
+            <span class="project-link">Open tool <span aria-hidden="true">↗</span></span>
           </a>
 
-          <a class="project-card" href="https://waliddyab.github.io/statistical-analysis-of-FSM/" target="_blank" rel="noopener noreferrer">
+          <article class="project-card" aria-label="Waveguide Septa Tool, in preparation">
             <div class="project-meta">
-              <span class="project-status status-educational">Educational</span>
-              <span>EE 322</span>
-            </div>
-            <h3>FSM Brute-Force Statistics</h3>
-            <p>A module on geometric distributions and search strategy for locking mechanisms, built for the Microprocessor Design course.</p>
-            <span class="project-link">Open module <span aria-hidden="true">↗</span></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Research Stations ── -->
-    <section class="section" id="stations">
-      <div class="wrap">
-        <div class="section-heading">
-          <p class="section-kicker">Research Portals</p>
-          <h2>Research Stations</h2>
-          <p>Peer-reviewed papers, ongoing projects, and the laboratories behind them.</p>
-        </div>
-
-        <div class="project-grid">
-          <a class="project-card project-card-featured" href="https://emg.psu.edu.sa" target="_blank" rel="noopener noreferrer">
-            <div class="project-meta">
-              <span class="project-status status-research">Research</span>
-              <span>Electromagnetics</span>
-            </div>
-            <h3>EMG Research Portal</h3>
-            <p>The Electromagnetics Research Group at Prince Sultan University — waveguides, antennas, wireless power transfer, simulations, manuscripts, and research intelligence.</p>
-            <span class="project-link">Visit EMG <span aria-hidden="true">↗</span></span>
-          </a>
-
-          <a class="project-card" href="radio-astronomy/">
-            <div class="project-meta">
-              <span class="project-status status-live">Live</span>
-              <span>H I 21-cm Astronomy</span>
-            </div>
-            <h3>Radio Astronomy</h3>
-            <p>Development of a Saudi radio telescope system for H I 21-cm observations, including telescope design, automated pointing, receiver development, calibration, Galactic hydrogen observations, software, data analysis, publications, and educational resources.</p>
-            <span class="project-link">Open portal</span>
-          </a>
-
-          <article class="project-card" aria-label="SAR and ISAR, research">
-            <div class="project-meta">
-              <span class="project-status status-research">Research</span>
-              <span>Radar Imaging</span>
-            </div>
-            <h3>SAR &amp; ISAR</h3>
-            <p>Electromagnetic simulation, synthetic echo datasets, visualisation, and radar imaging research.</p>
-            <span class="project-link muted">Coming soon</span>
-          </article>
-
-          <article class="project-card" aria-label="Riyadh Space Minaret, coming soon">
-            <div class="project-meta">
-              <span class="project-status status-coming">Coming Soon</span>
-              <span>Space Outreach</span>
-            </div>
-            <h3>Riyadh Space Minaret</h3>
-            <p>Radio astronomy, student projects, live telescope feeds, outreach, and space-science education from Riyadh.</p>
-            <span class="project-link muted">Coming soon</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Tools & Future ── -->
-    <section class="section" id="tools">
-      <div class="wrap">
-        <div class="section-heading">
-          <p class="section-kicker">Interactive Resources</p>
-          <h2>Tools &amp; Laboratory</h2>
-          <p>Engineering utilities, simulators, and hands-on resources for working with electromagnetic systems.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card" aria-label="Engineering Lab, coming soon">
-            <div class="project-meta">
-              <span class="project-status status-coming">Coming Soon</span>
-              <span>Simulation &amp; Tools</span>
-            </div>
-            <h3>Engineering Lab</h3>
-            <p>Waveguide tools, RFSoC resources, SDR experiments, electromagnetic field visualisation, and interactive utilities.</p>
-            <span class="project-link muted">Coming soon</span>
-          </article>
-
-          <article class="project-card" aria-label="Waveguide Septa Tool">
-            <div class="project-meta">
-              <span class="project-status status-coming">Coming Soon</span>
+              <span class="project-status status-coming">In Preparation</span>
               <span>Waveguide Design</span>
             </div>
             <h3>Waveguide Septa Tool</h3>
             <p>An interactive calculator for stepped-impedance waveguide septa design and analysis.</p>
             <span class="project-link muted">Coming soon</span>
           </article>
+
+          <article class="project-card" aria-label="Engineering Lab toolset, in preparation">
+            <div class="project-meta">
+              <span class="project-status status-coming">In Preparation</span>
+              <span>Simulation &amp; Tools</span>
+            </div>
+            <h3>Engineering Lab Toolset</h3>
+            <p>Waveguide tools, RFSoC resources, SDR experiments, electromagnetic field visualisation, and interactive utilities.</p>
+            <span class="project-link muted">Coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ C. Lab facilities ══ -->
+    <section class="section" id="facilities" aria-labelledby="facilities-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Lab Facilities</p>
+          <h2 id="facilities-title">Laboratory &amp; research facilities</h2>
+          <p>
+            The research environment behind the projects: the laboratories, instruments,
+            and installations where the engineering work is carried out.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <a class="project-card" href="https://emg.psu.edu.sa" target="_blank" rel="noopener noreferrer">
+            <div class="project-meta">
+              <span class="project-status status-research">Research Group</span>
+              <span>Electromagnetics</span>
+            </div>
+            <h3>EMG — Electromagnetics Research Group</h3>
+            <p>The Electromagnetics Research Group at Prince Sultan University — waveguides, antennas, wireless power transfer, simulations, manuscripts, and research intelligence.</p>
+            <span class="project-link">Visit EMG <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a class="project-card" href="radio-astronomy/project.html">
+            <div class="project-meta">
+              <span class="project-status status-live">Operational</span>
+              <span>Radio Telescope</span>
+            </div>
+            <h3>Radio Telescope Facility</h3>
+            <p>The 5 m parabolic reflector, choke-horn feed, and software-defined receiver chain used for hydrogen-line observations near 1.42 GHz.</p>
+            <span class="project-link">View the telescope system</span>
+          </a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ─── Footer ─── -->
+  <!-- ═══ EMXplore global footer ═══ -->
   <footer class="site-footer">
     <div class="wrap footer-grid">
       <div class="footer-col">
         <a class="brand footer-brand" href="index.html" aria-label="EMXplore home">
           <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
         </a>
-        <p>Explore electromagnetics through science, engineering, and discovery.</p>
+        <p>Engineering projects and interactive courses in electromagnetics and radio science.</p>
       </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h4>Explore</h4>
+        <p class="footer-inline">
+          <a href="index.html">Home</a><span class="sep"> · </span><a href="about.html">About</a><span class="sep"> · </span><a href="projects.html">Projects</a><span class="sep"> · </span><a href="https://courses.emxplore.com/">Courses</a>
+        </p>
+      </nav>
+      <nav class="footer-col" aria-label="Footer projects and learning links">
+        <h4>Projects &amp; Learning</h4>
+        <p class="footer-inline">
+          <a href="radio-astronomy/">Radio Astronomy</a><span class="sep"> · </span><a href="projects.html#tools">Simulation Tools</a><span class="sep"> · </span><a href="projects.html#facilities">Lab Facilities</a>
+        </p>
+      </nav>
+      <nav class="footer-col" aria-label="Footer research and profile links">
         <h4>Research</h4>
-        <ul class="footer-links">
-          <li><a href="https://emg.psu.edu.sa" target="_blank" rel="noopener noreferrer">EMG Website</a></li>
-          <li><a href="https://scholar.google.com/citations?hl=en&user=Y6nqdz0AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-          <li><a href="https://www.researchgate.net/profile/Walid-Dyab" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul class="footer-links">
-          <li><a href="https://github.com/WalidDyab" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/walid-dyab-0a60b315/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        </ul>
-      </div>
+        <p class="footer-inline">
+          <a href="https://emg.psu.edu.sa" target="_blank" rel="noopener noreferrer">EMG</a><span class="sep"> · </span><a href="https://scholar.google.com/citations?hl=en&amp;user=Y6nqdz0AAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a><span class="sep"> · </span><a href="https://www.researchgate.net/profile/Walid-Dyab" target="_blank" rel="noopener noreferrer">ResearchGate</a><span class="sep"> · </span><a href="https://github.com/WalidDyab" target="_blank" rel="noopener noreferrer">GitHub</a><span class="sep"> · </span><a href="https://www.linkedin.com/in/walid-dyab-0a60b315/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+      </nav>
     </div>
     <div class="wrap">
-      <p class="copyright">&copy; <span id="year"></span> EMXplore &middot; Dr. Walid Dyab</p>
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>
 

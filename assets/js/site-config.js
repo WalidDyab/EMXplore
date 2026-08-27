@@ -10,6 +10,49 @@
 
 const SITE_CONFIG = {
 
+  /* ── Ecosystem ───────────────────────────────────────────—
+   * EMXplore is one identity delivered from two repositories:
+   *   main site  → emxplore.com          (this repository)
+   *   courses    → courses.emxplore.com  (emxplore-teaching repository)
+   * Courses is first-class navigation, not an external resource:
+   * no external-link arrow and no forced new tab.
+   */
+  ecosystem: {
+    main:    'https://emxplore.com/',
+    courses: 'https://courses.emxplore.com/',
+    nav: [
+      { label: 'Home',     href: 'index.html' },
+      { label: 'About',    href: 'about.html' },
+      { label: 'Projects', href: 'projects.html' },
+      { label: 'Courses',  href: 'https://courses.emxplore.com/' },
+    ],
+  },
+
+  /* ── Courses (hosted in the emxplore-teaching repository) ── */
+  courses: {
+    communicationSystems: {
+      code:        'EE 351',
+      title:       'Communication Systems',
+      description: 'Signals and systems across the time and frequency domains, modulation, and communication-system analysis.',
+      status:      'available',
+      url:         'https://courses.emxplore.com/communication-systems/',
+    },
+    satelliteCommunications: {
+      code:        'EE 499',
+      title:       'Satellite Communications',
+      description: 'Orbital mechanics, satellite geometry, propagation, antennas, communication links, spacecraft, and ground systems.',
+      status:      'available',
+      url:         'https://courses.emxplore.com/satellite-technologies/',
+    },
+    microprocessorsDesign: {
+      code:        '',
+      title:       'Microprocessors Design',
+      description: 'A planned learning space covering microprocessor architecture, interfacing, and embedded design.',
+      status:      'coming-soon',
+      url:         '', // Not yet published on courses.emxplore.com
+    },
+  },
+
   /* ── Profile & Academic Links ────────────────────────────── */
   profiles: {
     linkedin:      'https://www.linkedin.com/in/walid-dyab-0a60b315/',
@@ -31,6 +74,7 @@ const SITE_CONFIG = {
       category:    'Radio Communication',
       status:      'live',
       language:    'Arabic',
+      taxonomy:    'project',   // public engineering portal — REVIEW MANUALLY before any migration
       url:         'https://waliddyab.github.io/Ham-Radio/',
       github:      'https://github.com/WalidDyab/Ham-Radio',
     },
@@ -40,6 +84,7 @@ const SITE_CONFIG = {
       description: 'A bilingual visual portal on amateur satellite communication — tracking, antennas, Doppler correction, and student satellite missions.',
       category:    'Space Systems',
       status:      'live',
+      taxonomy:    'project',   // public engineering portal — REVIEW MANUALLY (relates to, but is not, EE 499)
       url:         'https://waliddyab.github.io/satellite-lecture/',
       github:      'https://github.com/WalidDyab/satellite-lecture',
     },
@@ -49,15 +94,24 @@ const SITE_CONFIG = {
       description: 'From algebra and Argand diagrams to phasors and AC circuits, with an interactive visualizer and quiz.',
       category:    'Engineering Mathematics',
       status:      'live',
+      taxonomy:    'tool',      // general engineering resource — KEEP SHARED (linkable from Courses)
       url:         'https://waliddyab.github.io/Complex-Numbers/',
       github:      'https://github.com/WalidDyab/Complex-Numbers',
     },
 
+    /* MIGRATION CANDIDATE → courses.emxplore.com (Microprocessors Design).
+     * Course-specific teaching material (EE 322 / Microprocessor Design).
+     * Removed from the public Projects taxonomy in the main site; the entry is
+     * retained here as the record until Phase 2 moves it to emxplore-teaching.
+     * Nothing has been deleted — the module lives in its own external repository.
+     */
     fsmStatistics: {
       title:       'FSM Brute-Force Statistics',
       description: 'A module on geometric distributions and search strategy for locking mechanisms, built for Microprocessor Design.',
       category:    'Engineering Education',
       status:      'live',
+      taxonomy:    'course',
+      migration:   'MOVE → courses.emxplore.com / microprocessors-design',
       url:         'https://waliddyab.github.io/statistical-analysis-of-FSM/',
       github:      'https://github.com/WalidDyab/statistical-analysis-of-FSM',
     },
@@ -67,6 +121,7 @@ const SITE_CONFIG = {
       description: 'Development of a Saudi radio telescope system for H I 21-cm observations, including telescope design, automated pointing, receiver development, calibration, Galactic hydrogen observations, scientific software, data analysis, publications, and educational resources.',
       category:    'H I 21-cm Astronomy',
       status:      'live',
+      taxonomy:    'project',
       url:         'radio-astronomy/',
       github:      '', // Add when available
       paper:       'https://doi.org/10.1109/MAP.2025.3621127',
@@ -110,7 +165,8 @@ const SITE_CONFIG = {
       description: 'Electromagnetic simulation, synthetic echo datasets, visualisation, and radar imaging research.',
       category:    'Radar Imaging',
       status:      'research',
-      url:         '',
+      taxonomy:    'project',
+      url:         '', // No dedicated page yet — do not fabricate a route.
       github:      '',
     },
 
@@ -119,16 +175,38 @@ const SITE_CONFIG = {
       description: 'Radio astronomy, student projects, live telescope feeds, outreach, and space-science education.',
       category:    'Space Outreach',
       status:      'coming-soon',
-      url:         '',
+      taxonomy:    'project',
+      url:         '', // No dedicated page yet — do not fabricate a route.
       github:      '',
     },
 
     engineeringLab: {
-      title:       'Engineering Lab',
+      title:       'Engineering Lab Toolset',
       description: 'Waveguide tools, RFSoC resources, SDR experiments, electromagnetic field visualisation, and interactive utilities.',
       category:    'Simulation & Tools',
       status:      'coming-soon',
+      taxonomy:    'tool',
       url:         '',
+      github:      '',
+    },
+
+    waveguideSeptaTool: {
+      title:       'Waveguide Septa Tool',
+      description: 'An interactive calculator for stepped-impedance waveguide septa design and analysis.',
+      category:    'Waveguide Design',
+      status:      'coming-soon',
+      taxonomy:    'tool',
+      url:         '',
+      github:      '',
+    },
+
+    radioTelescopeFacility: {
+      title:       'Radio Telescope Facility',
+      description: 'The 5 m parabolic reflector, choke-horn feed, and software-defined receiver chain used for hydrogen-line observations near 1.42 GHz.',
+      category:    'Radio Telescope',
+      status:      'live',
+      taxonomy:    'facility',
+      url:         'radio-astronomy/project.html',
       github:      '',
     },
 
@@ -137,6 +215,7 @@ const SITE_CONFIG = {
       description: 'Electromagnetic systems, antennas, waveguides, simulations, manuscripts, and research intelligence portals.',
       category:    'Research',
       status:      'research',
+      taxonomy:    'facility',
       url:         'https://emg.psu.edu.sa',
       github:      '',
     },
