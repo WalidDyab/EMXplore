@@ -1,0 +1,2179 @@
+{
+  "schema_version": "1.1.0",
+  "registry": "datasets",
+  "updated": "2026-09-30",
+  "notice": "Dataset and source registry for the EMXplore Radio Astronomy project. Sources with visibility 'private' are research files that are not distributed. They are referenced only by opaque logical IDs; storage locations and checksums are kept in a private local-source manifest outside this public registry. Private project records are never quoted; they may only support neutral 'inferred' notes. Historical products keep their original calibration epoch (see calibration-epochs.json).",
+  "data_levels": {
+    "L0": "Native spectral acquisition: averaged power spectra as written by the acquisition software (NOT raw I/Q), or the same values resampled to a common grid (product_class resampled_spectra).",
+    "L1": "Observation organisation: scan manifests, pointing tracks, session metadata.",
+    "L2": "Reduced spectra: baseline/bandpass removed, quality-gated, still on a relative scale.",
+    "L3": "Calibrated spectra: values on a temperature scale of a named calibration epoch.",
+    "L4": "Spectral cubes: gridded position-position-velocity data.",
+    "L5": "Derived science products: peak/velocity/moment maps, catalogues, velocity tables, fitted calibration constants.",
+    "L6": "Curated / corrected products: selection rules, stray-radiation or other corrections, multi-session composites.",
+    "L7": "Visualization: figures and renderings made from lower levels.",
+    "L8": "Independently reproduced publication products: regenerated from L0/L1 by documented code with a recorded lineage."
+  },
+  "sources": [
+    {
+      "source_id": "src-cal-report-20260923",
+      "kind": "research_file",
+      "title": "DISH222 absolute brightness-temperature calibration report (23 Sep 2026)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-yfactor-record-20260902",
+      "kind": "research_file",
+      "title": "Y-factor calibration record written by the acquisition software (2 Sep 2026)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-kelvin-map-figure-20260901",
+      "kind": "research_file",
+      "title": "First kelvin-calibrated map of the 1 Sep 2026 scan (figure)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-lab-comparison-note-20260828",
+      "kind": "research_file",
+      "title": "DISH222 vs LAB survey comparison note (28 Aug 2026)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-session-archive-20260826",
+      "kind": "research_file",
+      "title": "26 Aug 2026 outer-Galaxy session archive (native spectra, raster manifest, stitched figures)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-fits-products-20260826",
+      "kind": "research_file",
+      "title": "26 Aug 2026 FITS products (cube, peak map, velocity map, catalog)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-fullband-table-20260826",
+      "kind": "research_file",
+      "title": "26 Aug 2026 un-baselined averaged spectra on a common grid (table)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-reduced-spectra-table-20260826",
+      "kind": "research_file",
+      "title": "26 Aug 2026 reduced spectra, dB above fitted baseline (table)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-workbook-20260826",
+      "kind": "research_file",
+      "title": "26 Aug 2026 workbook: measurements, spectra and session definitions",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-velocity-table-20260826",
+      "kind": "research_file",
+      "title": "26 Aug 2026 strong-line LSR velocity table",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-gc-products-20260902",
+      "kind": "research_file",
+      "title": "2 Sep 2026 galactic-centre area-scan products (FITS and figures)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-ac-products-20260903",
+      "kind": "research_file",
+      "title": "3 Sep 2026 anticentre-side scan products (FITS and figure)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-allsky-products",
+      "kind": "research_file",
+      "title": "All-sky TRUSTED composite products (FITS and LAB overlay figure)",
+      "visibility": "private"
+    },
+    {
+      "source_id": "src-legacy-dish1-v69",
+      "kind": "legacy_software",
+      "title": "Legacy acquisition/control application, DISH1 V69 (operational snapshot)",
+      "visibility": "private",
+      "note": "Private legacy software snapshot; locators refer to line numbers in that snapshot."
+    },
+    {
+      "source_id": "src-legacy-dish222-v75",
+      "kind": "legacy_software",
+      "title": "Legacy acquisition/control application, DISH222 V75 one-app (operational snapshot)",
+      "visibility": "private",
+      "note": "Private legacy software snapshot; locators refer to line numbers in that snapshot."
+    },
+    {
+      "source_id": "src-phase0-audit",
+      "kind": "project_record",
+      "title": "Phase 0 audit report (analysis and measurements made during the audit)",
+      "visibility": "private",
+      "note": "Audit analysis of the supplied archive. Measurements made by the audit are flagged 'inferred'; statements about what the archive does or does not contain are documented."
+    },
+    {"source_id": "src-project-decisions", "kind": "project_record", "title": "Project decisions log (D1-D5)", "visibility": "private"},
+    {
+      "source_id": "src-private-project-records",
+      "kind": "project_record",
+      "title": "Private project records (restricted)",
+      "visibility": "private",
+      "evidence_limit": "inferred_only",
+      "note": "May only support neutral inferred notes. AI-generated analyses contained in these records are not treated as evidence."
+    },
+    {
+      "source_id": "src-site-index",
+      "kind": "public_site_page",
+      "title": "Radio Astronomy hub page",
+      "visibility": "public",
+      "path": "radio-astronomy/index.html"
+    },
+    {
+      "source_id": "src-site-project",
+      "kind": "public_site_page",
+      "title": "Project Story page",
+      "visibility": "public",
+      "path": "radio-astronomy/project.html"
+    },
+    {
+      "source_id": "src-site-lecture",
+      "kind": "public_site_page",
+      "title": "Interactive lecture (52 slides)",
+      "visibility": "public",
+      "path": "radio-astronomy/lecture.html"
+    },
+    {
+      "source_id": "src-ieee-2025",
+      "kind": "external_publication",
+      "title": "An Educational Radio Telescope Optimized for Hydrogen Line Astronomy (IEEE Antennas and Propagation Magazine 67(6):72-95, Dec 2025)",
+      "visibility": "public",
+      "doi": "10.1109/MAP.2025.3621127"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset_id": "ds-20260826-og-native-spectra",
+      "title": "26 Aug 2026 outer-Galaxy raster: native averaged spectra (776 NPZ)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00Z",
+        "end": "2026-08-26T05:48:00Z",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ __meta__ saved_utc_iso (first and last chunk)"}],
+        "note": "Chunk timestamps are the save time at the END of each averaging window. The folder name '0547' is local time (UTC+3)."
+      },
+      "target": {
+        "value": "Outer Galaxy / outer spiral arm",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info: 'morning, outer arm'"}]
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 226,
+        "lat_min_deg": -10,
+        "lat_max_deg": 20,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "raster manifest track"}]
+      },
+      "observing_mode": {
+        "value": "raster_scan",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest 'mode': 'raster'"}]
+      },
+      "coordinate_system": {
+        "value": "not_applicable",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ keys"}],
+        "note": "NPZ files carry no pointing; positions come from the manifest by time association."
+      },
+      "velocity_frame": {
+        "value": "topocentric",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ freqAxis (sky frequency)"}],
+        "note": "Frequency axis only; no velocity correction applied."
+      },
+      "velocity_definition": {"value": "not_applicable", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826"}]},
+      "spectral_line": {
+        "name": "H I 21 cm",
+        "rest_frequency_mhz": {
+          "value": 1420.40575,
+          "unit": "MHz",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-fits-products-20260826", "locator": "RESTFRQ = 1420405750.0 Hz"}]
+        }
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "file_formats": ["zip", "npz"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": null,
+      "calibration_assignment": {
+        "value": "Uncalibrated power (arbitrary units); calibration-independent",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ avg_lin/avg_dB"}]
+      },
+      "processing_status": {
+        "value": "Welch-averaged power spectra only; schema A additionally divided by a stored background",
+        "evidence": "documented",
+        "sources": [
+          {"source_id": "src-session-archive-20260826", "locator": "NPZ keys and __meta__.bg_present"},
+          {"source_id": "src-legacy-dish222-v75", "locator": "lines 6160-6258, 12651-12713"}
+        ]
+      },
+      "portal_status": "reference",
+      "recommended_for_students": true,
+      "student_notes": "Strongest supplied end-to-end reproducible campaign: native spectra + manifest + every downstream product level. Recommended first dataset for reduction, repeatability and velocity work.",
+      "scientific_purpose": {
+        "value": "Map outer-arm H I brightness and velocity structure across l = 146-226 deg",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info"}, {"source_id": "src-lab-comparison-note-20260828", "locator": "section 1"}]
+      },
+      "files": [
+        {
+          "source_id": "src-session-archive-20260826",
+          "artifact_id": "art-20260826-native-spectra-set",
+          "role": "native_spectra",
+          "data_level": "L0",
+          "format": "npz",
+          "member_count": 776,
+          "note": "Two schemas: see facts. Checksums are held in the private local-source manifest."
+        }
+      ],
+      "lineage": {
+        "derived_from": [],
+        "produced_by": {
+          "value": "Legacy acquisition software (V62 native accumulator and original autosave path)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 6160-6258 and 12651-12713"}],
+          "note": "Exact build used on 26 Aug is not recorded in the files; schema A/B match the two code paths."
+        }
+      },
+      "facts": [
+        {
+          "key": "npz_schema_a_count",
+          "value": 459,
+          "unit": "count",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826"}],
+          "note": "301 channels, 1420.10-1420.80 MHz, L_used 50, background-divided corr_lin/corr_dB present; spectral span follows the GUI zoom grid."
+        },
+        {
+          "key": "npz_schema_b_count",
+          "value": 317,
+          "unit": "count",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826"}],
+          "note": "1024 channels, 1418.70-1421.10 MHz, L_used 10-70, no background."
+        },
+        {
+          "key": "centre_frequency_mhz",
+          "value": 1419.9,
+          "unit": "MHz",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "__meta__ fc_hz"}]
+        },
+        {
+          "key": "sample_rate_mhz",
+          "value": 2.4,
+          "unit": "MHz",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "__meta__ fs_hz"}]
+        },
+        {
+          "key": "recorded_gain_metadata",
+          "value": "lna_db 20, vga_db 7",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "__meta__"}],
+          "note": "Recorded values may not equal the hardware state (audit finding S7)."
+        },
+        {
+          "key": "stores_raw_iq",
+          "value": false,
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ keys"}]
+        }
+      ],
+      "limitations": [
+        {"value": "Not raw I/Q: Welch-averaged power spectra", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826"}]},
+        {
+          "value": "lst_hours is 0.0 and device is empty in every file; NPZ files carry no pointing",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "__meta__"}]
+        },
+        {
+          "value": "__meta__ is a pickled object array (requires allow_pickle when reading)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826"}]
+        },
+        {
+          "value": "Schema A background (corr) is on a different power scale (corr/avg about 0.005-0.007) and the background file is not supplied",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826"}]
+        },
+        {
+          "value": "HackRF sample-format conversion unverified",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 826-860"}],
+          "note": "Audit finding S1."
+        },
+        {
+          "value": "Morning session; the Sun may contribute through sidelobes late in the session",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-allsky-products", "locator": "FITS HISTORY 'dawn Sun band removed'"}],
+          "note": "Only the all-sky product mentions a dawn Sun band; its effect on this session is not quantified."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-raster-manifest",
+      "title": "26 Aug 2026 outer-Galaxy raster manifest (313 waypoints)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:49:06Z",
+        "end": "2026-08-26T05:19:26Z",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest track[0].t and track[-1].t"}]
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 226,
+        "lat_min_deg": -10,
+        "lat_max_deg": 20,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest track"}],
+        "note": "Longitude step 4 deg, latitude step 2 deg."
+      },
+      "observing_mode": {"value": "raster_scan", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest 'mode'"}]},
+      "coordinate_system": {
+        "value": "galactic_and_equatorial",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "track keys l, b, ra_h, dec_d"}],
+        "note": "Computed with fixed J2000 transformation constants in the legacy software."
+      },
+      "product_class": "observation_manifest",
+      "data_level": "L1",
+      "file_formats": ["json"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": null,
+      "calibration_assignment": {"value": "Not applicable (pointing record)", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826"}]},
+      "portal_status": "reference",
+      "recommended_for_students": true,
+      "student_notes": "Use with the native spectra to associate each chunk with a sky position.",
+      "files": [
+        {
+          "source_id": "src-session-archive-20260826",
+          "artifact_id": "art-20260826-raster-manifest",
+          "role": "observation_manifest",
+          "data_level": "L1",
+          "format": "json"
+        }
+      ],
+      "lineage": {
+        "derived_from": [],
+        "produced_by": {
+          "value": "Legacy raster engine (incremental manifest writer)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "_v44_raster_save_manifest, lines 12064-12080"}]
+        }
+      },
+      "facts": [
+        {"key": "track_points", "value": 313, "unit": "count", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826"}]},
+        {
+          "key": "partial",
+          "value": false,
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest 'partial'"}]
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Positions are the COMMANDED waypoints, time-stamped at the end of each dwell; waypoints reached by timeout are not flagged",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 12023-12041"}]
+        },
+        {
+          "value": "created_utc is rewritten on each incremental save (05:19:28Z), not the start time",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "line 12074"}]
+        },
+        {
+          "value": "No precession to date in the RA/Dec to Az/El step used for pointing (about 0.36 deg in 2026)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "_v44_radec_to_azel_now, line 11855"}],
+          "note": "Audit finding S13; magnitude estimated from general precession of about 50 arcsec per year."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-fullband-resampled",
+      "title": "26 Aug 2026 un-baselined averaged spectra resampled to a common grid (CSV)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00Z",
+        "end": "2026-08-26T05:21:40Z",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "DATE-OBS / DATE-END"}],
+        "note": "Same 661 accepted chunks as the FITS catalog."
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 226,
+        "lat_min_deg": -10,
+        "lat_max_deg": 20,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fullband-table-20260826", "locator": "gal_l_deg, gal_b_deg columns"}]
+      },
+      "observing_mode": {"value": "raster_scan", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest"}]},
+      "coordinate_system": {"value": "galactic_and_equatorial", "evidence": "documented", "sources": [{"source_id": "src-fullband-table-20260826", "locator": "header"}]},
+      "velocity_frame": {
+        "value": "topocentric",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fullband-table-20260826", "locator": "frequency columns 1418.70000-1421.10000 MHz"}]
+      },
+      "product_class": "resampled_spectra",
+      "data_level": "L0",
+      "file_formats": ["csv"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": null,
+      "calibration_assignment": {
+        "value": "Uncalibrated averaged power in dB",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-fullband-table-20260826"}, {"source_id": "src-session-archive-20260826"}],
+        "note": "Values equal the NPZ avg_dB within about 0.01 dB after regridding (checked on sample rows in the Phase 0 audit)."
+      },
+      "processing_status": {
+        "value": "Native avg_dB interpolated onto 1418.700-1421.100 MHz; channels outside each chunk's span left empty; accepted-chunk subset (661 of 776)",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-fullband-table-20260826"}, {"source_id": "src-phase0-audit", "locator": "section C.2 DS-2"}],
+        "note": "392 rows come from 301-channel chunks, 269 rows from 1024-channel chunks."
+      },
+      "portal_status": "reference",
+      "recommended_for_students": true,
+      "student_notes": "Easiest entry to the native values without reading NPZ files. Despite being labelled 'raw', this is not raw SDR data.",
+      "files": [{"source_id": "src-fullband-table-20260826", "role": "resampled_spectra", "data_level": "L0", "format": "csv"}],
+      "lineage": {
+        "derived_from": ["ds-20260826-og-native-spectra", "ds-20260826-og-raster-manifest"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "limitations": [
+        {
+          "value": "Labelled 'raw' but contains averaged power spectra, not raw SDR samples",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-fullband-table-20260826"}]
+        },
+        {
+          "value": "The chunk acceptance rule (661 of 776) is described but its code is not supplied",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info 'Chunks'"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-reduced-spectra",
+      "title": "26 Aug 2026 reduced spectra, dB above fitted baseline (CSV, 701 channels)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00Z",
+        "end": "2026-08-26T05:21:40Z",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "DATE-OBS / DATE-END"}],
+        "note": "Same 661 accepted chunks."
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 226,
+        "lat_min_deg": -10,
+        "lat_max_deg": 20,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-reduced-spectra-table-20260826"}]
+      },
+      "observing_mode": {"value": "raster_scan", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest"}]},
+      "coordinate_system": {
+        "value": "galactic_and_equatorial",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-reduced-spectra-table-20260826", "locator": "header"}]
+      },
+      "velocity_frame": {
+        "value": "topocentric",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info 'Velocity conversion'"}]
+      },
+      "product_class": "reduced_spectra",
+      "data_level": "L2",
+      "file_formats": ["csv"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": "C0",
+      "calibration_assignment": {
+        "value": "dB above fitted baseline (relative)",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info 'Spectrum definition'"}]
+      },
+      "processing_status": {
+        "value": "Bandpass self-flattening and line-free re-zeroing; not smoothed; not notched (1420.000 MHz spur visible, ignore 1419.96-1420.04 MHz); grid 1419.300-1421.050 MHz at 2.5 kHz",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "student_notes": "Target product for the independent-reduction track: reproduce it from the native spectra and document every difference.",
+      "files": [{"source_id": "src-reduced-spectra-table-20260826", "role": "reduced_spectra", "data_level": "L2", "format": "csv"}],
+      "lineage": {
+        "derived_from": ["ds-20260826-og-native-spectra", "ds-20260826-og-raster-manifest"],
+        "produced_by": {
+          "value": "External processing following the V65 method (code not supplied)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info"}],
+          "note": "No CSV writer exists in the legacy applications."
+        }
+      },
+      "limitations": [
+        {
+          "value": "Depends on the bandpass template, which may have been persisted from other sessions and was not supplied",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 13663-13715"}],
+          "note": "Audit finding S8."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-measurements-workbook",
+      "title": "26 Aug 2026 workbook: per-chunk measurements, spectra and session definitions (XLSX)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00Z",
+        "end": "2026-08-26T05:21:40Z",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Measurements 'UTC date-time'"}],
+        "note": "Same 661 accepted chunks."
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 226,
+        "lat_min_deg": -10,
+        "lat_max_deg": 20,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Measurements"}]
+      },
+      "observing_mode": {"value": "raster_scan", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest"}]},
+      "coordinate_system": {
+        "value": "galactic_and_equatorial",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Measurements columns"}]
+      },
+      "velocity_frame": {
+        "value": "LSR_kind_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info 'Velocity conversion'"}],
+        "note": "Barycentric correction plus 20 km/s toward 18h03m50s +30d00m17s (standard solar motion)."
+      },
+      "velocity_definition": {
+        "value": "peak_of_smoothed_spectrum",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info 'Measurements sheet'"}],
+        "note": "Peak of the 100 kHz-smoothed spectrum within 1420.15-1420.95 MHz."
+      },
+      "spectral_line": {
+        "name": "H I 21 cm",
+        "rest_frequency_mhz": {
+          "value": 1420.40575,
+          "unit": "MHz",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info 'Velocity conversion'"}]
+        }
+      },
+      "product_class": "derived_science_product",
+      "data_level": "L5",
+      "additional_levels": ["L2"],
+      "file_formats": ["xlsx"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": "C0",
+      "calibration_assignment": {
+        "value": "Peak power in dB above baseline (relative)",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-workbook-20260826", "locator": "Measurements 'HI peak power (dB)'"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "student_notes": "Contains worked velocity conversions (topocentric, barycentric correction, LSR) that make good regression checks.",
+      "files": [
+        {
+          "source_id": "src-workbook-20260826",
+          "role": "derived_table",
+          "data_level": "L5",
+          "format": "xlsx",
+          "note": "Sheets: Measurements (661 rows, L5), Spectra dB (351 channels at 5 kHz, L2), Session info."
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260826-og-native-spectra", "ds-20260826-og-raster-manifest"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "facts": [
+        {
+          "key": "accepted_chunks",
+          "value": 661,
+          "unit": "count",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-workbook-20260826", "locator": "Session info 'Chunks: 661 clean (of 776 recorded)'"}]
+        },
+        {
+          "key": "strong_line_rows",
+          "value": 453,
+          "unit": "count",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-workbook-20260826", "locator": "Measurements 'strong line (>=0.3 dB)' = YES"}]
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Peak-velocity metric compresses the Galactic rotation amplitude (reported about 4x) because it follows the brightest, usually local, component",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.2"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-velocity-table",
+      "title": "26 Aug 2026 strong-line LSR velocity table (CSV)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00Z",
+        "end": "2026-08-26T05:21:40Z",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-workbook-20260826"}],
+        "note": "Subset of the workbook measurements."
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 226,
+        "lat_min_deg": -10,
+        "lat_max_deg": 20,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-velocity-table-20260826"}]
+      },
+      "coordinate_system": {"value": "galactic", "evidence": "documented", "sources": [{"source_id": "src-velocity-table-20260826", "locator": "header"}]},
+      "velocity_frame": {
+        "value": "LSR_kind_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-velocity-table-20260826", "locator": "column v_lsr_kms"}]
+      },
+      "velocity_definition": {
+        "value": "peak_of_smoothed_spectrum",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-workbook-20260826"}],
+        "note": "Values match the workbook's peak-based v_LSR."
+      },
+      "product_class": "derived_science_product",
+      "data_level": "L5",
+      "file_formats": ["csv"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": "C0",
+      "calibration_assignment": {
+        "value": "hi_peak_db in dB above baseline (relative)",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-velocity-table-20260826", "locator": "column hi_peak_db"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "files": [{"source_id": "src-velocity-table-20260826", "role": "derived_table", "data_level": "L5", "format": "csv"}],
+      "lineage": {
+        "derived_from": ["ds-20260826-og-measurements-workbook"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "facts": [{"key": "rows", "value": 452, "unit": "count", "evidence": "documented", "sources": [{"source_id": "src-velocity-table-20260826"}]}],
+      "limitations": [
+        {
+          "value": "452 rows versus 453 'strong line' rows in the workbook: one-row discrepancy",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-velocity-table-20260826"}, {"source_id": "src-workbook-20260826"}]
+        },
+        {
+          "value": "Peak-velocity metric; see the workbook limitation",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.2"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-fits-cube",
+      "title": "26 Aug 2026 outer-Galaxy spectral cube in dB (FITS)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00",
+        "end": "2026-08-26T05:21:40",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "DATE-OBS / DATE-END ('first chunk UTC')"}],
+        "note": "UTC per header comment."
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 228,
+        "lat_min_deg": -12,
+        "lat_max_deg": 22,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "CRVAL/CDELT/NAXIS (165 x 69 at 0.5 deg)"}]
+      },
+      "observing_mode": {"value": "raster_scan", "evidence": "documented", "sources": [{"source_id": "src-session-archive-20260826", "locator": "manifest"}]},
+      "coordinate_system": {
+        "value": "galactic",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "CTYPE1/2 GLON-CAR, GLAT-CAR"}]
+      },
+      "velocity_frame": {"value": "LSRK", "evidence": "documented", "sources": [{"source_id": "src-fits-products-20260826", "locator": "SPECSYS"}]},
+      "spectral_line": {
+        "name": "H I 21 cm",
+        "rest_frequency_mhz": {"value": 1420.40575, "unit": "MHz", "evidence": "documented", "sources": [{"source_id": "src-fits-products-20260826", "locator": "RESTFRQ"}]}
+      },
+      "product_class": "derived_science_product",
+      "data_level": "L4",
+      "file_formats": ["zip", "fits"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": "C0",
+      "calibration_assignment": {
+        "value": "BUNIT dB, 'HI line power above baseline (uncalibrated)'. A header comment gives the C1 conversion T_B ~ T_sys*(10^(dB/10)-1) with T_sys_eff 330-480 K, but values are not converted.",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "BUNIT and COMMENT cards"}]
+      },
+      "processing_status": {
+        "value": "V65/V67 pipeline: bandpass self-flattened, baseline removed; velocity axis -120..+60 km/s at 1 km/s",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "COMMENT; CRVAL3/CDELT3/NAXIS3"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "student_notes": "Opened in SAOImage DS9 by the project; good for learning cubes, channel maps and WCS.",
+      "files": [{"source_id": "src-fits-products-20260826", "artifact_id": "art-20260826-cube", "role": "spectral_cube", "data_level": "L4", "format": "fits"}],
+      "lineage": {
+        "derived_from": ["ds-20260826-og-reduced-spectra"],
+        "produced_by": {
+          "value": "External processing ('V65/V67 pipeline'); code not supplied",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-fits-products-20260826", "locator": "COMMENT"}],
+          "note": "No FITS writer exists in the legacy applications."
+        }
+      },
+      "facts": [
+        {
+          "key": "finite_fraction",
+          "value": 0.802,
+          "unit": "dimensionless",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2"}],
+          "note": "Measured in the Phase 0 audit."
+        },
+        {
+          "key": "pointing_residual_deg",
+          "value": 1.1,
+          "unit": "deg",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-fits-products-20260826", "locator": "COMMENT 'Pointing calibrated via Sun shadow 25 Aug 2026'"}]
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Uncalibrated (dB); comparisons in kelvin require an explicit epoch",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-fits-products-20260826", "locator": "BUNIT"}]
+        },
+        {
+          "value": "Beam FWHM given as approximately 3 deg (not measured)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-fits-products-20260826", "locator": "BMAJ"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-fits-maps",
+      "title": "26 Aug 2026 peak map, peak-velocity map and catalog (FITS)",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00",
+        "end": "2026-08-26T05:21:40",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "DATE-OBS / DATE-END"}],
+        "note": "UTC per header comment."
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": 146,
+        "lon_max_deg": 228,
+        "lat_min_deg": -12,
+        "lat_max_deg": 22,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "WCS"}]
+      },
+      "coordinate_system": {"value": "galactic", "evidence": "documented", "sources": [{"source_id": "src-fits-products-20260826", "locator": "CTYPE1/2"}]},
+      "velocity_frame": {
+        "value": "LSRK",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "velocity BUNIT 'LSR velocity of the HI peak'"}],
+        "note": "SPECSYS appears only in the cube header."
+      },
+      "velocity_definition": {
+        "value": "peak_of_smoothed_spectrum",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "velocity map BUNIT comment 'LSR velocity of the HI peak'"}]
+      },
+      "product_class": "derived_science_product",
+      "data_level": "L5",
+      "file_formats": ["zip", "fits"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": "C0",
+      "calibration_assignment": {
+        "value": "Peak in dB (relative)",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-fits-products-20260826", "locator": "peak map BUNIT"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "files": [
+        {
+          "source_id": "src-fits-products-20260826",
+          "artifact_id": "art-20260826-peak-map",
+          "role": "derived_map",
+          "data_level": "L5",
+          "format": "fits"
+        },
+        {
+          "source_id": "src-fits-products-20260826",
+          "artifact_id": "art-20260826-velocity-map",
+          "role": "derived_map",
+          "data_level": "L5",
+          "format": "fits"
+        },
+        {
+          "source_id": "src-fits-products-20260826",
+          "artifact_id": "art-20260826-catalog",
+          "role": "catalog",
+          "data_level": "L5",
+          "format": "fits",
+          "note": "BINTABLE, 661 rows: UTC, RA, DEC, GLON, GLAT, PEAK_DB, VLSR."
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260826-og-fits-cube", "ds-20260826-og-measurements-workbook"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "limitations": [
+        {
+          "value": "Peak-velocity metric (see workbook); not comparable with the first-moment velocity maps of 2-3 Sep",
+          "evidence": "documented",
+          "sources": [
+            {"source_id": "src-fits-products-20260826", "locator": "velocity BUNIT"},
+            {"source_id": "src-gc-products-20260902", "locator": "velocity HISTORY 'intensity-weighted LSR velocity'"}
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260826-og-stitched-figures",
+      "title": "26 Aug 2026 stitched sky-chart and strip figures from the legacy stitcher",
+      "campaign": "2026-08-26-outer-galaxy",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26T02:48:00Z",
+        "end": "2026-08-26T05:48:00Z",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-session-archive-20260826"}],
+        "note": "Made from the session folder; figures generated 26 Aug and re-generated 27 Aug."
+      },
+      "coverage": {
+        "frame": "equatorial",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "stitched sky-chart figure (RA/Dec)"}]
+      },
+      "product_class": "visualization",
+      "data_level": "L7",
+      "file_formats": ["png"],
+      "native_availability": "available",
+      "missing_source": false,
+      "calibration_id": "C0",
+      "calibration_assignment": {
+        "value": "H I line peak in dB above baseline",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-session-archive-20260826", "locator": "stitched sky-chart colour bar"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": false,
+      "student_notes": "Processing diagnostic (313 beam-stacked positions, V65 flatten+stack).",
+      "files": [
+        {
+          "source_id": "src-session-archive-20260826",
+          "artifact_id": "art-20260826-skymap-figure-a",
+          "role": "visualization",
+          "data_level": "L7",
+          "format": "png"
+        },
+        {
+          "source_id": "src-session-archive-20260826",
+          "artifact_id": "art-20260826-skymap-figure-b",
+          "role": "visualization",
+          "data_level": "L7",
+          "format": "png",
+          "note": "Byte-identical to the 26 Aug file."
+        },
+        {
+          "source_id": "src-session-archive-20260826",
+          "artifact_id": "art-20260826-strip-figure-a",
+          "role": "visualization",
+          "data_level": "L7",
+          "format": "png"
+        },
+        {
+          "source_id": "src-session-archive-20260826",
+          "artifact_id": "art-20260826-strip-figure-b",
+          "role": "visualization",
+          "data_level": "L7",
+          "format": "png",
+          "note": "Byte-identical to the 26 Aug file."
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260826-og-native-spectra", "ds-20260826-og-raster-manifest"],
+        "produced_by": {
+          "value": "Legacy V65 stitcher inside the acquisition app",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "_v44_run_stitch, _v44_build_skymap"}]
+        }
+      },
+      "limitations": [
+        {
+          "value": "Stitched galaxy-scan figure shows only a small part of the session in its time axis",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-session-archive-20260826"}],
+          "note": "Visual inspection in the Phase 0 audit."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260901-gc-kelvin-map-figure",
+      "title": "First kelvin-calibrated map of the 1 Sep 2026 scan with LAB comparison (figure)",
+      "campaign": "2026-09-01-galactic-plane",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-01",
+        "end": "2026-09-01",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-kelvin-map-figure-20260901", "locator": "title 'DISH222 1 Sep scan'"}]
+      },
+      "coverage": {
+        "frame": "galactic",
+        "lon_min_deg": -30,
+        "lon_max_deg": 25,
+        "lat_min_deg": -15,
+        "lat_max_deg": 60,
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-kelvin-map-figure-20260901", "locator": "map axes"}],
+        "note": "Read approximately from the figure axes."
+      },
+      "product_class": "visualization",
+      "data_level": "L7",
+      "file_formats": ["png"],
+      "native_availability": "derived_only",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "T_sys = 179.5 K from the 2 Sep wall calibration; LAB comparison slope 0.30",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-kelvin-map-figure-20260901", "locator": "title and panel legends"}]
+      },
+      "rederivation": {
+        "of_dataset_id": "ds-20260901-gc-plane-scan",
+        "original_calibration_id": null,
+        "created": "2026-09-02",
+        "created_by": "DISH222 project, historically (before this registry existed)",
+        "method_note": "The 2 Sep Y-factor T_sys was applied retroactively to the 1 Sep scan, and eta = 0.30 was derived from this same map's comparison with LAB. Recorded as a historical re-derivation so the retroactive use stays visible."
+      },
+      "portal_status": "historical",
+      "recommended_for_students": false,
+      "student_notes": "Calibration diagnostic of the superseded C2 epoch. It shows where eta = 0.30 came from.",
+      "files": [{"source_id": "src-kelvin-map-figure-20260901", "role": "visualization", "data_level": "L7", "format": "png"}],
+      "lineage": {
+        "derived_from": ["ds-20260901-gc-plane-scan"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "provenance_notes": [
+        {
+          "value": "The figure file is supplied; the 1 Sep data it is made from are not.",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-kelvin-map-figure-20260901"}]
+        }
+      ],
+      "limitations": [
+        {
+          "value": "A calibration measured on 2 Sep is applied to a 1 Sep scan",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-kelvin-map-figure-20260901", "locator": "title"}, {"source_id": "src-yfactor-record-20260902", "locator": "date"}]
+        },
+        {"value": "Superseded calibration epoch (C2)", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923"}]}
+      ]
+    },
+    {
+      "dataset_id": "ds-20260902-cal-yfactor-record",
+      "title": "2 Sep 2026 wall-to-zenith Y-factor calibration record",
+      "campaign": "2026-09-02-calibration",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-02T11:13:14",
+        "end": "2026-09-02T11:13:14",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "date"}],
+        "note": "Local time without zone, as written by the software."
+      },
+      "observing_mode": {
+        "value": "hot_cold_calibration",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "V70, lines 16849-16858"}]
+      },
+      "product_class": "calibration_record",
+      "data_level": null,
+      "file_formats": ["json"],
+      "native_availability": "not_applicable",
+      "missing_source": false,
+      "calibration_id": "C2",
+      "calibration_assignment": {"value": "Defines C2 T_sys", "evidence": "documented", "sources": [{"source_id": "src-yfactor-record-20260902"}]},
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "student_notes": "Recompute T_sys from p_wall and p_zenith with both Y-factor formulas (179.6 K versus 171.6 K).",
+      "files": [{"source_id": "src-yfactor-record-20260902", "role": "calibration_record", "data_level": null, "format": "json"}],
+      "lineage": {
+        "derived_from": [],
+        "produced_by": {
+          "value": "V70 Kelvin calibration in a build before V72",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "V70/V72"}],
+          "note": "The record lacks the eta_mb key that V72+ builds write."
+        }
+      },
+      "facts": [
+        {
+          "key": "y_factor_db",
+          "value": 4.4,
+          "unit": "dB",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "y_db"}]
+        },
+        {
+          "key": "t_wall_degc",
+          "value": 50.0,
+          "evidence": "documented",
+          "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "t_wall_C"}]
+        },
+        {
+          "key": "p_wall_over_p_zenith",
+          "value": 2.7555,
+          "unit": "dimensionless",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "p_wall, p_zenith"}],
+          "note": "Ratio computed from the recorded powers; equals 4.40 dB."
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Superseded; see C2 limitations in calibration-epochs.json",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260902-gc-ta-cube",
+      "title": "2 Sep 2026 galactic-centre area scan: antenna-temperature cube (FITS)",
+      "campaign": "2026-09-02-galactic-center",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-02",
+        "end": "2026-09-02",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "product naming and products-figure title '2 Sep 2026 area scan'"}],
+        "note": "Time of day not recorded in the FITS headers (no DATE-OBS)."
+      },
+      "target": {
+        "value": "Galactic-centre region",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "products-figure title"}]
+      },
+      "coverage": {
+        "frame": "equatorial",
+        "lon_min_deg": 240,
+        "lon_max_deg": 297,
+        "lat_min_deg": -31,
+        "lat_max_deg": -1,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "cube_TA WCS (39 x 61 at 1.5 x 0.5 deg)"}],
+        "note": "RA 16.0-19.8 h."
+      },
+      "observing_mode": {
+        "value": "area_scan",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "products-figure title 'area scan'"}]
+      },
+      "coordinate_system": {
+        "value": "equatorial_equinox_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "CTYPE RA---CAR/DEC--CAR; no RADESYS/EQUINOX"}]
+      },
+      "velocity_frame": {
+        "value": "LSR_kind_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "HISTORY '... LSR'"}],
+        "note": "No SPECSYS keyword."
+      },
+      "spectral_line": {"name": "H I 21 cm"},
+      "product_class": "calibrated_product",
+      "data_level": "L4",
+      "additional_levels": ["L3"],
+      "file_formats": ["zip", "fits"],
+      "native_availability": "derived_only",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "BUNIT K; TSYS = 179.5 'wall-zenith Y-factor cal 2026-09-02'; cube values are T_A = f x T_sys",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "cube_TA header"}]
+      },
+      "processing_status": {
+        "value": "RFI-excised, centre-mode baseline, de-ramped, LSR; velocity axis -120..+60 km/s at 1 km/s",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "HISTORY; axis 3"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "student_notes": "Historical C2 product. Because the cube is T_A = f x 179.5 K, f can be recovered and a NEW, separately labelled C4 re-derivation created (never overwrite this product).",
+      "scientific_purpose": {
+        "value": "H I brightness and velocity field around the Galactic centre",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "figure titles"}]
+      },
+      "files": [
+        {
+          "source_id": "src-gc-products-20260902",
+          "artifact_id": "art-20260902-ta-cube",
+          "role": "calibrated_cube",
+          "data_level": "L4",
+          "format": "fits"
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260902-gc-native-spectra"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "facts": [
+        {
+          "key": "finite_fraction",
+          "value": 0.645,
+          "unit": "dimensionless",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-4"}],
+          "note": "Measured in the Phase 0 audit."
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Native spectra and manifest not supplied: cannot be re-reduced",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C"}]
+        },
+        {
+          "value": "Header lacks DATE-OBS, TELESCOP, RESTFRQ, SPECSYS and equinox",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-gc-products-20260902", "locator": "headers"}]
+        },
+        {"value": "Superseded calibration epoch (C2)", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923"}]}
+      ]
+    },
+    {
+      "dataset_id": "ds-20260902-gc-maps",
+      "title": "2 Sep 2026 galactic-centre peak brightness (T_B) and first-moment velocity maps (FITS)",
+      "campaign": "2026-09-02-galactic-center",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-02",
+        "end": "2026-09-02",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "file names"}]
+      },
+      "coverage": {
+        "frame": "equatorial",
+        "lon_min_deg": 240,
+        "lon_max_deg": 297,
+        "lat_min_deg": -31,
+        "lat_max_deg": -1,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "WCS"}]
+      },
+      "coordinate_system": {
+        "value": "equatorial_equinox_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "CTYPE"}]
+      },
+      "velocity_frame": {
+        "value": "LSR_kind_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "velocity HISTORY"}]
+      },
+      "velocity_definition": {
+        "value": "intensity_weighted_first_moment",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "velocity HISTORY 'intensity-weighted LSR velocity'"}]
+      },
+      "product_class": "derived_science_product",
+      "data_level": "L5",
+      "file_formats": ["zip", "fits"],
+      "native_availability": "derived_only",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "Peak T_B = T_A / 0.30 with 4-sigma detection",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "peak_TB HISTORY; TSYS, ETA_MB"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "student_notes": "Good for velocity-field and LAB-comparison exercises; brightness is on the superseded C2 scale.",
+      "files": [
+        {
+          "source_id": "src-gc-products-20260902",
+          "artifact_id": "art-20260902-peak-tb-map",
+          "role": "derived_map",
+          "data_level": "L5",
+          "format": "fits"
+        },
+        {
+          "source_id": "src-gc-products-20260902",
+          "artifact_id": "art-20260902-velocity-map",
+          "role": "derived_map",
+          "data_level": "L5",
+          "format": "fits"
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260902-gc-ta-cube"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "facts": [
+        {
+          "key": "peak_tb_median_k",
+          "value": 90.3,
+          "unit": "K",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-4"}],
+          "note": "Measured in the Phase 0 audit on the C2 scale."
+        },
+        {
+          "key": "peak_tb_max_k",
+          "value": 777,
+          "unit": "K",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-4"}],
+          "note": "Physically implausible outliers present."
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Brightness about 1.6 times LAB; latitude profile does not fall off the plane as expected",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-gc-products-20260902", "locator": "products figure, checks 1 and 2"}]
+        },
+        {
+          "value": "'No detection' pixels are stored as 0, not NaN",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "finding S15"}],
+          "note": "Inferred from the value distribution."
+        },
+        {
+          "value": "Stray radiation through sidelobes is a proposed but unverified explanation for the off-plane excess",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-private-project-records"}],
+          "note": "Summarised from AI-assisted analysis in private project records; not independent expert evidence."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260902-gc-figures",
+      "title": "2 Sep 2026 galactic-centre product and velocity figures",
+      "campaign": "2026-09-02-galactic-center",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-02",
+        "end": "2026-09-02",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "figure titles"}]
+      },
+      "product_class": "visualization",
+      "data_level": "L7",
+      "file_formats": ["png"],
+      "native_availability": "derived_only",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "Brightness panels labelled 'Kelvin, T_sys 179.5 K / eta 0.30'",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "products figure"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": false,
+      "files": [
+        {
+          "source_id": "src-gc-products-20260902",
+          "artifact_id": "art-20260902-products-figure",
+          "role": "visualization",
+          "data_level": "L7",
+          "format": "png",
+          "note": "Includes validation panels versus LAB."
+        },
+        {
+          "source_id": "src-gc-products-20260902",
+          "artifact_id": "art-20260902-velocity-figure",
+          "role": "visualization",
+          "data_level": "L7",
+          "format": "png"
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260902-gc-maps"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "limitations": [{"value": "Superseded calibration epoch (C2)", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923"}]}]
+    },
+    {
+      "dataset_id": "ds-20260903-ac-ta-cube",
+      "title": "3 Sep 2026 morning anticentre-side scans: antenna-temperature cube (FITS)",
+      "campaign": "2026-09-03-anticenter",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "velocity-figure title '3 Sep 2026 morning scans'"}],
+        "note": "Time of day not recorded in headers."
+      },
+      "target": {
+        "value": "Galactic anticentre side (RA 5.3-8.4 h per figure title)",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "figure title; HISTORY 'anticenter scans 3 Sep'"}]
+      },
+      "coverage": {
+        "frame": "equatorial",
+        "lon_min_deg": 78,
+        "lon_max_deg": 127.5,
+        "lat_min_deg": -16,
+        "lat_max_deg": 35,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "cube_TA WCS (34 x 103 at 1.5 x 0.5 deg)"}]
+      },
+      "observing_mode": {"value": null, "evidence": "unknown", "note": "Scan mode not recorded."},
+      "coordinate_system": {
+        "value": "equatorial_equinox_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "CTYPE; no RADESYS/EQUINOX"}]
+      },
+      "velocity_frame": {
+        "value": "LSR_kind_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "HISTORY '... LSR'"}]
+      },
+      "spectral_line": {"name": "H I 21 cm"},
+      "product_class": "calibrated_product",
+      "data_level": "L4",
+      "additional_levels": ["L3"],
+      "file_formats": ["zip", "fits"],
+      "native_availability": "derived_only",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "BUNIT K; TSYS = 179.5, ETA_MB = 0.3",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "cube_TA header"}]
+      },
+      "processing_status": {"value": "RFI-excised, de-ramped, LSR", "evidence": "documented", "sources": [{"source_id": "src-ac-products-20260903", "locator": "HISTORY"}]},
+      "portal_status": "historical",
+      "recommended_for_students": false,
+      "student_notes": "Artefact-dominated; not a starting point.",
+      "files": [
+        {
+          "source_id": "src-ac-products-20260903",
+          "artifact_id": "art-20260903-ta-cube",
+          "role": "calibrated_cube",
+          "data_level": "L4",
+          "format": "fits"
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260903-ac-am-native-spectra"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "facts": [
+        {
+          "key": "finite_fraction",
+          "value": 0.185,
+          "unit": "dimensionless",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-5"}],
+          "note": "Measured in the Phase 0 audit."
+        },
+        {
+          "key": "cube_max_k",
+          "value": 9850,
+          "unit": "K",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-5"}],
+          "note": "Artefacts; physically implausible."
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Header lacks TELESCOP, DATE-OBS, RESTFRQ, SPECSYS and equinox",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-ac-products-20260903", "locator": "headers"}]
+        },
+        {"value": "Superseded calibration epoch (C2)", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923"}]}
+      ]
+    },
+    {
+      "dataset_id": "ds-20260903-ac-maps",
+      "title": "3 Sep 2026 anticentre-side peak T_B and first-moment velocity maps (FITS)",
+      "campaign": "2026-09-03-anticenter",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "file names"}]
+      },
+      "coverage": {
+        "frame": "equatorial",
+        "lon_min_deg": 78,
+        "lon_max_deg": 127.5,
+        "lat_min_deg": -16,
+        "lat_max_deg": 35,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "WCS"}]
+      },
+      "coordinate_system": {
+        "value": "equatorial_equinox_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "CTYPE"}]
+      },
+      "velocity_frame": {
+        "value": "LSR_kind_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "velocity HISTORY"}]
+      },
+      "velocity_definition": {
+        "value": "intensity_weighted_first_moment",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "velocity HISTORY 'intensity-weighted LSR velocity'"}]
+      },
+      "product_class": "derived_science_product",
+      "data_level": "L5",
+      "file_formats": ["zip", "fits"],
+      "native_availability": "derived_only",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "Peak T_B = T_A / 0.30 with 4-sigma detection",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "peak_TB HISTORY"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": false,
+      "files": [
+        {
+          "source_id": "src-ac-products-20260903",
+          "artifact_id": "art-20260903-peak-tb-map",
+          "role": "derived_map",
+          "data_level": "L5",
+          "format": "fits"
+        },
+        {
+          "source_id": "src-ac-products-20260903",
+          "artifact_id": "art-20260903-velocity-map",
+          "role": "derived_map",
+          "data_level": "L5",
+          "format": "fits"
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260903-ac-ta-cube"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "limitations": [
+        {
+          "value": "Peak T_B uses 0 for 'no detection'; only about 8% of velocity pixels are finite",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-5"}],
+          "note": "Measured in the Phase 0 audit."
+        },
+        {"value": "Superseded calibration epoch (C2)", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923"}]}
+      ]
+    },
+    {
+      "dataset_id": "ds-20260903-ac-figure",
+      "title": "3 Sep 2026 smoothed brightness and velocity figure",
+      "campaign": "2026-09-03-anticenter",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "figure title"}]
+      },
+      "product_class": "visualization",
+      "data_level": "L7",
+      "file_formats": ["png"],
+      "native_availability": "derived_only",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "Brightness in K on the C2 scale",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-ac-products-20260903"}],
+        "note": "Made from the C2 maps in the same archive."
+      },
+      "portal_status": "historical",
+      "recommended_for_students": false,
+      "files": [
+        {
+          "source_id": "src-ac-products-20260903",
+          "artifact_id": "art-20260903-velocity-figure",
+          "role": "visualization",
+          "data_level": "L7",
+          "format": "png"
+        }
+      ],
+      "lineage": {
+        "derived_from": ["ds-20260903-ac-maps"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "limitations": [
+        {
+          "value": "Smoothed rendering of an artefact-dominated dataset",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-5"}],
+          "note": "See the cube facts."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-allsky-trusted-maps",
+      "title": "All-sky 'TRUSTED' composite: peak T_B and velocity (FITS)",
+      "campaign": "full-survey",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26",
+        "end": "2026-09-03",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "overlay figure session labels: 26 Aug, 30 Aug, 1 Sep, 2 Sep, 3 Sep am, 3 Sep pm"}]
+      },
+      "coverage": {
+        "frame": "equatorial",
+        "lon_min_deg": 0,
+        "lon_max_deg": 358.5,
+        "lat_min_deg": -45,
+        "lat_max_deg": 90,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "WCS (240 x 271 at 1.5 x 0.5 deg)"}],
+        "note": "Grid extent; data fill about 9.9% of pixels (RA about 3.8-8 h and 14-20.5 h)."
+      },
+      "observing_mode": {
+        "value": "multi_session_composite",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "overlay session boxes"}]
+      },
+      "coordinate_system": {
+        "value": "equatorial_equinox_unspecified",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "CTYPE; no RADESYS/EQUINOX"}]
+      },
+      "velocity_frame": {
+        "value": "LSR_kind_unspecified",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-allsky-products", "locator": "overlay colour bar 'V_LSR'"}],
+        "note": "Not stated in the FITS header."
+      },
+      "velocity_definition": {"value": null, "evidence": "unknown", "note": "Not stated."},
+      "product_class": "curated_product",
+      "data_level": "L6",
+      "file_formats": ["zip", "fits"],
+      "native_availability": "partial",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "No calibration keywords in the headers; assumed to be the C2 scale in use on 4 Sep 2026",
+        "evidence": "inferred",
+        "sources": [
+          {"source_id": "src-allsky-products", "locator": "headers (no TSYS/ETA_MB)"},
+          {"source_id": "src-gc-products-20260902", "locator": "C2 headers of contemporaneous products"}
+        ],
+        "note": "Needs confirmation from whoever produced the composite."
+      },
+      "processing_status": {
+        "value": "TRUSTED selection: 40 <= T_B <= 160 K, |v| <= 35 km/s, dawn Sun band removed, speckles removed ('LAB-validated rule')",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "FITS HISTORY"}]
+      },
+      "portal_status": "showcase",
+      "recommended_for_students": false,
+      "student_notes": "Showcase and LAB-comparison illustration only. Its native lineage is incomplete in the supplied archive and its selection cuts remove faint and high-velocity gas by construction.",
+      "files": [
+        {"source_id": "src-allsky-products", "artifact_id": "art-allsky-peak-tb-map", "role": "curated_map", "data_level": "L6", "format": "fits"},
+        {"source_id": "src-allsky-products", "artifact_id": "art-allsky-velocity-map", "role": "curated_map", "data_level": "L6", "format": "fits"}
+      ],
+      "lineage": {
+        "derived_from": [
+          "ds-20260826-og-native-spectra",
+          "ds-20260830-session",
+          "ds-20260901-gc-plane-scan",
+          "ds-20260902-gc-native-spectra",
+          "ds-20260903-ac-am-native-spectra",
+          "ds-20260903-pm-session"
+        ],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."},
+        "note": "Only the 26 Aug native spectra are supplied. In the overlap with the 2 Sep peak map the composite is about 0.81 times the 2 Sep values (median) and matches it in only 0.3% of pixels, so it was reprocessed rather than mosaicked from the supplied FITS (Phase 0 audit measurement)."
+      },
+      "limitations": [
+        {
+          "value": "Native lineage incomplete: three of six source sessions have no supplied data at any level and two are derived-only",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-allsky-products", "locator": "overlay session labels"}, {"source_id": "src-phase0-audit", "locator": "section C.4"}]
+        },
+        {
+          "value": "Selection cuts (40-160 K, |v| <= 35 km/s) bias any statistics drawn from it",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-allsky-products", "locator": "HISTORY"}]
+        },
+        {
+          "value": "The 'LAB-validated rule' is not documented beyond the HISTORY card",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-allsky-products", "locator": "HISTORY"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-allsky-trusted-overlay",
+      "title": "All-sky 'TRUSTED' values overlaid on the LAB survey (figure)",
+      "campaign": "full-survey",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-26",
+        "end": "2026-09-03",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "overlay session labels"}]
+      },
+      "product_class": "visualization",
+      "data_level": "L7",
+      "file_formats": ["png"],
+      "native_availability": "partial",
+      "missing_source": true,
+      "calibration_id": "C2",
+      "calibration_assignment": {
+        "value": "Same as the composite maps",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-allsky-products"}],
+        "note": "See ds-allsky-trusted-maps."
+      },
+      "portal_status": "showcase",
+      "recommended_for_students": false,
+      "files": [{"source_id": "src-allsky-products", "artifact_id": "art-allsky-overlay-figure", "role": "visualization", "data_level": "L7", "format": "png"}],
+      "lineage": {
+        "derived_from": ["ds-allsky-trusted-maps"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "External processing; code not supplied."}
+      },
+      "limitations": [{"value": "Inherits all limitations of the composite", "evidence": "documented", "sources": [{"source_id": "src-allsky-products"}]}]
+    },
+    {
+      "dataset_id": "ds-20260828-validation-dish222-vs-lab",
+      "title": "DISH222 vs LAB comparison note (survey of 13-26 Aug 2026)",
+      "campaign": "2026-08-survey",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-13",
+        "end": "2026-08-26",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "subtitle"}]
+      },
+      "product_class": "validation_report",
+      "data_level": null,
+      "file_formats": ["docx"],
+      "native_availability": "not_applicable",
+      "missing_source": false,
+      "calibration_id": "C1",
+      "calibration_assignment": {
+        "value": "Comparisons made in relative dB and with the LAB-anchored T_sys_eff of 330-480 K",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "sections 1 and 2.4"}]
+      },
+      "portal_status": "historical",
+      "recommended_for_students": true,
+      "student_notes": "Historical state of knowledge on 28 Aug. Its correlation figures (r = 0.82, 0.81, 0.96) predate the Kelvin calibrations and their computation is not supplied.",
+      "files": [{"source_id": "src-lab-comparison-note-20260828", "role": "validation_report", "data_level": null, "format": "docx"}],
+      "lineage": {
+        "derived_from": ["ds-20260813-20260825-survey-sessions", "ds-20260826-og-native-spectra"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "Author and analysis code not recorded."}
+      },
+      "facts": [
+        {
+          "key": "brightness_correlation_outer_arm",
+          "value": 0.82,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "table"}]
+        },
+        {
+          "key": "brightness_correlation_l190_cut",
+          "value": 0.81,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "table"}]
+        },
+        {
+          "key": "velocity_longitude_correlation_26aug",
+          "value": 0.96,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "table"}]
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Computation inputs and code not supplied; claims cannot be reproduced yet",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C.2 DS-8"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260923-cal-report",
+      "title": "Absolute brightness-temperature calibration report, 20-23 Sep 2026 (defines C3 and C4)",
+      "campaign": "2026-09-20-calibration",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-20",
+        "end": "2026-09-23",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "title block 'Measurements 20 - 23 September 2026'"}]
+      },
+      "observing_mode": {"value": "sky_reference_calibration", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 4"}]},
+      "product_class": "calibration_report",
+      "data_level": null,
+      "file_formats": ["pdf"],
+      "native_availability": "not_applicable",
+      "missing_source": false,
+      "calibration_id": "C4",
+      "calibration_assignment": {
+        "value": "Defines C4 (and documents C3)",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 1, 3, 6"}]
+      },
+      "portal_status": "current",
+      "recommended_for_students": true,
+      "student_notes": "Table 1 (eight points) is the smallest self-contained calibration dataset; the published fit is exactly reproducible (see calibration-epochs.json C4).",
+      "files": [{"source_id": "src-cal-report-20260923", "role": "calibration_report", "data_level": null, "format": "pdf"}],
+      "lineage": {
+        "derived_from": ["ds-20260920-20260923-calibration-measurements", "ds-20260922-gc-survey"],
+        "produced_by": {"value": null, "evidence": "unknown", "note": "Author metadata 'DISH222 / 7Z1EC'; analysis code not supplied."}
+      },
+      "limitations": [
+        {
+          "value": "The underlying measurements (15-sample medians, hot-load powers, solar transit) are not supplied as data files",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section L"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260813-20260825-survey-sessions",
+      "title": "DISH222 survey sessions 13-25 Aug 2026 (not supplied)",
+      "campaign": "2026-08-survey",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-13",
+        "end": "2026-08-25",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "subtitle (13-26 August 2026)"}],
+        "note": "26 Aug is registered separately."
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown"},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "provenance_notes": [
+        {
+          "value": "Sessions on 20 and 22 Aug are referenced in legacy code comments about bandpass and stitching fixes",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 13499, 13608-13618"}]
+        },
+        {
+          "value": "Sessions on 24-25 Aug carried 5-10 deg pointing errors before the Sun-shadow calibration",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.5"}]
+        },
+        {
+          "value": "Private project records indicate that session data from 13 Aug 2026 (morning and evening) existed but were not supplied",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-private-project-records"}],
+          "note": "Neutral summary of private project records."
+        }
+      ],
+      "limitations": [{"value": "No data supplied", "evidence": "documented", "sources": [{"source_id": "src-phase0-audit", "locator": "section L.1"}]}]
+    },
+    {
+      "dataset_id": "ds-20260830-session",
+      "title": "DISH222 session 30 Aug 2026 (not supplied)",
+      "campaign": "full-survey",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-08-30",
+        "end": "2026-08-30",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "overlay label '30 Aug'"}]
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown"},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "limitations": [
+        {
+          "value": "Known only as a source of the all-sky composite",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-allsky-products", "locator": "overlay"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260901-gc-plane-scan",
+      "title": "DISH222 galactic-plane scan 1 Sep 2026 (native data and FITS not supplied)",
+      "campaign": "2026-09-01-galactic-plane",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-01",
+        "end": "2026-09-01",
+        "evidence": "documented",
+        "sources": [
+          {"source_id": "src-kelvin-map-figure-20260901", "locator": "title"},
+          {"source_id": "src-allsky-products", "locator": "overlay label '1 Sep'"}
+        ]
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown", "note": "Its products were expressed on C2 (see the kelvin-map figure)."},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "provenance_notes": [
+        {
+          "value": "The eta = 0.30 of C2 was derived from this scan's comparison with LAB",
+          "evidence": "documented",
+          "sources": [
+            {"source_id": "src-kelvin-map-figure-20260901", "locator": "LAB comparison panels"},
+            {"source_id": "src-legacy-dish222-v75", "locator": "V72 comment, lines 17109-17117"}
+          ]
+        },
+        {
+          "value": "Private project records indicate FITS products of this scan existed but were not supplied",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-private-project-records"}],
+          "note": "Neutral summary of private project records."
+        }
+      ],
+      "limitations": [{"value": "No data supplied", "evidence": "documented", "sources": [{"source_id": "src-phase0-audit", "locator": "section L.1"}]}]
+    },
+    {
+      "dataset_id": "ds-20260901-gc-stray-corrected-products",
+      "title": "1 Sep 2026 first-order stray-radiation-corrected products (not supplied)",
+      "campaign": "2026-09-01-galactic-plane",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-01",
+        "end": "2026-09-01",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-private-project-records"}],
+        "note": "Neutral summary of private project records."
+      },
+      "product_class": "curated_product",
+      "data_level": "L6",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown", "note": "Presumably C2, but not supplied."},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": ["ds-20260901-gc-plane-scan"], "produced_by": {"value": null, "evidence": "unknown"}},
+      "provenance_notes": [
+        {
+          "value": "Private project records indicate an experimental first-order stray-radiation correction (plane-template subtraction) was applied to the 1 Sep cube by AI-assisted analysis. The method is unverified and the products were not supplied.",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-private-project-records"}],
+          "note": "Not independent expert evidence."
+        }
+      ],
+      "limitations": [
+        {
+          "value": "No data supplied; method unverified",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-private-project-records"}],
+          "note": "See provenance note."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260902-gc-native-spectra",
+      "title": "2 Sep 2026 galactic-centre area scan: native spectra and manifest (not supplied)",
+      "campaign": "2026-09-02-galactic-center",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-02",
+        "end": "2026-09-02",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-gc-products-20260902", "locator": "file names"}]
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown"},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "limitations": [
+        {
+          "value": "Needed to re-reduce the 2 Sep products",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section L.1"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260903-ac-am-native-spectra",
+      "title": "3 Sep 2026 morning anticentre-side scans: native spectra (not supplied)",
+      "campaign": "2026-09-03-anticenter",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-ac-products-20260903", "locator": "figure title '3 Sep 2026 morning scans'"}]
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown"},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "limitations": [
+        {
+          "value": "Needed to re-reduce the 3 Sep products",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section L.1"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260903-pm-session",
+      "title": "3 Sep 2026 afternoon/evening session (not supplied)",
+      "campaign": "full-survey",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-03",
+        "end": "2026-09-03",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-allsky-products", "locator": "overlay label '3 Sep pm'"}]
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown"},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "limitations": [
+        {
+          "value": "Known only as a source of the all-sky composite",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-allsky-products", "locator": "overlay"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260908-cygnus-session",
+      "title": "8 Sep 2026 Cygnus-region session (not supplied)",
+      "campaign": "2026-09-cygnus",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-08",
+        "end": "2026-09-08",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-private-project-records"}],
+        "note": "Neutral summary of private project records."
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown", "note": "Private records indicate products on the C2 scale (T_sys 180 K, eta 0.3)."},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "limitations": [
+        {
+          "value": "No data supplied; existence known only from private records",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-private-project-records"}],
+          "note": "Neutral summary."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260913-area-scan",
+      "title": "13 Sep 2026 area scan, RA about 19.4-23.1 h, Dec about 32-66 deg (not supplied)",
+      "campaign": "2026-09-cygnus",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-13",
+        "end": "2026-09-13",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-private-project-records"}],
+        "note": "Neutral summary of private project records."
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown", "note": "Private records indicate products on the C2 scale."},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "limitations": [
+        {
+          "value": "No data supplied; existence known only from private records",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-private-project-records"}],
+          "note": "Neutral summary."
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260920-20260923-calibration-measurements",
+      "title": "20-23 Sep 2026 calibration measurements: hot loads, solar transit, eight sky-reference positions (not supplied)",
+      "campaign": "2026-09-20-calibration",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-20",
+        "end": "2026-09-23",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "title block and sections 3-4"}]
+      },
+      "product_class": "calibration_record",
+      "data_level": null,
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown", "note": "These measurements define C3 and C4."},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "limitations": [
+        {
+          "value": "Only the summary values in the report are available",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "Table 1"}]
+        }
+      ]
+    },
+    {
+      "dataset_id": "ds-20260922-gc-survey",
+      "title": "22 Sep 2026 galactic-centre survey, 392 spectra (not supplied)",
+      "campaign": "2026-09-20-calibration",
+      "instrument_id": "dish222",
+      "observation_time": {
+        "start": "2026-09-22",
+        "end": "2026-09-22",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 5"}]
+      },
+      "product_class": "native_spectra",
+      "data_level": "L0",
+      "native_availability": "not_supplied",
+      "missing_source": true,
+      "calibration_id": null,
+      "calibration_assignment": {"value": null, "evidence": "unknown"},
+      "portal_status": "unavailable",
+      "recommended_for_students": false,
+      "files": [],
+      "lineage": {"derived_from": [], "produced_by": {"value": null, "evidence": "unknown"}},
+      "facts": [
+        {
+          "key": "spectra",
+          "value": 392,
+          "unit": "count",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 5"}]
+        }
+      ],
+      "limitations": [
+        {
+          "value": "Used for the archival check of C4 (HI4PI surrogate); data not supplied",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 5"}]
+        }
+      ]
+    }
+  ]
+}

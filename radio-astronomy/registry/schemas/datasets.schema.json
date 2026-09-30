@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/datasets.schema.json",
+  "title": "Dataset registry",
+  "description": "Catalogue of source files (with checksums) and of every dataset/product known from the Phase 0 audit, including datasets that are known to exist but were not supplied.",
+  "type": "object",
+  "required": ["schema_version", "registry", "updated", "notice", "data_levels", "sources", "datasets"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/registryHeader/properties/schema_version" },
+    "registry": { "const": "datasets" },
+    "updated": { "$ref": "common.schema.json#/$defs/isoDateOrDateTime" },
+    "notice": { "type": "string" },
+    "data_levels": {
+      "description": "Human-readable definitions of L0-L8 (keys must be exactly L0..L8).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["L0", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8"],
+      "patternProperties": { "^L[0-8]$": { "type": "string" } }
+    },
+    "sources": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/source" } },
+    "datasets": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/dataset" } }
+  },
+  "$defs": {
+    "dataLevel": { "enum": ["L0", "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8"] },
+    "source": {
+      "description": "A citable source, identified by an opaque logical ID. Private sources carry no path, filename or checksum here; those live in the private local-source manifest (see local-sources.schema.json).",
+      "type": "object",
+      "required": ["source_id", "kind", "title", "visibility"],
+      "additionalProperties": false,
+      "properties": {
+        "source_id": { "$ref": "common.schema.json#/$defs/sourceId" },
+        "kind": {
+          "enum": ["research_file", "legacy_software", "project_record", "public_site_page", "external_publication"]
+        },
+        "title": { "type": "string" },
+        "visibility": {
+          "description": "public = the artifact itself is publicly distributed; private = not distributed (storage details withheld).",
+          "enum": ["public", "private"]
+        },
+        "evidence_limit": {
+          "description": "inferred_only = this source may only support values flagged 'inferred'.",
+          "enum": ["none", "inferred_only"]
+        },
+        "path": { "type": "string", "description": "Public repository-relative path (public sources only)." },
+        "doi": { "type": "string" },
+        "sha256": { "$ref": "common.schema.json#/$defs/sha256", "description": "Only for publicly distributed artifacts." },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "note": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "visibility": { "const": "private" } } },
+          "then": { "not": { "anyOf": [ { "required": ["path"] }, { "required": ["sha256"] }, { "required": ["bytes"] } ] } }
+        },
+        {
+          "if": { "properties": { "visibility": { "const": "public" } }, "required": ["path"] },
+          "then": { "properties": { "path": { "not": { "pattern": "^radio-astronomy/source/" } } } }
+        }
+      ]
+    },
+    "fileRef": {
+      "type": "object",
+      "required": ["source_id", "role", "format"],
+      "additionalProperties": false,
+      "properties": {
+        "source_id": { "$ref": "common.schema.json#/$defs/sourceId" },
+        "artifact_id": {
+          "description": "Opaque ID of an item inside the source (e.g. one file of an archive). Resolved only by the private local-source manifest.",
+          "$ref": "common.schema.json#/$defs/artifactId"
+        },
+        "member_count": { "type": "integer", "minimum": 0, "description": "Number of files in a multi-file artifact." },
+        "role": {
+          "enum": [
+            "native_spectra", "observation_manifest", "resampled_spectra", "reduced_spectra",
+            "calibrated_cube", "spectral_cube", "derived_map", "derived_table", "catalog",
+            "curated_map", "visualization", "calibration_record", "calibration_report",
+            "validation_report"
+          ]
+        },
+        "data_level": { "oneOf": [ { "$ref": "#/$defs/dataLevel" }, { "type": "null" } ] },
+        "format": { "enum": ["npz", "json", "csv", "xlsx", "fits", "png", "pdf", "docx", "zip"] },
+        "sha256": { "$ref": "common.schema.json#/$defs/sha256", "description": "Only when the source is publicly distributed (validator-enforced)." },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "note": { "type": "string" }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["frame", "evidence"],
+      "additionalProperties": false,
+      "properties": {
+        "frame": { "enum": ["galactic", "equatorial", "horizontal", "not_applicable"] },
+        "lon_min_deg": { "type": ["number", "null"] },
+        "lon_max_deg": { "type": ["number", "null"] },
+        "lat_min_deg": { "type": ["number", "null"] },
+        "lat_max_deg": { "type": ["number", "null"] },
+        "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+        "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+        "note": { "type": "string" }
+      }
+    },
+    "rederivation": {
+      "description": "Required when a product carries a calibration epoch that did not exist when its data were taken. This is how student re-calibrations are declared openly.",
+      "type": "object",
+      "required": ["of_dataset_id", "original_calibration_id", "created", "created_by"],
+      "additionalProperties": false,
+      "properties": {
+        "of_dataset_id": { "$ref": "common.schema.json#/$defs/datasetId" },
+        "original_calibration_id": { "oneOf": [ { "$ref": "common.schema.json#/$defs/calibrationId" }, { "type": "null" } ] },
+        "created": { "$ref": "common.schema.json#/$defs/isoDateOrDateTime" },
+        "created_by": { "type": "string" },
+        "method_note": { "type": "string" }
+      }
+    },
+    "dataset": {
+      "type": "object",
+      "required": [
+        "dataset_id", "title", "campaign", "instrument_id", "observation_time",
+        "product_class", "data_level", "native_availability", "missing_source",
+        "calibration_id", "calibration_assignment", "portal_status",
+        "recommended_for_students", "files", "lineage", "limitations"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "dataset_id": { "$ref": "common.schema.json#/$defs/datasetId" },
+        "title": { "type": "string" },
+        "campaign": { "type": "string", "description": "Grouping key, e.g. 2026-08-26-outer-galaxy." },
+        "instrument_id": { "$ref": "common.schema.json#/$defs/instrumentId" },
+        "observation_time": { "$ref": "common.schema.json#/$defs/timeRange" },
+        "target": { "$ref": "common.schema.json#/$defs/annotatedText" },
+        "coverage": { "$ref": "#/$defs/coverage" },
+        "observing_mode": {
+          "type": "object",
+          "required": ["value", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": [
+                "raster_scan", "area_scan", "drift_scan", "fixed_pointing", "hot_cold_calibration",
+                "sun_cross_scan", "sky_reference_calibration", "solar_transit", "multi_session_composite",
+                "not_applicable", null
+              ]
+            },
+            "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+            "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+            "note": { "type": "string" }
+          }
+        },
+        "coordinate_system": {
+          "type": "object",
+          "required": ["value", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {
+              "enum": [
+                "galactic", "equatorial_j2000", "equatorial_equinox_unspecified",
+                "galactic_and_equatorial", "horizontal_az_el", "not_applicable", null
+              ]
+            },
+            "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+            "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+            "note": { "type": "string" }
+          }
+        },
+        "velocity_frame": {
+          "type": "object",
+          "required": ["value", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "enum": ["LSRK", "LSR_kind_unspecified", "topocentric", "not_applicable", null] },
+            "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+            "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+            "note": { "type": "string" }
+          }
+        },
+        "velocity_definition": {
+          "type": "object",
+          "required": ["value", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "enum": ["peak_of_smoothed_spectrum", "intensity_weighted_first_moment", "not_applicable", null] },
+            "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+            "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+            "note": { "type": "string" }
+          }
+        },
+        "spectral_line": {
+          "type": "object",
+          "required": ["name"],
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string" },
+            "rest_frequency_mhz": { "$ref": "common.schema.json#/$defs/quantity" }
+          }
+        },
+        "product_class": {
+          "description": "What kind of thing this is. native_spectra = averaged power spectra as written by the acquisition software (NOT raw I/Q).",
+          "enum": [
+            "native_spectra", "observation_manifest", "resampled_spectra", "reduced_spectra",
+            "calibrated_product", "derived_science_product", "curated_product", "visualization",
+            "calibration_record", "calibration_report", "validation_report"
+          ]
+        },
+        "data_level": { "oneOf": [ { "$ref": "#/$defs/dataLevel" }, { "type": "null" } ] },
+        "additional_levels": { "type": "array", "items": { "$ref": "#/$defs/dataLevel" } },
+        "file_formats": { "type": "array", "items": { "enum": ["npz", "json", "csv", "xlsx", "fits", "png", "pdf", "docx", "zip"] } },
+        "native_availability": {
+          "description": "available = native spectra for this data are in the supplied archive; partial = some of them; derived_only = products exist but their native spectra were not supplied; not_supplied = nothing supplied; not_applicable = record/report.",
+          "enum": ["available", "partial", "derived_only", "not_supplied", "not_applicable"]
+        },
+        "missing_source": { "type": "boolean", "description": "true when native/source data needed to reproduce this dataset are absent from the supplied archive." },
+        "calibration_id": {
+          "description": "Calibration epoch the values were produced with. null = calibration-independent (native power, manifests).",
+          "oneOf": [ { "$ref": "common.schema.json#/$defs/calibrationId" }, { "type": "null" } ]
+        },
+        "calibration_assignment": { "$ref": "common.schema.json#/$defs/annotatedText" },
+        "rederivation": { "$ref": "#/$defs/rederivation" },
+        "processing_status": { "$ref": "common.schema.json#/$defs/annotatedText" },
+        "portal_status": {
+          "description": "reference = source data used as the basis for reproduction; historical = product on a superseded calibration or superseded method; current = product on the current calibration; showcase = presentation product, not a starting point; unavailable = known but not supplied.",
+          "enum": ["reference", "historical", "current", "showcase", "unavailable"]
+        },
+        "recommended_for_students": { "type": "boolean" },
+        "student_notes": { "type": "string" },
+        "scientific_purpose": { "$ref": "common.schema.json#/$defs/annotatedText" },
+        "files": { "type": "array", "items": { "$ref": "#/$defs/fileRef" } },
+        "lineage": {
+          "type": "object",
+          "required": ["derived_from", "produced_by"],
+          "additionalProperties": false,
+          "properties": {
+            "derived_from": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/datasetId" } },
+            "produced_by": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "note": { "type": "string" }
+          }
+        },
+        "facts": {
+          "description": "Additional scientific facts about the dataset, each annotated.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["key", "value", "evidence"],
+            "additionalProperties": false,
+            "properties": {
+              "key": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+              "value": {},
+              "unit": { "$ref": "common.schema.json#/$defs/unit" },
+              "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+              "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+              "note": { "type": "string" }
+            },
+            "$ref": "common.schema.json#/$defs/evidenceRules"
+          }
+        },
+        "provenance_notes": {
+          "description": "Neutral summaries. Restricted project records are never quoted; they may only support 'inferred' notes.",
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/annotatedText" }
+        },
+        "limitations": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/annotatedText" } }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "native_availability": { "enum": ["derived_only", "not_supplied"] } } },
+          "then": { "properties": { "missing_source": { "const": true } } }
+        },
+        {
+          "if": { "properties": { "native_availability": { "const": "not_supplied" } } },
+          "then": { "properties": { "portal_status": { "const": "unavailable" }, "files": { "maxItems": 0 }, "recommended_for_students": { "const": false } } }
+        }
+      ]
+    }
+  }
+}

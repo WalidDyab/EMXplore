@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/common.schema.json",
+  "title": "Shared definitions for the Radio Astronomy registries",
+  "description": "Building blocks used by instruments, calibration-epochs and datasets. Every scientific value carries an evidence flag and structured source references.",
+  "$defs": {
+    "evidence": {
+      "description": "documented = stated in or measured directly from a cited source; inferred = derived by analysis, must say how in 'note'; unknown = not determinable from supplied material.",
+      "enum": [
+        "documented",
+        "inferred",
+        "unknown"
+      ]
+    },
+    "instrumentId": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "calibrationId": {
+      "type": "string",
+      "pattern": "^C[0-9]+$"
+    },
+    "datasetId": {
+      "type": "string",
+      "pattern": "^ds-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "sourceId": {
+      "type": "string",
+      "pattern": "^src-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "artifactId": {
+      "type": "string",
+      "pattern": "^art-[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "isoDateOrDateTime": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(T[0-9]{2}:[0-9]{2}(:[0-9]{2})?(Z|[+-][0-9]{2}:[0-9]{2})?)?$"
+    },
+    "sourceRef": {
+      "description": "Pointer to an entry in the 'sources' catalogue of datasets.json, with an optional location inside it (section, line, header keyword, sheet...).",
+      "type": "object",
+      "required": [
+        "source_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "$ref": "#/$defs/sourceId"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sourceRef"
+      }
+    },
+    "evidenceRules": {
+      "description": "documented values need at least one source; unknown values must be null.",
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "evidence": {
+                "const": "documented"
+              }
+            },
+            "required": [
+              "evidence"
+            ]
+          },
+          "then": {
+            "required": [
+              "sources"
+            ],
+            "properties": {
+              "sources": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidence": {
+                "const": "unknown"
+              }
+            },
+            "required": [
+              "evidence"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidence": {
+                "const": "inferred"
+              }
+            },
+            "required": [
+              "evidence"
+            ]
+          },
+          "then": {
+            "required": [
+              "note"
+            ]
+          }
+        }
+      ]
+    },
+    "annotated": {
+      "description": "Any value together with its evidence flag, sources and an optional note.",
+      "type": "object",
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {},
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "sources": {
+          "$ref": "#/$defs/sourceRefs"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "$ref": "#/$defs/evidenceRules"
+    },
+    "annotatedText": {
+      "type": "object",
+      "required": [
+        "value",
+        "evidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "sources": {
+          "$ref": "#/$defs/sourceRefs"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "$ref": "#/$defs/evidenceRules"
+    },
+    "unit": {
+      "enum": [
+        "K",
+        "dimensionless",
+        "dB",
+        "dBi",
+        "deg",
+        "km/s",
+        "MHz",
+        "Hz",
+        "m",
+        "m^2",
+        "count"
+      ]
+    },
+    "quantity": {
+      "description": "A number (or null when unknown) with unit, optional 1-sigma uncertainty, evidence and sources.",
+      "type": "object",
+      "required": [
+        "value",
+        "unit",
+        "evidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "uncertainty": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "unit": {
+          "$ref": "#/$defs/unit"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "sources": {
+          "$ref": "#/$defs/sourceRefs"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "$ref": "#/$defs/evidenceRules"
+    },
+    "timeRange": {
+      "description": "Start/end as ISO dates or date-times. A date-time without a zone is local time as written in the source; say so in 'note'.",
+      "type": "object",
+      "required": [
+        "start",
+        "end",
+        "evidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/isoDateOrDateTime"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "end": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/isoDateOrDateTime"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        },
+        "sources": {
+          "$ref": "#/$defs/sourceRefs"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "evidence": {
+                "const": "documented"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sources"
+            ],
+            "properties": {
+              "sources": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "evidence": {
+                "const": "inferred"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "note"
+            ]
+          }
+        }
+      ]
+    },
+    "openQuestion": {
+      "type": "object",
+      "required": [
+        "field",
+        "question"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "field": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        }
+      }
+    },
+    "registryHeader": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "registry",
+        "updated",
+        "notice"
+      ],
+      "properties": {
+        "schema_version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "registry": {
+          "enum": [
+            "instruments",
+            "calibration-epochs",
+            "datasets",
+            "local-sources"
+          ]
+        },
+        "updated": {
+          "$ref": "#/$defs/isoDateOrDateTime"
+        },
+        "notice": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

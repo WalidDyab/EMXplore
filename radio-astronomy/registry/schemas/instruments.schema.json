@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/instruments.schema.json",
+  "title": "Instrument registry",
+  "description": "One entry per instrument generation (fixed transit network, DISH1, DISH222). Unknown facts are recorded as null with evidence 'unknown', never guessed.",
+  "type": "object",
+  "required": ["schema_version", "registry", "updated", "notice", "instruments"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/registryHeader/properties/schema_version" },
+    "registry": { "const": "instruments" },
+    "updated": { "$ref": "common.schema.json#/$defs/isoDateOrDateTime" },
+    "notice": { "type": "string" },
+    "instruments": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/instrument" }
+    }
+  },
+  "$defs": {
+    "instrument": {
+      "type": "object",
+      "required": [
+        "instrument_id", "name", "status", "telescope_type", "pointing",
+        "observing_modes", "dish", "receiver", "site", "operational_period",
+        "relationships", "software_snapshots", "unresolved"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "instrument_id": { "$ref": "common.schema.json#/$defs/instrumentId" },
+        "name": { "type": "string" },
+        "aliases": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/annotatedText" } },
+        "status": {
+          "description": "active = currently operated system; historical = no longer the active system (may still exist physically).",
+          "type": "object",
+          "required": ["value", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "value": { "enum": ["active", "historical"] },
+            "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+            "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+            "note": { "type": "string" }
+          }
+        },
+        "telescope_type": { "$ref": "common.schema.json#/$defs/annotatedText" },
+        "pointing": {
+          "type": "object",
+          "required": ["capability", "limits"],
+          "additionalProperties": false,
+          "properties": {
+            "capability": {
+              "type": "object",
+              "required": ["value", "evidence"],
+              "additionalProperties": false,
+              "properties": {
+                "value": { "enum": ["fixed_zenith", "az_el_motorised", "unknown", null] },
+                "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+                "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+                "note": { "type": "string" }
+              }
+            },
+            "limits": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/annotated" } }
+          }
+        },
+        "observing_modes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["mode", "evidence"],
+            "additionalProperties": false,
+            "properties": {
+              "mode": {
+                "enum": [
+                  "fixed_zenith_transit", "raster_scan", "area_scan", "drift_scan",
+                  "fixed_pointing", "hot_cold_calibration", "sun_cross_scan",
+                  "sky_reference_calibration", "solar_transit"
+                ]
+              },
+              "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+              "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "dish": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["diameter_m", "surface_construction"],
+          "properties": {
+            "diameter_m": { "$ref": "common.schema.json#/$defs/quantity" },
+            "focal_ratio_f_over_d": { "$ref": "common.schema.json#/$defs/quantity" },
+            "geometric_area_m2": { "$ref": "common.schema.json#/$defs/quantity" },
+            "panel_count": { "$ref": "common.schema.json#/$defs/quantity" },
+            "surface_construction": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "feed": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "gain_dbi": { "$ref": "common.schema.json#/$defs/quantity" },
+            "beam_fwhm_deg": { "$ref": "common.schema.json#/$defs/quantity" },
+            "beam_width_incl_first_sidelobes_deg": { "$ref": "common.schema.json#/$defs/quantity" },
+            "aperture_efficiency": { "$ref": "common.schema.json#/$defs/quantity" }
+          }
+        },
+        "receiver": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["sdr"],
+          "properties": {
+            "sdr": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "supported_sdr_drivers": { "$ref": "common.schema.json#/$defs/annotated" },
+            "frequency_reference": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "front_end": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "receiver_temperature_k": { "$ref": "common.schema.json#/$defs/quantity" },
+            "centre_frequency_mhz": { "$ref": "common.schema.json#/$defs/quantity" },
+            "sample_rate_mhz": { "$ref": "common.schema.json#/$defs/quantity" },
+            "fft_length": { "$ref": "common.schema.json#/$defs/quantity" },
+            "stores_raw_iq": { "$ref": "common.schema.json#/$defs/annotated" },
+            "verification_status": { "$ref": "common.schema.json#/$defs/annotatedText" }
+          }
+        },
+        "site": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "institution": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "latitude_deg": { "$ref": "common.schema.json#/$defs/quantity" },
+            "longitude_deg": { "$ref": "common.schema.json#/$defs/quantity" },
+            "elevation_m": { "$ref": "common.schema.json#/$defs/quantity" },
+            "station_callsign": { "$ref": "common.schema.json#/$defs/annotatedText" },
+            "description": { "$ref": "common.schema.json#/$defs/annotatedText" }
+          }
+        },
+        "operational_period": { "$ref": "common.schema.json#/$defs/timeRange" },
+        "relationships": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "target", "evidence"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "enum": ["predecessor_of", "successor_of", "operated_concurrently_with"] },
+              "target": { "$ref": "common.schema.json#/$defs/instrumentId" },
+              "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+              "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "software_snapshots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "supplied", "evidence"],
+            "additionalProperties": false,
+            "properties": {
+              "label": { "type": "string" },
+              "supplied": { "type": "boolean" },
+              "source_id": { "$ref": "common.schema.json#/$defs/sourceId" },
+              "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+              "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+              "note": { "type": "string" }
+            },
+            "if": { "properties": { "supplied": { "const": true } } },
+            "then": { "required": ["source_id"] }
+          }
+        },
+        "calibration_epochs": {
+          "description": "Calibration epochs defined for this instrument (IDs from calibration-epochs.json).",
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/calibrationId" }
+        },
+        "unresolved": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/openQuestion" } }
+      }
+    }
+  }
+}

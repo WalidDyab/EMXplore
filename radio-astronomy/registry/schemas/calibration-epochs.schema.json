@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/calibration-epochs.schema.json",
+  "title": "Calibration-epoch registry",
+  "description": "Immutable record of every brightness-temperature scale used for a DISH222 product. Epochs are never edited to match later knowledge; a new epoch is added instead.",
+  "type": "object",
+  "required": ["schema_version", "registry", "updated", "notice", "current_calibration_id", "fractional_excess_definition", "epochs"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/registryHeader/properties/schema_version" },
+    "registry": { "const": "calibration-epochs" },
+    "updated": { "$ref": "common.schema.json#/$defs/isoDateOrDateTime" },
+    "notice": { "type": "string" },
+    "current_calibration_id": { "$ref": "common.schema.json#/$defs/calibrationId" },
+    "fractional_excess_definition": {
+      "description": "Definition of f shared by C2-C4.",
+      "$ref": "common.schema.json#/$defs/annotatedText"
+    },
+    "epochs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/epoch" } }
+  },
+  "$defs": {
+    "param": { "$ref": "common.schema.json#/$defs/quantity" },
+    "kelvin": {
+      "allOf": [ { "$ref": "common.schema.json#/$defs/quantity" } ],
+      "properties": { "unit": { "const": "K" }, "value": { "type": ["number", "null"], "minimum": 0 } }
+    },
+    "fraction": {
+      "allOf": [ { "$ref": "common.schema.json#/$defs/quantity" } ],
+      "properties": { "unit": { "const": "dimensionless" }, "value": { "type": ["number", "null"], "exclusiveMinimum": 0, "maximum": 1 } }
+    },
+    "signedDimensionless": {
+      "allOf": [ { "$ref": "common.schema.json#/$defs/quantity" } ],
+      "properties": { "unit": { "const": "dimensionless" } }
+    },
+    "decibel": {
+      "allOf": [ { "$ref": "common.schema.json#/$defs/quantity" } ],
+      "properties": { "unit": { "const": "dB" } }
+    },
+    "count": {
+      "allOf": [ { "$ref": "common.schema.json#/$defs/quantity" } ],
+      "properties": { "unit": { "const": "count" }, "value": { "type": ["integer", "null"], "minimum": 0 } }
+    },
+    "parameters": {
+      "description": "Only these named parameters are allowed, each with a fixed unit. This prevents malformed calibration parameters.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tsys_k": { "$ref": "#/$defs/kelvin" },
+        "tsys_eff_k_min": { "$ref": "#/$defs/kelvin" },
+        "tsys_eff_k_max": { "$ref": "#/$defs/kelvin" },
+        "eta": { "$ref": "#/$defs/fraction" },
+        "conversion_constant_g_k": { "$ref": "#/$defs/kelvin" },
+        "pedestal_p": { "$ref": "#/$defs/signedDimensionless" },
+        "pedestal_equivalent_k": { "$ref": "#/$defs/kelvin" },
+        "y_factor_db": { "$ref": "#/$defs/decibel" },
+        "t_hot_k": { "$ref": "#/$defs/kelvin" },
+        "t_cold_k": { "$ref": "#/$defs/kelvin" },
+        "receiver_temperature_k": { "$ref": "#/$defs/kelvin" },
+        "aperture_efficiency": { "$ref": "#/$defs/fraction" },
+        "fit_correlation_r": { "$ref": "#/$defs/fraction" },
+        "fit_rms_k": { "$ref": "#/$defs/kelvin" },
+        "fit_points": { "$ref": "#/$defs/count" }
+      }
+    },
+    "fitPoint": {
+      "type": "object",
+      "required": ["label", "lab_tb_k", "measured_f"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string" },
+        "galactic_l_deg": { "type": ["number", "null"] },
+        "galactic_b_deg": { "type": ["number", "null"] },
+        "position_note": { "type": "string" },
+        "elevation_deg": { "type": ["number", "null"] },
+        "elevation_approximate": { "type": "boolean" },
+        "lab_tb_k": { "type": "number", "minimum": 0 },
+        "measured_f": { "type": "number" }
+      }
+    },
+    "epoch": {
+      "type": "object",
+      "required": [
+        "calibration_id", "title", "instrument_id", "status", "valid_period",
+        "model_type", "brightness_equation", "parameters", "sources",
+        "limitations", "supersedes", "superseded_by"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "calibration_id": { "$ref": "common.schema.json#/$defs/calibrationId" },
+        "title": { "type": "string" },
+        "instrument_id": { "$ref": "common.schema.json#/$defs/instrumentId" },
+        "status": { "enum": ["current", "superseded"] },
+        "valid_period": { "$ref": "common.schema.json#/$defs/timeRange" },
+        "established": { "$ref": "common.schema.json#/$defs/timeRange" },
+        "model_type": {
+          "enum": ["relative_db", "lab_anchored_tsys_eff", "yfactor_tsys_eta", "sky_referenced_linear"]
+        },
+        "brightness_equation": {
+          "description": "Plain-text equation. null for C0 (no temperature scale).",
+          "type": ["string", "null"]
+        },
+        "brightness_quantity": { "enum": ["relative_db", "antenna_temperature", "brightness_temperature", "mixed"] },
+        "parameters": { "$ref": "#/$defs/parameters" },
+        "method": { "$ref": "common.schema.json#/$defs/annotatedText" },
+        "fit_data": { "type": "array", "items": { "$ref": "#/$defs/fitPoint" } },
+        "fit_data_source": { "$ref": "common.schema.json#/$defs/sourceRef" },
+        "supporting_checks": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/annotated" } },
+        "implementation": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/annotatedText" } },
+        "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+        "limitations": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/annotatedText" } },
+        "supersedes": { "oneOf": [ { "$ref": "common.schema.json#/$defs/calibrationId" }, { "type": "null" } ] },
+        "superseded_by": { "oneOf": [ { "$ref": "common.schema.json#/$defs/calibrationId" }, { "type": "null" } ] },
+        "superseded_reason": { "$ref": "common.schema.json#/$defs/annotatedText" },
+        "unresolved": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/openQuestion" } }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "current" } } },
+          "then": { "properties": { "superseded_by": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "status": { "const": "superseded" } } },
+          "then": { "properties": { "superseded_by": { "$ref": "common.schema.json#/$defs/calibrationId" } }, "required": ["superseded_reason"] }
+        },
+        {
+          "if": { "properties": { "model_type": { "const": "relative_db" } } },
+          "then": { "properties": { "brightness_equation": { "type": "null" }, "parameters": { "maxProperties": 0 } } }
+        },
+        {
+          "if": { "properties": { "model_type": { "const": "lab_anchored_tsys_eff" } } },
+          "then": { "properties": { "parameters": { "required": ["tsys_eff_k_min", "tsys_eff_k_max"] } } }
+        },
+        {
+          "if": { "properties": { "model_type": { "const": "yfactor_tsys_eta" } } },
+          "then": { "properties": { "parameters": { "required": ["tsys_k", "eta", "conversion_constant_g_k", "y_factor_db"] } } }
+        },
+        {
+          "if": { "properties": { "model_type": { "const": "sky_referenced_linear" } } },
+          "then": { "properties": { "parameters": { "required": ["conversion_constant_g_k", "pedestal_p"] } } }
+        }
+      ]
+    }
+  }
+}

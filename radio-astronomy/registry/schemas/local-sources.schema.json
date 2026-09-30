@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/local-sources.schema.json",
+  "title": "Private local-source manifest",
+  "description": "Schema for the PRIVATE, git-ignored local-source manifest. It maps the opaque public source and artifact IDs to local storage paths, private filenames and SHA-256 checksums. The schema is public; the data file is not.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry",
+    "updated",
+    "notice",
+    "sources",
+    "artifacts"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "registry": {
+      "const": "local-sources"
+    },
+    "updated": {
+      "$ref": "common.schema.json#/$defs/isoDateOrDateTime"
+    },
+    "notice": {
+      "type": "string"
+    },
+    "sources": {
+      "description": "Local storage of private sources declared in datasets.json.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "$ref": "common.schema.json#/$defs/sourceId"
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^radio-astronomy/source/"
+          },
+          "sha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "description": "Items inside archive sources, referenced publicly by artifact_id.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "artifact_id",
+          "source_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "$ref": "common.schema.json#/$defs/artifactId"
+          },
+          "source_id": {
+            "$ref": "common.schema.json#/$defs/sourceId"
+          },
+          "member": {
+            "type": "string"
+          },
+          "member_pattern": {
+            "type": "string"
+          },
+          "member_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "oneOf": [
+          {
+            "required": [
+              "member"
+            ]
+          },
+          {
+            "required": [
+              "member_pattern",
+              "member_count"
+            ]
+          }
+        ]
+      }
+    },
+    "private_record_files": {
+      "description": "Files that make up restricted project records. Checked for presence and integrity only; never referenced publicly.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": {
+            "$ref": "common.schema.json#/$defs/sourceId"
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^radio-astronomy/source/"
+          },
+          "sha256": {
+            "$ref": "common.schema.json#/$defs/sha256"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "privacy_denylist": {
+      "description": "Private terms (names, platforms, storage hints) that must never appear in any file of the public registry folder. Matched case-insensitively.",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    }
+  }
+}

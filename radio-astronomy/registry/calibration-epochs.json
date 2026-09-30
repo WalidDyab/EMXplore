@@ -1,0 +1,593 @@
+{
+  "schema_version": "1.1.0",
+  "registry": "calibration-epochs",
+  "updated": "2026-09-30",
+  "notice": "Immutable calibration history of DISH222. C4 is the current reference (decision D1). Every product keeps the epoch it was produced with; historical products are never relabelled. A product re-expressed on a newer epoch is a NEW dataset with a 'rederivation' record.",
+  "current_calibration_id": "C4",
+  "fractional_excess_definition": {
+    "value": "f = P_line / P_baseline - 1, equivalently f = 10^(x/10) - 1 for a line height of x dB above the fitted baseline",
+    "evidence": "documented",
+    "sources": [
+      {"source_id": "src-cal-report-20260923", "locator": "section 1"},
+      {"source_id": "src-legacy-dish222-v75", "locator": "V70 header comment, lines 16849-16858"}
+    ]
+  },
+  "epochs": [
+    {
+      "calibration_id": "C0",
+      "title": "Relative scale: line height in dB above a fitted baseline",
+      "instrument_id": "dish222",
+      "status": "superseded",
+      "valid_period": {
+        "start": null,
+        "end": "2026-08-26",
+        "evidence": "inferred",
+        "sources": [
+          {"source_id": "src-fits-products-20260826", "locator": "BUNIT 'dB' / 'HI line power above baseline (uncalibrated)'"},
+          {"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.4"}
+        ],
+        "note": "Relative dB was the operational scale until LAB-anchored conversion factors were introduced. The start is unknown. The end marks the last supplied dataset whose products are purely in dB."
+      },
+      "model_type": "relative_db",
+      "brightness_equation": null,
+      "brightness_quantity": "relative_db",
+      "parameters": {},
+      "method": {
+        "value": "Per-spectrum baseline fit on line-free channels (V65 pipeline: bandpass self-flattening, line-free re-zeroing, beam stacking); value = peak or channel height above baseline in dB",
+        "evidence": "documented",
+        "sources": [
+          {"source_id": "src-workbook-20260826", "locator": "sheet 'Session info', row 'Spectrum definition'"},
+          {"source_id": "src-legacy-dish222-v75", "locator": "_v44_norm_resid line 13268; _v44_build_skymap lines 13594-13800"}
+        ]
+      },
+      "implementation": [
+        {
+          "value": "Legacy V65/V67 stitcher inside the acquisition app",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 13594-14124"}]
+        },
+        {
+          "value": "External processing that produced the 26 Aug CSV/XLSX/FITS files (code not supplied)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-fits-products-20260826", "locator": "COMMENT 'V65/V67 pipeline'"}],
+          "note": "Neither legacy application contains a FITS, CSV or XLSX writer."
+        }
+      ],
+      "sources": [{"source_id": "src-fits-products-20260826"}, {"source_id": "src-workbook-20260826"}, {"source_id": "src-lab-comparison-note-20260828"}],
+      "limitations": [
+        {
+          "value": "No temperature scale; values are internally consistent but relative",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.4"}]
+        },
+        {
+          "value": "About 10-20% session-to-session scale wobble",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.4"}]
+        },
+        {
+          "value": "Values depend on the persisted bandpass template and baseline choices, which were not supplied",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 13663-13715"}],
+          "note": "Phase 0 audit finding S8."
+        }
+      ],
+      "supersedes": null,
+      "superseded_by": "C1",
+      "superseded_reason": {
+        "value": "A LAB-anchored conversion to kelvin was introduced to compare with the LAB survey",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.4"}]
+      }
+    },
+    {
+      "calibration_id": "C1",
+      "title": "LAB-anchored effective system temperature (single-point anchor through the origin)",
+      "instrument_id": "dish222",
+      "status": "superseded",
+      "valid_period": {
+        "start": "2026-08-26",
+        "end": "2026-09-02",
+        "evidence": "inferred",
+        "sources": [
+          {"source_id": "src-fits-products-20260826", "locator": "COMMENT 'T_sys_eff ~ 330-480 K (LAB-anchored)'"},
+          {"source_id": "src-lab-comparison-note-20260828", "locator": "table: 'Effective system temperature (LAB-anchored fit)'"},
+          {"source_id": "src-yfactor-record-20260902"}
+        ],
+        "note": "Bounded by the first products citing the LAB-anchored factor (26 Aug FITS, dated 29 Aug; validation document of 28 Aug) and the 2 Sep Y-factor calibration (C2). Exact dates are not documented."
+      },
+      "model_type": "lab_anchored_tsys_eff",
+      "brightness_equation": "T = T_sys_eff * (10^(x/10) - 1), x = line height in dB above baseline",
+      "brightness_quantity": "brightness_temperature",
+      "parameters": {
+        "tsys_eff_k_min": {
+          "value": 330,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [
+            {"source_id": "src-lab-comparison-note-20260828", "locator": "table and section 2.3"},
+            {"source_id": "src-fits-products-20260826", "locator": "COMMENT"}
+          ]
+        },
+        "tsys_eff_k_max": {
+          "value": 480,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [
+            {"source_id": "src-lab-comparison-note-20260828", "locator": "table and section 2.3"},
+            {"source_id": "src-fits-products-20260826", "locator": "COMMENT"}
+          ]
+        }
+      },
+      "method": {
+        "value": "Anchor a measured dB value on the galactic plane to the LAB brightness at the same (l, b) convolved to a 3 deg beam; T_sys_eff = T_B(LAB) / (10^(dB/10) - 1). The factor bundles system temperature and beam efficiency.",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "_v44_lab_scale_calibrate, lines 15060-15136"}]
+      },
+      "implementation": [
+        {
+          "value": "V62 'LAB scale calibration' in the acquisition app, writing a stored LAB-scale calibration file (not supplied)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 15060-15155"}],
+          "note": "This is the only LAB-anchored method in the supplied code. That it produced the quoted 330-480 K range is inferred; the validation document also mentions an 'all-sky fit' whose code is not supplied."
+        }
+      ],
+      "sources": [
+        {"source_id": "src-lab-comparison-note-20260828"},
+        {"source_id": "src-fits-products-20260826"},
+        {"source_id": "src-legacy-dish222-v75", "locator": "lines 15060-15155"}
+      ],
+      "limitations": [
+        {
+          "value": "Anchored on a single bright position and forced through the origin, so an additive pedestal cannot be detected",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 4.1"}]
+        },
+        {
+          "value": "Varies with elevation and between sessions (330-480 K)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "table"}]
+        },
+        {
+          "value": "Depends on the external LAB profile service",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "_v44_lab_fetch, lines 14140-14177"}]
+        }
+      ],
+      "supersedes": "C0",
+      "superseded_by": "C2",
+      "superseded_reason": {
+        "value": "An independent Y-factor (wall to zenith) system-temperature measurement was introduced on 2 Sep 2026",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-yfactor-record-20260902"}]
+      }
+    },
+    {
+      "calibration_id": "C2",
+      "title": "Y-factor system temperature 179.5 K with main-beam efficiency 0.30 (2 Sep 2026)",
+      "instrument_id": "dish222",
+      "status": "superseded",
+      "established": {
+        "start": "2026-09-02T11:13:14",
+        "end": "2026-09-02T11:13:14",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "date"}],
+        "note": "Timestamp as written by the software, without a time zone (local time, most likely Asia/Riyadh; the zone is inferred)."
+      },
+      "valid_period": {
+        "start": "2026-09-02",
+        "end": "2026-09-20",
+        "evidence": "inferred",
+        "sources": [
+          {"source_id": "src-gc-products-20260902", "locator": "FITS TSYS=179.5, ETA_MB=0.3"},
+          {"source_id": "src-ac-products-20260903", "locator": "FITS TSYS=179.5, ETA_MB=0.3"},
+          {"source_id": "src-cal-report-20260923", "locator": "section 3.1 (new hot-load T_sys on 20 Sep)"},
+          {"source_id": "src-private-project-records"}
+        ],
+        "note": "Used for the 1-3 Sep products; private project records indicate it was still in use for sessions on 8 and 13 Sep. Replaced by the 20 Sep hot-load measurement (C3)."
+      },
+      "model_type": "yfactor_tsys_eta",
+      "brightness_equation": "T_A = f * T_sys ; T_B = T_A / eta = f * G with G = T_sys / eta ; pedestal assumed zero",
+      "brightness_quantity": "mixed",
+      "parameters": {
+        "tsys_k": {
+          "value": 179.5,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "tsys"}, {"source_id": "src-gc-products-20260902", "locator": "FITS header TSYS"}]
+        },
+        "eta": {
+          "value": 0.3,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [
+            {"source_id": "src-gc-products-20260902", "locator": "FITS header ETA_MB 'main-beam eff vs Bonn LAB'"},
+            {"source_id": "src-legacy-dish222-v75", "locator": "V72, lines 17109-17117"},
+            {"source_id": "src-kelvin-map-figure-20260901", "locator": "panel 'DISH222 vs Bonn LAB' (LAB x 0.30)"}
+          ]
+        },
+        "conversion_constant_g_k": {
+          "value": 598.3,
+          "unit": "K",
+          "evidence": "inferred",
+          "note": "Computed as T_sys / eta = 179.5 / 0.30. Not stated as a single number in the sources."
+        },
+        "pedestal_p": {
+          "value": 0,
+          "unit": "dimensionless",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 1 ('implicitly p = 0')"}],
+          "note": "No pedestal term exists in the C2 equations."
+        },
+        "y_factor_db": {"value": 4.4, "unit": "dB", "evidence": "documented", "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "y_db"}]},
+        "t_hot_k": {
+          "value": 323.15,
+          "unit": "K",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-yfactor-record-20260902", "locator": "t_wall_C = 50.0"}],
+          "note": "50.0 degC converted with +273.15, as the V70 code does."
+        },
+        "t_cold_k": {
+          "value": 8,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "V70_TSKY_K, line ~16859"}]
+        }
+      },
+      "method": {
+        "value": "Wall (hot load, entered as 50 degC) versus zenith (cold sky) power ratio from the display-averaged raw spectrum; T_sys = (T_hot - T_cold) / (Y - 1). eta taken from the ratio of a 1 Sep plane map to the LAB survey.",
+        "evidence": "documented",
+        "sources": [
+          {"source_id": "src-legacy-dish222-v75", "locator": "V70, lines 16849-17055; V72, lines 17109-17190"},
+          {"source_id": "src-yfactor-record-20260902"}
+        ]
+      },
+      "supporting_checks": [
+        {
+          "value": "Recomputing T_sys from p_wall/p_zenith in the Y-factor record with the V70 formula gives 179.6 K (179.5 K recorded)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-yfactor-record-20260902"}, {"source_id": "src-phase0-audit", "locator": "section K"}],
+          "note": "Arithmetic check by the Phase 0 audit; confirms which formula produced the stored value."
+        }
+      ],
+      "implementation": [
+        {
+          "value": "V70 Kelvin calibration button (wall to zenith); V72 eta field; V71 default T_sys 179.5 K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 16849-17190"}]
+        },
+        {
+          "value": "The supplied Y-factor record was written before V72 (no eta_mb key)",
+          "evidence": "inferred",
+          "sources": [
+            {"source_id": "src-yfactor-record-20260902"},
+            {"source_id": "src-legacy-dish222-v75", "locator": "V70 _finish writes eta_mb, lines ~16945-16952"}
+          ],
+          "note": "The supplied V75 writes an eta_mb key; the supplied record has none."
+        }
+      ],
+      "sources": [
+        {"source_id": "src-yfactor-record-20260902"},
+        {"source_id": "src-gc-products-20260902"},
+        {"source_id": "src-ac-products-20260903"},
+        {"source_id": "src-kelvin-map-figure-20260901"},
+        {"source_id": "src-legacy-dish222-v75", "locator": "lines 16849-17190"}
+      ],
+      "limitations": [
+        {
+          "value": "eta = 0.30 is characteristic of a compact source under-filling the beam and inconsistent with the measured aperture efficiency of 0.58",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 1 and 3.1"}]
+        },
+        {
+          "value": "No pedestal term; faint-sky temperatures are biased high",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 2 and 4.1"}]
+        },
+        {
+          "value": "The Y-factor formula omits Y on the cold term; the calibration report's form gives about 8 K lower T_sys for the same Y",
+          "evidence": "inferred",
+          "sources": [
+            {"source_id": "src-legacy-dish222-v75", "locator": "lines 16854, ~16935"},
+            {"source_id": "src-cal-report-20260923", "locator": "section 3.1 equation"}
+          ],
+          "note": "(323.15 - 8)/(Y - 1) = 179.6 K versus (323.15 - 8Y)/(Y - 1) = 171.6 K for Y = 4.40 dB."
+        },
+        {
+          "value": "eta was derived from the same 1 Sep map it was then applied to, and the 2 Sep T_sys was applied to the 1 Sep scan",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-kelvin-map-figure-20260901"}],
+          "note": "The figure is titled '1 Sep scan' with 'T_sys = 179.5 K, Y = 4.40 dB wall calibration'."
+        },
+        {
+          "value": "Galactic-centre products on this scale read about 1.6 times LAB and do not fall off the plane as expected",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-gc-products-20260902", "locator": "products figure, panel 'Check 2: vs Bonn LAB' (median ratio 1.62)"}]
+        },
+        {
+          "value": "Band power used for Y was the mean over the whole band of the display-averaged spectrum; hardware gain state and sample-format linearity are unverified",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "_v70_band_power, lines 16861-16873; HackRF conversion lines 826-860"}],
+          "note": "Phase 0 audit findings S1 and S7."
+        }
+      ],
+      "supersedes": "C1",
+      "superseded_by": "C3",
+      "superseded_reason": {
+        "value": "A new hot-load measurement on 20 Sep 2026 gave T_sys = 895 K; the scale in use became 895.4/0.30",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 1 and 3.1"}]
+      },
+      "unresolved": [
+        {
+          "field": "y_factor_db",
+          "question": "Why is Y = 4.40 dB on 2 Sep but 1.29 dB on 20 Sep for a comparable 50 degC wall? Hardware change, estimator change or geometry? The calibration report does not discuss the 179.5 K result."
+        }
+      ]
+    },
+    {
+      "calibration_id": "C3",
+      "title": "20 Sep hot-load Tsys determination with legacy eta=0.30 conversion",
+      "instrument_id": "dish222",
+      "status": "superseded",
+      "established": {
+        "start": "2026-09-20",
+        "end": "2026-09-20",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1"}]
+      },
+      "valid_period": {
+        "start": "2026-09-20",
+        "end": "2026-09-23",
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 1, 3.1 and 6"}],
+        "note": "The report describes G = 895.4/0.30 as the scale 'prior to this work' and adopts C4 on 23 Sep."
+      },
+      "model_type": "yfactor_tsys_eta",
+      "brightness_equation": "T_B = f * G with G = T_sys / eta ; pedestal assumed zero",
+      "brightness_quantity": "brightness_temperature",
+      "parameters": {
+        "tsys_k": {
+          "value": 895.4,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 1, 3.1, 4.3"}]
+        },
+        "eta": {
+          "value": 0.3,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 1"}]
+        },
+        "conversion_constant_g_k": {
+          "value": 2985,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 1 ('G = 895.4 / 0.30 = 2985 K')"}]
+        },
+        "pedestal_p": {
+          "value": 0,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 1 ('implicitly p = 0')"}]
+        },
+        "y_factor_db": {"value": 1.29, "unit": "dB", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1"}]},
+        "t_hot_k": {
+          "value": 323,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1 equation"}]
+        },
+        "t_cold_k": {"value": 8, "unit": "K", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1 equation"}]},
+        "receiver_temperature_k": {"value": 860, "unit": "K", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1"}]},
+        "aperture_efficiency": {
+          "value": 0.582,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1 (solar transit)"}],
+          "note": "Measured in the same session; later used to show that eta = 0.30 was inappropriate."
+        }
+      },
+      "method": {
+        "value": "Concrete wall at 50 degC covering all reflector panels versus zenith sky; T_sys = (T_wall - Y * T_sky) / (Y - 1)",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1"}]
+      },
+      "supporting_checks": [
+        {
+          "value": "A repeat hot-load attempt on 23 Sep gave Y = 0.12 dB (T_sys 10831 K) and was rejected because the load covered about 10% of the beam",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.2"}]
+        }
+      ],
+      "implementation": [
+        {
+          "value": null,
+          "evidence": "unknown",
+          "note": "The software build used on 20 Sep 2026 is not identified or supplied; it lies between V75 and V162."
+        }
+      ],
+      "sources": [{"source_id": "src-cal-report-20260923"}],
+      "limitations": [
+        {
+          "value": "eta = 0.30 inflated every temperature by about 1.9x; the plane read about 237 K against about 110 K in LAB",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "Summary and section 2"}]
+        },
+        {
+          "value": "No pedestal term; a latitude +38 deg field read 80 K against 9 K in LAB",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 2"}]
+        },
+        {
+          "value": "No stored products on this scale were supplied",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-phase0-audit", "locator": "section C"}]
+        }
+      ],
+      "supersedes": "C2",
+      "superseded_by": "C4",
+      "superseded_reason": {
+        "value": "A sky-referenced two-parameter fit against LAB at eight positions established G and an additive pedestal",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 4 and 6"}]
+      }
+    },
+    {
+      "calibration_id": "C4",
+      "title": "Sky-referenced calibration against LAB with additive pedestal (23 Sep 2026) - CURRENT REFERENCE",
+      "instrument_id": "dish222",
+      "status": "current",
+      "established": {
+        "start": "2026-09-23",
+        "end": "2026-09-23",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 4.2 and report date"}]
+      },
+      "valid_period": {
+        "start": "2026-09-23",
+        "end": null,
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 6"}, {"source_id": "src-project-decisions", "locator": "D1"}],
+        "note": "Valid for the hardware state of 20-23 Sep 2026. The report recommends repeating the calibration monthly and after any hardware change."
+      },
+      "model_type": "sky_referenced_linear",
+      "brightness_equation": "T_B = (f - p) * G",
+      "brightness_quantity": "brightness_temperature",
+      "parameters": {
+        "conversion_constant_g_k": {
+          "value": 1454,
+          "uncertainty": 154,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 4.3 and 6"}]
+        },
+        "pedestal_p": {
+          "value": 0.0174,
+          "uncertainty": 0.0042,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 4.3 and 6"}]
+        },
+        "pedestal_equivalent_k": {
+          "value": 25,
+          "uncertainty": 6,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 4.3"}]
+        },
+        "tsys_k": {
+          "value": 895.4,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 4.3 and 6"}],
+          "note": "Retained from the 20 Sep hot-load measurement."
+        },
+        "eta": {
+          "value": 0.616,
+          "uncertainty": 0.065,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 4.3 and 6"}],
+          "note": "Implied by G and T_sys; consistent with the independent aperture efficiency of 0.582."
+        },
+        "fit_correlation_r": {
+          "value": 0.968,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 4.3"}]
+        },
+        "fit_rms_k": {"value": 8.5, "unit": "K", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 4.3"}]},
+        "fit_points": {"value": 8, "unit": "count", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "Table 1"}]}
+      },
+      "method": {
+        "value": "Measured fractional line depth f (median of 15 consecutive samples per position) at eight positions spanning 8-78 K of LAB brightness convolved to a 3 deg beam; least-squares fit of f against T_LAB: slope = 1/G, intercept = p",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 4.1-4.3"}]
+      },
+      "fit_data_source": {"source_id": "src-cal-report-20260923", "locator": "Table 1"},
+      "fit_data": [
+        {"label": "1", "galactic_l_deg": 40, "galactic_b_deg": -28, "elevation_deg": 48, "lab_tb_k": 8, "measured_f": 0.0186},
+        {"label": "2", "galactic_l_deg": 96, "galactic_b_deg": -19, "elevation_deg": 44, "lab_tb_k": 17, "measured_f": 0.0316},
+        {
+          "label": "3",
+          "galactic_l_deg": null,
+          "galactic_b_deg": 21,
+          "position_note": "Table 1 gives only '(b +21)'; longitude not stated",
+          "elevation_deg": 75,
+          "elevation_approximate": true,
+          "lab_tb_k": 20,
+          "measured_f": 0.0368
+        },
+        {"label": "4", "galactic_l_deg": 103, "galactic_b_deg": 6, "elevation_deg": 45, "lab_tb_k": 55, "measured_f": 0.0465},
+        {"label": "5", "galactic_l_deg": 42, "galactic_b_deg": -1, "elevation_deg": 70, "lab_tb_k": 73, "measured_f": 0.0672},
+        {"label": "6", "galactic_l_deg": 40, "galactic_b_deg": 1, "elevation_deg": 70, "lab_tb_k": 74, "measured_f": 0.0753},
+        {"label": "7", "galactic_l_deg": 41, "galactic_b_deg": 0, "elevation_deg": 70, "lab_tb_k": 78, "measured_f": 0.0669},
+        {"label": "8", "galactic_l_deg": 41, "galactic_b_deg": 0, "elevation_deg": 70, "lab_tb_k": 78, "measured_f": 0.0736}
+      ],
+      "supporting_checks": [
+        {
+          "value": "Ordinary least squares of f = p + T_LAB/G on Table 1 reproduces G = 1454.3 K, p = 0.01742, r = 0.968 and rms 8.5 K (n - 2 degrees of freedom)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "Table 1"}, {"source_id": "src-phase0-audit", "locator": "section D.2"}],
+          "note": "Independent arithmetic reproduction by the Phase 0 audit. The inverse regression (T_LAB on f) would give G of about 1362 K; fit direction is a methodological choice."
+        },
+        {
+          "value": "Archival fit over 392 spectra of the 22 Sep galactic-centre survey against an HI4PI-derived surrogate: G = 1016 +/- 182 K, p = 0.0224 +/- 0.0068",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 5"}],
+          "note": "The report treats the absolute scale of this check as less reliable (surrogate, not the LAB cube) and its pedestal as consistent."
+        },
+        {
+          "value": "Four determinations of the pedestal range from 0.0174 to 0.0225 (mean 0.0200, s.d. 0.0029)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 5"}]
+        }
+      ],
+      "implementation": [
+        {
+          "value": "Builds V162-V166 (LAB pointing cross-correlation, live calibration verdict, whole-run fit, calibration removal with backups, hot-load raster plateau test)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 8, Table 2"}],
+          "note": "Not supplied."
+        }
+      ],
+      "sources": [{"source_id": "src-cal-report-20260923"}, {"source_id": "src-project-decisions", "locator": "D1"}],
+      "limitations": [
+        {
+          "value": "Residual scatter of 8.5 K per measurement, set by the receiver; fields fainter than about 40 K cannot be used for verification",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 7"}]
+        },
+        {
+          "value": "Linearity cannot be established (subset fits give 667 K for faint and 908 K for bright points, not significantly different)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 7"}]
+        },
+        {
+          "value": "The pedestal is applied as a constant although the baseline defect is sloped across 1419-1423 MHz, so weak lines can still be distorted",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 7"}]
+        },
+        {
+          "value": "Based on eight positions from one evening; the whole-run fit is recommended as the routine calibration",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 4.2 and 9.3"}]
+        },
+        {
+          "value": "Valid only for the 20-23 Sep hardware state; HackRF sample-format linearity is independently unverified",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 9.4"}, {"source_id": "src-project-decisions", "locator": "D5"}],
+          "note": "Phase 0 audit finding S1."
+        },
+        {
+          "value": "Must not be applied silently to products taken before 23 Sep; any such use creates a new, labelled re-derivation",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-project-decisions", "locator": "D1"}]
+        }
+      ],
+      "supersedes": "C3",
+      "superseded_by": null
+    }
+  ]
+}

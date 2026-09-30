@@ -1,0 +1,498 @@
+{
+  "schema_version": "1.1.0",
+  "registry": "instruments",
+  "updated": "2026-09-30",
+  "notice": "Authoritative instrument-history record for the EMXplore Radio Astronomy project. Values carry evidence flags (documented / inferred / unknown) and point to entries in the 'sources' catalogue of datasets.json. Unknown facts are null by design; do not fill them without a citable source.",
+  "instruments": [
+    {
+      "instrument_id": "fixed-transit-network",
+      "name": "Fixed zenith transit telescopes (university network)",
+      "aliases": [],
+      "status": {
+        "value": "historical",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-project-decisions", "locator": "D4"}],
+        "note": "Project decision: older systems remain historical. Whether individual stations are still operating is not recorded here."
+      },
+      "telescope_type": {
+        "value": "Fixed parabolic reflector pointing at zenith; transit observation using Earth rotation",
+        "evidence": "documented",
+        "sources": [
+          {"source_id": "src-site-project", "locator": "Pointing and Observation: Historical fixed system"},
+          {"source_id": "src-site-index", "locator": "Published implementation reported in the 2025 IEEE paper"}
+        ]
+      },
+      "pointing": {
+        "capability": {"value": "fixed_zenith", "evidence": "documented", "sources": [{"source_id": "src-site-project", "locator": "Historical fixed system"}]},
+        "limits": []
+      },
+      "observing_modes": [
+        {
+          "mode": "fixed_zenith_transit",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-site-index", "locator": "Method: Fixed zenith transit-scan observations using Earth rotation"}]
+        }
+      ],
+      "dish": {
+        "diameter_m": {"value": 5, "unit": "m", "evidence": "documented", "sources": [{"source_id": "src-site-index", "locator": "Reflector"}]},
+        "focal_ratio_f_over_d": {
+          "value": 0.35,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-site-index", "locator": "Reflector: approximately f/D = 0.35"}],
+          "note": "Stated as approximate."
+        },
+        "surface_construction": {"value": null, "evidence": "unknown", "note": "Not stated in the supplied material."},
+        "feed": {"value": "Choke-horn feed", "evidence": "documented", "sources": [{"source_id": "src-site-index", "locator": "Feed"}]},
+        "gain_dbi": {
+          "value": 35,
+          "unit": "dBi",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-site-index", "locator": "Performance"}],
+          "note": "Approximate value as reported from the IEEE 2025 paper."
+        },
+        "beam_fwhm_deg": {
+          "value": 2.5,
+          "unit": "deg",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-site-index", "locator": "Performance"}],
+          "note": "Approximate value as reported from the IEEE 2025 paper."
+        }
+      },
+      "receiver": {
+        "sdr": {
+          "value": "Software-defined radio receiver chain (model not stated)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-site-index", "locator": "SDR stat tile"}]
+        },
+        "front_end": {
+          "value": "Low-noise receiver chain (details not stated)",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-site-project", "locator": "Radio signal chain"}]
+        }
+      },
+      "site": {
+        "description": {
+          "value": "Deployed across Saudi universities; the IEEE 2025 paper reports replication across five universities at the published stage",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-site-project", "locator": "University Deployment"}, {"source_id": "src-ieee-2025"}]
+        }
+      },
+      "operational_period": {
+        "start": null,
+        "end": null,
+        "evidence": "unknown",
+        "note": "No commissioning or end dates in the supplied material. The project society was founded in 2016 (lecture slide 2), which is not a telescope date."
+      },
+      "relationships": [
+        {
+          "type": "predecessor_of",
+          "target": "dish1",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-site-lecture", "locator": "slides 12-13 (motivation for a moving telescope)"}],
+          "note": "The lecture presents the moving telescope as the next step after the fixed system; which physical dish came first is not documented."
+        },
+        {
+          "type": "predecessor_of",
+          "target": "dish222",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-site-lecture", "locator": "slides 12-17"}],
+          "note": "Same basis as above."
+        }
+      ],
+      "software_snapshots": [{"label": "Fixed-system acquisition/analysis software", "supplied": false, "evidence": "unknown", "note": "Not supplied."}],
+      "calibration_epochs": [],
+      "unresolved": [
+        {"field": "operational_period", "question": "When were the fixed stations commissioned, and are any still operating?"},
+        {"field": "site", "question": "Authoritative list of stations and institutions."},
+        {
+          "field": "data",
+          "question": "Do source datasets from the fixed network (e.g. the KAU map on lecture slide 52) exist and can they be supplied?"
+        },
+        {"field": "receiver", "question": "SDR model and front-end used by the fixed stations."}
+      ]
+    },
+    {
+      "instrument_id": "dish1",
+      "name": "DISH1",
+      "aliases": [],
+      "status": {
+        "value": "historical",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-project-decisions", "locator": "D4"}],
+        "note": "Project decision. DISH1 is not a target of the new DISH222 software."
+      },
+      "telescope_type": {
+        "value": "Motorised AZ/EL steerable dish controlled by a PC application and a Raspberry Pi motor loop",
+        "evidence": "documented",
+        "sources": [
+          {
+            "source_id": "src-legacy-dish1-v69",
+            "locator": "window title (line 1056); motor-reverse options (lines 2509-2532); UDP command path (line ~8672)"
+          }
+        ]
+      },
+      "pointing": {
+        "capability": {
+          "value": "az_el_motorised",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish1-v69", "locator": "motor reverse options, lines 2509-2532"}]
+        },
+        "limits": [
+          {
+            "value": "Elevation motor direction permanently reversed in software",
+            "evidence": "documented",
+            "sources": [{"source_id": "src-legacy-dish1-v69", "locator": "line 2526"}]
+          }
+        ]
+      },
+      "observing_modes": [
+        {
+          "mode": "raster_scan",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish1-v69"}],
+          "note": "The V69 software contains the same raster/area/drift scan engines as V75. Whether DISH1 used them is not documented."
+        }
+      ],
+      "dish": {
+        "diameter_m": {"value": null, "unit": "m", "evidence": "unknown", "note": "Not stated in the supplied material."},
+        "surface_construction": {"value": null, "evidence": "unknown"}
+      },
+      "receiver": {
+        "sdr": {
+          "value": null,
+          "evidence": "unknown",
+          "note": "V69 contains drivers for HackRF, RTL-SDR, PlutoSDR and USRP; the receiver actually fitted to DISH1 is not documented."
+        },
+        "supported_sdr_drivers": {
+          "value": ["HackRF", "RTL-SDR", "PlutoSDR", "USRP"],
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish1-v69", "locator": "radio classes, lines ~369-900"}],
+          "note": "Software capability, not a statement of installed hardware."
+        }
+      },
+      "site": {"institution": {"value": null, "evidence": "unknown", "note": "Presumably the same site as DISH222, but not documented."}},
+      "operational_period": {
+        "start": null,
+        "end": null,
+        "evidence": "unknown",
+        "note": "The V69 snapshot shows DISH1 was operated in parallel with DISH222 around Aug-Sep 2026 (see relationships). No dates are documented."
+      },
+      "relationships": [
+        {
+          "type": "operated_concurrently_with",
+          "target": "dish222",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 8605-8609 (comment on command cross-talk between the two dishes' controllers)"}]
+        },
+        {
+          "type": "predecessor_of",
+          "target": "dish222",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 8605-8609 ('SECOND dish')"}],
+          "note": "Inferred from the numbering (DISH1 / second dish)."
+        },
+        {
+          "type": "successor_of",
+          "target": "fixed-transit-network",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-site-lecture", "locator": "slides 12-13"}],
+          "note": "See fixed-transit-network relationships."
+        }
+      ],
+      "software_snapshots": [
+        {
+          "label": "DISH1 legacy application V69",
+          "supplied": true,
+          "source_id": "src-legacy-dish1-v69",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish1-v69"}],
+          "note": "Legacy operational snapshot; shares ~98% of its code with DISH222 V75."
+        }
+      ],
+      "calibration_epochs": [],
+      "unresolved": [
+        {"field": "dish", "question": "Diameter, surface and construction of DISH1."},
+        {"field": "receiver", "question": "Which SDR and front-end DISH1 used."},
+        {"field": "operational_period", "question": "Commissioning date and current status or fate of DISH1."},
+        {"field": "data", "question": "Do any DISH1 observations exist?"}
+      ]
+    },
+    {
+      "instrument_id": "dish222",
+      "name": "DISH222",
+      "aliases": [
+        {
+          "value": "DISH2 / dish 2",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 8605-8613 ('[DISH2]' console messages)"}]
+        }
+      ],
+      "status": {
+        "value": "active",
+        "evidence": "documented",
+        "sources": [{"source_id": "src-project-decisions", "locator": "D4"}],
+        "note": "Active steerable system. Per decision D5, new software is offline-only until the HackRF sample format and motor safety are independently verified."
+      },
+      "telescope_type": {
+        "value": "5 m steerable (AZ/EL) parabolic reflector for H I 21 cm observations with automated scanning",
+        "evidence": "documented",
+        "sources": [
+          {"source_id": "src-cal-report-20260923", "locator": "title block"},
+          {"source_id": "src-fits-products-20260826", "locator": "TELESCOP comment"}
+        ]
+      },
+      "pointing": {
+        "capability": {
+          "value": "az_el_motorised",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "raster engine, lines 11919-12107"}]
+        },
+        "limits": [
+          {
+            "value": "Elevation >= 30 deg enforced by the PC software scan planners",
+            "evidence": "documented",
+            "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "line 11924 ('DISH2 HARDWARE LIMIT: cannot go below EL 30')"}],
+            "note": "Limits enforced by the Raspberry Pi motor controller are unknown (script not supplied)."
+          },
+          {
+            "value": "Measured end-to-end pointing residual about 1.1 deg after the 25 Aug 2026 Sun-shadow calibration",
+            "evidence": "documented",
+            "sources": [
+              {"source_id": "src-fits-products-20260826", "locator": "COMMENT 'Pointing calibrated via Sun shadow 25 Aug 2026 (residual ~1.1 deg)'"},
+              {"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.5"}
+            ]
+          }
+        ]
+      },
+      "observing_modes": [
+        {
+          "mode": "raster_scan",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "raster manifest 'mode'"}]
+        },
+        {
+          "mode": "area_scan",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "V44 area scan, lines 9523-9722"}],
+          "note": "Software capability; the 2 Sep galactic-centre dataset is an area-box scan per its figure title."
+        },
+        {
+          "mode": "drift_scan",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "follow-plan / drift engine, lines 12255-12636"}],
+          "note": "Software capability."
+        },
+        {
+          "mode": "hot_cold_calibration",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3"}, {"source_id": "src-yfactor-record-20260902"}]
+        },
+        {
+          "mode": "sun_cross_scan",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "V73 pointing check, lines 17195-17445"}]
+        },
+        {"mode": "solar_transit", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1"}]},
+        {"mode": "sky_reference_calibration", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 4"}]}
+      ],
+      "dish": {
+        "diameter_m": {"value": 5, "unit": "m", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "title block"}]},
+        "geometric_area_m2": {"value": 19.63, "unit": "m^2", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1"}]},
+        "panel_count": {
+          "value": 11,
+          "unit": "count",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1 ('all eleven reflector panels')"}]
+        },
+        "surface_construction": {
+          "value": null,
+          "evidence": "unknown",
+          "sources": [
+            {"source_id": "src-fits-products-20260826", "locator": "TELESCOP comment '5 m mesh dish'"},
+            {"source_id": "src-cal-report-20260923", "locator": "section 3.1 'eleven reflector panels'"},
+            {"source_id": "src-site-lecture", "locator": "slide 14 (fiberglass panels)"}
+          ],
+          "note": "Sources describe a 'mesh dish', 'eleven reflector panels' and (for the project generally) fiberglass panels. How these relate for DISH222 is unresolved."
+        },
+        "feed": {"value": null, "evidence": "unknown"},
+        "beam_fwhm_deg": {
+          "value": 3.0,
+          "unit": "deg",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-fits-products-20260826", "locator": "BMAJ/BMIN 'beam FWHM [deg] approx'"}],
+          "note": "Approximate value used in processing; no beam-map measurement supplied."
+        },
+        "beam_width_incl_first_sidelobes_deg": {
+          "value": 6,
+          "unit": "deg",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.2"}],
+          "note": "Approximate."
+        },
+        "aperture_efficiency": {
+          "value": 0.582,
+          "unit": "dimensionless",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1 (solar transit, 20 Sep 2026)"}]
+        }
+      },
+      "receiver": {
+        "sdr": {"value": "HackRF One", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "title block"}]},
+        "supported_sdr_drivers": {
+          "value": ["HackRF", "RTL-SDR", "PlutoSDR", "USRP"],
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "radio classes, lines 337-868"}],
+          "note": "Software capability, not a statement of installed hardware."
+        },
+        "frequency_reference": {"value": "External 10 MHz TCXO", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "title block"}]},
+        "front_end": {
+          "value": "Low-noise amplifier located after a transmission line (not at the feed)",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "sections 3.1 and 9.1"}],
+          "note": "The report attributes the high receiver temperature to line loss ahead of the amplifier and recommends relocating the LNA to the feed. LNA model and cable details are not supplied."
+        },
+        "receiver_temperature_k": {
+          "value": 860,
+          "unit": "K",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 3.1"}],
+          "note": "Measured 20 Sep 2026. Hardware state on other dates is not documented."
+        },
+        "centre_frequency_mhz": {
+          "value": 1419.9,
+          "unit": "MHz",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ __meta__ fc_hz"}],
+          "note": "Setting recorded for the 26 Aug 2026 session."
+        },
+        "sample_rate_mhz": {
+          "value": 2.4,
+          "unit": "MHz",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ __meta__ fs_hz"}],
+          "note": "Setting recorded for the 26 Aug 2026 session."
+        },
+        "fft_length": {
+          "value": 1024,
+          "unit": "count",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ __meta__ N"}]
+        },
+        "stores_raw_iq": {
+          "value": false,
+          "evidence": "documented",
+          "sources": [
+            {"source_id": "src-legacy-dish222-v75", "locator": "_save_chunk_npz, lines 6310-6474"},
+            {"source_id": "src-session-archive-20260826", "locator": "NPZ keys"}
+          ],
+          "note": "Only averaged power spectra are stored."
+        },
+        "verification_status": {
+          "value": "Unverified: HackRF sample-format conversion and gain metadata require an independent bench test",
+          "evidence": "inferred",
+          "sources": [
+            {"source_id": "src-legacy-dish222-v75", "locator": "lines 826-860 (uint8 - 128 conversion); 660, 718-724 (gain handling)"},
+            {"source_id": "src-project-decisions", "locator": "D5"}
+          ],
+          "note": "Phase 0 audit findings S1 and S7. The software treats HackRF bytes as unsigned; whether the device delivers signed samples must be verified."
+        }
+      },
+      "site": {
+        "institution": {
+          "value": "Prince Sultan University, Riyadh",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "title block"}]
+        },
+        "latitude_deg": {
+          "value": 24.735006,
+          "unit": "deg",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ __meta__ lat_deg"}]
+        },
+        "longitude_deg": {
+          "value": 46.700377,
+          "unit": "deg",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-session-archive-20260826", "locator": "NPZ __meta__ lon_deg"}]
+        },
+        "elevation_m": {
+          "value": null,
+          "unit": "m",
+          "evidence": "unknown",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "line 175 (0 m) and line 13812 (600 m)"}],
+          "note": "The legacy software uses two different values; no measured elevation supplied."
+        },
+        "station_callsign": {"value": "7Z1EC", "evidence": "documented", "sources": [{"source_id": "src-cal-report-20260923", "locator": "title block"}]},
+        "description": {
+          "value": "Courtyard site next to a university building",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "section 2.6"}]
+        }
+      },
+      "operational_period": {
+        "start": "2026-08-13",
+        "end": null,
+        "evidence": "inferred",
+        "sources": [{"source_id": "src-lab-comparison-note-20260828", "locator": "subtitle: survey 13-26 August 2026"}],
+        "note": "Earliest documented DISH222 survey date. Earlier commissioning or test dates are unknown. The earliest supplied native data are from 2026-08-26. End is null because the system is active."
+      },
+      "relationships": [
+        {
+          "type": "operated_concurrently_with",
+          "target": "dish1",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 8605-8609"}]
+        },
+        {
+          "type": "successor_of",
+          "target": "dish1",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-legacy-dish222-v75", "locator": "lines 8605-8609"}],
+          "note": "Inferred from the numbering only."
+        },
+        {
+          "type": "successor_of",
+          "target": "fixed-transit-network",
+          "evidence": "inferred",
+          "sources": [{"source_id": "src-site-lecture", "locator": "slides 12-17"}],
+          "note": "See fixed-transit-network relationships."
+        }
+      ],
+      "software_snapshots": [
+        {
+          "label": "DISH222 legacy application V75 (one-app build)",
+          "supplied": true,
+          "source_id": "src-legacy-dish222-v75",
+          "evidence": "documented",
+          "sources": [{"source_id": "src-legacy-dish222-v75"}],
+          "note": "Legacy operational snapshot. Contains V68-V75 additions (Kelvin calibration V70, Tb conversion V72, Sun pointing check V73, manifest fix V74) and an embedded PULSAR-V68 application."
+        },
+        {
+          "label": "V162-V166 (sky-referenced calibration, LAB pointing check, hot-load raster)",
+          "supplied": false,
+          "evidence": "documented",
+          "sources": [{"source_id": "src-cal-report-20260923", "locator": "section 8, Table 2"}],
+          "note": "Referenced by the calibration report; not supplied."
+        },
+        {
+          "label": "Builds between V75 and V162, including the build used 20-23 Sep 2026",
+          "supplied": false,
+          "evidence": "unknown",
+          "note": "Existence is implied by the version numbering; nothing supplied."
+        }
+      ],
+      "calibration_epochs": ["C0", "C1", "C2", "C3", "C4"],
+      "unresolved": [
+        {"field": "name", "question": "What does '222' mean, and which name is canonical for public use (DISH222 or dish 2)?"},
+        {"field": "dish.surface_construction", "question": "Mesh dish, eleven reflector panels, fiberglass panels: how do these descriptions relate?"},
+        {"field": "dish.feed", "question": "Feed type and focal ratio of DISH222."},
+        {"field": "receiver.front_end", "question": "LNA model, position and cable lengths, and what changed between 2 Sep and 20 Sep 2026."},
+        {"field": "receiver.verification_status", "question": "Independent verification of HackRF sample format and gain read-back (decision D5)."},
+        {"field": "pointing.limits", "question": "Limits enforced by the Raspberry Pi motor controller (script not supplied)."},
+        {"field": "site.elevation_m", "question": "Measured site elevation."},
+        {"field": "operational_period.start", "question": "Commissioning / first-light date of DISH222."}
+      ]
+    }
+  ]
+}
