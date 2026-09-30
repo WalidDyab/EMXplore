@@ -27,6 +27,7 @@ Each source in `datasets.json` has a `visibility`:
 | `public` | Title, repository path or DOI, and a SHA-256 checksum if the artifact itself is distributed | – |
 | `private` | Opaque `source_id`, `kind` (`research_file`, `legacy_software`, `project_record`), a neutral title, and an optional `evidence_limit` | Storage path, private filenames, size and SHA-256 |
 
+- Copies published on the website (e.g. figures) are listed under a dataset's `public_assets` with an opaque `asset_id` (`pub-…`), the public path, the SHA-256 of the published copy, the calibration epoch and whether that epoch is recorded or inferred, a caption and alt text. The private original is never named. The validator checks the file, its checksum, calibration consistency with the dataset and, when the private manifest is present, that the copy is not byte-identical to a private file.
 - Items inside archives are referenced publicly by an opaque `artifact_id`. The private manifest maps each `artifact_id` to its archive member and checksum.
 - Sources with `evidence_limit: inferred_only` are restricted project records. They may only support values flagged `inferred`, are never quoted, and their storage mechanism is not disclosed. AI-generated analyses within them are not treated as evidence.
 
@@ -89,6 +90,15 @@ The full parameters, limitations and sources are in `calibration-epochs.json`. T
    - **Published files:** add them as `visibility: "public"` sources with path and SHA-256.
    - **Unpublished files:** add an opaque `source_id` (and `artifact_id` if needed) here, and put the path and checksum in the private manifest.
 7. Run the validator.
+
+## Portal bundle
+
+The student portal pages (Telescopes, Data Library, Calibration and others) read a generated copy of the three public registries: `radio-astronomy/assets/js/registry-data.js`. Because the copy is a plain script, the pages also work when opened directly from disk. The JSON files here remain the source of truth; never edit the bundle by hand. After changing a registry:
+
+```bash
+python radio-astronomy/registry/build_bundle.py           # regenerate the bundle
+python radio-astronomy/registry/build_bundle.py --check   # verify it is up to date
+```
 
 ## Running the validator
 

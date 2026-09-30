@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Log — EMXplore Radio Astronomy</title>
+  <meta name="description" content="Curated chronological log of DISH222 observations, processing, calibration and software milestones and scientific results.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html">Research</a><a href="log.html" aria-current="page">Project Log</a><a href="lecture.html">Lecture</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Observation / Project Log</p>
+        <h1>What happened, and when</h1>
+        <p class="hero-intro">A curated, factual record of the project's milestones. Entries summarise documented project records. Where a milestone is known only indirectly, the entry says so.</p>
+        <nav class="ra-subnav" aria-label="On this page">
+          <a href="#aug-2026">August 2026</a>
+          <a href="#sep-2026">September 2026</a>
+          <a href="#latest">Latest</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <ul class="ra-log-key" aria-label="Entry types">
+          <li class="ra-log-observation">Observation</li>
+          <li class="ra-log-processing">Processing milestone</li>
+          <li class="ra-log-calibration">Calibration milestone</li>
+          <li class="ra-log-software">Software milestone</li>
+          <li class="ra-log-result">Scientific result</li>
+        </ul>
+
+        <ol class="ra-log">
+          <li class="ra-log-result">
+            <time datetime="2025-12">Dec 2025</time>
+            <h3><span class="ra-log-type">Scientific result</span> Fixed transit telescope published</h3>
+            <p>The fixed, zenith-pointing 5 m educational telescope and its replication at Saudi universities are published in IEEE Antennas and Propagation Magazine. <a href="publications.html">Publication</a></p>
+          </li>
+
+          <li class="ra-log-observation" id="aug-2026">
+            <time datetime="2026-08-13">13 Aug 2026</time>
+            <h3><span class="ra-log-type">Observation</span> DISH222 survey observing begins</h3>
+            <p>A series of Galactic survey sessions with the steerable DISH222 runs from 13 to 26 August. Only the 26 August session is in the research archive.</p>
+          </li>
+
+          <li class="ra-log-processing">
+            <time datetime="2026-08-22">22 Aug 2026</time>
+            <h3><span class="ra-log-type">Processing milestone</span> Session-based bandpass flattening</h3>
+            <p>A strong slope across the receiver band had caused most wide spectra (75–91%) to be rejected as corrupted. Measuring the slope from each session and removing it recovered them.</p>
+          </li>
+
+          <li class="ra-log-calibration">
+            <time datetime="2026-08-25">24–25 Aug 2026</time>
+            <h3><span class="ra-log-type">Calibration milestone</span> Pointing error found and corrected</h3>
+            <p>Two sessions showed pointing errors of 5–10°, visibly displacing the Galactic plane. A Sun-based pointing calibration on 25 August reduced the error from 9.1° to about 1.1°.</p>
+          </li>
+
+          <li class="ra-log-observation">
+            <time datetime="2026-08-26">26 Aug 2026</time>
+            <h3><span class="ra-log-type">Observation</span> Outer-Galaxy raster</h3>
+            <p>An automated raster over Galactic longitudes 146°–226° records 776 averaged spectra at 313 positions. It is today's <a href="data.html#featured">recommended starting dataset</a>.</p>
+          </li>
+
+          <li class="ra-log-calibration">
+            <time datetime="2026-08-28">late Aug 2026</time>
+            <h3><span class="ra-log-type">Calibration milestone</span> LAB-anchored effective scale (C1)</h3>
+            <p>Relative dB values are converted to kelvin with a single effective system temperature of 330–480 K, anchored on the LAB survey. <a href="calibration.html#C1">Epoch C1</a></p>
+          </li>
+
+          <li class="ra-log-result">
+            <time datetime="2026-08-28">28 Aug 2026</time>
+            <h3><span class="ra-log-type">Scientific result</span> First systematic comparison with LAB</h3>
+            <p>On the relative scale, the outer-arm brightness structure follows LAB (correlation about 0.8), and the velocity–longitude pattern matches closely (r = 0.96), with the anticentre located within about 1°. The peak-velocity metric compresses the rotation amplitude by about a factor of four. <a data-ra-dataset="ds-20260828-validation-dish222-vs-lab" href="data.html#ds-20260828-validation-dish222-vs-lab">Validation note</a></p>
+          </li>
+
+          <li class="ra-log-processing">
+            <time datetime="2026-08-29">29 Aug 2026</time>
+            <h3><span class="ra-log-type">Processing milestone</span> First FITS cube and maps</h3>
+            <p>The 26 August session is delivered as a spectral cube, peak and velocity maps and a catalogue in FITS format, on the relative dB scale.</p>
+          </li>
+
+          <li class="ra-log-observation">
+            <time datetime="2026-08-30">30 Aug 2026</time>
+            <h3><span class="ra-log-type">Observation</span> Session used in the all-sky composite</h3>
+            <p>Known from the composite's session labels; its data are not in the research archive.</p>
+          </li>
+
+          <li class="ra-log-observation" id="sep-2026">
+            <time datetime="2026-09-01">1 Sep 2026</time>
+            <h3><span class="ra-log-type">Observation</span> Galactic-plane scan and first kelvin map</h3>
+            <p>A scan around the inner Galactic plane. It was later re-derived in kelvin using the C2 calibration established on 2 Sep, becoming the first kelvin map. This is a historical product, not on the current C4 scale. Its comparison with LAB gives the efficiency of 0.30 used in C2. The native data are not in the archive.</p>
+          </li>
+
+          <li class="ra-log-calibration">
+            <time datetime="2026-09-02">2 Sep 2026</time>
+            <h3><span class="ra-log-type">Calibration milestone</span> Y-factor system temperature (C2)</h3>
+            <p>A warm wall compared with the zenith sky gives a Y-factor of 4.40 dB and a system temperature of 179.5 K. Combined with η = 0.30, this becomes the C2 scale used for the early September products. <a href="calibration.html#C2">Epoch C2</a></p>
+          </li>
+
+          <li class="ra-log-software">
+            <time datetime="2026-09-02">2 Sep 2026</time>
+            <h3><span class="ra-log-type">Software milestone</span> Calibration and pointing tools in the observing software</h3>
+            <p>The observing software gains a built-in Y-factor calibration, an efficiency setting for converting antenna to brightness temperature, an automatic Sun cross-scan pointing check, and a fix that keeps each scan's pointing manifest next to its spectra.</p>
+          </li>
+
+          <li class="ra-log-observation">
+            <time datetime="2026-09-02">2 Sep 2026</time>
+            <h3><span class="ra-log-type">Observation</span> Galactic-centre area scan</h3>
+            <p>An area scan of the Galactic-centre region yields a cube and maps on the C2 scale. The velocity field looks reasonable, but brightness comes out about 1.6 times LAB and does not fall off away from the plane, a discrepancy later addressed by the calibration work.</p>
+          </li>
+
+          <li class="ra-log-observation">
+            <time datetime="2026-09-03">3 Sep 2026</time>
+            <h3><span class="ra-log-type">Observation</span> Anticentre-side scans</h3>
+            <p>Morning scans on the anticentre side, plus a later session, feed the all-sky composite. Only products of the morning scans are in the archive, and they are dominated by artefacts.</p>
+          </li>
+
+          <li class="ra-log-processing">
+            <time datetime="2026-09-04">4 Sep 2026</time>
+            <h3><span class="ra-log-type">Processing milestone</span> All-sky "TRUSTED" composite</h3>
+            <p>Six sessions are combined, and a selection rule keeps only values between 40 and 160 K with velocities within ±35 km/s. A showcase product with incomplete native lineage. <a href="data.html#showcase">Details</a></p>
+          </li>
+
+          <li class="ra-log-observation">
+            <time datetime="2026-09-13">8 and 13 Sep 2026</time>
+            <h3><span class="ra-log-type">Observation</span> Further area scans</h3>
+            <p>Project records indicate sessions in the Cygnus region (8 Sep) and a northern area scan (13 Sep), still on the C2 scale. Their data are not in the research archive.</p>
+          </li>
+
+          <li class="ra-log-calibration">
+            <time datetime="2026-09-20">20 Sep 2026</time>
+            <h3><span class="ra-log-type">Calibration milestone</span> Hot-load system temperature (C3)</h3>
+            <p>A concrete wall filling the beam gives a Y-factor of 1.29 dB and a system temperature of 895.4 K, still converted with the legacy η = 0.30. A solar transit on the same day gives an aperture efficiency of 0.582. <a href="calibration.html#C3">Epoch C3</a></p>
+          </li>
+
+          <li class="ra-log-observation">
+            <time datetime="2026-09-22">22 Sep 2026</time>
+            <h3><span class="ra-log-type">Observation</span> Galactic-centre survey (392 spectra)</h3>
+            <p>Later used for an independent archival check of the calibration pedestal. Not in the research archive.</p>
+          </li>
+
+          <li class="ra-log-calibration" id="latest">
+            <time datetime="2026-09-23">23 Sep 2026</time>
+            <h3><span class="ra-log-type">Calibration milestone</span> Sky-referenced calibration adopted (C4)</h3>
+            <p>Eight positions of known LAB brightness give G = 1454 K and an additive pedestal p = 0.0174. The implied efficiency of 0.616 agrees with the solar measurement. A repeat hot-load attempt that day was rejected because the load covered only about a tenth of the beam. C4 is the current reference; earlier products keep their original scales. <a href="calibration.html#C4">Epoch C4</a></p>
+          </li>
+
+          <li class="ra-log-software">
+            <time datetime="2026-09-23">23 Sep 2026</time>
+            <h3><span class="ra-log-type">Software milestone</span> Calibration checks built into observing</h3>
+            <p>New observing-software builds add a pointing check against LAB, a continuous calibration check at the current pointing, a whole-run fit of G and p, and a beam-coverage test for hot-load measurements.</p>
+          </li>
+
+          <li class="ra-log-processing">
+            <time datetime="2026-09-30">30 Sep 2026</time>
+            <h3><span class="ra-log-type">Processing milestone</span> Scientific provenance record</h3>
+            <p>Instruments, calibration epochs and datasets are catalogued in a machine-readable registry. That registry drives the Telescopes, Data Library and Calibration pages of this portal.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research &amp; learning</h4>
+        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

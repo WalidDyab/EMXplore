@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Data to Science — EMXplore Radio Astronomy</title>
+  <meta name="description" content="How a DISH222 hydrogen-line observation becomes science: averaged spectra, pointing, baselines, RFI, line measurement, velocity, calibration, cubes, maps and comparison with the LAB survey.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Step 3 · From Data to Science</p>
+        <h1>How an averaged spectrum becomes a map of the Galaxy</h1>
+        <p class="hero-intro">An explanatory walk through the chain used for DISH222 data. Each step says what is done and which parts are established, historical or still provisional. It explains the ideas, not the software.</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="ra-note ra-note--history">
+          <p><strong>No complete observational product has yet been independently reproduced end-to-end, from native spectra to a final science product.</strong> Individual calibration calculations have been checked independently; for example, the C4 eight-point fit was reproduced exactly from its published table. The steps below describe how the existing products were made, using the legacy observing software and external processing whose code is not in the archive. Rebuilding this chain with documented, testable code is the first research track.</p>
+        </div>
+
+        <p class="ra-flow-group">Measurement</p>
+        <ol class="ra-flow-steps">
+          <li>
+            <h3>Telescope and SDR measurement</h3>
+            <p>The dish points at a sky position and the software-defined radio samples a 2.4 MHz-wide band around the hydrogen line. The computer immediately turns short blocks of samples into power spectra with a Fourier transform (1024 frequency channels).</p>
+          </li>
+          <li>
+            <h3>Averaged spectrum <span class="ra-chip">L0</span></h3>
+            <p>A single spectrum is dominated by noise, so thousands are averaged. Every few tens of seconds the software writes one <strong>averaged power spectrum</strong> to disk. These files are the native data of the project. They are not raw radio samples, and they are on an arbitrary power scale.</p>
+          </li>
+          <li>
+            <h3>Metadata and pointing <span class="ra-chip">L1</span></h3>
+            <p>A scan <strong>manifest</strong> records the planned sky positions and times. Each averaged spectrum is matched to a position by its timestamp. The manifest stores the <em>commanded</em> position, not an independent measurement of where the dish pointed, which is one reason pointing checks matter.</p>
+          </li>
+        </ol>
+
+        <p class="ra-flow-group">Reduction</p>
+        <ol class="ra-flow-steps" start="4" style="counter-reset: flow 3">
+          <li>
+            <h3>Baseline and bandpass <span class="ra-chip">L2</span></h3>
+            <p>The receiver's response is not flat across the band. A smooth baseline is fitted to line-free channels on either side of the hydrogen line and removed, leaving the line as a small excess over the baseline. For wide native spectra, a bandpass template measured from the session itself removed a strong slope. The result is a relative scale, usually quoted in dB above the baseline.</p>
+          </li>
+          <li>
+            <h3>RFI handling</h3>
+            <p>Radio-frequency interference is anything that is not sky signal. DISH222 sees a permanent spur exactly at 1420.000 MHz and narrow spurs from its motors. Real Galactic hydrogen is broad, so a minimum line width filters out narrow spikes. Quality gates reject spectra whose line-free channels are not flat: in the 26 Aug session 661 of 776 spectra passed.</p>
+          </li>
+          <li>
+            <h3>H I line measurement</h3>
+            <p>After baseline removal the line strength is expressed as a fractional excess over the baseline:</p>
+            <span class="ra-equation ra-equation--display" data-tex="f = \frac{P_\text{line}}{P_\text{baseline}} - 1 = 10^{x/10} - 1" data-display="true"><code>f = P_line / P_baseline - 1 = 10^(x/10) - 1</code></span>
+            <p>where x is the line height in dB. Two summaries appear in the archive: the <strong>peak</strong> of a smoothed spectrum (26 Aug products) and the <strong>intensity-weighted mean velocity</strong>, or first moment (2–3 Sep products). They answer different questions and are not directly comparable.</p>
+          </li>
+        </ol>
+
+        <p class="ra-flow-group">Physics</p>
+        <ol class="ra-flow-steps" start="7" style="counter-reset: flow 6">
+          <li>
+            <h3>Frequency to radial velocity</h3>
+            <p>Gas moving away from us shifts the line to lower frequency. The Doppler formula converts an observed frequency into a velocity relative to the telescope:</p>
+            <span class="ra-equation ra-equation--display" data-tex="v_\text{topo} = c\,\frac{f_0 - f_\text{obs}}{f_0},\qquad f_0 = 1420.40575\ \text{MHz}" data-display="true"><code>v_topo = c (f0 - f_obs) / f0,  f0 = 1420.40575 MHz</code></span>
+            <p>The Earth's rotation and orbit, and the Sun's motion, are then removed so that velocities refer to the Local Standard of Rest (LSR). For the 26 Aug products this meant adding a barycentric correction and the standard 20 km/s solar motion towards RA 18h03m50s, Dec +30°00′17″.</p>
+          </li>
+          <li>
+            <h3>Calibration <span class="ra-chip">L3</span></h3>
+            <p>Calibration turns the relative line strength into a brightness temperature in kelvin. The current reference scale (C4) is</p>
+            <span class="ra-equation ra-equation--display" data-tex="T_B = (f - p)\,G" data-display="true"><code>T_B = (f - p) G</code></span>
+            <p>with a conversion constant G and a small pedestal p. The scale went through five stages, and every archived product keeps the stage it was made with. See <a href="calibration.html">Calibration</a>.</p>
+          </li>
+          <li>
+            <h3>Sky positioning</h3>
+            <p>Each spectrum is assigned the sky coordinates of its pointing and converted between equatorial (RA, Dec) and Galactic (l, b) frames. Spectra taken within about one beam radius of each other are stacked to reduce noise. With a beam about 3° wide, every map is inevitably smooth on scales smaller than a few degrees.</p>
+          </li>
+        </ol>
+
+        <p class="ra-flow-group">Products and interpretation</p>
+        <ol class="ra-flow-steps" start="10" style="counter-reset: flow 9">
+          <li>
+            <h3>Spectral cube <span class="ra-chip">L4</span></h3>
+            <p>Gridding spectra onto regular sky pixels, with velocity as the third axis, gives a position–position–velocity cube (FITS format). The 26 Aug cube covers l 146°–228°, b −12° to +22° and −120 to +60 km/s. See the lecture on <a href="lecture.html#slide-047">data cubes</a>.</p>
+          </li>
+          <li>
+            <h3>Maps and science products <span class="ra-chip">L5</span> <span class="ra-chip">L6</span></h3>
+            <p>Collapsing the cube gives maps: peak brightness, velocity (<a href="lecture.html#slide-044">moment maps</a>) and catalogues. Curated products go further, combining sessions or applying selection rules and corrections. Every such step changes what the product can be used for, so it is recorded.</p>
+          </li>
+          <li>
+            <h3>Comparison with reference surveys</h3>
+            <p>The Leiden/Argentine/Bonn (LAB) survey is a professional all-sky H I survey. Comparing DISH222 with LAB smoothed to a 3° beam tests shapes, velocities and brightness. It is a <strong>validation</strong>, and in C4 also the reference for the kelvin scale, so it is not an independent absolute calibration. Known reasons for differences are beam dilution, stray radiation entering through sidelobes, baseline choices and pointing.</p>
+            <figure class="ra-fig" style="margin-top:14px">
+              <img src="assets/images/research/dish222-2026-09-02-galactic-centre-c2.png" width="1600" height="1100" loading="lazy" alt="Four panels from the 2 Sep 2026 Galactic-centre area scan: brightness map, velocity map, brightness against Galactic latitude compared with LAB, and a scatter of DISH222 against LAB brightness with a median ratio of 1.62.">
+              <figcaption>
+                <span class="ra-chips"><span class="ra-chip">L7 · visualization</span><span class="ra-chip ra-chip--historical">C2 · historical scale</span></span>
+                <strong>What it shows:</strong> the 2 Sep 2026 Galactic-centre area scan with two checks against LAB. <strong>When:</strong> produced on 2 Sep 2026 with the C2 scale (T<sub>sys</sub> 179.5 K, η 0.30). <strong>What to learn:</strong> the velocity field looks reasonable, but brightness comes out about 1.6 times LAB and does not fall off away from the plane. Discrepancies like this one led to the later calibration work. The brightness values are <em>not</em> on the current scale.
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <h3>Interpretation</h3>
+            <p>Velocities along a line of sight map onto distance through the Galaxy's rotation, which is how spiral arms and the rotation curve are traced. Interpretation is the last step for a reason: it inherits every limitation above. In the project's early comparison with LAB (on the relative scale), the velocity–longitude pattern of the outer Galaxy matched LAB closely, but the peak metric compressed the rotation amplitude by roughly a factor of four.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap ra-grid-2">
+        <article class="ra-card">
+          <h3>Learn the principles in the lecture</h3>
+          <p>Lecture slides <a href="lecture.html#slide-033">33–43</a> cover the generic observation workflow, hot–cold calibration, baselines and LSR correction. Slides <a href="lecture.html#slide-044">44–51</a> cover moment maps, data cubes and column density.</p>
+        </article>
+        <article class="ra-card">
+          <h3>See it on real data</h3>
+          <p>Every step above can be followed through the <a href="data.html#featured">26 Aug 2026 campaign</a>, from native spectra (L0) to cube (L4), maps (L5) and figures (L7).</p>
+        </article>
+      </div>
+    </section>
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="data.html"><span>Previous step</span><strong>&larr; Data Library</strong></a><a class="is-next" href="calibration.html"><span>Next step</span><strong>Calibration &rarr;</strong></a></nav></div>
+    </section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research &amp; learning</h4>
+        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/vendor/katex/katex.min.js"></script>
+  <script src="assets/js/math-render.js"></script>
+  <script src="assets/js/registry-data.js"></script>
+  <script src="assets/js/ra-portal.js"></script>
+</body>
+</html>

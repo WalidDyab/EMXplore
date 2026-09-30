@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start Here — EMXplore Radio Astronomy</title>
+  <meta name="description" content="Student entry point to the EMXplore H I 21-cm radio astronomy research project: what we observe, which telescope is active, what data exist, and where to begin.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html" aria-current="page">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Start Here · Student research portal</p>
+        <h1>Join a working radio astronomy project</h1>
+        <p class="hero-intro">We map neutral hydrogen in the Milky Way with a 5 m steerable radio telescope, DISH222, at Prince Sultan University in Riyadh. This portal shows you the instrument, the real data, how the data become science, and the open questions you can work on.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#path">Follow the six-step path</a>
+          <a class="button button-ghost" href="data.html#ds-20260826-og-native-spectra">Open the recommended dataset</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="ra-grid-3">
+          <article class="ra-card">
+            <h3>What we observe</h3>
+            <p>Cold neutral hydrogen gas emits a faint radio line at <strong>1420.40575 MHz</strong> (wavelength about 21 cm). It passes through the dust that hides much of the Galaxy from optical telescopes. Its Doppler shift tells us how fast the gas moves towards or away from us, which is how the Milky Way's spiral structure and rotation can be traced.</p>
+          </article>
+          <article class="ra-card">
+            <h3>With which telescope</h3>
+            <p>The project grew from a network of fixed, zenith-pointing telescopes to steerable dishes. <strong>DISH222</strong> is the active research telescope: a 5 m dish on an azimuth/elevation mount with a software-defined radio receiver. The earlier systems are part of the project's history.</p>
+            <p><a href="telescopes.html">Meet the telescopes</a></p>
+          </article>
+          <article class="ra-card">
+            <h3>What kind of data exist</h3>
+            <p>The telescope records <strong>averaged power spectra</strong> (not raw radio samples). Each dataset in the library is tagged with a processing level from L0 (native spectra) to L8 (independently reproduced result) and with the calibration scale it was made on.</p>
+            <p><a href="data.html">Browse the Data Library</a></p>
+          </article>
+        </div>
+        <div class="ra-stats" style="margin-top:22px" data-ra-render="dataset-stats" aria-label="Data library at a glance"></div>
+        <noscript><p class="ra-noscript">Some summaries on this page are generated from the project registry and need JavaScript.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Where the project stands</p>
+          <h2>What has been shown, and what is still open</h2>
+          <p>A research project is never finished. This is an honest summary as of late September 2026.</p>
+        </div>
+        <div class="ra-grid-2">
+          <article class="ra-card">
+            <h3>Demonstrated</h3>
+            <ul>
+              <li>Automated raster scanning of the Galactic plane: the 26 Aug 2026 session visited 313 sky positions and recorded 776 averaged spectra.</li>
+              <li>H I brightness and velocity maps of the outer Galaxy, first on a relative (dB) scale.</li>
+              <li>Pointing improved from several degrees of error to about 1° after a Sun-based pointing calibration.</li>
+              <li>A kelvin temperature scale that went through five documented stages; the current one (C4) reproduces the LAB survey at eight reference positions with about 8.5 K scatter.</li>
+            </ul>
+          </article>
+          <article class="ra-card">
+            <h3>Still open</h3>
+            <ul>
+              <li>No complete observational product has yet been independently reproduced end-to-end, from native spectra to a final science product (nothing at level L8). Individual calibration calculations, such as the C4 eight-point fit, have been checked independently.</li>
+              <li>The current calibration (C4) has not been applied to any archived map; existing products stay on their original, historical scales.</li>
+              <li>The receiver noise temperature (about 860 K) limits sensitivity, and a small baseline pedestal is corrected only approximately.</li>
+              <li>Native spectra behind the September products and the all-sky composite are not yet in the research archive.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="path">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Recommended path</p>
+          <h2>Six steps from newcomer to contributor</h2>
+          <p>Take them in order the first time. Each step is one page.</p>
+        </div>
+        <ol class="ra-steps">
+          <li><a class="ra-step" href="telescopes.html"><span class="ra-step-num">STEP 1</span><strong>Understand the instrument</strong><span class="ra-step-text">How DISH222 points, receives and records, and how it differs from the earlier telescopes.</span></a></li>
+          <li><a class="ra-step" href="data.html#ds-20260826-og-native-spectra"><span class="ra-step-num">STEP 2</span><strong>Explore a real observation</strong><span class="ra-step-text">The 26 Aug 2026 outer-Galaxy raster: native spectra, pointing manifest and every product made from them.</span></a></li>
+          <li><a class="ra-step" href="data-to-science.html"><span class="ra-step-num">STEP 3</span><strong>Follow the processing chain</strong><span class="ra-step-text">From an averaged spectrum to velocities, maps and comparison with a reference survey.</span></a></li>
+          <li><a class="ra-step" href="calibration.html"><span class="ra-step-num">STEP 4</span><strong>Understand calibration</strong><span class="ra-step-text">How the kelvin scale evolved from C0 to C4, and why old products keep their original scale.</span></a></li>
+          <li><a class="ra-step" href="research.html#track-reduction"><span class="ra-step-num">STEP 5</span><strong>Reproduce an existing result</strong><span class="ra-step-text">Rebuild the 26 Aug reduced spectra from the native data and document every difference.</span></a></li>
+          <li><a class="ra-step" href="research.html"><span class="ra-step-num">STEP 6</span><strong>Choose a research question</strong><span class="ra-step-text">Eight open research tracks, each with a starting dataset and its main uncertainty.</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="ra-feature">
+          <div>
+            <span class="ra-chip ra-chip--recommended">Recommended starting dataset</span>
+            <h3>26 Aug 2026 · outer-Galaxy raster</h3>
+            <p>A three-hour automated raster across Galactic longitudes 146°–226°. It is the strongest reproducible chain in the archive: the native averaged spectra and the pointing manifest are both available, together with every derived product up to maps and a spectral cube.</p>
+            <p class="ra-muted">Its products are on the relative C0 (dB) scale. That is expected for this date and is part of what you will learn.</p>
+            <p><a class="button button-primary" href="data.html#featured">See the full chain</a></p>
+          </div>
+          <figure class="ra-fig">
+            <img src="assets/images/research/dish222-2026-08-26-outer-galaxy-skymap.png" width="1600" height="842" loading="lazy" alt="Sky chart in right ascension and declination with the Galactic plane drawn as a red curve; a contour map of H I line peak in dB covers the outer-Galaxy region near RA 4–8 h scanned on 26 Aug 2026.">
+            <figcaption><strong>26 Aug 2026 raster on the sky.</strong> 313 beam-stacked positions, H I line peak in dB above baseline (C0, relative scale). Produced by the legacy stitcher on the day of observation.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="ra-grid-2">
+          <article class="ra-card">
+            <h3>Lecture and portal work together</h3>
+            <p>The <a href="lecture.html">52-slide interactive lecture</a> teaches the principles: the 21-cm line, Einstein coefficients, hot–cold calibration, baselines, LSR velocity, moment maps and data cubes. This portal shows how those principles are applied, with all their complications, to DISH222's real data.</p>
+            <p class="ra-muted">Good companions: lecture slides <a href="lecture.html#slide-021">21–32</a> (physics), <a href="lecture.html#slide-033">33–43</a> (observation and calibration) and <a href="lecture.html#slide-044">44–51</a> (maps and cubes).</p>
+          </article>
+          <article class="ra-card">
+            <h3>How to read this portal</h3>
+            <ul>
+              <li><span class="ra-chip ra-chip--current">C4 · current reference</span> marks the adopted calibration scale.</li>
+              <li><span class="ra-chip ra-chip--historical">C2 · historical scale</span> marks products kept on the scale they were made with.</li>
+              <li>Values marked <span class="ra-inferred">inferred</span> come from analysis rather than a direct statement in a source.</li>
+              <li>Unknown details are listed as open questions rather than guessed.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a class="is-next" href="telescopes.html"><span>Next step</span><strong>Telescopes &rarr;</strong></a></nav></div>
+    </section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research &amp; learning</h4>
+        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/registry-data.js"></script>
+  <script src="assets/js/ra-portal.js"></script>
+</body>
+</html>

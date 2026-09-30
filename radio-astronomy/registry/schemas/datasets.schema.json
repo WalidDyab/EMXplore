@@ -85,6 +85,37 @@
         "note": { "type": "string" }
       }
     },
+    "publicAsset": {
+      "description": "A copy of (part of) this dataset that is published on the website. Only public information: the private original is never named here.",
+      "type": "object",
+      "required": ["asset_id", "path", "media_type", "sha256", "bytes", "calibration", "caption", "alt"],
+      "additionalProperties": false,
+      "properties": {
+        "asset_id": { "type": "string", "pattern": "^pub-[a-z0-9]+(-[a-z0-9]+)*$" },
+        "path": { "type": "string", "pattern": "^radio-astronomy/assets/", "description": "Repository-relative path of the published file." },
+        "media_type": { "enum": ["image/png", "image/jpeg", "image/webp", "image/svg+xml"] },
+        "sha256": { "$ref": "common.schema.json#/$defs/sha256", "description": "Checksum of the published copy (not of any private original)." },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "rendition": { "type": "string", "description": "How the published copy differs from the original (resizing, metadata removal)." },
+        "calibration": {
+          "description": "Calibration epoch of the values shown in the asset and whether that assignment is recorded or inferred.",
+          "type": "object",
+          "required": ["calibration_id", "epoch_status", "evidence"],
+          "additionalProperties": false,
+          "properties": {
+            "calibration_id": { "oneOf": [ { "$ref": "common.schema.json#/$defs/calibrationId" }, { "type": "null" } ] },
+            "epoch_status": { "enum": ["current", "historical", "not_applicable"] },
+            "evidence": { "$ref": "common.schema.json#/$defs/evidence" },
+            "sources": { "$ref": "common.schema.json#/$defs/sourceRefs" },
+            "note": { "type": "string" }
+          },
+          "$ref": "common.schema.json#/$defs/evidenceRules"
+        },
+        "caption": { "type": "string", "minLength": 20 },
+        "alt": { "type": "string", "minLength": 20 },
+        "used_on": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9-]+\\.html$" } }
+      }
+    },
     "coverage": {
       "type": "object",
       "required": ["frame", "evidence"],
@@ -225,6 +256,7 @@
         "student_notes": { "type": "string" },
         "scientific_purpose": { "$ref": "common.schema.json#/$defs/annotatedText" },
         "files": { "type": "array", "items": { "$ref": "#/$defs/fileRef" } },
+        "public_assets": { "type": "array", "items": { "$ref": "#/$defs/publicAsset" } },
         "lineage": {
           "type": "object",
           "required": ["derived_from", "produced_by"],

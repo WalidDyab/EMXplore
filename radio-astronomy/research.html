@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Research — EMXplore Radio Astronomy</title>
+  <meta name="description" content="Open research tracks for students joining the DISH222 H I project: spectrum reduction, calibration, pointing, Galactic velocities, spectral cubes, receiver characterization, LAB comparison and full-Galaxy reconstruction.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html" aria-current="page">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Steps 5–6 · Student Research</p>
+        <h1>Open research tracks</h1>
+        <p class="hero-intro">These are entry points into questions the project has not yet answered, not finished assignments. Each track names a real starting dataset, the background you need, a sensible first output and the main uncertainty you will run into. Talk to the project team before you start, so that work is coordinated and access to the research archive is arranged.</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="ra-note">
+          <p><strong>If you are new, start with Track A.</strong> Reproducing an existing result from native data is the best way to learn the chain, and it produces the project's first independently reproduced (L8) product.</p>
+        </div>
+        <div class="ra-tracks">
+          <article class="ra-track" id="track-reduction">
+            <span class="ra-difficulty">Track A · Introductory–intermediate</span>
+            <h3>Independent spectrum reduction</h3>
+            <p class="ra-track-q">Can the 26 Aug reduced spectra, and the acceptance of 661 of 776 spectra, be reproduced from the native data with documented code?</p>
+            <dl>
+              <dt>Start with</dt><dd><a data-ra-dataset="ds-20260826-og-native-spectra" data-ra-title href="data.html#ds-20260826-og-native-spectra">26 Aug 2026 native spectra</a> and its <a data-ra-dataset="ds-20260826-og-raster-manifest" href="data.html#ds-20260826-og-raster-manifest">pointing manifest</a></dd>
+              <dt>Background</dt><dd>Python and NumPy; power spectra; fitting a baseline</dd>
+              <dt>Output</dt><dd>A notebook or script, a comparison with the <a data-ra-dataset="ds-20260826-og-reduced-spectra" href="data.html#ds-20260826-og-reduced-spectra">archived reduced spectra</a>, and a list of any undocumented processing steps you had to infer</dd>
+              <dt>Main issue</dt><dd>The code that made the archived products is not available, and part of the bandpass treatment depended on a stored template that is not in the archive</dd>
+            </dl>
+          </article>
+
+          <article class="ra-track" id="track-calibration">
+            <span class="ra-difficulty">Track B · Intermediate</span>
+            <h3>Instrument calibration</h3>
+            <p class="ra-track-q">How do the C1–C4 scales compare, and how robust are G and p to the fitting method and its uncertainties?</p>
+            <dl>
+              <dt>Start with</dt><dd>The eight C4 reference points on the <a href="calibration.html#current">Calibration</a> page, the <a data-ra-dataset="ds-20260902-cal-yfactor-record" href="data.html#ds-20260902-cal-yfactor-record">2 Sep Y-factor record</a> and the <a data-ra-dataset="ds-20260902-gc-ta-cube" href="data.html#ds-20260902-gc-ta-cube">2 Sep antenna-temperature cube</a></dd>
+              <dt>Background</dt><dd>Radiometry (system temperature, Y-factor); least-squares fitting with errors in both variables</dd>
+              <dt>Output</dt><dd>A calibration note; optionally a new, separately labelled C4 re-derivation of the 2 Sep cube</dd>
+              <dt>Main issue</dt><dd>The Y-factor dropped from 4.40 dB (2 Sep) to 1.29 dB (20 Sep) for a similar warm wall, and the reason is not yet documented</dd>
+            </dl>
+          </article>
+
+          <article class="ra-track" id="track-pointing">
+            <span class="ra-difficulty">Track C · Intermediate</span>
+            <h3>Pointing and repeatability</h3>
+            <p class="ra-track-q">How accurately and repeatably does DISH222 point, judged from the data themselves?</p>
+            <dl>
+              <dt>Start with</dt><dd>Repeated spectra at the same positions in the <a data-ra-dataset="ds-20260826-og-native-spectra" href="data.html#ds-20260826-og-native-spectra">26 Aug session</a>; the Galactic-plane ridge in the 26 Aug and 2 Sep maps</dd>
+              <dt>Background</dt><dd>Celestial coordinates and Astropy; beam patterns</dd>
+              <dt>Output</dt><dd>Ridge-centroid and repeat-scatter measurements with an error budget, including the effect of coordinate precession</dd>
+              <dt>Main issue</dt><dd>The manifest records commanded positions, not measured ones</dd>
+            </dl>
+          </article>
+
+          <article class="ra-track" id="track-velocity">
+            <span class="ra-difficulty">Track D · Intermediate–advanced</span>
+            <h3>Galactic H I velocity analysis</h3>
+            <p class="ra-track-q">Does a first-moment or multi-component fit recover the Galactic rotation amplitude that the peak metric compressed?</p>
+            <dl>
+              <dt>Start with</dt><dd><a data-ra-dataset="ds-20260826-og-reduced-spectra" href="data.html#ds-20260826-og-reduced-spectra">26 Aug reduced spectra</a> (or your own reduction from Track A)</dd>
+              <dt>Background</dt><dd>Galactic rotation and kinematic distances; LSR correction; Gaussian fitting</dd>
+              <dt>Output</dt><dd>A longitude–velocity diagram and a comparison of velocity metrics against LAB</dd>
+              <dt>Main issue</dt><dd>With a 3° beam, local gas near 0 km/s blends with more distant spiral-arm gas</dd>
+            </dl>
+          </article>
+
+          <article class="ra-track" id="track-cube">
+            <span class="ra-difficulty">Track E · Intermediate</span>
+            <h3>FITS and spectral-cube imaging</h3>
+            <p class="ra-track-q">Can we produce standards-compliant cubes with complete coordinate and provenance metadata?</p>
+            <dl>
+              <dt>Start with</dt><dd><a data-ra-dataset="ds-20260826-og-fits-cube" href="data.html#ds-20260826-og-fits-cube">26 Aug spectral cube</a> as a reference; your own gridding of the reduced spectra</dd>
+              <dt>Background</dt><dd>FITS and WCS; gridding and smoothing; moment maps</dd>
+              <dt>Output</dt><dd>A cube, moment maps and a proposed header standard (units, frame, epoch, calibration ID)</dd>
+              <dt>Main issue</dt><dd>Several archived FITS headers lack observation date, telescope, rest frequency, velocity frame or equinox</dd>
+            </dl>
+          </article>
+
+          <article class="ra-track" id="track-receiver">
+            <span class="ra-difficulty">Track F · Advanced</span>
+            <h3>Receiver and system characterization</h3>
+            <p class="ra-track-q">How linear and stable is the receiver chain, and how stable is its bandpass from session to session?</p>
+            <dl>
+              <dt>Start with</dt><dd>The two spectrum types recorded in the <a data-ra-dataset="ds-20260826-og-native-spectra" href="data.html#ds-20260826-og-native-spectra">26 Aug session</a>; new bench measurements made with the project team</dd>
+              <dt>Background</dt><dd>RF systems; software-defined radio; noise temperature</dd>
+              <dt>Output</dt><dd>A bench-test report, including an independent check of the receiver's sample format and linearity</dd>
+              <dt>Main issue</dt><dd>Needs supervised hardware access. This track does not involve operating or controlling the telescope.</dd>
+            </dl>
+          </article>
+
+          <article class="ra-track" id="track-lab">
+            <span class="ra-difficulty">Track G · Intermediate</span>
+            <h3>Comparison with the LAB survey</h3>
+            <p class="ra-track-q">Where do DISH222 profiles agree with LAB smoothed to a 3° beam, and where do stray radiation or the baseline pedestal dominate?</p>
+            <dl>
+              <dt>Start with</dt><dd><a data-ra-dataset="ds-20260826-og-reduced-spectra" href="data.html#ds-20260826-og-reduced-spectra">26 Aug reduced spectra</a>; <a data-ra-dataset="ds-20260902-gc-maps" href="data.html#ds-20260902-gc-maps">2 Sep Galactic-centre maps</a></dd>
+              <dt>Background</dt><dd>Radio survey methods; beam convolution</dd>
+              <dt>Output</dt><dd>Profile-by-profile comparison and residual maps with an explanation of each systematic effect</dd>
+              <dt>Main issue</dt><dd>C4 is itself anchored to LAB, so agreement on C4 is a consistency check rather than an independent test</dd>
+            </dl>
+          </article>
+
+          <article class="ra-track" id="track-galaxy">
+            <span class="ra-difficulty">Track H · Long-term</span>
+            <h3>Full-Galaxy reconstruction</h3>
+            <p class="ra-track-q">Can a reproducible all-sky H I map be rebuilt from native sessions, on one calibration, with a documented selection?</p>
+            <dl>
+              <dt>Start with</dt><dd><a data-ra-dataset="ds-20260826-og-native-spectra" href="data.html#ds-20260826-og-native-spectra">26 Aug native spectra</a> now; further sessions as they enter the archive. The <a data-ra-dataset="ds-allsky-trusted-maps" href="data.html#ds-allsky-trusted-maps">all-sky showcase</a> is a comparison target only.</dd>
+              <dt>Background</dt><dd>All of the above</dd>
+              <dt>Output</dt><dd>A reproducible multi-session mosaic with a complete lineage</dd>
+              <dt>Main issue</dt><dd>Most of the sessions behind the existing composite are not yet in the research archive</dd>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="contribute">
+      <div class="wrap ra-grid-2">
+        <article class="ra-card">
+          <h3>How a student result enters the record</h3>
+          <ul>
+            <li>Every new product gets a <strong>new dataset ID</strong>; existing records are never edited to match new results.</li>
+            <li>Its record lists what it was derived from, the code and version used, its processing level and its calibration epoch.</li>
+            <li>A product built from native data by documented, rerunnable code is an <strong>L8</strong> independently reproduced product, the level the project most needs.</li>
+          </ul>
+        </article>
+        <article class="ra-card">
+          <h3>Before you begin</h3>
+          <ul>
+            <li>Read the <a href="data-to-science.html">processing chain</a> and the <a href="calibration.html">calibration history</a>.</li>
+            <li>Check the <a href="log.html">project log</a> for what has already been tried.</li>
+            <li>Keep the evidence status of your claims explicit: measured, inferred or unknown.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="calibration.html"><span>Previous step</span><strong>&larr; Calibration</strong></a></nav></div>
+    </section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research &amp; learning</h4>
+        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/registry-data.js"></script>
+  <script src="assets/js/ra-portal.js"></script>
+</body>
+</html>

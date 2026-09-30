@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Observations, Results, and Data — EMXplore Radio Astronomy</title>
-  <meta name="description" content="Radio Astronomy observations, scientific result summaries, and planned data products.">
+  <title>Data Library — EMXplore Radio Astronomy</title>
+  <meta name="description" content="Catalogue of DISH222 H I datasets: processing levels L0–L8, calibration epochs, availability of native spectra, limitations and the recommended starting dataset.">
   <meta name="theme-color" content="#06101f">
   <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
   <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
 </head>
 <body class="ra-body">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -18,19 +18,99 @@
       <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
       <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html">Overview</a><a href="lecture.html">Lecture</a><a href="software.html">Software</a><a href="data.html" aria-current="page">Data</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html" aria-current="page">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
     </div>
   </header>
   <main id="main-content">
-    <section class="ra-hero ra-compact-hero"><div class="wrap"><p class="eyebrow">Observations &amp; Results</p><h1>Signals, spectra, calibration, and Milky Way products</h1><p class="hero-intro">A research-focused view of project observations, published transit-scan context, and future public data products.</p><nav class="ra-subnav"><a href="#results">Scientific Results</a><a href="#pipeline">Processing Levels</a><a href="#datasets">Dataset Registry</a></nav></div></section>
-    <section class="section" id="results"><div class="wrap"><div class="section-heading"><p class="section-kicker">Selected Results</p><h2>What the observations show</h2><p>Each result is summarized rather than republishing complete paper pages.</p></div><div class="ra-figure-grid">
-      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-036.png" alt="Raw spectrum recording workflow slide" loading="lazy"></figure><h3>Signal Processing Result</h3><p><strong>What is shown:</strong> A raw spectrum stage in the H I observation workflow.</p><p><strong>Why it matters:</strong> It places SDR acquisition and FFT-based spectral extraction at the center of the platform. The project is presented as a complete measurement chain, not only as a reflector build.</p><p class="ra-source-note">Source: Project lecture material; related signal-processing workflow is described in the 2025 IEEE publication.</p></article>
-      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-017.png" alt="Calibration and first survey result slide" loading="lazy"></figure><h3>PSU Transit Survey and Calibration Context</h3><p><strong>What is shown:</strong> Calibration and first survey products from the project lecture.</p><p><strong>Why it matters:</strong> Transit observations connect time/frequency measurements to sky structure as Earth rotates through the beam. Published scans should be interpreted as normalized signal strength or relative H I response unless an absolute calibration is explicitly stated.</p><p class="ra-source-note">Source: Project lecture material; published transit-scan context - IEEE Antennas and Propagation Magazine, 2025.</p></article>
-      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-020.png" alt="H I survey and position velocity interpretation concept slide" loading="lazy"></figure><h3>From Sky Survey to Position-Velocity Interpretation</h3><p><strong>What is shown:</strong> A project concept linking survey observations, calibration context, and sky/velocity interpretation.</p><p><strong>Why it matters:</strong> The model <span class="ra-equation" data-tex="T_B(\alpha,\delta,v_{\mathrm{LSR}})" data-display="false"><code>\(T_B(\alpha,\delta,v_{\mathrm{LSR}})\)</code></span> is the scientific endpoint used to connect sky position, H I intensity, and radial velocity. This figure should not be read as a complete calibrated 3D brightness-temperature cube by itself.</p><p class="ra-source-note">Source: Project lecture material.</p></article>
-      <article class="ra-result-card"><figure><img src="assets/images/lecture/slide-052.png" alt="H I 21 cm line example from KAU slide" loading="lazy"></figure><h3>H I 21-cm Line Example</h3><p><strong>What is shown:</strong> A real H I line example included in the lecture material.</p><p><strong>Why it matters:</strong> The line profile is the observational signature that lets students connect antenna temperature, calibration, velocity, and Galactic hydrogen science.</p><p class="ra-source-note">Source: Project lecture material.</p></article>
-    </div></div></section>
-    <section class="section ra-light" id="pipeline"><div class="wrap"><div class="section-heading"><p class="section-kicker">Data Processing Levels</p><h2>From receiver output to science product</h2><p>The dataset area is prepared for future public releases without inventing downloadable files.</p></div><ol class="ra-chain"><li>Raw receiver output</li><li>Spectrum</li><li>Calibrated measurement</li><li>H I line product</li><li>Position / velocity dataset</li><li>Scientific visualization</li></ol></div></section>
-    <section class="section" id="datasets"><div class="wrap"><div class="section-heading"><p class="section-kicker">Dataset Registry</p><h2>Available and planned data products</h2><p>Observation datasets will be added as they are prepared for public release.</p></div><div class="ra-table-wrap"><table class="ra-resource-table"><thead><tr><th>Dataset title</th><th>Description</th><th>Observation type</th><th>Coordinates</th><th>Frequency coverage</th><th>Format</th><th>Status</th></tr></thead><tbody data-ra-dataset-list><tr><td>Raw receiver output</td><td>Receiver captures before public packaging.</td><td>Receiver acquisition</td><td>In preparation</td><td>H I observing band</td><td>Coming soon</td><td><span class="ra-status-pill ra-status-prep">In Preparation</span></td></tr><tr><td>H I spectra</td><td>Spectral products after FFT, averaging, and processing.</td><td>Hydrogen-line spectrum</td><td>In preparation</td><td>Near 1.42 GHz</td><td>Coming soon</td><td><span class="ra-status-pill ra-status-prep">In Preparation</span></td></tr><tr><td>Position / velocity products</td><td>Future science products connecting sky coordinates and velocity.</td><td>H I line product</td><td>RA / Dec planned</td><td>Coming soon</td><td>Coming soon</td><td><span class="ra-status-pill ra-status-coming">Coming Soon</span></td></tr></tbody></table></div></div></section>
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Step 2 · Data Library</p>
+        <h1>The project's datasets, level by level</h1>
+        <p class="hero-intro">Every observation, product, figure and calibration record in the research archive, catalogued with its processing level, calibration scale, source availability and known limitations. Datasets that are known to exist but are not yet in the archive are listed too.</p>
+        <nav class="ra-subnav" aria-label="On this page">
+          <a href="#levels">Processing levels</a>
+          <a href="#featured">Recommended dataset</a>
+          <a href="#showcase">All-sky showcase</a>
+          <a href="#browse">Browse everything</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="levels">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Processing levels</p>
+          <h2>L0 → L8: from recorded spectrum to reproduced result</h2>
+          <p>Each level is made from the ones below it. The chips show where the datasets in the archive sit. Click one to open its record.</p>
+        </div>
+        <div class="ra-note">
+          <p><strong>Terminology.</strong> L0 here means the <em>averaged power spectra</em> written by the acquisition software. DISH222 does not store raw I/Q radio samples, so no dataset in the archive is "raw SDR data".</p>
+        </div>
+        <ol class="ra-ladder" data-ra-render="level-ladder" aria-label="Processing levels L0 to L8"></ol>
+        <noscript><p class="ra-noscript">The level ladder and dataset browser are generated from the project registry and need JavaScript.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="featured">
+      <div class="wrap">
+        <div class="ra-feature">
+          <div>
+            <span class="ra-chip ra-chip--recommended">Recommended starting dataset</span>
+            <h3>26 Aug 2026 · outer-Galaxy raster with DISH222</h3>
+            <p>An automated raster from 02:48 to 05:48 UTC across Galactic longitudes 146°–226° and latitudes −10° to +20°. It is currently the <strong>strongest reproducible chain in the archive</strong>: the native averaged spectra (776 files) and the pointing manifest (313 positions) are both available, alongside every product made from them.</p>
+            <p class="ra-muted">All products of this session are on the relative C0 (dB above baseline) scale. The external processing code that produced the tables and FITS files is not in the archive, so re-deriving them from the native spectra is itself a research task (<a href="research.html#track-reduction">Track A</a>).</p>
+            <ol class="ra-chainlist" data-ra-render="featured-chain" data-campaign="2026-08-26-outer-galaxy" aria-label="Datasets of the 26 Aug 2026 campaign"></ol>
+            <ul class="ra-stage-legend" aria-label="Stage colour key">
+              <li class="ra-stage-acq">Acquisition</li><li class="ra-stage-proc">Processing</li><li class="ra-stage-sci">Science product</li><li class="ra-stage-vis">Visualization</li>
+            </ul>
+          </div>
+          <figure class="ra-fig">
+            <img src="assets/images/research/dish222-2026-08-26-outer-galaxy-skymap.png" width="1600" height="842" loading="lazy" alt="Sky chart in right ascension and declination with the Galactic plane as a red curve and the ecliptic in violet; a contour map of H I line peak in dB covers the outer-Galaxy region near RA 4–8 h.">
+            <figcaption>
+              <span class="ra-chips"><span class="ra-chip">L7 · visualization</span><span class="ra-chip ra-chip--historical">C0 · relative dB</span></span>
+              <strong>What it shows:</strong> the 26 Aug 2026 raster projected on the sky: 313 beam-stacked positions with the H I line peak in dB above the baseline. <strong>When:</strong> generated by the legacy stitcher on the day of the observation. <strong>What to learn:</strong> how individual pointings become a map, and why a relative scale is enough to see the Galactic plane but not to compare brightness with other telescopes.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="showcase">
+      <div class="wrap">
+        <div class="ra-grid-2" style="align-items:start">
+          <div class="ra-prose">
+            <p class="section-kicker">Showcase product</p>
+            <h2 style="color:var(--text-dark)">The all-sky "TRUSTED" composite</h2>
+            <p>This composite combines six observing sessions between 26 Aug and 3 Sep 2026 into one map of peak brightness and velocity, overlaid on the LAB reference survey. It keeps only pixels that pass a selection rule (40–160 K, velocities within ±35 km/s, a dawn Sun band and speckles removed).</p>
+            <div class="ra-note ra-note--caution">
+              <p><strong>Showcase, not a starting point.</strong> It is a derived, curated (L6) product whose native lineage is <strong>incomplete</strong> in the research archive: only one of its six source sessions has native spectra available. Its selection cuts remove faint and high-velocity gas by construction. Its calibration is <strong>not recorded in the product metadata</strong>; the historical C2 scale is <strong>inferred from project chronology</strong> (C2 was in use when the composite was made).</p>
+            </div>
+            <p><a href="#ds-allsky-trusted-maps">Open its dataset record</a></p>
+          </div>
+          <figure class="ra-fig">
+            <img src="assets/images/research/dish222-allsky-trusted-overlay.png" width="1600" height="1432" loading="lazy" alt="Two sky maps in right ascension and declination: DISH222 velocity and brightness values that passed the TRUSTED selection, drawn over the faded LAB survey, with boxes marking the sessions of 26 Aug, 30 Aug, 1 Sep, 2 Sep and 3 Sep.">
+            <figcaption>
+              <span class="ra-chips"><span class="ra-chip">L7 · visualization</span><span class="ra-chip ra-chip--caution">Showcase</span><span class="ra-chip ra-chip--caution">Calibration not recorded · C2 inferred</span></span>
+              <strong>What it shows:</strong> DISH222 values that passed the selection rule, over the LAB survey. <strong>When:</strong> about 4 Sep 2026. <strong>Calibration:</strong> not recorded in the product metadata; C2 inferred from project chronology. <strong>What to learn:</strong> how multi-session maps are assembled and how selection rules shape what a map can say.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="browse">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Browse</p>
+          <h2>All catalogued datasets</h2>
+          <p>Open a record for its purpose, processing, calibration, lineage and known limitations. Research files are held in the project's research archive and are not published on this site. Ask the project team about access.</p>
+        </div>
+        <div data-ra-render="dataset-browser"></div>
+      </div>
+    </section>
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="telescopes.html"><span>Previous step</span><strong>&larr; Telescopes</strong></a><a class="is-next" href="data-to-science.html"><span>Next step</span><strong>From Data to Science &rarr;</strong></a></nav></div>
+    </section>
   </main>
   <footer class="site-footer ra-portal-footer">
     <div class="wrap ra-footer-grid">
@@ -40,11 +120,11 @@
       </div>
       <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
         <h4>Explore</h4>
-        <p><a href="index.html">Overview</a> · <a href="lecture.html">Lecture</a> · <a href="software.html">Software</a> · <a href="data.html">Data</a></p>
+        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
       </nav>
       <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
-        <h4>Research</h4>
-        <p><a href="publications.html">Publication</a> · <a href="resources.html">Resources</a></p>
+        <h4>Research &amp; learning</h4>
+        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
       </nav>
       <div class="ra-footer-col">
         <h4>EMXplore</h4>
@@ -53,6 +133,8 @@
       </div>
     </div>
   </footer>
-  <script src="../assets/js/site-config.js"></script><script src="../assets/js/main.js"></script><script src="assets/vendor/katex/katex.min.js"></script><script src="assets/js/math-render.js"></script><script src="assets/js/radio-astronomy.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/registry-data.js"></script>
+  <script src="assets/js/ra-portal.js"></script>
 </body>
 </html>

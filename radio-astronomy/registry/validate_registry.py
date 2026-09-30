@@ -10,7 +10,8 @@ Public checks (always run; need only the tracked registry):
      'inferred' values.
   4. Privacy lint: no private paths, filenames, storage details or checksums of
      non-distributed files in the public registry.
-  5. Public files: existence and (if recorded) SHA-256 of publicly distributed sources.
+  5. Public files: existence and (if recorded) SHA-256 of publicly distributed sources and of
+     published assets (dataset public_assets), plus asset/dataset calibration consistency.
 
 Private checks (only when the git-ignored manifest
 radio-astronomy/source/registry/local-sources.json is present):
@@ -146,10 +147,17 @@ def date_key(s):
     return s[:10] if isinstance(s, str) and len(s) >= 10 else None
 
 
+def public_asset_paths(data: dict) -> set:
+    return {a.get("path") for d in data["datasets"].get("datasets", []) for a in d.get("public_assets", [])}
+
+
 def privacy_lint(data: dict, rep: Report) -> None:
     sources = {s["source_id"]: s for s in data["datasets"].get("sources", [])}
+    published = public_asset_paths(data)  # published copies may be named by their public path
     for reg_name, reg in data.items():
         for text in strings(reg):
+            if text in published:
+                continue
             low = text.lower()
             for bad in FORBIDDEN_SUBSTRINGS:
                 if bad in low:
@@ -339,6 +347,37 @@ def check_public_files(data: dict, rep: Report, skip: bool) -> None:
     for s in data["datasets"].get("sources", []):
         if s.get("visibility") == "public" and s.get("path"):
             check_file(s["source_id"], REPO_ROOT / s["path"], s.get("sha256"), s.get("bytes"), rep, skip, False)
+    # Published assets: unique IDs/paths, files present with matching checksum, calibration consistent
+    seen_ids, seen_paths = set(), set()
+    cal_ids = {e["calibration_id"]: e for e in data["calibration-epochs"].get("epochs", [])}
+    current = data["calibration-epochs"].get("current_calibration_id")
+    for d in data["datasets"].get("datasets", []):
+        for a in d.get("public_assets", []):
+            aid, path = a["asset_id"], a["path"]
+            if aid in seen_ids:
+                rep.error(f"[assets] duplicate asset_id '{aid}'")
+            if path in seen_paths:
+                rep.error(f"[assets] path published twice: {path}")
+            seen_ids.add(aid)
+            seen_paths.add(path)
+            check_file(aid, REPO_ROOT / path, a.get("sha256"), a.get("bytes"), rep, skip, False)
+            c = a["calibration"]
+            cid = c.get("calibration_id")
+            if cid is not None and cid not in cal_ids:
+                rep.error(f"[assets] {aid}: unknown calibration '{cid}'")
+            if cid != d.get("calibration_id"):
+                rep.error(f"[assets] {aid}: calibration {cid} differs from its dataset {d['dataset_id']} ({d.get('calibration_id')})")
+            if cid is not None and (c["epoch_status"] == "current") != (cid == current):
+                rep.error(f"[assets] {aid}: epoch_status '{c['epoch_status']}' contradicts {cid} being "
+                          f"{'current' if cid == current else 'superseded'}")
+            if d.get("calibration_assignment", {}).get("evidence") == "inferred" and c["evidence"] == "documented":
+                rep.error(f"[assets] {aid}: calibration documented on the asset but only inferred for its dataset")
+            for page in a.get("used_on", []):
+                pp = HERE.parent / page
+                if not pp.exists():
+                    rep.error(f"[assets] {aid}: used_on page {page} does not exist")
+                elif path.split("/", 1)[1] not in pp.read_text(encoding="utf-8", errors="replace"):
+                    rep.warn(f"[assets] {aid}: listed as used on {page} but not referenced there")
 
 
 def check_local(data: dict, local: dict, schemas: dict, rep: Report, skip: bool) -> None:
@@ -420,6 +459,12 @@ def check_local(data: dict, local: dict, schemas: dict, rep: Report, skip: bool)
                     rep.verified.append(aid)
                 else:
                     rep.error(f"[local] artifact '{aid}': SHA-256 mismatch")
+    private_shas = {x.get("sha256") for k in ("sources", "artifacts", "private_record_files")
+                    for x in local.get(k, []) if x.get("sha256")}
+    for d in data["datasets"].get("datasets", []):
+        for a in d.get("public_assets", []):
+            if a.get("sha256") in private_shas:
+                rep.error(f"[privacy] published asset {a['asset_id']} is byte-identical to a private file")
     for i, r in enumerate(local.get("private_record_files", [])):
         if r["source_id"] not in public:
             rep.error(f"[local] private record file #{i} refers to unknown source '{r['source_id']}'")

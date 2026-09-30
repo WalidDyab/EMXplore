@@ -66,23 +66,6 @@
     }).join('');
   }
 
-  function renderDatasets() {
-    var target = document.querySelector('[data-ra-dataset-list]');
-    if (!target || !radioConfig || !Array.isArray(radioConfig.datasets)) return;
-
-    target.innerHTML = radioConfig.datasets.map(function (item) {
-      return '<tr>' +
-        '<td>' + item.title + '</td>' +
-        '<td>' + (item.description || 'Observation product prepared for public release.') + '</td>' +
-        '<td>' + item.observationType + '</td>' +
-        '<td>' + (item.coordinates || 'In preparation') + '</td>' +
-        '<td>' + (item.frequencyCoverage || 'Coming Soon') + '</td>' +
-        '<td>' + (item.format || 'Coming Soon') + '</td>' +
-        '<td><span class="ra-status-pill ' + statusClass(item.status) + '">' + item.status + '</span></td>' +
-      '</tr>';
-    }).join('');
-  }
-
   function renderLectureDownloads() {
     var downloads = radioConfig && radioConfig.lectureDownloads;
     if (!downloads) return;
@@ -151,6 +134,5 @@
 
   renderPublication();
   renderSoftware();
-  renderDatasets();
   renderLectureDownloads();
 })();

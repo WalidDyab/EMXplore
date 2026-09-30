@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calibration History — EMXplore Radio Astronomy</title>
+  <meta name="description" content="How the DISH222 brightness-temperature scale evolved through calibration epochs C0 to C4, the current sky-referenced reference, and why historical products keep their original scale.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html" aria-current="page">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Step 4 · Calibration</p>
+        <h1>How the temperature scale was built, step by step</h1>
+        <p class="hero-intro">Turning a relative radio measurement into kelvin is hard, and the project's understanding improved in five documented stages. Each stage is kept as an immutable <strong>calibration epoch</strong>. C4 is the current reference.</p>
+        <nav class="ra-subnav" aria-label="On this page">
+          <a href="#current">Current reference (C4)</a>
+          <a href="#history">C0 → C4 history</a>
+          <a href="#rules">Rules for old products</a>
+          <a href="#milestone">First kelvin map</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="current">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Current reference · C4</p>
+          <h2>The sky-referenced calibration of 23 Sep 2026</h2>
+          <p>The measured fractional line excess f is converted to brightness temperature with a conversion constant G and an additive pedestal p.</p>
+        </div>
+        <span class="ra-equation ra-equation--display" data-tex="T_B = (f - p)\,G, \qquad G = \frac{T_\text{sys}}{\eta}" data-display="true"><code>T_B = (f - p) G,  G = T_sys / eta</code></span>
+        <dl class="ra-params" data-ra-render="calibration-current" aria-label="Adopted C4 parameters"></dl>
+        <noscript><p class="ra-noscript">C4: G = 1454 ± 154 K, p = 0.0174 ± 0.0042, η = 0.616 ± 0.065, T_sys = 895.4 K. The interactive parts of this page are generated from the project registry and need JavaScript.</p></noscript>
+        <div class="ra-grid-2" style="margin-top:22px;align-items:start">
+          <div class="ra-chart" data-ra-render="calibration-fit-chart"></div>
+          <div class="ra-prose">
+            <h3>How C4 was obtained</h3>
+            <p>Eight sky positions, whose true brightness is known from the LAB survey smoothed to DISH222's 3° beam, were observed on the evening of 23 Sep 2026. They span about 8 K to 78 K. Plotting the measured f against the LAB brightness gives a straight line whose <strong>slope</strong> is 1/G and whose <strong>intercept</strong> is the pedestal p.</p>
+            <p>Using several brightness levels was the key step: a single reference point cannot separate a scale factor from an offset. The implied efficiency η = 0.616 agrees with an independent measurement of the aperture efficiency from a solar transit (0.582).</p>
+            <h3>Limits of C4</h3>
+            <ul>
+              <li>The scatter about the fit is about 8.5 K per measurement, set mainly by the receiver noise.</li>
+              <li>Linearity cannot yet be confirmed, and the pedestal is applied as a constant although the underlying baseline defect is sloped.</li>
+              <li>It is valid for the hardware state of 20–23 Sep 2026 and should be repeated after hardware changes.</li>
+              <li>Because it is anchored to LAB, comparing C4-scaled data with LAB is a consistency check, not an independent test.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="history">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">History</p>
+          <h2>C0 → C4: an evolution of understanding</h2>
+          <p>Each stage was a reasonable step with the evidence available at the time, and each revealed what the next one had to fix. The products listed under each epoch remain on that epoch's scale.</p>
+        </div>
+        <ol class="ra-epochs" data-ra-render="calibration-timeline" aria-label="Calibration epochs"></ol>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="rules">
+      <div class="wrap">
+        <div class="ra-grid-3">
+          <article class="ra-card">
+            <h3>Old products keep their scale</h3>
+            <p>A map made on 2 Sep with the C2 scale stays a C2 map. It is not silently relabelled when a better calibration arrives, because its processing (baseline, efficiency, pedestal) differed and that history matters for interpreting it.</p>
+          </article>
+          <article class="ra-card">
+            <h3>C4 has not been applied retroactively</h3>
+            <p>No map, cube or table in the archive has been recalibrated to C4. The only item carrying C4 is the calibration report that defines it. Brightness values in historical products must be read on their own epoch's scale.</p>
+          </article>
+          <article class="ra-card">
+            <h3>Re-deriving creates a new product</h3>
+            <p>If you express older data on the C4 scale (possible for the 2 Sep antenna-temperature cube, for example), the result is a <strong>new dataset</strong> with its own ID and an explicit record of what it was derived from. The original stays untouched.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="milestone">
+      <div class="wrap">
+        <div class="ra-feature">
+          <figure class="ra-fig">
+            <img src="assets/images/research/dish222-2026-09-01-kelvin-map-c2.png" width="1600" height="1067" loading="lazy" alt="Map of H I peak brightness in kelvin over Galactic longitude −30° to 25° and latitude −15° to 60°, with two panels below comparing DISH222 with the LAB survey: a scatter plot with a line at 0.30 times LAB, and brightness along the plane.">
+          </figure>
+          <div>
+            <span class="ra-chip ra-chip--historical">Historical milestone · C2 scale</span>
+            <h3>The first kelvin-calibrated map (1 Sep 2026)</h3>
+            <p><strong>What it shows:</strong> peak H I brightness based on the <strong>1 Sep 2026 observation</strong>, <strong>re-derived</strong> using the C2 calibration established on <strong>2 Sep 2026</strong> (T<sub>sys</sub> = 179.5 K, η = 0.30), and compared with the LAB survey. The lower panels show DISH222 reading about 0.30 of LAB along the plane, which is where the C2 efficiency η = 0.30 came from.</p>
+            <p><strong>Status:</strong> a historical product on the superseded C2 scale. It is <em>not</em> on the current C4 scale and has not been recalibrated. The calibration it uses was established the day after the observation, and the efficiency was derived from the same map it was applied to. The native data behind it are not in the research archive.</p>
+            <p><strong>What to learn:</strong> why a single scale factor fitted on one map cannot separate beam efficiency from other effects, and what the later sky-referenced method (C4) does differently.</p>
+            <p><a href="data.html#ds-20260901-gc-kelvin-map-figure">Dataset record</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="data-to-science.html"><span>Previous step</span><strong>&larr; From Data to Science</strong></a><a class="is-next" href="research.html"><span>Next step</span><strong>Student Research &rarr;</strong></a></nav></div>
+    </section>
+  </main>
+  <footer class="site-footer ra-portal-footer">
+    <div class="wrap ra-footer-grid">
+      <div class="ra-footer-branding">
+        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+        <p>Radio Astronomy — EMXplore</p>
+      </div>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
+        <h4>Explore</h4>
+        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
+      </nav>
+      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
+        <h4>Research &amp; learning</h4>
+        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
+      </nav>
+      <div class="ra-footer-col">
+        <h4>EMXplore</h4>
+        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
+        <p class="copyright">&copy; 2026 Walid Dyab</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/vendor/katex/katex.min.js"></script>
+  <script src="assets/js/math-render.js"></script>
+  <script src="assets/js/registry-data.js"></script>
+  <script src="assets/js/ra-portal.js"></script>
+</body>
+</html>

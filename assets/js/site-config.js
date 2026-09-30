@@ -126,7 +126,7 @@ const SITE_CONFIG = {
       github:      '', // Add when available
       paper:       'https://doi.org/10.1109/MAP.2025.3621127',
       software:    '', // Add when available
-      data:        '', // Add when available
+      data:        'radio-astronomy/data.html',
       lecture:     'radio-astronomy/lecture.html',
       publication: {
         status: 'Published',
@@ -145,14 +145,9 @@ const SITE_CONFIG = {
       },
       softwareResources: [
         { name: 'Telescope control', purpose: 'Pointing and telescope motion/control resources.', status: 'Coming Soon', platform: '', version: '', license: '', github: '', release: '', documentation: '' },
-        { name: 'SDR data acquisition', purpose: 'Receiver sampling and spectral acquisition resources.', status: 'Coming Soon', platform: '', version: '', license: '', github: '', release: '', documentation: '' },
-        { name: 'H I signal analysis', purpose: 'I/Q processing, FFT, averaging, calibration, and H I line analysis workflows.', status: 'Coming Soon', platform: '', version: '', license: '', github: '', release: '', documentation: '' },
+        { name: 'SDR data acquisition', purpose: 'Receiver control and real-time spectral acquisition: the SDR produces I/Q samples, which are Fourier-transformed and averaged on the fly. Only native averaged power spectra are stored; raw I/Q is not recorded.', status: 'Coming Soon', platform: '', version: '', license: '', github: '', release: '', documentation: '' },
+        { name: 'H I signal analysis', purpose: 'Analysis of the native averaged power spectra: baseline and bandpass treatment, RFI handling, H I line measurement, velocity and calibration workflows.', status: 'Coming Soon', platform: '', version: '', license: '', github: '', release: '', documentation: '' },
         { name: 'Scientific visualization', purpose: 'Plots, survey visualizations, and future data-product viewers.', status: 'Coming Soon', platform: '', version: '', license: '', github: '', release: '', documentation: '' },
-      ],
-      datasets: [
-        { title: 'Raw receiver output', description: 'Receiver captures before public packaging.', status: 'In Preparation', observationType: 'Receiver acquisition', coordinates: 'In preparation', frequencyCoverage: 'H I observing band', format: '', size: '', download: '', documentation: '' },
-        { title: 'H I spectra', description: 'Spectral products after FFT, averaging, and processing.', status: 'In Preparation', observationType: 'Hydrogen-line spectrum', coordinates: 'In preparation', frequencyCoverage: 'Near 1.42 GHz', format: '', size: '', download: '', documentation: '' },
-        { title: 'Position / velocity products', description: 'Future science products connecting sky coordinates and velocity.', status: 'Coming Soon', observationType: 'H I line product', coordinates: 'RA / Dec planned', frequencyCoverage: '', format: '', size: '', download: '', documentation: '' },
       ],
       lectureDownloads: {
         powerpoint: { status: 'Coming Soon', url: '' },
