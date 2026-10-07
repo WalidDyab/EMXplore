@@ -16,10 +16,11 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
-      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="../projects.html">Projects</a>
+      <div class="brand ra-portal-brand">
+        <a class="ra-brand-home" href="../index.html" aria-label="EMXplore home"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span></a><span class="ra-brand-divider" aria-hidden="true">/</span><a class="ra-portal-name" href="index.html">Radio Astronomy</a>
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html">Start</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
     </div>
   </header>
   <main id="main-content">
@@ -33,16 +34,53 @@
 
 
     <section class="section ra-portal-section" id="transformations">
-      <div class="wrap">
+      <div class="wrap ra-prose-wrap">
         <div class="section-heading">
           <p class="section-kicker">Three transformations</p>
           <h2>From what was recorded to what it means</h2>
-          <p>Every scientific product comes from a recording by passing through transformations. Each has assumptions, and each changes a measured quantity into a derived one.</p>
+          <p>Every scientific product starts as a recording. Three transformations turn it into physical quantities. Each has assumptions, and each changes a measured quantity into a derived one.</p>
         </div>
-        <div class="ra-xform">
-          <a href="time-to-ra.html"><span class="ra-xform-num">Transformation 1</span><h3>Time to sky position</h3><span class="ra-xform-chain">Solar time → sidereal time → Right Ascension</span><p>How a fixed zenith telescope records the sky as the Earth rotates.</p><span class="ra-status ra-status--planned">Explainer · data awaiting</span></a>
-          <a href="frequency-to-velocity.html"><span class="ra-xform-num">Transformation 2</span><h3>Frequency to motion</h3><span class="ra-xform-chain">Frequency → velocity / reference frames</span><p>The Doppler conversion and the frames that velocities can be quoted in.</p><span class="ra-status ra-status--validation">Explorer under validation</span></a>
-          <a href="calibration.html"><span class="ra-xform-num">Transformation 3</span><h3>Intensity to temperature</h3><span class="ra-xform-chain">Relative intensity → temperature</span><p>Calibration epochs C0 – C4 and the assumptions behind a kelvin scale.</p><span class="ra-status ra-status--available">Available (DISH222)</span></a>
+
+        <h3 id="t-ra">1. Solar time → sidereal time → Right Ascension</h3>
+        <p>A fixed zenith telescope never moves. The Earth rotates, so the sky drifts through the beam. Each spectrum carries only a clock time.</p>
+        <p>Clock time becomes sidereal time, then Local Sidereal Time (LST). For a zenith-pointing dish, the Right Ascension at the beam centre is approximately the LST. The declination stays near the site latitude.</p>
+        <span class="ra-equation ra-equation--display" data-tex="\alpha \approx \mathrm{LST},\qquad \delta \approx \varphi_{\mathrm{site}}" data-display="true"><code>RA ≈ LST,  Dec ≈ site latitude</code></span>
+        <p>Details: <a href="time-to-ra.html">Solar time → sidereal time → Right Ascension</a>.</p>
+
+        <h3 id="t-v">2. Frequency → velocity</h3>
+        <p>Spectra are recorded in frequency. The Doppler shift of the 21-cm line gives the gas velocity along the line of sight.</p>
+        <span class="ra-equation ra-equation--display" data-tex="v_\text{topo} = c\,\frac{f_0 - f_\text{obs}}{f_0},\qquad f_0 = 1420.40575\ \text{MHz}" data-display="true"><code>v_topo = c (f0 - f_obs) / f0,  f0 = 1420.40575 MHz</code></span>
+        <p>This velocity is relative to the telescope. It can be converted to other reference frames: heliocentric, barycentric and the Local Standard of Rest (LSR). The frame must always be stated.</p>
+        <p>Details: <a href="frequency-to-velocity.html">Frequency → velocity</a>.</p>
+
+        <h3 id="t-t">3. Relative intensity → temperature</h3>
+        <p>A raw spectrum has an arbitrary power scale. Calibration converts it to a physical temperature in kelvin.</p>
+        <p>Calibration rests on assumptions and on separate measurements. It carries uncertainty. DISH222 products keep the calibration epoch they were made with (C0 to C4; C4 is current).</p>
+        <p>Calibration of the historical fixed-dish spectra is <em>under validation</em>.</p>
+        <p>Details: <a href="calibration.html">Relative intensity → temperature</a>.</p>
+      </div>
+    </section>
+
+
+    <section class="section ra-portal-section ra-light" id="endpoint">
+      <div class="wrap">
+        <div class="ra-dark-panel">
+        <div>
+          <p class="section-kicker">Engineering to Science</p>
+          <h2>The endpoint: a brightness-temperature data product</h2>
+        </div>
+        <div class="ra-pathway" aria-label="Engineering to science pathway">
+          <span>Radio emission</span><span>Received signal</span><span>Averaged spectrum</span><span>Baseline &amp; RFI</span>
+          <span>H I measurement</span><span>Calibration</span><span>Sky position + velocity</span><span>Milky Way science</span>
+        </div>
+        <p>The conceptual endpoint is the H I brightness-temperature data product (<span class="ra-equation" data-tex="T_B(\alpha,\delta,v_{\mathrm{LSR}})" data-display="false"><code>\(T_B(\alpha,\delta,v_{\mathrm{LSR}})\)</code></span>), connecting signal processing to sky coordinates and velocity.</p>
+        <dl class="ra-definition-grid">
+          <div><dt>α</dt><dd>Right Ascension</dd></div>
+          <div><dt>δ</dt><dd>Declination</dd></div>
+          <div><dt>v<sub>LSR</sub></dt><dd>Radial velocity relative to the Local Standard of Rest</dd></div>
+          <div><dt>T<sub>B</sub></dt><dd>H I brightness temperature</dd></div>
+        </dl>
+        <p><a class="project-link" href="lecture.html#slide-020">Explore this in the lecture</a></p>
         </div>
       </div>
     </section>
@@ -147,15 +185,15 @@
     </section>
 
     <section class="section ra-portal-section">
-      <div class="wrap ra-grid-2">
-        <article class="ra-card">
+      <div class="wrap ra-prose">
+        <div>
           <h3>Learn the principles in the lecture</h3>
           <p>Lecture slides <a href="lecture.html#slide-033">33–43</a> cover the generic observation workflow, hot–cold calibration, baselines and LSR correction. Slides <a href="lecture.html#slide-044">44–51</a> cover moment maps, data cubes and column density.</p>
-        </article>
-        <article class="ra-card">
+        </div>
+        <div>
           <h3>See it on real data</h3>
           <p>Every step above can be followed through the <a href="data.html#featured">26 Aug 2026 campaign</a>, from native spectra (L0) to cube (L4), maps (L5) and figures (L7).</p>
-        </article>
+        </div>
       </div>
     </section>
 
@@ -169,13 +207,24 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap footer-simple">
-      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
-        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
-      </a>
-      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    <div class="wrap footer-main">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+          <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+        </a>
+        <p>Engineering projects and interactive learning in engineering and radio science.</p>
+      </div>
+      <nav aria-label="Footer explore links">
+        <h4>Explore</h4>
+        <p class="footer-inline"><a href="../projects.html">Projects</a><span class="sep"> · </span><a href="../courses.html">Courses</a><span class="sep"> · </span><a href="../tools.html">Tools</a><span class="sep"> · </span><a href="../portals.html">Portals</a></p>
+      </nav>
+      <div>
+        <h4>Connect</h4>
+        <p class="footer-inline"><a href="https://github.com/WalidDyab" target="_blank" rel="noopener noreferrer">GitHub</a><span class="sep"> · </span><a href="https://www.researchgate.net/profile/Walid-Dyab" target="_blank" rel="noopener noreferrer">ResearchGate</a><span class="sep"> · </span><a href="https://www.linkedin.com/in/walid-dyab-0a60b315/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      </div>
     </div>
     <div class="wrap">
+      <p class="footer-motto">Discover · Learn · Experiment</p>
       <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>

@@ -34,7 +34,7 @@ MAIN_KEY = {
 
 # ── Radio Astronomy project navigation ───────────────────────────────
 RA_NAV = [
-    ("start", "Start Here", "start-here.html"),
+    ("start", "Start", "index.html"),
     ("telescopes", "Telescopes", "telescopes.html"),
     ("data", "Data Library", "data.html"),
     ("d2s", "Data to Science", "data-to-science.html"),
@@ -42,7 +42,7 @@ RA_NAV = [
     ("log", "Project Log", "log.html"),
 ]
 RA_KEY = {
-    "start-here.html": "start",
+    "index.html": "start",
     "telescopes.html": "telescopes", "telescope-psu-fixed.html": "telescopes",
     "telescope-pnu-fixed.html": "telescopes", "telescope-psu-moving.html": "telescopes",
     "data.html": "data", "archive-psu-fixed.html": "data", "archive-pnu-fixed.html": "data",
@@ -50,9 +50,6 @@ RA_KEY = {
     "data-to-science.html": "d2s", "time-to-ra.html": "d2s", "frequency-to-velocity.html": "d2s",
     "calibration.html": "d2s", "research.html": "research", "log.html": "log",
 }
-# Pages whose "up" link goes somewhere other than Projects
-RA_PARENT = {"lecture.html": ("Portals", "../portals.html")}
-
 CUR = ' aria-current="page"'
 
 
@@ -77,27 +74,52 @@ def main_header(key: str) -> str:
   </header>'''
 
 
-def ra_header(key: str | None, parent: tuple[str, str]) -> str:
+def ra_header(key: str | None) -> str:
     links = "".join(f'<a href="{h}"{CUR if k == key else ""}>{l}</a>' for k, l, h in RA_NAV)
     return f'''<header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
-      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="{parent[1]}">{parent[0]}</a>
+      <div class="brand ra-portal-brand">
+        <a class="ra-brand-home" href="../index.html" aria-label="EMXplore home"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span></a><span class="ra-brand-divider" aria-hidden="true">/</span><a class="ra-portal-name" href="index.html">Radio Astronomy</a>
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
       <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation">{links}</nav>
     </div>
   </header>'''
 
 
+EXTERNAL_LINKS = [
+    ("GitHub", "https://github.com/WalidDyab"),
+    ("ResearchGate", "https://www.researchgate.net/profile/Walid-Dyab"),
+    ("LinkedIn", "https://www.linkedin.com/in/walid-dyab-0a60b315/"),
+]
+FOOTER_EXPLORE = [("Projects", "projects.html"), ("Courses", "courses.html"),
+                  ("Tools", "tools.html"), ("Portals", "portals.html")]
+
+
 def footer(prefix: str) -> str:
+    sep = '<span class="sep"> · </span>'
+    explore = sep.join(f'<a href="{prefix}{h}">{l}</a>' for l, h in FOOTER_EXPLORE)
+    connect = sep.join(
+        f'<a href="{u}" target="_blank" rel="noopener noreferrer">{l}</a>' for l, u in EXTERNAL_LINKS)
     return f'''<footer class="site-footer">
-    <div class="wrap footer-simple">
-      <a class="brand footer-brand" href="{prefix}index.html" aria-label="EMXplore home">
-        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
-      </a>
-      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    <div class="wrap footer-main">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="{prefix}index.html" aria-label="EMXplore home">
+          <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+        </a>
+        <p>Engineering projects and interactive learning in engineering and radio science.</p>
+      </div>
+      <nav aria-label="Footer explore links">
+        <h4>Explore</h4>
+        <p class="footer-inline">{explore}</p>
+      </nav>
+      <div>
+        <h4>Connect</h4>
+        <p class="footer-inline">{connect}</p>
+      </div>
     </div>
     <div class="wrap">
+      <p class="footer-motto">Discover · Learn · Experiment</p>
       <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>'''
@@ -112,7 +134,7 @@ def render(path: Path) -> str:
     in_ra = path.parent == RA_DIR
     name = path.name
     if in_ra:
-        hdr = ra_header(RA_KEY.get(name), RA_PARENT.get(name, ("Projects", "../projects.html")))
+        hdr = ra_header(RA_KEY.get(name))
     else:
         hdr = main_header(MAIN_KEY[name])
     html, n1 = HEADER_RE.subn(lambda m: hdr, html, count=1)

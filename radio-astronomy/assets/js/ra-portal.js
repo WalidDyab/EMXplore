@@ -140,7 +140,7 @@
 
   var R = {};
 
-  // Counts shown on Start Here / Data Library
+  // Counts shown on Start / Data Library
   R['dataset-stats'] = function (el) {
     var ds = datasets();
     var supplied = ds.filter(function (d) { return d.native_availability !== 'not_supplied'; }).length;
@@ -151,17 +151,6 @@
       '<div><strong>' + supplied + '</strong><span>in the current research archive</span></div>' +
       '<div><strong>' + native + '</strong><span>campaign with native spectra and a pointing manifest (26 Aug 2026)</span></div>' +
       '<div><strong>' + missing + '</strong><span>known sessions or products not yet in the archive</span></div>';
-  };
-
-  // Compact instrument generations strip
-  R['instrument-strip'] = function (el) {
-    el.innerHTML = instruments().map(function (i) {
-      var active = val(i.status) === 'active';
-      return '<a class="' + (active ? 'is-active' : '') + '" href="telescopes.html#' + esc(i.instrument_id) + '">' +
-        '<span class="ra-chips"><span class="ra-chip ' + (active ? 'ra-chip--current' : '') + '">' + (active ? 'Active' : 'Historical') + '</span></span>' +
-        '<strong>' + esc(i.name) + '</strong>' +
-        '<span>' + esc(val(i.telescope_type) || '') + '</span></a>';
-    }).join('');
   };
 
   function fact(label, q, unitText) {
@@ -183,7 +172,8 @@
       sky_reference_calibration: 'Sky-referenced calibration against the LAB survey'
     };
     var POINT = { fixed_zenith: 'Fixed, pointing at the zenith', az_el_motorised: 'Motorised azimuth/elevation (steerable)' };
-    el.innerHTML = instruments().map(function (i) {
+    var only = el.getAttribute('data-instrument');
+    el.innerHTML = instruments().filter(function (i) { return !only || i.instrument_id === only; }).map(function (i) {
       var active = val(i.status) === 'active';
       var d = i.dish || {}, r = i.receiver || {}, s = i.site || {};
       var modes = (i.observing_modes || []).filter(function (m) { return m.evidence === 'documented'; })

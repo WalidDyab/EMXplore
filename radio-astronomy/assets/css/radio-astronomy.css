@@ -7,7 +7,11 @@
 .ra-portal-brand {
   flex: 1 1 auto;
   min-width: 0;
+  align-items: baseline;
 }
+.ra-portal-brand a { text-decoration: none; }
+.ra-brand-home { display: inline-flex; align-items: baseline; gap: 1px; }
+.ra-portal-name:hover, .ra-portal-name:focus-visible { color: var(--cyan); outline: none; }
 
 .ra-brand-divider {
   color: rgba(255,255,255,.36);
@@ -23,66 +27,11 @@
   white-space: nowrap;
 }
 
-.ra-parent-link {
-  color: var(--cyan);
-  border: 1px solid rgba(22,215,255,.28);
-  border-radius: var(--radius-pill);
-  padding: 7px 12px;
-  text-decoration: none;
-  font-size: .82rem;
-  font-weight: 800;
-  white-space: nowrap;
-  background: rgba(22,215,255,.08);
-}
-
-.ra-parent-link:hover,
-.ra-parent-link:focus-visible {
-  color: #fff;
-  background: rgba(22,215,255,.16);
-  outline: none;
-}
-
 .ra-portal-nav a[aria-current="page"] {
   color: #06101f;
   background: var(--cyan);
   border-color: rgba(22,215,255,.65);
   font-weight: 800;
-}
-
-.ra-portal-footer {
-  padding-top: 46px;
-}
-
-.ra-footer-grid {
-  display: grid;
-  grid-template-columns: minmax(220px,1.4fr) minmax(160px,.9fr) minmax(160px,.9fr) minmax(150px,.8fr);
-  gap: 26px;
-  padding-bottom: 34px;
-}
-
-.ra-footer-branding p,
-.ra-footer-col p {
-  color: var(--text-muted);
-  margin: 10px 0 0;
-}
-
-.ra-footer-col h4 {
-  color: var(--gold);
-  font-size: .78rem;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.ra-footer-col a {
-  color: var(--text-muted);
-  text-decoration: none;
-}
-
-.ra-footer-col a:hover,
-.ra-footer-col a:focus-visible {
-  color: var(--cyan);
-  outline: none;
 }
 
 .ra-hero { background:
@@ -100,7 +49,8 @@
 .ra-feature-slide img, .ra-slide-image img, .ra-timeline-item img, .project-card img { border-radius: 18px; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 18px 48px rgba(0,0,0,.25); }
 .ra-feature-slide img { display: block; width: 100%; max-width: 100%; height: auto; }
 .ra-feature-slide figcaption { color: var(--text-muted); font-size: .85rem; margin-top: 10px; }
-.ra-light { background: var(--surface-alt); color: var(--text-body); }
+.ra-light,
+.section.ra-light { background: var(--surface-alt); color: var(--text-body); } /* .section.ra-light: beats style.css .section:nth-of-type(2n), which silently turned every even-numbered .ra-light section white */
 .ra-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
 .ra-stats div { background: var(--white); border: 1px solid var(--border-light); border-radius: var(--radius-card); padding: 22px; }
 .ra-stats strong { display:block; color: var(--text-dark); font-size: 2rem; line-height: 1; margin-bottom: 8px; }
@@ -185,7 +135,7 @@
 .ra-resource-table th, .ra-resource-table td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--border-light); vertical-align: top; }
 .ra-resource-table th { color: var(--text-dark); background: var(--surface); }
 .ra-arabic { direction: rtl; text-align: right; font-family: "Tahoma", "Arial", sans-serif; }
-.ra-arabic .site-nav, .ra-arabic .header-inner, .ra-arabic .ra-portal-footer { direction: ltr; text-align: left; }
+.ra-arabic .site-nav, .ra-arabic .header-inner, .ra-arabic .site-footer { direction: ltr; text-align: left; }
 .ra-arabic .ra-hero, .ra-arabic .section { direction: rtl; }
 .ra-arabic .ra-chain li { padding: 13px 52px 13px 16px; }
 .ra-arabic .ra-chain li::before { left: auto; right: 14px; }
@@ -196,7 +146,6 @@
   .ra-hero-grid, .ra-lecture-shell, .ra-timeline-item, .ra-system-grid, .ra-figure-grid, .ra-pathway, .ra-publication-meta, .ra-definition-grid { grid-template-columns: 1fr; }
   .ra-toc { position: relative; top: auto; max-height: none; }
   .ra-stats { grid-template-columns: repeat(2,1fr); }
-  .ra-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width: 680px) {
   .ra-body {
@@ -241,10 +190,6 @@
     border-bottom: 1px solid var(--border-dark);
   }
 
-  .ra-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
 
   .ra-hero { padding-top: 125px; }
   .ra-hero-grid {

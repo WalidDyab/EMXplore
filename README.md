@@ -36,7 +36,7 @@ EMXplore
 └── About                      about.html
 
 Radio Astronomy (radio-astronomy/)
-├── Start Here
+├── Start (index.html: introduction + student onboarding)
 ├── Telescopes   → Fixed (PSU, PNU) · Moving (PSU / DISH222)
 ├── Data Library → A. Explore data · B. Scientific Archives
 │                  (archive-psu-fixed · archive-pnu-fixed · archive-psu-moving)

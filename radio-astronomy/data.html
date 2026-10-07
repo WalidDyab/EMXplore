@@ -15,10 +15,11 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
-      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="../projects.html">Projects</a>
+      <div class="brand ra-portal-brand">
+        <a class="ra-brand-home" href="../index.html" aria-label="EMXplore home"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span></a><span class="ra-brand-divider" aria-hidden="true">/</span><a class="ra-portal-name" href="index.html">Radio Astronomy</a>
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html" aria-current="page">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html">Start</a><a href="telescopes.html">Telescopes</a><a href="data.html" aria-current="page">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
     </div>
   </header>
   <main id="main-content">
@@ -35,18 +36,16 @@
 
 
     <section class="section ra-portal-section" id="overview">
-      <div class="wrap">
-        <div class="ra-grid-2">
-          <article class="ra-card">
+      <div class="wrap ra-prose-wrap">
+        <div class="ra-cols">
+          <div>
             <h3>A · Explore data</h3>
-            <p>What observations and datasets exist, which telescope produced them, what scientific question they support, and what students can explore.</p>
-            <p><a href="#levels">Processing levels</a> · <a href="#featured">Recommended dataset</a> · <a href="#browse">All datasets</a></p>
-          </article>
-          <article class="ra-card">
+            <p>Which observations exist, which telescope produced them, what question they support and what students can explore. See the <a href="#levels">processing levels</a>, the <a href="#featured">recommended dataset</a> and <a href="#browse">all datasets</a>.</p>
+          </div>
+          <div>
             <h3>B · Scientific Archives</h3>
-            <p>What actual files and products exist, at what processing level, in which formats, and what can eventually be downloaded.</p>
-            <p><a href="#archives">PSU Fixed</a> · <a href="#archives">PNU Fixed</a> · <a href="#archives">PSU Moving / DISH222</a></p>
-          </article>
+            <p>Which files and products exist, at what processing level, in which formats, and what can eventually be downloaded. See the <a href="#archives">archives by telescope</a>.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -125,26 +124,23 @@
     </section>
 
     <section class="section ra-portal-section" id="archives">
-      <div class="wrap">
+      <div class="wrap ra-prose-wrap">
         <div class="section-heading">
           <p class="section-kicker">B · Scientific Archives</p>
           <h2>What actual files and products exist</h2>
-          <p>Archives are organised by telescope, then by processing stage. They show the formats, what is measured versus derived, and what can eventually be downloaded. Placeholders mark stages whose files are not yet ingested; nothing is downloadable unless it says so.</p>
+          <p>Archives are organised by telescope, then by processing stage. Placeholders mark stages whose files are not yet ingested. Nothing is downloadable unless it says so.</p>
         </div>
-        <div class="ra-tier">
-          <div class="ra-tier-head"><h3>Fixed telescopes</h3><p>Zenith-pointing drift-scan stations.</p></div>
-          <div class="ra-grid-2">
-            <a class="ra-station" href="archive-psu-fixed.html"><div class="ra-station-top"><span>Fixed · PSU</span><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></div><h4>PSU Fixed Telescope</h4><p>Original spectra through to a planned modern reprocessed archive.</p><ul class="ra-formats" aria-label="File formats"><li>TXT spectra</li><li>MAT bundles</li><li>RA/LST MAT bundles</li><li>Master MATLAB structure</li><li>Future FITS / CSV / JSON</li></ul><span class="project-link">Open the PSU fixed archive</span></a>
-            <a class="ra-station is-placeholder" href="archive-pnu-fixed.html"><div class="ra-station-top"><span>Fixed · PNU</span><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></div><h4>PNU Fixed Telescope</h4><p>Placeholders for original, aggregated, processed and modern archive products.</p><ul class="ra-formats" aria-label="File formats"><li>Placeholders</li></ul><span class="project-link">Open the PNU fixed archive</span></a>
-          </div>
-        </div>
-        <div class="ra-tier">
-          <div class="ra-tier-head"><h3>Moving / rotating telescope</h3><p>The steerable DISH222 at PSU.</p></div>
-          <div class="ra-grid-2">
-            <a class="ra-station" href="archive-psu-moving.html"><div class="ra-station-top"><span>Moving · PSU</span><span class="ra-status ra-status--available">Available on request</span></div><h4>PSU Moving Telescope / DISH222</h4><p>Products catalogued from the registry, with placeholders for future standard products.</p><ul class="ra-formats" aria-label="File formats"><li>NPZ spectra</li><li>Scan manifests</li><li>Derived products</li><li>Future FITS / CSV / JSON</li></ul><span class="project-link">Open the DISH222 archive</span></a>
-          </div>
-        </div>
-        <ul class="ra-legend" aria-label="Status key"><li><span class="ra-status ra-status--available">Available</span></li><li><span class="ra-status ra-status--processing">Processing</span></li><li><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></li><li><span class="ra-status ra-status--validation">Under validation</span></li><li><span class="ra-status ra-status--planned">Planned</span></li></ul>
+        <ul class="ra-legend" aria-label="Status key"><li><span class="ra-status ra-status--available">Available</span></li><li><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></li><li><span class="ra-status ra-status--planned">Planned</span></li></ul>
+        <ul class="ra-rows" style="margin-top:14px">
+          <li><div><strong><a href="archive-psu-fixed.html">PSU Fixed Telescope</a></strong><span class="ra-status ra-status--awaiting">Awaiting ingestion</span><span class="ra-row-sub">Fixed · historical</span></div>
+              <div>Archive lineage from original spectra to a planned modern archive:
+                <ul><li>TXT spectra</li><li>MAT bundles</li><li>RA/LST-corrected MAT bundles</li><li>master MATLAB structure</li><li>future FITS / CSV / JSON</li></ul></div></li>
+          <li><div><strong><a href="archive-pnu-fixed.html">PNU Fixed Telescope</a></strong><span class="ra-status ra-status--awaiting">Awaiting ingestion</span><span class="ra-row-sub">Fixed · historical</span></div>
+              <div>The same archive structure as a set of placeholders: original, aggregated and processed data, FITS, metadata and derived products.</div></li>
+          <li><div><strong><a href="archive-psu-moving.html">PSU Moving Telescope / DISH222</a></strong><span class="ra-status ra-status--available">Available on request</span><span class="ra-row-sub">Moving · active</span></div>
+              <div>Products catalogued from the registry:
+                <ul><li>NPZ spectra</li><li>scan manifests</li><li>derived products (cubes, maps, figures)</li><li>future FITS / CSV / JSON</li></ul></div></li>
+        </ul>
       </div>
     </section>
 
@@ -174,13 +170,24 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap footer-simple">
-      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
-        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
-      </a>
-      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    <div class="wrap footer-main">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+          <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+        </a>
+        <p>Engineering projects and interactive learning in engineering and radio science.</p>
+      </div>
+      <nav aria-label="Footer explore links">
+        <h4>Explore</h4>
+        <p class="footer-inline"><a href="../projects.html">Projects</a><span class="sep"> · </span><a href="../courses.html">Courses</a><span class="sep"> · </span><a href="../tools.html">Tools</a><span class="sep"> · </span><a href="../portals.html">Portals</a></p>
+      </nav>
+      <div>
+        <h4>Connect</h4>
+        <p class="footer-inline"><a href="https://github.com/WalidDyab" target="_blank" rel="noopener noreferrer">GitHub</a><span class="sep"> · </span><a href="https://www.researchgate.net/profile/Walid-Dyab" target="_blank" rel="noopener noreferrer">ResearchGate</a><span class="sep"> · </span><a href="https://www.linkedin.com/in/walid-dyab-0a60b315/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      </div>
     </div>
     <div class="wrap">
+      <p class="footer-motto">Discover · Learn · Experiment</p>
       <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>

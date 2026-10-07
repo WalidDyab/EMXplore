@@ -15,10 +15,11 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
-      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="../projects.html">Projects</a>
+      <div class="brand ra-portal-brand">
+        <a class="ra-brand-home" href="../index.html" aria-label="EMXplore home"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span></a><span class="ra-brand-divider" aria-hidden="true">/</span><a class="ra-portal-name" href="index.html">Radio Astronomy</a>
+      </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html" aria-current="page">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html">Start</a><a href="telescopes.html" aria-current="page">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
     </div>
   </header>
   <main id="main-content">
@@ -26,8 +27,8 @@
       <div class="wrap">
         <ol class="ra-crumbs" aria-label="Breadcrumb"><li><a href="index.html">Radio Astronomy</a></li><li><a href="telescopes.html">Telescopes</a></li><li aria-current="page">Fixed</li><li aria-current="page">PSU</li></ol>
         <p class="eyebrow">Telescopes · Fixed · PSU</p>
-        <h1>PSU fixed telescope: the drift-scan origin of the project</h1>
-        <p class="hero-intro">A fixed reflector that looks straight up and lets the Earth do the scanning. This is where the project's historical data begin.</p>
+        <h1>PSU Fixed Telescope</h1>
+        <p class="hero-intro">Historical fixed zenith-pointing telescope at Prince Sultan University: a fixed reflector that looks straight up and lets the Earth do the scanning.</p>
       </div>
     </section>
 
@@ -55,44 +56,7 @@
           <h2>How the fixed telescope works, step by step</h2>
           <p>This page is being prepared as the main historical learning path. Topics marked Planned are placeholders: their content is not written yet.</p>
         </div>
-        <ul class="ra-legend" aria-label="Status key"><li><span class="ra-status ra-status--available">Available (summary)</span> text exists</li><li><span class="ra-status ra-status--planned">Planned</span> content to be written</li></ul>
-        <div class="ra-prod-grid" style="margin-top:18px">
-        <article class="ra-prod">
-          <div class="ra-prod-head"><h3>Zenith-pointing operation</h3><span class="ra-status ra-status--available">Available (summary)</span></div>
-          <p>The reflector points straight up and never moves. The beam therefore stays on one band of sky, at the declination set by the site's latitude, while the Earth turns.</p>
-          
-        </article>
-        <article class="ra-prod">
-          <div class="ra-prod-head"><h3>Drift-scan observing</h3><span class="ra-status ra-status--available">Available (summary)</span></div>
-          <p>As the Earth rotates, the sky drifts through the beam: each fixed telescope maps one band of sky per day. Simple and robust, but the telescope cannot choose where to look.</p>
-          <p class="ra-prod-note"><a href="telescopes.html#evolution">Read the fixed-to-moving story</a></p>
-        </article>
-        <article class="ra-prod is-placeholder">
-          <div class="ra-prod-head"><h3>SDR-based spectrum acquisition</h3><span class="ra-status ra-status--planned">Planned</span></div>
-          <p>How the software-defined receiver chain turns the received signal into a spectrum. Detailed PSU description to be added.</p>
-          
-        </article>
-        <article class="ra-prod is-placeholder">
-          <div class="ra-prod-head"><h3>Averaged spectra</h3><span class="ra-status ra-status--planned">Planned</span></div>
-          <p>How many short spectra are averaged into the recorded spectrum, and what the recorded file contains. Detail to be added from the station record.</p>
-          
-        </article>
-        <article class="ra-prod is-placeholder">
-          <div class="ra-prod-head"><h3>Receiver / background response correction</h3><span class="ra-status ra-status--planned">Planned</span></div>
-          <p>How the receiver and background response were removed from the historical spectra, and what assumptions that involved. Detail to be added.</p>
-          
-        </article>
-        <article class="ra-prod is-placeholder">
-          <div class="ra-prod-head"><h3>Sidereal time and Right Ascension processing</h3><span class="ra-status ra-status--planned">Explainer ready · data awaiting ingestion</span></div>
-          <p>How clock time on each spectrum becomes sidereal time and Right Ascension for a zenith-pointing drift instrument.</p>
-          <p class="ra-prod-note"><a href="time-to-ra.html">Open Solar Time → Right Ascension</a></p>
-        </article>
-        <article class="ra-prod">
-          <div class="ra-prod-head"><h3>Limitations that motivated the moving telescope</h3><span class="ra-status ra-status--available">Available (summary)</span></div>
-          <p>A fixed telescope cannot repeat an observation on demand, map a chosen region, or point at a calibration source. These limits led to the steerable DISH222.</p>
-          <p class="ra-prod-note"><a href="telescope-psu-moving.html">Continue to the moving PSU telescope</a></p>
-        </article>
-        </div>
+        <ul class="ra-rows"><li><div><strong>Zenith-pointing operation</strong><span class="ra-status ra-status--available">Available (summary)</span></div><div>The reflector points straight up and never moves. The beam therefore stays on one band of sky, at the declination set by the site's latitude, while the Earth turns.</div></li><li><div><strong>Drift-scan observing</strong><span class="ra-status ra-status--available">Available (summary)</span></div><div>As the Earth rotates, the sky drifts through the beam: each fixed telescope maps one band of sky per day. Simple and robust, but the telescope cannot choose where to look. <a href="telescopes.html#evolution">Read the fixed-to-moving story</a></div></li><li><div><strong>SDR-based spectrum acquisition</strong><span class="ra-status ra-status--planned">Planned</span></div><div>How the software-defined receiver chain turns the received signal into a spectrum. Detailed PSU description to be added.</div></li><li><div><strong>Averaged spectra</strong><span class="ra-status ra-status--planned">Planned</span></div><div>How many short spectra are averaged into the recorded spectrum, and what the recorded file contains. Detail to be added from the station record.</div></li><li><div><strong>Receiver / background response correction</strong><span class="ra-status ra-status--planned">Planned</span></div><div>How the receiver and background response were removed from the historical spectra, and what assumptions that involved. Detail to be added.</div></li><li><div><strong>Sidereal time and Right Ascension processing</strong><span class="ra-status ra-status--planned">Explainer ready · data awaiting ingestion</span></div><div>How clock time on each spectrum becomes sidereal time and Right Ascension for a zenith-pointing drift instrument. <a href="time-to-ra.html">Open Solar Time → Right Ascension</a></div></li><li><div><strong>Limitations that motivated the moving telescope</strong><span class="ra-status ra-status--available">Available (summary)</span></div><div>A fixed telescope cannot repeat an observation on demand, map a chosen region, or point at a calibration source. These limits led to the steerable DISH222. <a href="telescope-psu-moving.html">Continue to the moving PSU telescope</a></div></li></ul>
       </div>
     </section>
 
@@ -103,10 +67,25 @@
           <h2>Data and archive for this station</h2>
           <p>Where the recorded observations will appear.</p>
         </div>
-        <div class="ra-grid-2">
-          <article class="ra-card"><h3>Data Library <span class="ra-status ra-status--awaiting">Awaiting ingestion</span></h3><p>The Data Library describes which scientific datasets exist and what you can explore. PSU fixed-telescope datasets are not catalogued there yet.</p><p><a href="data.html">Open the Data Library</a></p></article>
-          <article class="ra-card"><h3>PSU Fixed Telescope Archive <span class="ra-status ra-status--awaiting">Awaiting ingestion</span></h3><p>The archive lineage from original averaged spectra to a modern reprocessed archive is laid out, with each stage marked by status. No files are connected yet, so there is no download here.</p><p><a href="archive-psu-fixed.html">Open the PSU fixed archive</a></p></article>
-        </div>
+        <p>The <a href="data.html">Data Library</a> describes which datasets exist. PSU fixed-telescope datasets are not catalogued there yet <span class="ra-status ra-status--awaiting">Awaiting ingestion</span>.</p>
+        <p>The <a href="archive-psu-fixed.html">PSU fixed archive</a> lays out the lineage from original spectra to a modern reprocessed archive. No files are connected yet, so there is no download.</p>
+      </div>
+    </section>
+
+
+    <section class="section ra-portal-section" id="pointing">
+      <div class="wrap">
+        <div class="section-heading"><p class="section-kicker">Pointing and Observation</p><h2>How a fixed station observes</h2></div>
+        <div class="ra-system-grid"><article class="ra-flow"><h3>Historical fixed system</h3><p>In the published fixed implementation, the telescope points at zenith and Earth rotation carries sky regions through the beam. This supports transit-scan measurements without implying motorized tracking.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light" id="system"><div class="wrap"><div class="section-heading"><p class="section-kicker">Telescope System</p><h2>Radio signal chain</h2><p>A practical path from the neutral hydrogen line to an interpreted spectrum.</p></div><ol class="ra-chain"><li>H I emission near 1.42 GHz</li><li>5 m parabolic reflector</li><li>Choke-horn / feed</li><li>Low-noise receiver chain</li><li>Software-defined radio</li><li>I/Q samples</li><li>FFT</li><li>Averaging and signal processing</li><li>H I spectrum</li><li>Scientific visualization</li></ol></div></section>
+
+    <section class="section ra-portal-section" id="instrument-record">
+      <div class="wrap">
+        <div class="section-heading"><p class="section-kicker">Instrument record</p><h2>What is documented about the fixed stations</h2><p>Generated from the project's instrument registry. Details that are not documented are listed as open questions rather than guessed.</p></div>
+        <div class="ra-instr" data-ra-render="instrument-cards" data-instrument="fixed-transit-network"></div>
       </div>
     </section>
 
@@ -115,16 +94,29 @@
     </section>
   </main>
   <footer class="site-footer">
-    <div class="wrap footer-simple">
-      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
-        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
-      </a>
-      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    <div class="wrap footer-main">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+          <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+        </a>
+        <p>Engineering projects and interactive learning in engineering and radio science.</p>
+      </div>
+      <nav aria-label="Footer explore links">
+        <h4>Explore</h4>
+        <p class="footer-inline"><a href="../projects.html">Projects</a><span class="sep"> · </span><a href="../courses.html">Courses</a><span class="sep"> · </span><a href="../tools.html">Tools</a><span class="sep"> · </span><a href="../portals.html">Portals</a></p>
+      </nav>
+      <div>
+        <h4>Connect</h4>
+        <p class="footer-inline"><a href="https://github.com/WalidDyab" target="_blank" rel="noopener noreferrer">GitHub</a><span class="sep"> · </span><a href="https://www.researchgate.net/profile/Walid-Dyab" target="_blank" rel="noopener noreferrer">ResearchGate</a><span class="sep"> · </span><a href="https://www.linkedin.com/in/walid-dyab-0a60b315/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      </div>
     </div>
     <div class="wrap">
+      <p class="footer-motto">Discover · Learn · Experiment</p>
       <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
+  <script src="assets/js/registry-data.js"></script>
+  <script src="assets/js/ra-portal.js"></script>
 </body>
 </html>
