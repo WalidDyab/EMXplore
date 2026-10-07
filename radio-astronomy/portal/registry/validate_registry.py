@@ -21,7 +21,7 @@ radio-astronomy/source/registry/local-sources.json is present):
      verified, including members inside ZIP archives.
 
 Usage
-  python radio-astronomy/registry/validate_registry.py [--no-local] [--local PATH]
+  python radio-astronomy/portal/registry/validate_registry.py [--no-local] [--local PATH]
                                                        [--skip-checksums] [--quiet]
 
 Requires: Python 3.8+ and the 'jsonschema' package (pip install jsonschema).
@@ -45,7 +45,8 @@ except ImportError:  # pragma: no cover
     sys.exit("jsonschema is required: pip install jsonschema")
 
 HERE = Path(__file__).resolve().parent
-REPO_ROOT = HERE.parent.parent
+REPO_ROOT = HERE.parent.parent.parent
+RA_DIR = HERE.parent.parent  # radio-astronomy/ (used_on pages are relative to it)
 SCHEMA_DIR = HERE / "schemas"
 DEFAULT_LOCAL = REPO_ROOT / "radio-astronomy" / "source" / "registry" / "local-sources.json"
 REGISTRIES = {
@@ -373,10 +374,10 @@ def check_public_files(data: dict, rep: Report, skip: bool) -> None:
             if d.get("calibration_assignment", {}).get("evidence") == "inferred" and c["evidence"] == "documented":
                 rep.error(f"[assets] {aid}: calibration documented on the asset but only inferred for its dataset")
             for page in a.get("used_on", []):
-                pp = HERE.parent / page
+                pp = RA_DIR / page
                 if not pp.exists():
                     rep.error(f"[assets] {aid}: used_on page {page} does not exist")
-                elif path.split("/", 1)[1] not in pp.read_text(encoding="utf-8", errors="replace"):
+                elif path.rsplit("/", 1)[1] not in pp.read_text(encoding="utf-8", errors="replace"):
                     rep.warn(f"[assets] {aid}: listed as used on {page} but not referenced there")
 
 

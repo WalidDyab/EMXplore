@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Single source for the site chrome: global header nav, Radio Astronomy header nav, footer.
 
+Three page families, each with its own relative-path depth:
+  site root                *.html            global header, footer prefix ""
+  radio-astronomy/         public project    global header (prefix "../"), footer prefix "../"
+  radio-astronomy/portal/  member-only pages portal header, footer prefix "../../"
+
 Every page carries identical, plain-HTML chrome (no build step at deploy time). This script
 rewrites it from the definitions below so the copies cannot drift apart.
 
@@ -16,6 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RA_DIR = ROOT / "radio-astronomy"
+PORTAL_DIR = RA_DIR / "portal"
 
 # ── Global navigation ────────────────────────────────────────────────
 MAIN_NAV = [
@@ -34,7 +40,7 @@ MAIN_KEY = {
 
 # ── Radio Astronomy project navigation ───────────────────────────────
 RA_NAV = [
-    ("start", "Start", "index.html"),
+    ("start", "Start", "start.html"),
     ("telescopes", "Telescopes", "telescopes.html"),
     ("data", "Data Library", "data.html"),
     ("d2s", "Data to Science", "data-to-science.html"),
@@ -42,7 +48,7 @@ RA_NAV = [
     ("log", "Project Log", "log.html"),
 ]
 RA_KEY = {
-    "index.html": "start",
+    "start.html": "start",
     "telescopes.html": "telescopes", "telescope-psu-fixed.html": "telescopes",
     "telescope-pnu-fixed.html": "telescopes", "telescope-psu-moving.html": "telescopes",
     "data.html": "data", "archive-psu-fixed.html": "data", "archive-pnu-fixed.html": "data",
@@ -50,15 +56,20 @@ RA_KEY = {
     "data-to-science.html": "d2s", "time-to-ra.html": "d2s", "frequency-to-velocity.html": "d2s",
     "calibration.html": "d2s", "research.html": "research", "log.html": "log",
 }
+# Public pages inside radio-astronomy/ use the global header; this is the nav item they highlight.
+RA_PUBLIC_KEY = {
+    "index.html": "projects", "publications.html": "projects", "project-ar.html": "projects",
+    "campus-to-milky-way-ar.html": "projects", "lecture.html": "portals",
+}
 CUR = ' aria-current="page"'
 
 
-def main_header(key: str) -> str:
+def main_header(key: str, prefix: str = "") -> str:
     links = "\n".join(
-        f'        <a href="{h}"{CUR if k == key else ""}>{l}</a>' for k, l, h in MAIN_NAV)
+        f'        <a href="{prefix}{h}"{CUR if k == key else ""}>{l}</a>' for k, l, h in MAIN_NAV)
     return f'''<header class="site-header" id="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html" aria-label="EMXplore home">
+      <a class="brand" href="{prefix}index.html" aria-label="EMXplore home">
         <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
       </a>
 
@@ -79,7 +90,7 @@ def ra_header(key: str | None) -> str:
     return f'''<header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
       <div class="brand ra-portal-brand">
-        <a class="ra-brand-home" href="../index.html" aria-label="EMXplore home"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span></a><span class="ra-brand-divider" aria-hidden="true">/</span><a class="ra-portal-name" href="index.html">Radio Astronomy</a>
+        <a class="ra-brand-home" href="../../index.html" aria-label="EMXplore home"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span></a><span class="ra-brand-divider" aria-hidden="true">/</span><a class="ra-portal-name" href="start.html">Radio Astronomy</a>
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
       <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation">{links}</nav>
@@ -131,21 +142,22 @@ FOOTER_RE = re.compile(r'<footer class="site-footer[^"]*">.*?</footer>', re.S)
 
 def render(path: Path) -> str:
     html = path.read_text(encoding="utf-8")
-    in_ra = path.parent == RA_DIR
     name = path.name
-    if in_ra:
-        hdr = ra_header(RA_KEY.get(name))
+    if path.parent == PORTAL_DIR:
+        hdr, prefix = ra_header(RA_KEY.get(name)), "../../"
+    elif path.parent == RA_DIR:
+        hdr, prefix = main_header(RA_PUBLIC_KEY[name], "../"), "../"
     else:
-        hdr = main_header(MAIN_KEY[name])
+        hdr, prefix = main_header(MAIN_KEY[name]), ""
     html, n1 = HEADER_RE.subn(lambda m: hdr, html, count=1)
-    html, n2 = FOOTER_RE.subn(lambda m: footer("../" if in_ra else ""), html, count=1)
+    html, n2 = FOOTER_RE.subn(lambda m: footer(prefix), html, count=1)
     if n1 != 1 or n2 != 1:
         raise SystemExit(f"{path.relative_to(ROOT)}: header/footer not found")
     return html
 
 
 def pages():
-    return sorted(list(ROOT.glob("*.html")) + list(RA_DIR.glob("*.html")))
+    return sorted(list(ROOT.glob("*.html")) + list(RA_DIR.glob("*.html")) + list(PORTAL_DIR.glob("*.html")))
 
 
 def main() -> int:

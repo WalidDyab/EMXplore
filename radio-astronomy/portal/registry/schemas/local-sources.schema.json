@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/local-sources.schema.json",
+  "$id": "https://emxplore.com/radio-astronomy/portal/registry/schemas/local-sources.schema.json",
   "title": "Private local-source manifest",
   "description": "Schema for the PRIVATE, git-ignored local-source manifest. It maps the opaque public source and artifact IDs to local storage paths, private filenames and SHA-256 checksums. The schema is public; the data file is not.",
   "type": "object",

@@ -8,7 +8,7 @@ These files are the machine-readable scientific record behind the future student
 
 They are technical documentation, not portal copy.
 
-This folder is **public**: it is tracked and will be served by the website. It holds only scientific metadata and opaque identifiers. Storage locations, private filenames and checksums of files that are not distributed are kept in a separate, git-ignored **private local-source manifest**. That manifest is never published.
+This folder lives under `radio-astronomy/portal/`, the member-only area protected by Cloudflare Access, so the registry is not served to the general public. It is tracked in git and holds only scientific metadata and opaque identifiers. Storage locations, private filenames and checksums of files that are not distributed are kept in a separate, git-ignored **private local-source manifest**. That manifest is never published.
 
 | File | Contents |
 |---|---|
@@ -93,19 +93,19 @@ The full parameters, limitations and sources are in `calibration-epochs.json`. T
 
 ## Portal bundle
 
-The student portal pages (Telescopes, Data Library, Calibration and others) read a generated copy of the three public registries: `radio-astronomy/assets/js/registry-data.js`. Because the copy is a plain script, the pages also work when opened directly from disk. The JSON files here remain the source of truth; never edit the bundle by hand. After changing a registry:
+The student portal pages (Telescopes, Data Library, Calibration and others) read a generated copy of the three public registries: `radio-astronomy/portal/assets/js/registry-data.js`. Because the copy is a plain script, the pages also work when opened directly from disk. The JSON files here remain the source of truth; never edit the bundle by hand. After changing a registry:
 
 ```bash
-python radio-astronomy/registry/build_bundle.py           # regenerate the bundle
-python radio-astronomy/registry/build_bundle.py --check   # verify it is up to date
+python radio-astronomy/portal/registry/build_bundle.py           # regenerate the bundle
+python radio-astronomy/portal/registry/build_bundle.py --check   # verify it is up to date
 ```
 
 ## Running the validator
 
 ```bash
 pip install jsonschema
-python radio-astronomy/registry/validate_registry.py              # public checks + private manifest if present
-python radio-astronomy/registry/validate_registry.py --no-local   # public checks only
+python radio-astronomy/portal/registry/validate_registry.py              # public checks + private manifest if present
+python radio-astronomy/portal/registry/validate_registry.py --no-local   # public checks only
 ```
 
 - `--local PATH` points to the private manifest.

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/common.schema.json",
+  "$id": "https://emxplore.com/radio-astronomy/portal/registry/schemas/common.schema.json",
   "title": "Shared definitions for the Radio Astronomy registries",
   "description": "Building blocks used by instruments, calibration-epochs and datasets. Every scientific value carries an evidence flag and structured source references.",
   "$defs": {

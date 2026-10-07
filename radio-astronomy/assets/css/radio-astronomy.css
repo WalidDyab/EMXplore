@@ -370,3 +370,11 @@
     font-size: 0.82em;
   }
 }
+
+/* Public project page: authentic figures and CTA note */
+.ra-pub-figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 22px 0 0; max-width: 980px; }
+.ra-pub-figs figure { margin: 0; }
+.ra-pub-figs img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border-light); }
+.ra-pub-figs figcaption { margin-top: 8px; font-size: .86rem; line-height: 1.5; color: var(--text-dim); }
+@media (max-width: 760px) { .ra-pub-figs { grid-template-columns: 1fr; } }
+.ra-cta-note { font-size: .86rem; margin: 10px 0 0; }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/instruments.schema.json",
+  "$id": "https://emxplore.com/radio-astronomy/portal/registry/schemas/instruments.schema.json",
   "title": "Instrument registry",
   "description": "One entry per instrument generation (fixed transit network, DISH1, DISH222). Unknown facts are recorded as null with evidence 'unknown', never guessed.",
   "type": "object",

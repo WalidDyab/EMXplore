@@ -4,185 +4,154 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Radio Astronomy — EMXplore</title>
-  <meta name="description" content="EMXplore Radio Astronomy: observing neutral hydrogen in the Milky Way through the 21-cm line with the historical PSU and PNU fixed telescopes and the active PSU telescope DISH222.">
+  <meta name="description" content="EMXplore Radio Astronomy: turning decades of H I 21-cm observations from the fixed PSU and PNU telescopes, and the active DISH222 telescope, into reproducible scientific datasets that students can analyse.">
   <meta name="theme-color" content="#06101f">
   <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
   <link rel="stylesheet" href="assets/css/radio-astronomy.css">
   <link rel="stylesheet" href="assets/css/ra-portal.css">
 </head>
 <body class="ra-body">
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="site-header ra-portal-header" id="site-header">
-    <div class="wrap header-inner ra-portal-header-inner">
-      <div class="brand ra-portal-brand">
-        <a class="ra-brand-home" href="../index.html" aria-label="EMXplore home"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span></a><span class="ra-brand-divider" aria-hidden="true">/</span><a class="ra-portal-name" href="index.html">Radio Astronomy</a>
-      </div>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="index.html" aria-current="page">Start</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
+  <header class="site-header" id="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html" aria-current="page">Projects</a>
+        <a href="../courses.html">Courses</a>
+        <a href="../tools.html">Tools</a>
+        <a href="../portals.html">Portals</a>
+        <a href="../about.html">About</a>
+      </nav>
     </div>
   </header>
   <main id="main-content">
     <section class="ra-hero">
       <div class="wrap ra-hero-grid">
         <div>
-          <p class="eyebrow">Radio Astronomy</p>
-          <h1>Observing the Milky Way through the H I 21-cm line</h1>
-          <p class="hero-intro">We study neutral hydrogen in the Milky Way. Historical fixed telescopes at PSU and PNU laid the foundation. The active steerable PSU telescope, DISH222, now maps the sky. Students can explore the data and take part in the research.</p>
+          <p class="eyebrow">Radio Astronomy · Prince Sultan University</p>
+          <h1>Turning historical radio observations into new science</h1>
+          <p class="hero-intro">Several generations of telescopes at PSU and PNU have been listening to neutral hydrogen in the Milky Way. We are reprocessing those observations into traceable, reproducible datasets that students can keep analysing.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="data.html">Explore the data</a>
-            <a class="button button-ghost" href="research.html">Research</a>
+            <a class="button button-primary" href="portal/start.html">Come aboard &rarr;</a>
+            <a class="button button-ghost" href="lecture.html">Open the lecture</a>
           </div>
+          <p class="ra-muted ra-cta-note">Authorized project members enter using their approved email address.</p>
         </div>
         <figure class="ra-feature-slide">
           <img src="assets/images/research/dish222-2026-08-26-outer-galaxy-skymap.png" width="1600" height="842" alt="Sky chart with the Galactic plane as a red curve and a contour map of H I line strength covering the outer-Galaxy region scanned by DISH222 on 26 Aug 2026.">
-          <figcaption>DISH222 raster of the outer Galaxy, 26 Aug 2026: 313 positions, H I line peak in dB above baseline (relative scale).</figcaption>
+          <figcaption>DISH222 raster of the outer Galaxy, 26 Aug 2026: 313 sky positions, H I line peak in dB above baseline (relative scale).</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section ra-portal-section" id="observe">
+    <section class="section ra-portal-section" id="what">
       <div class="wrap ra-prose-wrap">
-        <h2>What we observe</h2>
-        <p>Cold neutral hydrogen gas emits a faint radio line at <strong>1420.40575 MHz</strong>. Its wavelength is about 21 cm.</p>
-        <p>The line passes through the dust that hides much of the Galaxy from optical telescopes. Its Doppler shift tells us how fast the gas moves towards or away from us.</p>
+        <h2>What the project is</h2>
+        <p>Cold hydrogen gas in the Galaxy emits a faint radio line at <strong>1420.40575 MHz</strong>, a wavelength of about 21 cm. It passes through the dust that hides much of the Galaxy from optical telescopes, and its Doppler shift tells us how fast the gas moves.</p>
+        <p>The EMXplore Radio Astronomy project is the research and learning environment for these observations. It does not only document the telescopes and their history. It turns the observations accumulated over several generations of instruments into datasets that are traceable, reproducible and scientifically useful.</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light" id="telescopes">
+      <div class="wrap ra-prose-wrap">
+        <h2>The telescopes</h2>
         <ul>
-          <li>The line shows where hydrogen gas is.</li>
-          <li>Its frequency shift gives the gas velocity.</li>
-          <li>Velocities along a line of sight trace the Galaxy's spiral structure and rotation.</li>
+          <li><strong>PSU fixed telescope</strong> (historical): a 5 m reflector pointing straight up. The Earth's rotation carries a strip of sky through the beam.</li>
+          <li><strong>PNU fixed telescope</strong> (historical): a replication of the same zenith-pointing design at another Saudi university.</li>
+          <li><strong>PSU moving telescope, DISH222</strong> (active): a steerable 5 m dish with a software-defined radio receiver. It can point at chosen positions, track them and map regions of sky by raster scanning.</li>
         </ul>
+        <p>A fixed telescope cannot choose where to look. That limit led to a steerable dish.</p>
+        <div class="ra-pub-figs">
+          <figure>
+            <img src="assets/images/lecture/slide-006.png" width="1920" height="1080" alt="Lecture slide with a photograph of the first locally manufactured 5 m radio telescope, with students standing around the dish on a rooftop." loading="lazy">
+            <figcaption>The first locally manufactured 5 m telescope (slide from the project lecture, in Arabic).</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/images/lecture/slide-016.png" width="1920" height="1080" alt="Lecture slide showing the DISH222 control and analysis software: a sky map with pointing limits above a live averaged spectrum with the hydrogen line." loading="lazy">
+            <figcaption>DISH222 control and analysis software: sky map and live spectrum (slide from the project lecture, in Arabic).</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-
-    <section class="section ra-portal-section ra-light" id="evolution">
+    <section class="section ra-portal-section" id="history">
       <div class="wrap ra-prose-wrap">
-        <h2>How the project evolved</h2>
-        <ol class="ra-pipe" aria-label="How the project evolved">
-          <li class="is-measured"><span>PSU Fixed + PNU Fixed<small>Historical</small></span></li>
-          <li class="is-later"><span>Experience with drift-scan observing<small>What we learned</small></span></li>
-          <li class="is-measured"><span>PSU Moving Telescope — DISH222<small>Active</small></span></li>
-        </ol>
-        <p style="margin-top:14px">A fixed telescope cannot choose where to look. That limit led to a steerable dish.</p>
-      </div>
-    </section>
-
-
-    <section class="section ra-portal-section" id="telescopes">
-      <div class="wrap ra-prose-wrap">
-        <h2>The three telescopes</h2>
-        <p>Today the portal focuses on three <a href="telescopes.html">telescopes</a>.</p>
+        <h2>The historical data</h2>
+        <p>The PSU fixed-telescope archive is valuable because several generations of the same observations survive.</p>
         <ul>
-          <li><a href="telescope-psu-fixed.html">PSU fixed telescope</a>: historical, zenith-pointing.</li>
-          <li><a href="telescope-pnu-fixed.html">PNU fixed telescope</a>: historical, zenith-pointing.</li>
-          <li><a href="telescope-psu-moving.html">PSU moving telescope, DISH222</a>: active. A 5 m dish on an azimuth/elevation mount with a software-defined radio receiver.</li>
+          <li><strong>Averaged spectra</strong> as TXT files: frequency against relative amplitude, with the receiver response already corrected. About one spectrum every two minutes.</li>
+          <li><strong>MATLAB datasets</strong> of roughly 1000 spectra each, about 33 hours of observing.</li>
+          <li><strong>A later MATLAB generation</strong> that includes the historical correction from solar time to sidereal time and Right Ascension.</li>
+          <li><strong>A station-wide MATLAB structure</strong> combining the corrected PSU observations.</li>
         </ul>
-        <p>The fixed telescopes point straight up. The Earth's rotation carries the sky through the beam. DISH222 steers to chosen sky positions.</p>
+        <p>These generations let us do more than display old results. We can reconstruct and verify the whole processing chain.</p>
       </div>
     </section>
 
-
-    <section class="section ra-portal-section ra-light" id="data">
+    <section class="section ra-portal-section ra-light" id="reprocessing">
       <div class="wrap ra-prose-wrap">
-        <h2>What data exist</h2>
-        <p><strong>Historical fixed telescopes</strong> recorded averaged spectra:</p>
-        <ul>
-          <li>individual TXT spectra;</li>
-          <li>MATLAB (MAT) observation bundles;</li>
-          <li>bundles with historical RA/LST correction.</li>
-        </ul>
-        <p>These files are not yet in the portal. Their archive structure is laid out and marked <em>awaiting ingestion</em>.</p>
-        <p><strong>The moving telescope</strong> records averaged power spectra, not raw radio samples:</p>
-        <ul>
-          <li>NPZ spectral observations and scan manifests;</li>
-          <li>spectral cubes, maps and other derived products;</li>
-          <li>every dataset tagged with a processing level (L0 to L8) and a calibration scale.</li>
-        </ul>
-        <p>Both are described in the <a href="data.html">Data Library</a>, which also holds the scientific archives.</p>
-      </div>
-    </section>
-
-
-    <section class="section ra-portal-section" id="science">
-      <div class="wrap ra-prose-wrap">
-        <h2>From data to science</h2>
-        <p>A recording becomes science through three transformations. Each has assumptions.</p>
-        <ul>
-          <li><strong>Time to sky position.</strong> Solar time becomes sidereal time, then Right Ascension.</li>
-          <li><strong>Frequency to velocity.</strong> The Doppler shift becomes a velocity, in a stated reference frame.</li>
-          <li><strong>Intensity to temperature.</strong> A relative signal is calibrated to kelvin.</li>
-        </ul>
-        <p>These are taught step by step in <a href="data-to-science.html">Data to Science</a>.</p>
-      </div>
-    </section>
-
-
-    <section class="section ra-portal-section ra-light" id="active">
-      <div class="wrap ra-prose-wrap">
-        <h2>The active telescope today</h2>
-        <p>DISH222 is the project's research telescope. It points to chosen positions, scans regions of sky and records spectra.</p>
-        <p>Its first large product is the 26 Aug 2026 outer-Galaxy raster shown above: 313 positions and 776 averaged spectra. It is the recommended <a href="data.html#featured">starting dataset</a>.</p>
-      </div>
-    </section>
-
-
-    <section class="section ra-portal-section" id="stands">
-      <div class="wrap ra-prose-wrap">
-
-      <h2>Where the project stands</h2>
-      <p>A research project is never finished. This is an honest summary as of late September 2026, mostly about the DISH222 data.</p>
-      <div class="ra-cols">
-        <div><h3>Demonstrated</h3><ul>
-              <li>Automated raster scanning of the Galactic plane: the 26 Aug 2026 session visited 313 sky positions and recorded 776 averaged spectra.</li>
-              <li>H I brightness and velocity maps of the outer Galaxy, first on a relative (dB) scale.</li>
-              <li>Pointing improved from several degrees of error to about 1° after a Sun-based pointing calibration.</li>
-              <li>A kelvin temperature scale that went through five documented stages; the current one (C4) reproduces the LAB survey at eight reference positions with about 8.5 K scatter.</li>
-            </ul></div>
-        <div><h3>Still open</h3><ul>
-              <li>No complete observational product has yet been independently reproduced end-to-end, from native spectra to a final science product (nothing at level L8). Individual calibration calculations, such as the C4 eight-point fit, have been checked independently.</li>
-              <li>The current calibration (C4) has not been applied to any archived map; existing products stay on their original, historical scales.</li>
-              <li>The receiver noise temperature (about 860 K) limits sensitivity, and a small baseline pedestal is corrected only approximately.</li>
-              <li>Native spectra behind the September products and the all-sky composite are not yet in the research archive.</li>
-            </ul></div>
-      </div>
-      </div>
-    </section>
-
-
-    <section class="section ra-portal-section ra-light" id="catchup">
-      <div class="wrap ra-prose-wrap">
-        <h2>How to catch up quickly</h2>
+        <h2>From recorded spectra to scientific data</h2>
+        <p>The historical records are always preserved unchanged. Modern products are generated separately and linked back through provenance.</p>
         <ol class="ra-steplist">
-          <li>Understand the <a href="telescope-psu-fixed.html">fixed telescopes</a> and what they measured.</li>
-          <li>Look at a historical spectrum (the <a href="archive-psu-fixed.html">PSU fixed archive</a> is awaiting ingestion).</li>
-          <li>Understand the <a href="time-to-ra.html">RA / sidereal-time correction</a>.</li>
-          <li>Learn <a href="frequency-to-velocity.html">frequency to velocity</a> and <a href="calibration.html">calibration</a>.</li>
-          <li>Explore <a href="telescope-psu-moving.html">DISH222</a> data in the <a href="data.html#featured">Data Library</a>.</li>
-          <li>Choose a research question.</li>
+          <li><strong>Time and sky position.</strong> Reconstruct UTC, local sidereal time and Right Ascension for the fixed declination of the zenith drift scan, and compare with the historical correction.</li>
+          <li><strong>Frequency and velocity.</strong> Keep the measured frequency spectrum and derive Doppler velocity in topocentric, barycentric, heliocentric and LSR frames.</li>
+          <li><strong>Intensity and temperature.</strong> Keep the relative intensity, and investigate whether the historical solar and other calibrations support a defensible temperature scale with stated uncertainty.</li>
+          <li><strong>Scientific archiving.</strong> Produce standardized FITS products with full metadata, processing history, calibration state and provenance, plus CSV, JSON and graphics where useful.</li>
+          <li><strong>Validation.</strong> Compare the results with professional H I surveys and published historical results, always separating what was measured from what the modern pipeline derived.</li>
         </ol>
-        <p>The <a href="lecture.html">52-slide interactive lecture</a> teaches the principles behind these steps.</p>
-        <p>Reading the portal:</p>
-        <ul>
-          <li>C4 is the current calibration scale. Older products keep the scale they were made with.</li>
-          <li>Values marked <span class="ra-inferred">inferred</span> come from analysis, not a direct statement in a source.</li>
-          <li>Unknown details are listed as open questions rather than guessed.</li>
-        </ul>
+        <p>The end goal is for any historical observation to be viewable in steps of increasing meaning:</p>
+        <ol class="ra-pipe" aria-label="Representations of one observation">
+          <li class="is-measured"><span>Recorded spectrum<small>Measured</small></span></li>
+          <li class="is-later"><span>Sky position (RA)<small>Derived</small></span></li>
+          <li class="is-later"><span>Doppler velocity<small>Derived</small></span></li>
+          <li class="is-later"><span>Calibrated temperature<small>Derived</small></span></li>
+          <li class="is-later"><span>Comparison<small>Interpretation</small></span></li>
+        </ol>
       </div>
     </section>
 
+    <section class="section ra-portal-section" id="objective">
+      <div class="wrap ra-prose-wrap">
+        <h2>The scientific objective</h2>
+        <p>The aim is not just to modernize old file formats. It is to use the original observations to create a new, reproducible scientific dataset whose relationship to the historical measurements is completely documented, and eventually to publish standardized archive products.</p>
+        <p>Once the chain is understood on the simpler fixed telescope, the same principles carry over to DISH222, a richer system with targeted pointing, tracking and raster mapping.</p>
+      </div>
+    </section>
 
-    <section class="section ra-portal-section" id="contribute">
+    <section class="section ra-portal-section ra-light" id="students">
+      <div class="wrap ra-prose-wrap">
+        <h2>How students take part</h2>
+        <ul>
+          <li>Reproduce the historical processing and verify it with modern astronomical tools.</li>
+          <li>Improve the spectral and calibration treatment.</li>
+          <li>Compare the results with reference surveys.</li>
+          <li>Work with real DISH222 observations, and help produce publishable data products.</li>
+        </ul>
+        <p>New to the topic? The <a href="lecture.html">52-slide interactive lecture</a> teaches the principles behind the 21-cm line, the telescope, calibration and velocities. Published work is listed on the <a href="publications.html">publications</a> page.</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="join">
       <div class="wrap ra-prose-wrap">
         <div class="ra-cta-line" style="margin-top:0;border-top:0;padding-top:0">
-          <h2>Ready to contribute?</h2>
-          <p>Explore the current research questions and choose a starting point.</p>
-          <p><a class="button button-primary" href="research.html">Research &rarr;</a></p>
+          <h2>Join the research</h2>
+          <p>The working portal holds the telescope descriptions, the data library and archives, the data-to-science guides and the project log.</p>
+          <p><a class="button button-primary" href="portal/start.html">Come aboard &rarr;</a></p>
+          <p class="ra-muted ra-cta-note">Authorized project members enter using their approved email address.</p>
+          <p class="ra-muted"><a href="project-ar.html" lang="ar" dir="rtl">نظرة عامة بالعربية</a> · <a href="campus-to-milky-way-ar.html" lang="ar" dir="rtl">من الحرم الجامعي إلى درب التبانة</a></p>
         </div>
-        <p class="ra-muted">Reference: <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a> · <a href="project-ar.html" lang="ar" dir="rtl">نظرة عامة بالعربية</a> · <a href="campus-to-milky-way-ar.html" lang="ar" dir="rtl">من الحرم الجامعي إلى درب التبانة</a></p>
       </div>
     </section>
-
   </main>
   <footer class="site-footer">
     <div class="wrap footer-main">
@@ -208,8 +177,6 @@
   </footer>
   <script src="../assets/js/site-config.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script src="assets/vendor/katex/katex.min.js"></script>
-  <script src="assets/js/math-render.js"></script>
   <script src="assets/js/radio-astronomy.js"></script>
 </body>
 </html>

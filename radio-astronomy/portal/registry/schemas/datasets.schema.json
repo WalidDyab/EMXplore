@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/datasets.schema.json",
+  "$id": "https://emxplore.com/radio-astronomy/portal/registry/schemas/datasets.schema.json",
   "title": "Dataset registry",
   "description": "Catalogue of source files (with checksums) and of every dataset/product known from the Phase 0 audit, including datasets that are known to exist but were not supplied.",
   "type": "object",
@@ -92,7 +92,7 @@
       "additionalProperties": false,
       "properties": {
         "asset_id": { "type": "string", "pattern": "^pub-[a-z0-9]+(-[a-z0-9]+)*$" },
-        "path": { "type": "string", "pattern": "^radio-astronomy/assets/", "description": "Repository-relative path of the published file." },
+        "path": { "type": "string", "pattern": "^radio-astronomy/(portal/)?assets/", "description": "Repository-relative path of the published file." },
         "media_type": { "enum": ["image/png", "image/jpeg", "image/webp", "image/svg+xml"] },
         "sha256": { "$ref": "common.schema.json#/$defs/sha256", "description": "Checksum of the published copy (not of any private original)." },
         "bytes": { "type": "integer", "minimum": 0 },
@@ -113,7 +113,7 @@
         },
         "caption": { "type": "string", "minLength": 20 },
         "alt": { "type": "string", "minLength": 20 },
-        "used_on": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9-]+\\.html$" } }
+        "used_on": { "type": "array", "items": { "type": "string", "pattern": "^(portal/)?[a-z0-9-]+\\.html$" } }
       }
     },
     "coverage": {

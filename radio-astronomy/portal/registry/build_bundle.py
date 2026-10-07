@@ -2,13 +2,13 @@
 """Bundle the public registries into a JavaScript file for the portal pages.
 
 The JSON registries in this folder remain the source of truth. The portal pages
-load a generated copy (radio-astronomy/assets/js/registry-data.js) as a plain
+load a generated copy (radio-astronomy/portal/assets/js/registry-data.js) as a plain
 <script>, so they also work when opened from file:// (where fetch() of local JSON
 is blocked) and need no build tooling at deploy time.
 
 Usage
-  python radio-astronomy/registry/build_bundle.py          # regenerate
-  python radio-astronomy/registry/build_bundle.py --check  # fail if out of date
+  python radio-astronomy/portal/registry/build_bundle.py          # regenerate
+  python radio-astronomy/portal/registry/build_bundle.py --check  # fail if out of date
 
 Only the three public registries are bundled. Nothing from the private
 local-source manifest is read.
@@ -34,8 +34,8 @@ def render() -> str:
     body = json.dumps(data, ensure_ascii=False, separators=(",", ":"), sort_keys=False)
     return (
         "/* GENERATED FILE - do not edit by hand.\n"
-        " * Source of truth: radio-astronomy/registry/*.json\n"
-        " * Regenerate: python radio-astronomy/registry/build_bundle.py */\n"
+        " * Source of truth: radio-astronomy/portal/registry/*.json\n"
+        " * Regenerate: python radio-astronomy/portal/registry/build_bundle.py */\n"
         f"window.RA_REGISTRY = {body};\n"
     )
 

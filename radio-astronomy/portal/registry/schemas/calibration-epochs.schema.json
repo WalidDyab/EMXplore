@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://emxplore.com/radio-astronomy/registry/schemas/calibration-epochs.schema.json",
+  "$id": "https://emxplore.com/radio-astronomy/portal/registry/schemas/calibration-epochs.schema.json",
   "title": "Calibration-epoch registry",
   "description": "Immutable record of every brightness-temperature scale used for a DISH222 product. Epochs are never edited to match later knowledge; a new epoch is added instead.",
   "type": "object",

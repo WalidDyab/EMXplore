@@ -35,8 +35,13 @@ EMXplore
 │   └── Radio Astronomy Lecture (radio-astronomy/lecture.html) · Ham Radio · Satellite Lecture
 └── About                      about.html
 
-Radio Astronomy (radio-astronomy/)
-├── Start (index.html: introduction + student onboarding)
+Radio Astronomy: public (radio-astronomy/)
+├── index.html          project introduction ("Come aboard →" → portal/start.html)
+├── lecture.html        interactive lecture (also listed under Portals)
+└── publications.html · project-ar.html · campus-to-milky-way-ar.html
+
+Radio Astronomy: member portal (radio-astronomy/portal/, protected by Cloudflare Access)
+├── Start (portal/start.html: member onboarding)
 ├── Telescopes   → Fixed (PSU, PNU) · Moving (PSU / DISH222)
 ├── Data Library → A. Explore data · B. Scientific Archives
 │                  (archive-psu-fixed · archive-pnu-fixed · archive-psu-moving)
@@ -108,7 +113,7 @@ The main hero image is stored at `assets/images/emxplore-hero.png`. This is the 
 | Satellite Lecture | Projects — portals | [waliddyab.github.io/satellite-lecture](https://waliddyab.github.io/satellite-lecture/) |
 | Complex Numbers & Phasors | Simulation Tools | [waliddyab.github.io/Complex-Numbers](https://waliddyab.github.io/Complex-Numbers/) |
 | EMG Research Group | Lab Facilities | [emg.psu.edu.sa](https://emg.psu.edu.sa) |
-| Radio Telescope Facility | Lab Facilities | [`radio-astronomy/telescopes.html`](radio-astronomy/telescopes.html) |
+| Radio Telescope Facility | Lab Facilities | [`radio-astronomy/#telescopes`](radio-astronomy/) |
 
 ### Teaching migration candidates (Phase 2 — not yet moved)
 
@@ -140,31 +145,45 @@ The `/radio-astronomy/` section is the permanent EMXplore home for the Radio Tel
 
 ### Structure
 
+The section is split into a **public** project introduction and a **protected member portal**. Access to `radio-astronomy/portal/` is restricted by Cloudflare Access (authorized members, by email). Authentication is not implemented in the HTML; the protection is a path rule on the host, so everything that must stay private has to live under `portal/`.
+
 ```text
 radio-astronomy/
-├── index.html              # Portal landing page
-├── lecture.html            # 52-slide interactive lecture
-├── data.html               # Observations and result showcase
-├── publications.html       # IEEE publication citation, DOI, and BibTeX
-├── software.html           # Software-resource registry
-├── resources.html          # Organized learning/research/software/data resources
-├── project-ar.html         # Arabic formal project overview
-├── campus-to-milky-way-ar.html # Arabic public feature story
-├── assets/css/             # Radio Astronomy-specific styles
-├── assets/js/              # Lecture navigation and portal scripts
-├── assets/images/lecture/  # Exported slide images named slide-001.png ... slide-052.png
-└── source/                 # Private authoring/source material
+├── index.html                  # PUBLIC project introduction
+├── lecture.html                # PUBLIC 52-slide interactive lecture (linked from Portals)
+├── publications.html           # PUBLIC IEEE publication citation, DOI, and BibTeX
+├── project-ar.html             # PUBLIC Arabic formal project overview
+├── campus-to-milky-way-ar.html # PUBLIC Arabic feature story
+├── assets/                     # PUBLIC shared assets: CSS, lecture/KaTeX scripts, vendor/katex,
+│   │                           #   images/lecture/, and the one figure used on the public page
+│   └── images/research/dish222-2026-08-26-outer-galaxy-skymap.png
+├── source/                     # Private authoring material (git-ignored, never deployed)
+└── portal/                     # PROTECTED (members only)
+    ├── start.html              # member onboarding
+    ├── telescopes.html · telescope-psu-fixed.html · telescope-pnu-fixed.html · telescope-psu-moving.html
+    ├── data.html · archive-psu-fixed.html · archive-pnu-fixed.html · archive-psu-moving.html
+    ├── data-to-science.html · time-to-ra.html · frequency-to-velocity.html · calibration.html
+    ├── research.html · log.html · resources.html · software.html
+    ├── registry/               # scientific registries (JSON), schemas, validator, bundle builder
+    └── assets/
+        ├── js/                 # registry-data.js (generated bundle) and ra-portal.js
+        └── images/research/    # member-only science figures
 ```
+
+Rules for assets: shared CSS/JS/images that contain no private information stay in `radio-astronomy/assets/`; registry data, archive records and internal science products live under `portal/`. Do not place JSON/data files in the public `assets/` directory.
 
 ### Radio Astronomy page roles
 
-- `index.html` is the main project hub: project story, telescope system, observations, publication, software, data, and lecture entry points.
-- `data.html` presents current result summaries and future dataset metadata without fabricating downloads.
+- `index.html` (public) answers "what is this project and why does it matter?": telescopes, historical data, the reprocessing plan, and how students take part. Its CTA is `Come aboard →` to `portal/start.html`.
+- `portal/start.html` answers "I am on the team; what do I need to know and do?": a map of the portal, project status, a catch-up path and how to contribute.
+- `portal/data.html` presents the Data Library; the `archive-*` pages expose dataset lineage.
 - `publications.html` presents the IEEE publication, DOI, copyable citation, and BibTeX. It links to the DOI/publisher page only.
-- `software.html` defines future software categories: telescope control, SDR acquisition, H I signal analysis, and visualization.
-- `resources.html` organizes resources into Learn, Research, Software, Data, and Project Material.
+- `portal/software.html` defines future software categories: telescope control, SDR acquisition, H I signal analysis, and visualization.
+- `portal/resources.html` organizes resources into Learn, Research, Software, Data, and Project Material.
 - `project-ar.html` and `campus-to-milky-way-ar.html` are the two restrained Arabic resource pages.
 - `lecture.html` is the stable detailed educational layer and should not be redesigned during hub updates.
+
+Page chrome is generated by `python scripts/sync_chrome.py` (use `--check` to verify): public pages get the global header, portal pages get the Radio Astronomy portal header with the Start / Telescopes / Data Library / Data to Science / Research / Project Log navigation.
 
 ### Publication configuration
 
@@ -211,7 +230,7 @@ The public data page distinguishes available datasets from planned/in-preparatio
 
 ### Project assets and source material
 
-- Public images belong in `radio-astronomy/assets/images/`.
+- Public images belong in `radio-astronomy/assets/images/`; member-only science figures belong in `radio-astronomy/portal/assets/images/`.
 - Lecture slide exports belong in `radio-astronomy/assets/images/lecture/`.
 - Private authoring/source files belong in `radio-astronomy/source/`.
 - The IEEE PDF, source DOCX files, and source PowerPoint should not be linked publicly unless explicitly authorized.
