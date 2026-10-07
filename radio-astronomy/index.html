@@ -56,21 +56,14 @@
 
     <section class="section ra-portal-section" id="what">
       <div class="wrap ra-prose-wrap">
-        <h2>What the project is</h2>
-        <p>Cold hydrogen gas in the Galaxy emits a faint radio line at <strong>1420.40575 MHz</strong>, a wavelength of about 21 cm. It passes through the dust that hides much of the Galaxy from optical telescopes, and its Doppler shift tells us how fast the gas moves.</p>
-        <p>The EMXplore Radio Astronomy project is the research and learning environment for these observations. It does not only document the telescopes and their history. It turns the observations accumulated over several generations of instruments into datasets that are traceable, reproducible and scientifically useful.</p>
-      </div>
-    </section>
-
-    <section class="section ra-portal-section ra-light" id="telescopes">
-      <div class="wrap ra-prose-wrap">
-        <h2>The telescopes</h2>
+        <h2>The EMXplore Radio Astronomy Portal</h2>
+        <p>The EMXplore Radio Astronomy Portal is the central research and learning environment for the radio astronomy activities developed at PSU and collaborating institutions. Its purpose is not only to document the telescopes and their history, but to turn the observations accumulated over several generations of instruments into traceable, reproducible, scientifically useful datasets that students and researchers can continue to analyze.</p>
+        <p>The portal presents a clear progression from the historical fixed zenith-pointing telescopes at PSU and PNU to the active PSU steerable telescope, DISH222. Students entering the project can understand what each telescope measured, how the observing method evolved, what data are available, how measurements are converted into astronomical quantities, and which scientific questions remain open. Access to the Radio Astronomy project is restricted to authorized members by email, while the rest of EMXplore remains public.</p>
         <ul>
-          <li><strong>PSU fixed telescope</strong> (historical): a 5 m reflector pointing straight up. The Earth's rotation carries a strip of sky through the beam.</li>
-          <li><strong>PNU fixed telescope</strong> (historical): a replication of the same zenith-pointing design at another Saudi university.</li>
-          <li><strong>PSU moving telescope, DISH222</strong> (active): a steerable 5 m dish with a software-defined radio receiver. It can point at chosen positions, track them and map regions of sky by raster scanning.</li>
+          <li><strong>PSU fixed telescope</strong> (historical): a 5 m zenith-pointing reflector.</li>
+          <li><strong>PNU fixed telescope</strong> (historical): the same zenith-pointing design at another Saudi university.</li>
+          <li><strong>PSU moving telescope, DISH222</strong> (active): a steerable 5 m dish capable of targeted pointing, tracking and raster mapping.</li>
         </ul>
-        <p>A fixed telescope cannot choose where to look. That limit led to a steerable dish.</p>
         <div class="ra-pub-figs">
           <figure>
             <img src="assets/images/lecture/slide-006.png" width="1920" height="1080" alt="Lecture slide with a photograph of the first locally manufactured 5 m radio telescope, with students standing around the dish on a rooftop." loading="lazy">
@@ -84,64 +77,58 @@
       </div>
     </section>
 
-    <section class="section ra-portal-section" id="history">
+    <section class="section ra-portal-section ra-light" id="history">
       <div class="wrap ra-prose-wrap">
-        <h2>The historical data</h2>
-        <p>The PSU fixed-telescope archive is valuable because several generations of the same observations survive.</p>
-        <ul>
-          <li><strong>Averaged spectra</strong> as TXT files: frequency against relative amplitude, with the receiver response already corrected. About one spectrum every two minutes.</li>
-          <li><strong>MATLAB datasets</strong> of roughly 1000 spectra each, about 33 hours of observing.</li>
-          <li><strong>A later MATLAB generation</strong> that includes the historical correction from solar time to sidereal time and Right Ascension.</li>
-          <li><strong>A station-wide MATLAB structure</strong> combining the corrected PSU observations.</li>
-        </ul>
-        <p>These generations let us do more than display old results. We can reconstruct and verify the whole processing chain.</p>
+        <h2>Using the historical data</h2>
+        <p>The PSU fixed-telescope archive is particularly valuable because several generations of the same observations have survived. The earliest available products are averaged spectra stored as TXT files containing frequency versus relative amplitude, with the receiver/background spectral response already corrected. Approximately one spectrum was recorded every two minutes.</p>
+        <p>These spectra were subsequently grouped into MATLAB datasets of roughly 1000 observations, representing about 33 hours of observing time. A later generation of MATLAB files contains the historical correction from solar-time representation to sidereal time and Right Ascension, and a station-wide MATLAB structure combines the corrected PSU observations.</p>
+        <p>These different generations give us an opportunity not merely to display historical results, but to reconstruct and verify the full scientific processing chain.</p>
       </div>
     </section>
 
-    <section class="section ra-portal-section ra-light" id="reprocessing">
+    <section class="section ra-portal-section" id="reprocessing">
       <div class="wrap ra-prose-wrap">
         <h2>From recorded spectra to scientific data</h2>
-        <p>The historical records are always preserved unchanged. Modern products are generated separately and linked back through provenance.</p>
+        <p>The new processing workflow will always preserve the historical records unchanged. Modern products will be generated separately and linked through provenance. The principal transformations are:</p>
         <ol class="ra-steplist">
-          <li><strong>Time and sky position.</strong> Reconstruct UTC, local sidereal time and Right Ascension for the fixed declination of the zenith drift scan, and compare with the historical correction.</li>
-          <li><strong>Frequency and velocity.</strong> Keep the measured frequency spectrum and derive Doppler velocity in topocentric, barycentric, heliocentric and LSR frames.</li>
-          <li><strong>Intensity and temperature.</strong> Keep the relative intensity, and investigate whether the historical solar and other calibrations support a defensible temperature scale with stated uncertainty.</li>
-          <li><strong>Scientific archiving.</strong> Produce standardized FITS products with full metadata, processing history, calibration state and provenance, plus CSV, JSON and graphics where useful.</li>
-          <li><strong>Validation.</strong> Compare the results with professional H I surveys and published historical results, always separating what was measured from what the modern pipeline derived.</li>
+          <li><strong>Time and sky position:</strong> reconstruct UTC, Local Sidereal Time, Right Ascension and the fixed declination of the zenith drift scan, then compare the modern calculation with the historical MATLAB RA correction.</li>
+          <li><strong>Frequency and velocity:</strong> preserve the originally measured frequency spectrum while deriving Doppler velocity in appropriate reference frames, including topocentric, barycentric, heliocentric and LSR/LSRK representations.</li>
+          <li><strong>Relative intensity and temperature:</strong> preserve the recorded relative intensity and investigate the historical solar and other calibration measurements to determine whether a defensible antenna- or brightness-temperature scale can be established, including calibration uncertainty.</li>
+          <li><strong>Scientific archiving:</strong> produce standardized FITS products with complete observational metadata, processing history, calibration state and provenance, together with CSV, JSON and graphical representations where useful.</li>
+          <li><strong>Scientific validation:</strong> compare the reprocessed observations with professional H I surveys and with the published historical results, while clearly distinguishing what was originally measured from what has been derived using the modern pipeline.</li>
         </ol>
-        <p>The end goal is for any historical observation to be viewable in steps of increasing meaning:</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light" id="role">
+      <div class="wrap ra-prose-wrap">
+        <h2>Role of the portal</h2>
+        <p>The portal will provide the human-facing layer above this scientific pipeline. A student should eventually be able to choose a historical observation and view the same measurement through progressively more meaningful representations:</p>
         <ol class="ra-pipe" aria-label="Representations of one observation">
-          <li class="is-measured"><span>Recorded spectrum<small>Measured</small></span></li>
-          <li class="is-later"><span>Sky position (RA)<small>Derived</small></span></li>
-          <li class="is-later"><span>Doppler velocity<small>Derived</small></span></li>
+          <li class="is-measured"><span>Original recorded spectrum<small>Measured</small></span></li>
+          <li class="is-later"><span>Celestial position / Right Ascension<small>Derived</small></span></li>
+          <li class="is-later"><span>Frequency and Doppler velocity<small>Derived</small></span></li>
+          <li class="is-measured"><span>Relative intensity<small>Measured</small></span></li>
           <li class="is-later"><span>Calibrated temperature<small>Derived</small></span></li>
-          <li class="is-later"><span>Comparison<small>Interpretation</small></span></li>
+          <li class="is-later"><span>Scientific comparison and interpretation<small>Interpretation</small></span></li>
         </ol>
+        <p style="margin-top:16px">The Data Library will present observations as coherent scientific datasets, while its Archives section will expose their underlying lineage: TXT spectra, MATLAB bundles, historical RA/LST products, master datasets, and eventually standardized FITS/CSV/JSON products.</p>
+        <p>The Data to Science section will explain the transformations themselves, allowing students to understand why each correction is required rather than treating processing as a black box.</p>
       </div>
     </section>
 
     <section class="section ra-portal-section" id="objective">
       <div class="wrap ra-prose-wrap">
-        <h2>The scientific objective</h2>
-        <p>The aim is not just to modernize old file formats. It is to use the original observations to create a new, reproducible scientific dataset whose relationship to the historical measurements is completely documented, and eventually to publish standardized archive products.</p>
-        <p>Once the chain is understood on the simpler fixed telescope, the same principles carry over to DISH222, a richer system with targeted pointing, tracking and raster mapping.</p>
+        <h2>Scientific objective</h2>
+        <p>The objective is therefore not simply to modernize old file formats. It is to use the original observations to create a new, reproducible scientific dataset whose relationship to the historical measurements is completely documented.</p>
+        <p>This gives the fixed-telescope observations renewed scientific value while providing an ideal training environment for students. They can reproduce the historical processing, verify it using modern astronomical tools, improve the spectral and calibration treatment, compare the results with reference surveys, and ultimately publish standardized data products.</p>
+        <p>Once students understand this chain using the simpler fixed telescope, they can move naturally to DISH222, where the same principles apply to a much richer observing system capable of targeted pointing, tracking and raster mapping.</p>
+        <p>In that sense, the portal becomes both a scientific archive and a research laboratory: preserving what was measured, explaining what was done historically, showing what we can improve today, and providing students with real data from which new scientific results can be produced.</p>
+        <p>New to the topic? The <a href="lecture.html">52-slide interactive lecture</a> teaches the 21-cm line, the telescope, calibration and velocities. Published work is on the <a href="publications.html">publications</a> page.</p>
       </div>
     </section>
 
-    <section class="section ra-portal-section ra-light" id="students">
-      <div class="wrap ra-prose-wrap">
-        <h2>How students take part</h2>
-        <ul>
-          <li>Reproduce the historical processing and verify it with modern astronomical tools.</li>
-          <li>Improve the spectral and calibration treatment.</li>
-          <li>Compare the results with reference surveys.</li>
-          <li>Work with real DISH222 observations, and help produce publishable data products.</li>
-        </ul>
-        <p>New to the topic? The <a href="lecture.html">52-slide interactive lecture</a> teaches the principles behind the 21-cm line, the telescope, calibration and velocities. Published work is listed on the <a href="publications.html">publications</a> page.</p>
-      </div>
-    </section>
-
-    <section class="section ra-portal-section" id="join">
+    <section class="section ra-portal-section ra-light" id="join">
       <div class="wrap ra-prose-wrap">
         <div class="ra-cta-line" style="margin-top:0;border-top:0;padding-top:0">
           <h2>Join the research</h2>
