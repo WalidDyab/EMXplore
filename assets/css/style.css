@@ -878,9 +878,8 @@ a.project-card:hover {
   }
 }
 
-@media (max-width: 680px) {
-  .wrap { padding: 0 20px; }
-
+/* Seven top-level items: collapse to the hamburger menu below 1020px */
+@media (max-width: 1020px) {
   /* Mobile nav */
   .nav-toggle {
     display: flex;
@@ -908,6 +907,11 @@ a.project-card:hover {
     font-size: 0.92rem;
     border-radius: 0;
   }
+}
+
+@media (max-width: 680px) {
+  .wrap { padding: 0 20px; }
+
   /* Hero */
   .hero-content {
     padding-top: 100px;
@@ -1173,4 +1177,101 @@ a.course-card:hover {
   .course-grid { grid-template-columns: 1fr; }
   .direction-card { padding: 28px 22px; }
   .subsection-heading { margin: 44px 0 20px; }
+}
+
+
+/* ==========================================================================
+   19. Information-architecture additions (Home areas, placeholders)
+   ========================================================================== */
+
+.hero-sub {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--cyan);
+}
+
+.hero-areas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 0;
+  padding: 0;
+}
+.hero-areas a {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-muted);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-pill);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.hero-areas a:hover,
+.hero-areas a:focus-visible {
+  color: var(--text-light);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+/* Ghost button on a light section */
+.section .button-ghost-dark {
+  color: var(--primary);
+  border-color: rgba(14, 116, 144, 0.40);
+}
+.section .button-ghost-dark:hover {
+  background: var(--cyan-soft);
+}
+.section-cta .button + .button { margin-left: 10px; }
+@media (max-width: 680px) {
+  .section-cta .button { display: flex; margin: 10px 0 0 !important; }
+}
+
+/* Coming-soon placeholders: same footprint as live cards, visibly inactive */
+.project-card.is-placeholder {
+  background: rgba(255, 255, 255, 0.55);
+  border-style: dashed;
+  box-shadow: none;
+}
+a.project-card.is-placeholder:hover { border-color: rgba(107, 122, 148, 0.45); }
+
+.coming-panel {
+  background: var(--white);
+  border: 1px dashed rgba(107, 122, 148, 0.45);
+  border-radius: var(--radius-card);
+  padding: 30px 28px;
+  max-width: 760px;
+}
+.coming-panel h2 { font-size: 1.5rem; color: var(--text-dark); margin: 14px 0 10px; }
+.coming-panel p { color: var(--text-body); line-height: 1.7; }
+.coming-panel .coming-note { margin-top: 12px; font-size: 0.9rem; color: var(--text-dim); }
+.coming-list { margin: 0; padding-left: 20px; color: var(--text-body); line-height: 1.9; }
+
+.ra-moved-note {
+  margin-top: 32px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+.ra-moved-note a { color: var(--primary); }
+
+/* Standard footer: identical on every page */
+.site-footer { padding-top: 40px; }
+.footer-simple {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 28px;
+  padding-bottom: 8px;
+}
+.footer-tagline {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
 }

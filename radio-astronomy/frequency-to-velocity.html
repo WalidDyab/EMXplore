@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frequency → Velocity — EMXplore Radio Astronomy</title>
+  <meta name="description" content="How a spectrum recorded in frequency is expressed as Doppler velocity in topocentric, heliocentric, barycentric and LSR reference frames.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../projects.html">Projects</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <ol class="ra-crumbs" aria-label="Breadcrumb"><li><a href="index.html">Radio Astronomy</a></li><li><a href="data-to-science.html">Data to Science</a></li><li aria-current="page">Frequency → Velocity</li></ol>
+        <p class="eyebrow">Data to Science · 2 of 3</p>
+        <h1>Frequency → velocity and reference frames</h1>
+        <p class="hero-intro">The spectrum is recorded in frequency; the astronomy is in velocity. The reference frame is part of the answer.</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">The idea</p>
+          <h2>A spectrum measured in frequency can be read as a velocity</h2>
+        </div>
+        <div class="ra-prose">
+          <p>The historical spectra were recorded as <strong>frequency</strong>. Astronomers usually interpret the 21-cm line as a <strong>velocity</strong>, because the Doppler shift of the line tells how fast the gas moves along the line of sight. The conversion depends on <em>whose</em> velocity is meant, which is why the reference frame must always be stated.</p>
+          <p>Using the radio convention with the H I rest frequency, the velocity relative to the telescope is:</p>
+          <span class="ra-equation ra-equation--display" data-tex="v_\text{topo} = c\,\frac{f_0 - f_\text{obs}}{f_0},\qquad f_0 = 1420.40575\ \text{MHz}" data-display="true"><code>v_topo = c (f0 - f_obs) / f0,  f0 = 1420.40575 MHz</code></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="frames">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Reference frames</p>
+          <h2>Topocentric → heliocentric / barycentric → LSR</h2>
+        </div>
+        <ol class="ra-flow-steps">
+          <li><h3>Topocentric</h3><p>Relative to the telescope itself. This is what the measured frequency gives directly, and it includes the Earth's rotation and orbital motion.</p></li>
+          <li><h3>Heliocentric / barycentric</h3><p>Relative to the Sun, or to the centre of mass of the Solar System. The Earth's motion is removed.</p></li>
+          <li><h3>LSR / LSRK</h3><p>Relative to the Local Standard of Rest. The kinematic definition (LSRK) adds the Sun's standard motion: 20 km/s towards RA 18h03m50s, Dec +30°00′17″, the value used for the project's 26 Aug products. Galactic-structure work normally uses this frame.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Original and derived</p>
+          <h2>Keep the two apart</h2>
+        </div>
+        <div class="ra-pair">
+          <div><h3>Original <span class="ra-status ra-status--available">Recorded</span></h3><p>The frequency axis as recorded at the telescope. Nothing about it depends on a velocity convention or frame.</p></div>
+          <div><h3>Derived <span class="ra-status ra-status--validation">Computed</span></h3><p>Every velocity: topocentric, heliocentric, barycentric and LSR. Each depends on the convention, the rest frequency, the date, the time and the pointing direction.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Explorer</p>
+          <h2>Velocity-frame explorer</h2>
+        </div>
+        <div class="ra-placeholder">
+          <h3>Velocity-frame explorer <span class="ra-status ra-status--processing">Processing</span> <span class="ra-status ra-status--validation">Under validation</span></h3>
+          <p>An interactive view of one spectrum in each reference frame is intended here. The historical fixed-telescope processing pipeline is not complete, so no transformation is applied and no values are shown.</p>
+          <p>For a worked example on real data, see the <a href="data-to-science.html#chain">DISH222 chain</a> (step 7) and the lecture on <a href="lecture.html#slide-033">LSR correction</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="time-to-ra.html"><span>Previous step</span><strong>&larr; Solar → Sidereal → RA</strong></a><a class="is-next" href="calibration.html"><span>Next step</span><strong>Relative Intensity → Temperature &rarr;</strong></a></nav></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    </div>
+    <div class="wrap">
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/vendor/katex/katex.min.js"></script>
+  <script src="assets/js/math-render.js"></script>
+</body>
+</html>

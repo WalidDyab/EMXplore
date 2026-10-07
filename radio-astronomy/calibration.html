@@ -17,15 +17,15 @@
   <header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
       <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <a class="ra-parent-link" href="../projects.html">Projects</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html" aria-current="page">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
     </div>
   </header>
   <main id="main-content">
     <section class="ra-hero ra-page-hero">
       <div class="wrap">
-        <p class="eyebrow">Step 4 · Calibration</p>
+        <p class="eyebrow">Data to Science · 3 of 3 · Relative Intensity → Temperature</p>
         <h1>How the temperature scale was built, step by step</h1>
         <p class="hero-intro">Turning a relative radio measurement into kelvin is hard, and the project's understanding improved in five documented stages. Each stage is kept as an immutable <strong>calibration epoch</strong>. C4 is the current reference.</p>
         <nav class="ra-subnav" aria-label="On this page">
@@ -34,6 +34,22 @@
           <a href="#rules">Rules for old products</a>
           <a href="#milestone">First kelvin map</a>
         </nav>
+      </div>
+    </section>
+
+
+    <section class="section ra-portal-section ra-light" id="transformation">
+      <div class="wrap">
+        <ol class="ra-pipe" aria-label="Relative intensity to temperature">
+          <li class="is-measured"><span>Relative measured intensity<small>Measured</small></span></li>
+          <li class="is-later"><span>Calibration<small>Assumptions + measurements</small></span></li>
+          <li class="is-later"><span>Physical temperature scale<small>Derived, with uncertainty</small></span></li>
+        </ol>
+        <div class="ra-note ra-note--caution"><p><strong>Calibration is a scientific transformation.</strong> It rests on assumptions, on separate measurements, and carries uncertainty. A temperature is only as good as the stage of calibration it was made with, which is why each product keeps its epoch.</p></div>
+        <div class="ra-placeholder">
+          <h3>Fixed-telescope historical spectra <span class="ra-status ra-status--validation">Calibration under validation</span></h3>
+          <p>The history below is for DISH222. Absolute calibration of the historical fixed-dish spectra has not been validated, so no temperature values are given for them.</p>
+        </div>
       </div>
     </section>
 
@@ -113,28 +129,18 @@
       </div>
     </section>
     <section class="section ra-portal-section" aria-label="Learning path">
-      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="data-to-science.html"><span>Previous step</span><strong>&larr; From Data to Science</strong></a><a class="is-next" href="research.html"><span>Next step</span><strong>Student Research &rarr;</strong></a></nav></div>
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="frequency-to-velocity.html"><span>Previous step</span><strong>&larr; Frequency → Velocity</strong></a><a class="is-next" href="research.html"><span>Next step</span><strong>Research &rarr;</strong></a></nav></div>
     </section>
   </main>
-  <footer class="site-footer ra-portal-footer">
-    <div class="wrap ra-footer-grid">
-      <div class="ra-footer-branding">
-        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-        <p>Radio Astronomy — EMXplore</p>
-      </div>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
-        <h4>Explore</h4>
-        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
-      </nav>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
-        <h4>Research &amp; learning</h4>
-        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
-      </nav>
-      <div class="ra-footer-col">
-        <h4>EMXplore</h4>
-        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
-        <p class="copyright">&copy; 2026 Walid Dyab</p>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    </div>
+    <div class="wrap">
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>

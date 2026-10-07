@@ -13,46 +13,42 @@ EMXplore is one identity delivered from two repositories:
 | Projects (research, tools, facilities) | [emxplore.com](https://emxplore.com) | this repository |
 | Courses (teaching material) | [courses.emxplore.com](https://courses.emxplore.com/) | `emxplore-teaching` |
 
-Global navigation on every main-site page is **Home | About | Projects | Courses**.
+Global navigation on every main-site page is **Home | Projects | Courses | Tools | Portals | About**.
+`courses.html` is an in-site hub; each course card opens `courses.emxplore.com` (a separate repository).
+"Discover → Learn → Experiment" (the approach) is a section of the Home page, not a separate page.
 
-Courses is first-class navigation, not an external resource: no external-link arrow,
-no forced new tab. The canonical header/footer markup is plain semantic HTML using the
-shared classes `site-header` / `site-nav` / `site-footer` / `footer-inline`, so it can be
-duplicated into `emxplore-teaching` without a build step.
+Header navigation and the (deliberately minimal) footer are generated from one place:
+`python scripts/sync_chrome.py` rewrites them on every page; `--check` fails if any page drifts.
 
 ### Information architecture
 
 ```text
 EMXplore
-├── Projects (projects.html)
-│   ├── Project portfolio — Radio Astronomy · Riyadh Space Minaret · SAR & ISAR
-│   │   └── Public engineering portals — Ham Radio · Satellite Lecture
-│   ├── Simulation Tools   (#tools)
-│   └── Lab Facilities     (#facilities)
-└── Courses  → https://courses.emxplore.com/
+├── Home                       index.html  (includes the Discover → Learn → Experiment section)
+├── Projects                   projects.html
+│   ├── Radio Astronomy        radio-astronomy/            (live)
+│   ├── Riyadh Space Minaret   riyadh-space-minaret.html   (coming soon)
+│   └── Radar and Imaging      radar-imaging.html          (coming soon)
+├── Courses                    courses.html → courses.emxplore.com
+├── Tools                      tools.html  (Complex Numbers & Phasors live; two coming soon)
+├── Portals                    portals.html
+│   └── Radio Astronomy Lecture (radio-astronomy/lecture.html) · Ham Radio · Satellite Lecture
+└── About                      about.html
+
+Radio Astronomy (radio-astronomy/)
+├── Start Here
+├── Telescopes   → Fixed (PSU, PNU) · Moving (PSU / DISH222)
+├── Data Library → A. Explore data · B. Scientific Archives
+│                  (archive-psu-fixed · archive-pnu-fixed · archive-psu-moving)
+├── Data to Science → time-to-ra · frequency-to-velocity · calibration
+├── Research
+└── Project Log  (includes the project background timeline)
 ```
+
+Placeholders use the statuses *Coming soon, Planned, Awaiting ingestion, Processing, Under validation*;
+nothing is shown as available, and no download link exists, unless files are actually connected.
 
 ---
-
-## Project Structure
-
-```
-EMXplore/
-├── index.html                 # Homepage — Projects / Courses split
-├── projects.html              # Projects · Simulation Tools · Lab Facilities
-├── about.html                 # About EMXplore
-├── README.md
-├── .gitignore
-└── assets/
-    ├── css/
-    │   └── style.css          # All styles
-    ├── js/
-    │   ├── main.js            # Navigation, hero animation, utilities
-    │   └── site-config.js     # Central link/project configuration
-    └── images/
-        ├── emxplore-hero.png  # Hero banner image
-        └── favicon.svg        # Site favicon
-```
 
 ## Local Preview
 
@@ -108,11 +104,11 @@ The main hero image is stored at `assets/images/emxplore-hero.png`. This is the 
 | Resource | Section | URL |
 |---|---|---|
 | Radio Astronomy | Projects | [`/radio-astronomy/`](radio-astronomy/) |
-| Ham Radio | Projects — public portals | [waliddyab.github.io/Ham-Radio](https://waliddyab.github.io/Ham-Radio/) |
-| Satellite Lecture | Projects — public portals | [waliddyab.github.io/satellite-lecture](https://waliddyab.github.io/satellite-lecture/) |
+| Ham Radio | Projects — portals | [waliddyab.github.io/Ham-Radio](https://waliddyab.github.io/Ham-Radio/) |
+| Satellite Lecture | Projects — portals | [waliddyab.github.io/satellite-lecture](https://waliddyab.github.io/satellite-lecture/) |
 | Complex Numbers & Phasors | Simulation Tools | [waliddyab.github.io/Complex-Numbers](https://waliddyab.github.io/Complex-Numbers/) |
 | EMG Research Group | Lab Facilities | [emg.psu.edu.sa](https://emg.psu.edu.sa) |
-| Radio Telescope Facility | Lab Facilities | [`radio-astronomy/project.html`](radio-astronomy/project.html) |
+| Radio Telescope Facility | Lab Facilities | [`radio-astronomy/telescopes.html`](radio-astronomy/telescopes.html) |
 
 ### Teaching migration candidates (Phase 2 — not yet moved)
 
@@ -148,7 +144,6 @@ The `/radio-astronomy/` section is the permanent EMXplore home for the Radio Tel
 radio-astronomy/
 ├── index.html              # Portal landing page
 ├── lecture.html            # 52-slide interactive lecture
-├── project.html            # Project timeline and telescope system overview
 ├── data.html               # Observations and result showcase
 ├── publications.html       # IEEE publication citation, DOI, and BibTeX
 ├── software.html           # Software-resource registry
@@ -164,7 +159,6 @@ radio-astronomy/
 ### Radio Astronomy page roles
 
 - `index.html` is the main project hub: project story, telescope system, observations, publication, software, data, and lecture entry points.
-- `project.html` summarizes the engineering/project timeline and links selectively into stable lecture anchors.
 - `data.html` presents current result summaries and future dataset metadata without fabricating downloads.
 - `publications.html` presents the IEEE publication, DOI, copyable citation, and BibTeX. It links to the DOI/publisher page only.
 - `software.html` defines future software categories: telescope control, SDR acquisition, H I signal analysis, and visualization.

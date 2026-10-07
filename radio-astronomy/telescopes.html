@@ -16,17 +16,41 @@
   <header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
       <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <a class="ra-parent-link" href="../projects.html">Projects</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html" aria-current="page">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html" aria-current="page">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
     </div>
   </header>
   <main id="main-content">
     <section class="ra-hero ra-page-hero">
       <div class="wrap">
         <p class="eyebrow">Step 1 · Telescopes</p>
-        <h1>From fixed transit dishes to a steerable research telescope</h1>
-        <p class="hero-intro">Three instrument generations appear in the project record. The earlier two are historical. DISH222 is the active telescope and the source of every dataset in the research archive.</p>
+        <h1>Fixed dishes and the moving telescope</h1>
+        <p class="hero-intro">The project's telescopes fall into two families: fixed, zenith-pointing stations, and a moving (rotating) steerable telescope. DISH222 is the active telescope and the source of every dataset catalogued in the research archive.</p>
+      </div>
+    </section>
+
+
+    <section class="section ra-portal-section" id="hierarchy">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Telescope hierarchy</p>
+          <h2>Fixed and moving telescopes</h2>
+          <p>Each station has a page for the instrument and a matching entry in the <a href="data.html#archives">Archives</a>.</p>
+        </div>
+        <div class="ra-tier">
+          <div class="ra-tier-head"><h3>Fixed</h3><p>Zenith-pointing reflectors; the sky drifts through the beam as the Earth rotates.</p></div>
+          <div class="ra-grid-2">
+            <a class="ra-station" href="telescope-psu-fixed.html"><div class="ra-station-top"><span>Fixed · PSU</span><span class="ra-status ra-status--available">Live</span></div><h4>PSU fixed telescope</h4><p>The 5 m zenith-pointing drift-scan telescope and the historical learning entry point to the project.</p><span class="project-link">Open the PSU fixed telescope</span></a>
+            <a class="ra-station is-placeholder" href="telescope-pnu-fixed.html"><div class="ra-station-top"><span>Fixed · PNU</span><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></div><h4>PNU fixed telescope</h4><p>Station information and data are not yet added. The page holds the station's place in the hierarchy.</p><span class="project-link">Open the placeholder</span></a>
+          </div>
+        </div>
+        <div class="ra-tier">
+          <div class="ra-tier-head"><h3>Moving / rotating</h3><p>Motorised dishes that steer in azimuth and elevation.</p></div>
+          <div class="ra-grid-2">
+            <a class="ra-station" href="telescope-psu-moving.html"><div class="ra-station-top"><span>Moving · PSU</span><span class="ra-status ra-status--available">Live</span></div><h4>PSU moving telescope (DISH222)</h4><p>The active steerable research telescope: how it points, receives and scans the sky.</p><span class="project-link">Open the moving PSU telescope</span></a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -45,43 +69,17 @@
         </div>
         <p>The project's first telescopes were <strong>fixed 5 m reflectors pointing straight up</strong>. As the Earth turns, a strip of sky at the site's declination drifts through the beam, so each telescope maps one band of sky per day. That design is simple and robust, and it was replicated at several Saudi universities and published in <a href="publications.html">IEEE Antennas and Propagation Magazine (2025)</a>.</p>
         <p>A fixed telescope cannot choose where to look. To map chosen regions of the Galactic plane, repeat observations and point at calibration sources, the project moved to <strong>motorised dishes</strong> that can steer in azimuth and elevation. <strong>DISH1</strong> and <strong>DISH222</strong> are the two steerable dishes in the record. Both were operated during August–September 2026, but only DISH222 has observations in the research archive, and it is now the active research telescope.</p>
-        <p class="ra-muted">The <a href="project.html">Project Story</a> and <a href="lecture.html#slide-012">lecture slides 12–17</a> tell the engineering story in more detail.</p>
+        <p class="ra-muted">The <a href="log.html#background">project background</a> and <a href="lecture.html#slide-012">lecture slides 12–17</a> tell the engineering story in more detail.</p>
       </div>
     </section>
 
+    <section class="section ra-portal-section" id="system"><div class="wrap"><div class="section-heading"><p class="section-kicker">Telescope System</p><h2>Radio signal chain</h2><p>A practical path from the neutral hydrogen line to an interpreted spectrum.</p></div><ol class="ra-chain"><li>H I emission near 1.42 GHz</li><li>5 m parabolic reflector</li><li>Choke-horn / feed</li><li>Low-noise receiver chain</li><li>Software-defined radio</li><li>I/Q samples</li><li>FFT</li><li>Averaging and signal processing</li><li>H I spectrum</li><li>Scientific visualization</li></ol></div></section>
+
+    <section class="section ra-portal-section" id="pointing"><div class="wrap"><div class="section-heading"><p class="section-kicker">Pointing and Observation</p><h2>From celestial position to spectrum</h2><p>The portal separates the published fixed transit-scan concept from later moving-telescope capabilities.</p></div><div class="ra-system-grid"><article class="ra-flow"><h3>Historical fixed system</h3><p>In the published fixed implementation, the telescope points at zenith and Earth rotation carries sky regions through the beam. This supports transit-scan measurements without implying motorized tracking.</p></article><article class="ra-flow"><h3>Moving-system concept</h3><p>For moving systems, a sky target in RA / Dec can be transformed into azimuth / elevation, sent to telescope pointing, and then measured as a spectrum.</p></article></div><ol class="ra-chain" aria-label="Pointing workflow"><li>Sky target</li><li>RA / Dec</li><li>Coordinate transformation</li><li>Azimuth / Elevation</li><li>Telescope pointing</li><li>Spectrum</li></ol></div></section>
+
     <section class="section ra-portal-section" id="dish222-concepts">
       <div class="wrap">
-        <div class="section-heading">
-          <p class="section-kicker">DISH222</p>
-          <h2>How DISH222 observes</h2>
-          <p>A conceptual overview for students. It explains the measurement, not how to operate the telescope.</p>
-        </div>
-        <div class="ra-grid-2">
-          <article class="ra-card">
-            <h3>A steerable dish</h3>
-            <p>DISH222 is a 5 m parabolic reflector on an azimuth/elevation mount. To observe a sky position, software converts its celestial coordinates (right ascension and declination, or Galactic longitude and latitude) into azimuth and elevation for the current time and site. A motor controller then drives the dish there, and the dish reports its position back. The observing software keeps scans above 30° elevation.</p>
-          </article>
-          <article class="ra-card">
-            <h3>Receiver chain</h3>
-            <p>Radio waves collected by the dish reach the feed and a low-noise amplifier, then a <strong>HackRF One</strong> software-defined radio locked to an external 10 MHz reference. In the 26 Aug 2026 session the receiver was tuned to 1419.9 MHz with 2.4 MHz of bandwidth. The computer turns the sampled signal into 1024-channel spectra and averages many of them.</p>
-            <p class="ra-muted">Only these <strong>averaged power spectra</strong> are stored, not the raw radio samples.</p>
-          </article>
-          <article class="ra-card">
-            <h3>Pointing</h3>
-            <p>The beam is about 3° wide, so pointing errors of a degree matter. A Sun-based pointing calibration on 25 Aug 2026 reduced the residual error to about 1.1°. Later software added an automatic Sun cross-scan check, and comparing the observed ridge of Galactic H I with b = 0° provides an independent test.</p>
-          </article>
-          <article class="ra-card">
-            <h3>Ways of scanning the sky</h3>
-            <ul>
-              <li><strong>Raster scan:</strong> visit a planned grid of sky positions, wait at each one and record. The 26 Aug outer-Galaxy map was made this way (313 positions).</li>
-              <li><strong>Area scan:</strong> cover a rectangular box of sky, such as the 2 Sep Galactic-centre region.</li>
-              <li><strong>Drift scan:</strong> hold the dish still and let the Earth's rotation carry the sky through the beam, as the fixed telescopes do.</li>
-            </ul>
-          </article>
-        </div>
-        <div class="ra-note">
-          <p><strong>Current role.</strong> DISH222 produces all data in the research archive and is the reference instrument for the calibration work described on the <a href="calibration.html">Calibration</a> page. New, independently tested DISH222 software is being designed starting with offline analysis tools. The receiver's sample format and the motor-safety behaviour are to be verified independently before any new software controls the telescope.</p>
-        </div>
+        <div class="ra-note"><p><strong>How DISH222 observes</strong> (steerable dish, receiver chain, pointing, scan modes) now lives with its telescope: <a href="telescope-psu-moving.html#dish222-concepts">PSU moving telescope</a>.</p></div>
       </div>
     </section>
 
@@ -99,25 +97,15 @@
       <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="start-here.html"><span>Previous step</span><strong>&larr; Start Here</strong></a><a class="is-next" href="data.html"><span>Next step</span><strong>Data Library &rarr;</strong></a></nav></div>
     </section>
   </main>
-  <footer class="site-footer ra-portal-footer">
-    <div class="wrap ra-footer-grid">
-      <div class="ra-footer-branding">
-        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-        <p>Radio Astronomy — EMXplore</p>
-      </div>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
-        <h4>Explore</h4>
-        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
-      </nav>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
-        <h4>Research &amp; learning</h4>
-        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
-      </nav>
-      <div class="ra-footer-col">
-        <h4>EMXplore</h4>
-        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
-        <p class="copyright">&copy; 2026 Walid Dyab</p>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    </div>
+    <div class="wrap">
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>

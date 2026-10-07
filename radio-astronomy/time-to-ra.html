@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Solar Time → Sidereal Time → Right Ascension — EMXplore Radio Astronomy</title>
+  <meta name="description" content="How a fixed zenith telescope's clock-stamped spectra become sidereal time and Right Ascension.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/vendor/katex/katex.min.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../projects.html">Projects</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <ol class="ra-crumbs" aria-label="Breadcrumb"><li><a href="index.html">Radio Astronomy</a></li><li><a href="data-to-science.html">Data to Science</a></li><li aria-current="page">Solar → Sidereal → RA</li></ol>
+        <p class="eyebrow">Data to Science · 1 of 3</p>
+        <h1>Solar time → sidereal time → Right Ascension</h1>
+        <p class="hero-intro">How a fixed zenith telescope records the sky as the Earth rotates, and how each spectrum is placed on it.</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">The idea</p>
+          <h2>A fixed telescope sees the sky go by</h2>
+        </div>
+        <div class="ra-prose">
+          <p>A zenith-pointing telescope never moves. As the Earth rotates, different parts of the sky pass overhead, so each recorded spectrum belongs to a different Right Ascension. The file knows only the <strong>clock time</strong> at which it was recorded. To place a spectrum on the sky, clock time must be turned into sidereal time, and sidereal time into Right Ascension.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="chain">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">The chain</p>
+          <h2>Solar time → sidereal time → Right Ascension</h2>
+        </div>
+        <ol class="ra-flow-steps">
+          <li><h3>Clock / solar time (UTC)</h3><p>Each spectrum is stamped with a time. First record which time standard was used (UTC or local time) and its offset; mixing them silently shifts the sky position.</p></li>
+          <li><h3>Sidereal time</h3><p>Sidereal time follows the stars rather than the Sun. A sidereal day is about 23 h 56 m 4 s of solar time, so the stars rise about four minutes earlier each solar day. The reference value is Greenwich sidereal time.</p></li>
+          <li><h3>Local Sidereal Time (LST)</h3><p>Local Sidereal Time is the sidereal time at the telescope's longitude:</p>
+            <span class="ra-equation ra-equation--display" data-tex="\mathrm{LST} = \mathrm{GST} + \lambda_{\mathrm{east}}" data-display="true"><code>LST = GST + east longitude</code></span></li>
+          <li><h3>Right Ascension</h3><p>For a telescope pointing at the zenith, the Right Ascension at the beam centre equals the Local Sidereal Time, and the declination stays close to the site's latitude:</p>
+            <span class="ra-equation ra-equation--display" data-tex="\alpha \approx \mathrm{LST},\qquad \delta \approx \varphi_{\mathrm{site}}" data-display="true"><code>RA ≈ LST,  Dec ≈ site latitude</code></span>
+            <p>“Approximately” because the beam is a few degrees wide and the pointing is only as exact as the mount.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Original and derived</p>
+          <h2>Keep the two apart</h2>
+        </div>
+        <div class="ra-pair">
+          <div><h3>Original <span class="ra-status ra-status--available">Recorded</span></h3><p>The spectrum, its clock time stamp and the station's position. These are what the instrument and its logs recorded.</p></div>
+          <div><h3>Derived <span class="ra-status ra-status--planned">Computed</span></h3><p>Sidereal time, LST and Right Ascension. They depend on the time standard, the longitude and the pointing assumption, so they must be recorded as processing, not as measurement.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Real data</p>
+          <h2>Historical RA / LST-corrected data</h2>
+        </div>
+        <div class="ra-placeholder">
+          <h3>RA / LST explorer <span class="ra-status ra-status--awaiting">Awaiting ingestion</span></h3>
+          <p>The historical fixed-telescope bundles that were already corrected to RA / LST (archive level A2) will be demonstrated here. They have not been ingested, so no interactive display is shown and no values are claimed.</p>
+          <p><a href="archive-psu-fixed.html#historical">See the PSU fixed archive lineage</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="data-to-science.html"><span>Previous step</span><strong>&larr; Data to Science</strong></a><a class="is-next" href="frequency-to-velocity.html"><span>Next step</span><strong>Frequency → Velocity &rarr;</strong></a></nav></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    </div>
+    <div class="wrap">
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script src="assets/vendor/katex/katex.min.js"></script>
+  <script src="assets/js/math-render.js"></script>
+</body>
+</html>

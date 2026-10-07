@@ -75,7 +75,7 @@
         "description": {
           "value": "Deployed across Saudi universities; the IEEE 2025 paper reports replication across five universities at the published stage",
           "evidence": "documented",
-          "sources": [{"source_id": "src-site-project", "locator": "University Deployment"}, {"source_id": "src-ieee-2025"}]
+          "sources": [{"source_id": "src-site-log", "locator": "Background: University Deployment"}, {"source_id": "src-ieee-2025"}]
         }
       },
       "operational_period": {

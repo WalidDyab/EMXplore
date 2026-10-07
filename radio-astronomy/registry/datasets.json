@@ -133,9 +133,16 @@
     {
       "source_id": "src-site-project",
       "kind": "public_site_page",
-      "title": "Project Story page",
+      "title": "Telescopes page: system story (formerly the Project Story page)",
       "visibility": "public",
-      "path": "radio-astronomy/project.html"
+      "path": "radio-astronomy/telescopes.html"
+    },
+    {
+      "source_id": "src-site-log",
+      "kind": "public_site_page",
+      "title": "Project Log page: background timeline (formerly part of the Project Story page)",
+      "visibility": "public",
+      "path": "radio-astronomy/log.html"
     },
     {
       "source_id": "src-site-lecture",

@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EMXplore — Engineering Projects &amp; Courses in Electromagnetics</title>
-  <meta name="description" content="EMXplore is an engineering exploration platform built around real work: research projects in radio astronomy, radar imaging and instrumentation, and interactive university courses.">
-  <meta property="og:title" content="EMXplore — Engineering Projects &amp; Courses in Electromagnetics">
-  <meta property="og:description" content="Two directions, one platform: engineering projects and interactive courses in electromagnetics, radio science, and instrumentation.">
+  <title>EMXplore — Discover, Learn, Experiment</title>
+  <meta name="description" content="EMXplore: Discover → Learn → Experiment. Engineering and scientific projects, courses, tools and portals in electromagnetics, radio science and instrumentation.">
+  <meta property="og:title" content="EMXplore — Discover, Learn, Experiment">
+  <meta property="og:description" content="Projects, courses, tools and portals in electromagnetics and radio science.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#06101f">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
@@ -29,9 +29,11 @@
 
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About</a>
         <a href="projects.html">Projects</a>
-        <a href="https://courses.emxplore.com/">Courses</a>
+        <a href="courses.html">Courses</a>
+        <a href="tools.html">Tools</a>
+        <a href="portals.html">Portals</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
   </header>
@@ -49,19 +51,25 @@
 
       <div class="hero-content wrap">
         <p class="eyebrow">Electromagnetics &amp; Radio Science</p>
-        <h1 id="hero-title">Explore engineering through real projects and interactive learning.</h1>
+        <h1 id="hero-title">EMXplore<span class="hero-sub">Discover <span aria-hidden="true">→</span><span class="sr-only">then</span> Learn <span aria-hidden="true">→</span><span class="sr-only">then</span> Experiment</span></h1>
         <p class="hero-intro">
-          EMXplore brings together research projects, scientific instrumentation,
-          simulation tools, and structured course material in electromagnetics,
-          radio science, and radar engineering.
+          Real engineering and scientific projects, the courses taught alongside them,
+          interactive tools, and portals — in electromagnetics, radio science,
+          and radar engineering.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="projects.html">Explore Projects</a>
-          <a class="button button-ghost" href="https://courses.emxplore.com/">Explore Courses</a>
+          <a class="button button-ghost" href="courses.html">Explore Courses</a>
         </div>
+        <ul class="hero-areas" aria-label="Major areas of EMXplore">
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="portals.html">Portals</a></li>
+        </ul>
       </div>
 
-      <a class="scroll-cue" href="#directions" aria-label="Scroll to the two directions of EMXplore">
+      <a class="scroll-cue" href="#projects" aria-label="Scroll to projects">
         <span>Explore</span>
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M12 5v13m0 0 5-5m-5 5-5-5"/>
@@ -69,158 +77,156 @@
       </a>
     </section>
 
-    <!-- ── 2. Two primary directions ── -->
-    <section class="intro-section section" id="directions" aria-labelledby="directions-title">
+    <section class="section projects-section" id="projects" aria-labelledby="projects-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="section-kicker">Two directions, one platform</p>
-          <h2 id="directions-title">Projects and Courses.</h2>
-          <p>
-            EMXplore is organised around the work itself: engineering and research
-            projects on one side, and the teaching material developed alongside them
-            on the other.
-          </p>
+          <p class="section-kicker">Projects</p>
+          <h2 id="projects-title">Active engineering and scientific projects.</h2>
+          <p>EMXplore is increasingly the home of live research work. Radio Astronomy is active today; the next two projects have their places reserved.</p>
         </div>
-
-        <div class="direction-grid">
-          <article class="direction-card">
-            <p class="direction-label">Projects</p>
-            <h3>Research, instrumentation, and engineering development</h3>
-            <p>
-              Research projects, experimental platforms, scientific instrumentation,
-              engineering development, and applied exploration — together with the
-              simulation tools and laboratory facilities that support them.
-            </p>
-            <ul class="direction-points">
-              <li>Radio Astronomy</li>
-              <li>Riyadh Space Minaret</li>
-              <li>SAR &amp; ISAR</li>
-              <li>Simulation Tools</li>
-              <li>Lab Facilities</li>
-            </ul>
-            <div class="direction-actions">
-              <a class="button button-primary" href="projects.html">Explore Projects</a>
-            </div>
-          </article>
-
-          <article class="direction-card direction-courses">
-            <p class="direction-label">Courses</p>
-            <h3>Interactive course material and structured lectures</h3>
-            <p>
-              Interactive course material, simulations, visual explanations,
-              structured lectures, and teaching resources — organised by course
-              and delivered as a dedicated learning environment.
-            </p>
-            <ul class="direction-points">
-              <li>EE 351 Communication Systems</li>
-              <li>EE 499 Satellite Communications</li>
-              <li>Microprocessors Design</li>
-            </ul>
-            <div class="direction-actions">
-              <a class="button button-primary" href="https://courses.emxplore.com/">Explore Courses</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── 3. Selected project highlights ── -->
-    <section class="projects-section section" id="projects" aria-labelledby="projects-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <p class="section-kicker">Selected projects</p>
-          <h2 id="projects-title">Three principal project directions.</h2>
-          <p>Scientific instrumentation, space outreach, and radar imaging research.</p>
-        </div>
-
         <div class="project-grid grid-3">
           <a class="project-card" href="radio-astronomy/">
-            <div class="project-meta">
-              <span class="project-status status-live">Live</span>
-              <span>H I 21-cm Astronomy</span>
-            </div>
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>H I 21-cm Astronomy</span></div>
             <h3>Radio Astronomy</h3>
-            <p>A Saudi radio telescope platform for H I 21-cm observations — telescope engineering, calibration, software, data analysis, publications, and educational resources.</p>
+            <p>A Saudi radio telescope platform for H I 21-cm observations — telescopes, a data library and archive, data-to-science processing, research tracks, and educational resources.</p>
             <span class="project-link">Open project</span>
           </a>
 
-          <article class="project-card" aria-label="Riyadh Space Minaret, in development">
-            <div class="project-meta">
-              <span class="project-status status-coming">In Development</span>
-              <span>Space Outreach</span>
-            </div>
+          <a class="project-card" href="riyadh-space-minaret.html">
+            <div class="project-meta"><span class="project-status status-coming">Coming soon</span><span>Space Outreach</span></div>
             <h3>Riyadh Space Minaret</h3>
             <p>Radio astronomy, student projects, live telescope feeds, outreach, and space-science education from Riyadh.</p>
-            <span class="project-link muted">Project page in preparation</span>
-          </article>
+            <span class="project-link">Preview the project page</span>
+          </a>
 
-          <article class="project-card" aria-label="SAR and ISAR, research">
-            <div class="project-meta">
-              <span class="project-status status-research">Research</span>
-              <span>Radar Imaging</span>
-            </div>
-            <h3>SAR &amp; ISAR</h3>
+          <a class="project-card" href="radar-imaging.html">
+            <div class="project-meta"><span class="project-status status-coming">Coming soon</span><span>SAR &amp; ISAR</span></div>
+            <h3>Radar and Imaging</h3>
             <p>Electromagnetic simulation, synthetic echo datasets, visualisation, and radar imaging research.</p>
-            <span class="project-link muted">Project page in preparation</span>
-          </article>
+            <span class="project-link">Preview the project page</span>
+          </a>
         </div>
-
         <div class="section-cta">
-          <a class="button button-primary" href="projects.html">View all projects, tools &amp; facilities</a>
+          <a class="button button-primary" href="projects.html">All projects</a>
         </div>
       </div>
     </section>
 
-    <!-- ── 4. Courses preview ── -->
     <section class="section" id="courses" aria-labelledby="courses-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="section-kicker">Learning environment</p>
+          <p class="section-kicker">Courses</p>
           <h2 id="courses-title">Courses at EMXplore.</h2>
-          <p>
-            Each weekly module connects classroom discussion with engineering
-            visualisation, equations, interactive tools, and computational exploration.
-          </p>
+          <p>Structured course material with equations, visual explanations and interactive tools, delivered as a dedicated learning environment at courses.emxplore.com.</p>
         </div>
-
-        <div class="course-grid">
-          <a class="course-card" href="https://courses.emxplore.com/communication-systems/">
-            <p class="course-code">EE 351 · Available</p>
+        <div class="project-grid grid-3">
+          <a class="project-card" href="https://courses.emxplore.com/communication-systems/">
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>EE 351</span></div>
             <h3>Communication Systems</h3>
             <p>Signals and systems across the time and frequency domains, modulation, and communication-system analysis.</p>
             <span class="project-link">Open course</span>
           </a>
 
-          <a class="course-card" href="https://courses.emxplore.com/satellite-technologies/">
-            <p class="course-code">EE 499 · Available</p>
-            <h3>Satellite Communications</h3>
+          <a class="project-card" href="https://courses.emxplore.com/satellite-technologies/">
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>EE 499</span></div>
+            <h3>Satellite Technologies</h3>
             <p>Orbital mechanics, satellite geometry, propagation, antennas, communication links, spacecraft, and ground systems.</p>
             <span class="project-link">Open course</span>
           </a>
 
-          <article class="course-card" aria-label="Microprocessors Design, coming soon">
-            <p class="course-code">Planned · Coming soon</p>
+          <a class="project-card" href="https://courses.emxplore.com/">
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>Microprocessors Design</span></div>
             <h3>Microprocessors Design</h3>
-            <p>A planned learning space covering microprocessor architecture, interfacing, and embedded design.</p>
-            <span class="project-link muted">Not yet available</span>
-          </article>
+            <p>Microprocessor architecture, interfacing, and embedded design, delivered in the courses learning environment.</p>
+            <span class="project-link">Open on courses.emxplore.com</span>
+          </a>
         </div>
-
         <div class="section-cta">
-          <a class="button button-primary" href="https://courses.emxplore.com/">Explore Courses</a>
+          <a class="button button-primary" href="courses.html">About the courses</a>
         </div>
       </div>
     </section>
 
-    <!-- ── 5. Philosophy / About preview ── -->
+    <section class="section" id="tools" aria-labelledby="tools-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Tools</p>
+          <h2 id="tools-title">Interactive engineering tools.</h2>
+          <p>Calculators, simulators and visualisers for working with electromagnetic systems. More are in preparation.</p>
+        </div>
+        <div class="project-grid grid-3">
+          <a class="project-card" href="https://waliddyab.github.io/Complex-Numbers/" target="_blank" rel="noopener noreferrer">
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>Engineering Mathematics</span></div>
+            <h3>Complex Numbers &amp; Phasors</h3>
+            <p>From algebra and Argand diagrams to phasors and AC circuits, with an interactive visualiser and quiz.</p>
+            <span class="project-link">Open tool <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <article class="project-card is-placeholder" aria-label="Waveguide / S-parameter Tools, coming soon">
+            <div class="project-meta"><span class="project-status status-coming">Coming soon</span><span>Waveguide Design</span></div>
+            <h3>Waveguide / S-parameter Tools</h3>
+            <p>Interactive calculators for waveguide components, stepped-impedance septa, and S-parameter analysis.</p>
+            <span class="project-link muted">Coming soon</span>
+          </article>
+
+          <article class="project-card is-placeholder" aria-label="RF Engineering Lab Toolset, coming soon">
+            <div class="project-meta"><span class="project-status status-coming">Coming soon</span><span>Simulation &amp; Tools</span></div>
+            <h3>RF Engineering Lab Toolset</h3>
+            <p>RFSoC resources, SDR experiments, electromagnetic field visualisation, and interactive utilities.</p>
+            <span class="project-link muted">Coming soon</span>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a class="button button-primary" href="tools.html">All tools</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portals" aria-labelledby="portals-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Portals</p>
+          <h2 id="portals-title">Open portals for the public.</h2>
+          <p>Standalone educational portals developed alongside the research work. They are open engineering resources, not university course material.</p>
+        </div>
+        <div class="project-grid grid-3">
+          <a class="project-card" href="radio-astronomy/lecture.html">
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>Radio Astronomy</span></div>
+            <h3>Radio Astronomy Lecture</h3>
+            <p>A 52-slide interactive lecture: the 21-cm line, the telescope, calibration, velocities, moment maps and data cubes.</p>
+            <span class="project-link">Open lecture</span>
+          </a>
+
+          <a class="project-card" href="https://waliddyab.github.io/Ham-Radio/" target="_blank" rel="noopener noreferrer">
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>Radio Communication</span></div>
+            <h3>Ham Radio Portal</h3>
+            <p>Lectures, license preparation, practical resources, and a growing portal for amateur radio — regulations, equipment, operating procedures, and safety.</p>
+            <span class="project-link">Open portal <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a class="project-card" href="https://waliddyab.github.io/satellite-lecture/" target="_blank" rel="noopener noreferrer">
+            <div class="project-meta"><span class="project-status status-live">Live</span><span>Space Systems</span></div>
+            <h3>Satellite Lecture</h3>
+            <p>A bilingual visual portal on amateur satellite communication — tracking, antennas, Doppler correction, TLE data, LoRa, TinyGS, and student satellite missions.</p>
+            <span class="project-link">Open portal <span aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+        <div class="section-cta">
+          <a class="button button-primary" href="portals.html">All portals</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── The approach ── -->
     <section class="section" id="approach" aria-labelledby="approach-title">
       <div class="wrap">
         <div class="section-heading">
-          <p class="section-kicker">The approach</p>
-          <h2 id="approach-title">Built around real engineering work.</h2>
+          <p class="section-kicker">The Approach</p>
+          <h2 id="approach-title">Discover → Learn → Experiment</h2>
           <p>
-            EMXplore grows out of research and teaching in electromagnetics: what is
-            built and measured becomes what is explained and taught.
+            EMXplore connects real questions to learning, learning to experimentation,
+            and experimentation to new discovery: what is built and measured becomes
+            what is explained and taught.
           </p>
         </div>
 
@@ -228,7 +234,7 @@
           <article class="path-card">
             <span class="path-index">01</span>
             <h3>Discover</h3>
-            <p>See electromagnetics through natural phenomena, visual explanations, and real observations from the field.</p>
+            <p>Start from real questions: natural phenomena, visual explanations, and observations from the field.</p>
           </article>
           <article class="path-card">
             <span class="path-index">02</span>
@@ -238,7 +244,7 @@
           <article class="path-card">
             <span class="path-index">03</span>
             <h3>Experiment</h3>
-            <p>Use interactive tools, datasets, simulations, and practical engineering resources.</p>
+            <p>Use interactive tools, datasets, simulations, and practical engineering resources, and let the results raise the next question.</p>
           </article>
         </div>
 
@@ -252,31 +258,11 @@
 
   <!-- ═══ EMXplore global footer ═══ -->
   <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div class="footer-col">
-        <a class="brand footer-brand" href="index.html" aria-label="EMXplore home">
-          <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
-        </a>
-        <p>Engineering projects and interactive courses in electromagnetics and radio science.</p>
-      </div>
-      <nav class="footer-col" aria-label="Footer navigation">
-        <h4>Explore</h4>
-        <p class="footer-inline">
-          <a href="index.html">Home</a><span class="sep"> · </span><a href="about.html">About</a><span class="sep"> · </span><a href="projects.html">Projects</a><span class="sep"> · </span><a href="https://courses.emxplore.com/">Courses</a>
-        </p>
-      </nav>
-      <nav class="footer-col" aria-label="Footer projects and learning links">
-        <h4>Projects &amp; Learning</h4>
-        <p class="footer-inline">
-          <a href="radio-astronomy/">Radio Astronomy</a><span class="sep"> · </span><a href="projects.html#tools">Simulation Tools</a><span class="sep"> · </span><a href="projects.html#facilities">Lab Facilities</a>
-        </p>
-      </nav>
-      <nav class="footer-col" aria-label="Footer research and profile links">
-        <h4>Research</h4>
-        <p class="footer-inline">
-          <a href="https://emg.psu.edu.sa" target="_blank" rel="noopener noreferrer">EMG</a><span class="sep"> · </span><a href="https://scholar.google.com/citations?hl=en&amp;user=Y6nqdz0AAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a><span class="sep"> · </span><a href="https://www.researchgate.net/profile/Walid-Dyab" target="_blank" rel="noopener noreferrer">ResearchGate</a><span class="sep"> · </span><a href="https://github.com/WalidDyab" target="_blank" rel="noopener noreferrer">GitHub</a><span class="sep"> · </span><a href="https://www.linkedin.com/in/walid-dyab-0a60b315/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </p>
-      </nav>
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
     </div>
     <div class="wrap">
       <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>

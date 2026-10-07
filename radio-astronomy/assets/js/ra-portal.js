@@ -497,6 +497,55 @@
     });
   }
 
+
+  // Archive categories for the DISH222 (moving PSU telescope), grouped from the registry.
+  // Status comes from native_availability only: nothing is shown as available unless the
+  // registry says the files were supplied to the research archive, and nothing is a download.
+  R['archive-moving'] = function (el) {
+    var GROUPS = [
+      { title: 'Native averaged spectra', note: 'Averaged power spectra as written by the acquisition software (L0). Not raw I/Q.', match: function (d) { return d.product_class === 'native_spectra'; } },
+      { title: 'Observation manifests and pointing', note: 'Planned and commanded sky positions and times for each session (L1).', match: function (d) { return d.product_class === 'observation_manifest'; } },
+      { title: 'Reduced and resampled spectra', note: 'Baseline-removed or regridded spectra, still on a relative scale (L0 resampled, L2).', match: function (d) { return d.product_class === 'reduced_spectra' || d.product_class === 'resampled_spectra'; } },
+      { title: 'Calibration records and state', note: 'Calibration measurements, reports and calibrated products tied to an epoch (C0–C4).', match: function (d) { return d.product_class === 'calibration_record' || d.product_class === 'calibration_report' || d.product_class === 'calibrated_product'; } },
+      { title: 'Spectral cubes', note: 'Position–position–velocity cubes (L4).', match: function (d) { return d.data_level === 'L4'; } },
+      { title: 'Maps, velocity tables and curated products', note: 'Derived and curated science products (L5–L6).', match: function (d) { return d.product_class === 'derived_science_product' || d.product_class === 'curated_product'; } },
+      { title: 'Plots and derived figures', note: 'Figures and renderings made from lower levels (L7).', match: function (d) { return d.product_class === 'visualization'; } },
+      { title: 'Reports', note: 'Validation notes and other written records.', match: function (d) { return d.product_class === 'validation_report'; } }
+    ];
+    var used = {};
+    el.innerHTML = GROUPS.map(function (g) {
+      var list = datasets().filter(function (d) {
+        if (used[d.dataset_id] || !g.match(d)) return false;
+        used[d.dataset_id] = true;
+        return true;
+      });
+      if (!list.length) return '';
+      var have = list.filter(function (d) { return d.native_availability !== 'not_supplied'; });
+      var wait = list.length - have.length;
+      var fmts = {};
+      list.forEach(function (d) { (d.file_formats || []).forEach(function (f) { if (f !== 'zip') fmts[f.toUpperCase()] = 1; }); });
+      var chip = have.length
+        ? '<span class="ra-status ra-status--available">Available on request</span>'
+        : '<span class="ra-status ra-status--awaiting">Awaiting ingestion</span>';
+      var counts = have.length + ' catalogued with files in the research archive' +
+        (wait ? '; ' + wait + ' known but awaiting ingestion' : '');
+      var items = list.map(function (d) {
+        var tag = d.native_availability === 'not_supplied' ? ' <em>(awaiting ingestion)</em>'
+          : d.native_availability === 'derived_only' ? ' <em>(native spectra not supplied)</em>'
+          : d.native_availability === 'partial' ? ' <em>(native lineage incomplete)</em>' : '';
+        return '<li><a href="data.html#' + esc(d.dataset_id) + '">' + esc(d.title) + '</a>' + tag + '</li>';
+      }).join('');
+      var fmtList = Object.keys(fmts);
+      return '<article class="ra-prod' + (have.length ? '' : ' is-placeholder') + '">' +
+        '<div class="ra-prod-head"><h3>' + esc(g.title) + '</h3>' + chip + '</div>' +
+        '<p>' + esc(g.note) + '</p>' +
+        (fmtList.length ? '<ul class="ra-formats" aria-label="File formats">' + fmtList.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul>' : '') +
+        '<p class="ra-prod-note">' + esc(counts) + '. Files are not yet published for download on this site.</p>' +
+        '<details><summary>Show ' + list.length + ' catalogue ' + (list.length === 1 ? 'record' : 'records') + '</summary><ul class="ra-prod-list">' + items + '</ul></details>' +
+        '</article>';
+    }).join('');
+  };
+
   function run() {
     var targets = document.querySelectorAll('[data-ra-render]');
     if (!targets.length) return;

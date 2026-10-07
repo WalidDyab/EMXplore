@@ -16,9 +16,9 @@
   <header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
       <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <a class="ra-parent-link" href="../projects.html">Projects</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html" aria-current="page">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html" aria-current="page">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
     </div>
   </header>
   <main id="main-content">
@@ -27,19 +27,34 @@
         <p class="eyebrow">Step 2 · Data Library</p>
         <h1>The project's datasets, level by level</h1>
         <p class="hero-intro">Every observation, product, figure and calibration record in the research archive, catalogued with its processing level, calibration scale, source availability and known limitations. Datasets that are known to exist but are not yet in the archive are listed too.</p>
-        <nav class="ra-subnav" aria-label="On this page">
-          <a href="#levels">Processing levels</a>
-          <a href="#featured">Recommended dataset</a>
-          <a href="#showcase">All-sky showcase</a>
-          <a href="#browse">Browse everything</a>
-        </nav>
+        <nav class="ra-subnav" aria-label="On this page"><a href="#overview">Explore or archive?</a><a href="#levels">Processing levels</a><a href="#featured">Recommended dataset</a><a href="#browse">All datasets</a><a href="#archives">Scientific Archives</a></nav>
+      </div>
+    </section>
+
+
+
+
+    <section class="section ra-portal-section" id="overview">
+      <div class="wrap">
+        <div class="ra-grid-2">
+          <article class="ra-card">
+            <h3>A · Explore data</h3>
+            <p>What observations and datasets exist, which telescope produced them, what scientific question they support, and what students can explore.</p>
+            <p><a href="#levels">Processing levels</a> · <a href="#featured">Recommended dataset</a> · <a href="#browse">All datasets</a></p>
+          </article>
+          <article class="ra-card">
+            <h3>B · Scientific Archives</h3>
+            <p>What actual files and products exist, at what processing level, in which formats, and what can eventually be downloaded.</p>
+            <p><a href="#archives">PSU Fixed</a> · <a href="#archives">PNU Fixed</a> · <a href="#archives">PSU Moving / DISH222</a></p>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section ra-portal-section" id="levels">
       <div class="wrap">
         <div class="section-heading">
-          <p class="section-kicker">Processing levels</p>
+          <p class="section-kicker">A · Explore data · Processing levels</p>
           <h2>L0 → L8: from recorded spectrum to reproduced result</h2>
           <p>Each level is made from the ones below it. The chips show where the datasets in the archive sit. Click one to open its record.</p>
         </div>
@@ -108,29 +123,65 @@
         <div data-ra-render="dataset-browser"></div>
       </div>
     </section>
+
+    <section class="section ra-portal-section" id="archives">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">B · Scientific Archives</p>
+          <h2>What actual files and products exist</h2>
+          <p>Archives are organised by telescope, then by processing stage. They show the formats, what is measured versus derived, and what can eventually be downloaded. Placeholders mark stages whose files are not yet ingested; nothing is downloadable unless it says so.</p>
+        </div>
+        <div class="ra-tier">
+          <div class="ra-tier-head"><h3>Fixed telescopes</h3><p>Zenith-pointing drift-scan stations.</p></div>
+          <div class="ra-grid-2">
+            <a class="ra-station" href="archive-psu-fixed.html"><div class="ra-station-top"><span>Fixed · PSU</span><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></div><h4>PSU Fixed Telescope</h4><p>Original spectra through to a planned modern reprocessed archive.</p><ul class="ra-formats" aria-label="File formats"><li>TXT spectra</li><li>MAT bundles</li><li>RA/LST MAT bundles</li><li>Master MATLAB structure</li><li>Future FITS / CSV / JSON</li></ul><span class="project-link">Open the PSU fixed archive</span></a>
+            <a class="ra-station is-placeholder" href="archive-pnu-fixed.html"><div class="ra-station-top"><span>Fixed · PNU</span><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></div><h4>PNU Fixed Telescope</h4><p>Placeholders for original, aggregated, processed and modern archive products.</p><ul class="ra-formats" aria-label="File formats"><li>Placeholders</li></ul><span class="project-link">Open the PNU fixed archive</span></a>
+          </div>
+        </div>
+        <div class="ra-tier">
+          <div class="ra-tier-head"><h3>Moving / rotating telescope</h3><p>The steerable DISH222 at PSU.</p></div>
+          <div class="ra-grid-2">
+            <a class="ra-station" href="archive-psu-moving.html"><div class="ra-station-top"><span>Moving · PSU</span><span class="ra-status ra-status--available">Available on request</span></div><h4>PSU Moving Telescope / DISH222</h4><p>Products catalogued from the registry, with placeholders for future standard products.</p><ul class="ra-formats" aria-label="File formats"><li>NPZ spectra</li><li>Scan manifests</li><li>Derived products</li><li>Future FITS / CSV / JSON</li></ul><span class="project-link">Open the DISH222 archive</span></a>
+          </div>
+        </div>
+        <ul class="ra-legend" aria-label="Status key"><li><span class="ra-status ra-status--available">Available</span></li><li><span class="ra-status ra-status--processing">Processing</span></li><li><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></li><li><span class="ra-status ra-status--validation">Under validation</span></li><li><span class="ra-status ra-status--planned">Planned</span></li></ul>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light" id="archive-levels">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Archive processing levels</p>
+          <h2>What was measured versus what was derived later</h2>
+          <p>Historical lineage (A), modern reprocessing (P) and the DISH222 levels (L) are separate vocabularies. In every one, only the lowest stage is a measurement.</p>
+        </div>
+        <div class="ra-tablewrap"><table class="ra-leveltable">
+        <thead><tr><th scope="col">Level</th><th scope="col">Meaning</th><th scope="col">Measured or derived</th></tr></thead>
+        <tbody>
+          <tr><td>A0</td><td>Original recorded spectrum (fixed telescopes)</td><td>Measured</td></tr>
+          <tr><td>A1</td><td>Aggregated dataset</td><td>Repackaged from A0</td></tr>
+          <tr><td>A2</td><td>Historical coordinate-corrected dataset</td><td>Derived</td></tr>
+          <tr><td>A3</td><td>Station master dataset</td><td>Derived</td></tr>
+          <tr><td>P0</td><td>Faithfully decoded historical observation</td><td>Measured, re-encoded</td></tr>
+          <tr><td>P1 – P3</td><td>Modern celestial coordinates · Doppler / spectral frame · absolute calibration</td><td>Derived</td></tr>
+          <tr><td>P4</td><td>Community / FITS archive product</td><td>Derived</td></tr>
+          <tr><td>L0 – L8</td><td>DISH222 levels, from native averaged spectra (L0) to independently reproduced products (L8). See <a href="data.html#levels">Data Library</a>.</td><td>L0 measured; L1 – L8 derived</td></tr>
+        </tbody></table></div>
+      </div>
+    </section>
     <section class="section ra-portal-section" aria-label="Learning path">
       <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="telescopes.html"><span>Previous step</span><strong>&larr; Telescopes</strong></a><a class="is-next" href="data-to-science.html"><span>Next step</span><strong>From Data to Science &rarr;</strong></a></nav></div>
     </section>
   </main>
-  <footer class="site-footer ra-portal-footer">
-    <div class="wrap ra-footer-grid">
-      <div class="ra-footer-branding">
-        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-        <p>Radio Astronomy — EMXplore</p>
-      </div>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
-        <h4>Explore</h4>
-        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
-      </nav>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
-        <h4>Research &amp; learning</h4>
-        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
-      </nav>
-      <div class="ra-footer-col">
-        <h4>EMXplore</h4>
-        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
-        <p class="copyright">&copy; 2026 Walid Dyab</p>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    </div>
+    <div class="wrap">
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>

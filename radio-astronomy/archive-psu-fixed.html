@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PSU Fixed Telescope Archive — EMXplore Radio Astronomy</title>
+  <meta name="description" content="Archive architecture for the PSU fixed telescope: original TXT spectra, MAT bundles, RA/LST-corrected bundles, the station master dataset and the planned modern FITS archive.">
+  <meta name="theme-color" content="#06101f">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/radio-astronomy.css">
+  <link rel="stylesheet" href="assets/css/ra-portal.css">
+</head>
+<body class="ra-body">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header ra-portal-header" id="site-header">
+    <div class="wrap header-inner ra-portal-header-inner">
+      <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
+      <a class="ra-parent-link" href="../projects.html">Projects</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html" aria-current="page">Data Library</a><a href="data-to-science.html">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="ra-hero ra-page-hero">
+      <div class="wrap">
+        <ol class="ra-crumbs" aria-label="Breadcrumb"><li><a href="index.html">Radio Astronomy</a></li><li><a href="data.html">Data Library</a></li><li><a href="data.html#archives">Archives</a></li><li aria-current="page">Fixed</li><li aria-current="page">PSU</li></ol>
+        <p class="eyebrow">Archives · Fixed · PSU</p>
+        <h1>PSU fixed telescope archive</h1>
+        <p class="hero-intro">What data products exist, in what formats, at what processing stage, and what can eventually be downloaded. Awaiting ingestion: none of these files are connected yet.</p>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light">
+      <div class="wrap">
+        <div class="ra-note ra-note--caution"><p><strong>Reading this page.</strong> This is the archive architecture for the PSU fixed telescope. The stages below are described from the project's own account of its historical data. No files from this station have been ingested into the portal, so nothing here can be downloaded. Every stage carries a status.</p></div>
+        <ul class="ra-legend" aria-label="Status key"><li><span class="ra-status ra-status--available">Available</span></li><li><span class="ra-status ra-status--processing">Processing</span></li><li><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></li><li><span class="ra-status ra-status--validation">Under validation</span></li><li><span class="ra-status ra-status--planned">Planned</span></li></ul>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="progression">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Progression</p>
+          <h2>From recorded spectrum to community product</h2>
+          <p>Solid outlines are what was measured. Dashed outlines are what was derived later.</p>
+        </div>
+        <ol class="ra-pipe" aria-label="PSU fixed archive processing progression"><li class="is-measured"><span>TXT original recorded spectra<small>Measured</small></span></li><li class="is-later"><span>MAT aggregation<small>Repackaged</small></span></li><li class="is-later"><span>Historical RA / LST correction<small>Derived</small></span></li><li class="is-later"><span>PSU master structure<small>Derived</small></span></li><li class="is-later"><span>Modern reprocessing<small>Planned</small></span></li><li class="is-later"><span>FITS / community products<small>Planned</small></span></li></ol>
+        <ul class="ra-legend" aria-label="Origin key"><li><span class="ra-origin ra-origin--measured">Measured</span> what the instrument recorded</li><li><span class="ra-origin ra-origin--derived">Derived later</span> produced from measurements by a processing step</li></ul>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="historical">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Historical lineage</p>
+          <h2>A0 – A3: the data as they exist</h2>
+          <p>Source lineage of the historical PSU fixed-telescope data.</p>
+        </div>
+        <ol class="ra-lineage" aria-label="Historical source lineage A0 to A3"><li class="ra-lin ra-lin--measured is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">A0</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">A0: </span>Original recorded spectra</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--measured">Measured</span> <span class="ra-status ra-status--awaiting">Awaiting ingestion</span> </div>
+            <p>Averaged spectra: frequency versus relative amplitude, with the receiver/background response already corrected. One spectrum per file.</p>
+            <ul class="ra-formats" aria-label="File formats"><li>TXT</li></ul>
+          </div>
+        </li>
+        <li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">A1</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">A1: </span>Aggregated observation bundles</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--awaiting">Awaiting ingestion</span> </div>
+            <p>The original spectra gathered into larger files, approximately 1000 spectra per file. Repackaging, not new measurement.</p>
+            <ul class="ra-formats" aria-label="File formats"><li>MAT</li></ul>
+          </div>
+        </li>
+        <li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">A2</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">A2: </span>Historical RA / LST-corrected bundles</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--awaiting">Awaiting ingestion</span> </div>
+            <p>Bundles to which the project's historical Right Ascension / Local Sidereal Time correction was applied. See <a href="time-to-ra.html">Solar Time → Sidereal Time → Right Ascension</a>.</p>
+            <ul class="ra-formats" aria-label="File formats"><li>MAT</li></ul>
+          </div>
+        </li>
+        <li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">A3</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">A3: </span>PSU station master dataset</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--awaiting">Awaiting ingestion</span> </div>
+            <p>The station's historical data combined into one MATLAB structure.</p>
+            <ul class="ra-formats" aria-label="File formats"><li>MATLAB structure</li></ul>
+          </div>
+        </li>
+      </ol>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="modern">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Modern reprocessing</p>
+          <h2>P0 – P4: the reprocessed scientific archive</h2>
+          <p>Planned. None of these products exist yet, and none will be presented as measured data.</p>
+        </div>
+        <ol class="ra-lineage" aria-label="Modern processing P0 to P4"><li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">P0</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">P0: </span>Faithfully decoded historical observation</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--planned">Planned</span> </div>
+            <p>The historical files decoded into open formats with no scientific change, so the original measurement is preserved exactly.</p>
+            
+          </div>
+        </li>
+        <li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">P1</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">P1: </span>Modern celestial-coordinate reconstruction</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--planned">Planned</span> </div>
+            <p>Time stamps and station position turned into celestial coordinates again with documented, modern methods.</p>
+            
+          </div>
+        </li>
+        <li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">P2</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">P2: </span>Doppler / spectral-frame product</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--planned">Planned</span> </div>
+            <p>Frequency axis converted to velocity in stated reference frames. See <a href="frequency-to-velocity.html">Frequency → Velocity</a>.</p>
+            
+          </div>
+        </li>
+        <li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">P3</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">P3: </span>Absolute calibration (when scientifically valid)</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--validation">Calibration under validation</span> </div>
+            <p>Relative intensity converted to temperature, only if the assumptions and uncertainties can be established for the historical receiver. See <a href="calibration.html">Relative Intensity → Temperature</a>.</p>
+            
+          </div>
+        </li>
+        <li class="ra-lin ra-lin--derived is-placeholder">
+          <span class="ra-lin-code" aria-hidden="true">P4</span>
+          <div class="ra-lin-body">
+            <h3><span class="sr-only">P4: </span>Community / FITS archive product</h3>
+            <div class="ra-lin-tags"><span class="ra-origin ra-origin--derived">Derived later</span> <span class="ra-status ra-status--planned">Planned</span> </div>
+            <p>Standards-based reprocessed spectra with provenance, celestial coordinates, velocity reference frames, calibration state and metadata.</p>
+            
+          </div>
+        </li>
+      </ol>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="formats">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Product formats</p>
+          <h2>Modern archive products</h2>
+          <p>Placeholders for the formats the reprocessed archive is intended to offer.</p>
+        </div>
+      <div class="ra-prod-grid">
+        <article class="ra-prod is-placeholder">
+          <div class="ra-prod-head"><h3>FITS Scientific Archive</h3><span class="ra-status ra-status--planned">Planned</span></div>
+          <p>Standards-based reprocessed spectra with provenance, celestial coordinates, velocity reference frames, calibration state and metadata.</p>
+          <ul class="ra-formats" aria-label="File formats"><li>FITS</li></ul><p class="ra-prod-note">No files are connected yet, so there is no download here.</p>
+        </article>
+        <article class="ra-prod is-placeholder">
+          <div class="ra-prod-head"><h3>CSV exports</h3><span class="ra-status ra-status--planned">Planned</span></div>
+          <p>Plain-text tables of reprocessed spectra for spreadsheets and quick analysis.</p>
+          <ul class="ra-formats" aria-label="File formats"><li>CSV</li></ul><p class="ra-prod-note">No files are connected yet, so there is no download here.</p>
+        </article>
+        <article class="ra-prod is-placeholder">
+          <div class="ra-prod-head"><h3>JSON metadata</h3><span class="ra-status ra-status--planned">Planned</span></div>
+          <p>Machine-readable description of each product: provenance, processing steps, frames and calibration state.</p>
+          <ul class="ra-formats" aria-label="File formats"><li>JSON</li></ul><p class="ra-prod-note">No files are connected yet, so there is no download here.</p>
+        </article>
+        <article class="ra-prod is-placeholder">
+          <div class="ra-prod-head"><h3>Plots and derived products</h3><span class="ra-status ra-status--planned">Planned</span></div>
+          <p>Figures and derived maps made from the reprocessed spectra.</p>
+          <ul class="ra-formats" aria-label="File formats"><li>PNG</li></ul><p class="ra-prod-note">No files are connected yet, so there is no download here.</p>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" id="publications">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Publication products</p>
+          <h2>Existing publication material</h2>
+        </div>
+      <div class="ra-prod-grid">
+        <article class="ra-prod">
+          <div class="ra-prod-head"><h3>IEEE Antennas and Propagation Magazine, 2025</h3><span class="ra-status ra-status--available">Available</span></div>
+          <p>The peer-reviewed paper describing the fixed educational telescope and its implementation in Saudi academic institutes.</p>
+          <p class="ra-prod-note"><a href="publications.html">Citation, DOI and BibTeX</a></p>
+        </article>
+        <article class="ra-prod is-placeholder">
+          <div class="ra-prod-head"><h3>Other publication products</h3><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></div>
+          <p>Further papers, figures or datasets tied to the PSU fixed-telescope data.</p>
+          <p class="ra-prod-note">To be listed when the material is added.</p>
+        </article>
+      </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section" aria-label="Learning path">
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="data.html#archives"><span>Previous step</span><strong>&larr; Data Library · Archives</strong></a><a class="is-next" href="archive-pnu-fixed.html"><span>Next step</span><strong>PNU fixed archive &rarr;</strong></a></nav></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    </div>
+    <div class="wrap">
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

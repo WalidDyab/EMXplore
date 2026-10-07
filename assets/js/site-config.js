@@ -21,10 +21,12 @@ const SITE_CONFIG = {
     main:    'https://emxplore.com/',
     courses: 'https://courses.emxplore.com/',
     nav: [
-      { label: 'Home',     href: 'index.html' },
-      { label: 'About',    href: 'about.html' },
-      { label: 'Projects', href: 'projects.html' },
-      { label: 'Courses',  href: 'https://courses.emxplore.com/' },
+      { label: 'Home',           href: 'index.html' },
+      { label: 'Projects',       href: 'projects.html' },
+      { label: 'Courses',        href: 'courses.html' },          // in-site hub; cards link to courses.emxplore.com
+      { label: 'Tools',          href: 'tools.html' },
+      { label: 'Portals', href: 'portals.html' },
+      { label: 'About',          href: 'about.html' },
     ],
   },
 
@@ -39,7 +41,7 @@ const SITE_CONFIG = {
     },
     satelliteCommunications: {
       code:        'EE 499',
-      title:       'Satellite Communications',
+      title:       'Satellite Technologies',
       description: 'Orbital mechanics, satellite geometry, propagation, antennas, communication links, spacecraft, and ground systems.',
       status:      'available',
       url:         'https://courses.emxplore.com/satellite-technologies/',
@@ -48,8 +50,8 @@ const SITE_CONFIG = {
       code:        '',
       title:       'Microprocessors Design',
       description: 'A planned learning space covering microprocessor architecture, interfacing, and embedded design.',
-      status:      'coming-soon',
-      url:         '', // Not yet published on courses.emxplore.com
+      status:      'available',
+      url:         'https://courses.emxplore.com/', // REVIEW: replace with the course's own path once confirmed
     },
   },
 
@@ -74,7 +76,7 @@ const SITE_CONFIG = {
       category:    'Radio Communication',
       status:      'live',
       language:    'Arabic',
-      taxonomy:    'project',   // public engineering portal — REVIEW MANUALLY before any migration
+      taxonomy:    'portal',    // Portals
       url:         'https://waliddyab.github.io/Ham-Radio/',
       github:      'https://github.com/WalidDyab/Ham-Radio',
     },
@@ -84,7 +86,7 @@ const SITE_CONFIG = {
       description: 'A bilingual visual portal on amateur satellite communication — tracking, antennas, Doppler correction, and student satellite missions.',
       category:    'Space Systems',
       status:      'live',
-      taxonomy:    'project',   // public engineering portal — REVIEW MANUALLY (relates to, but is not, EE 499)
+      taxonomy:    'portal',    // Portals (relates to, but is not, EE 499)
       url:         'https://waliddyab.github.io/satellite-lecture/',
       github:      'https://github.com/WalidDyab/satellite-lecture',
     },
@@ -114,6 +116,16 @@ const SITE_CONFIG = {
       migration:   'MOVE → courses.emxplore.com / microprocessors-design',
       url:         'https://waliddyab.github.io/statistical-analysis-of-FSM/',
       github:      'https://github.com/WalidDyab/statistical-analysis-of-FSM',
+    },
+
+    radioAstronomyLecture: {
+      title:       'Radio Astronomy Lecture',
+      description: 'A 52-slide interactive lecture on the 21-cm line, the telescope, calibration, velocities, moment maps and data cubes.',
+      category:    'Radio Astronomy',
+      status:      'live',
+      taxonomy:    'portal',    // Portals (file stays at radio-astronomy/lecture.html)
+      url:         'radio-astronomy/lecture.html',
+      github:      '',
     },
 
     radioAstronomy: {
@@ -156,12 +168,13 @@ const SITE_CONFIG = {
     },
 
     sarIsar: {
-      title:       'SAR & ISAR',
+      title:       'Radar and Imaging',
+      subtitle:    'SAR & ISAR',
       description: 'Electromagnetic simulation, synthetic echo datasets, visualisation, and radar imaging research.',
       category:    'Radar Imaging',
-      status:      'research',
+      status:      'coming-soon',
       taxonomy:    'project',
-      url:         '', // No dedicated page yet — do not fabricate a route.
+      url:         'radar-imaging.html', // placeholder page
       github:      '',
     },
 
@@ -171,7 +184,7 @@ const SITE_CONFIG = {
       category:    'Space Outreach',
       status:      'coming-soon',
       taxonomy:    'project',
-      url:         '', // No dedicated page yet — do not fabricate a route.
+      url:         'riyadh-space-minaret.html', // placeholder page
       github:      '',
     },
 
@@ -186,7 +199,7 @@ const SITE_CONFIG = {
     },
 
     waveguideSeptaTool: {
-      title:       'Waveguide Septa Tool',
+      title:       'Waveguide / S-parameter Tools',
       description: 'An interactive calculator for stepped-impedance waveguide septa design and analysis.',
       category:    'Waveguide Design',
       status:      'coming-soon',
@@ -201,7 +214,7 @@ const SITE_CONFIG = {
       category:    'Radio Telescope',
       status:      'live',
       taxonomy:    'facility',
-      url:         'radio-astronomy/project.html',
+      url:         'radio-astronomy/telescopes.html',
       github:      '',
     },
 

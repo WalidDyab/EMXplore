@@ -17,17 +17,43 @@
   <header class="site-header ra-portal-header" id="site-header">
     <div class="wrap header-inner ra-portal-header-inner">
       <a class="brand ra-portal-brand" href="index.html" aria-label="EMXplore Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-      <a class="ra-parent-link" href="../index.html">Back to EMXplore</a>
+      <a class="ra-parent-link" href="../projects.html">Projects</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Open Radio Astronomy navigation</span><span></span><span></span><span></span></button>
-      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="calibration.html">Calibration</a><a href="research.html">Research</a><a href="log.html">Project Log</a><a href="lecture.html">Lecture</a></nav>
+      <nav class="site-nav ra-portal-nav" id="site-nav" aria-label="Radio Astronomy primary navigation"><a href="start-here.html">Start Here</a><a href="telescopes.html">Telescopes</a><a href="data.html">Data Library</a><a href="data-to-science.html" aria-current="page">Data to Science</a><a href="research.html">Research</a><a href="log.html">Project Log</a></nav>
     </div>
   </header>
   <main id="main-content">
     <section class="ra-hero ra-page-hero">
       <div class="wrap">
-        <p class="eyebrow">Step 3 · From Data to Science</p>
+        <p class="eyebrow">Step 3 · Data to Science</p>
         <h1>How an averaged spectrum becomes a map of the Galaxy</h1>
         <p class="hero-intro">An explanatory walk through the chain used for DISH222 data. Each step says what is done and which parts are established, historical or still provisional. It explains the ideas, not the software.</p>
+      </div>
+    </section>
+
+
+    <section class="section ra-portal-section" id="transformations">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Three transformations</p>
+          <h2>From what was recorded to what it means</h2>
+          <p>Every scientific product comes from a recording by passing through transformations. Each has assumptions, and each changes a measured quantity into a derived one.</p>
+        </div>
+        <div class="ra-xform">
+          <a href="time-to-ra.html"><span class="ra-xform-num">Transformation 1</span><h3>Time to sky position</h3><span class="ra-xform-chain">Solar time → sidereal time → Right Ascension</span><p>How a fixed zenith telescope records the sky as the Earth rotates.</p><span class="ra-status ra-status--planned">Explainer · data awaiting</span></a>
+          <a href="frequency-to-velocity.html"><span class="ra-xform-num">Transformation 2</span><h3>Frequency to motion</h3><span class="ra-xform-chain">Frequency → velocity / reference frames</span><p>The Doppler conversion and the frames that velocities can be quoted in.</p><span class="ra-status ra-status--validation">Explorer under validation</span></a>
+          <a href="calibration.html"><span class="ra-xform-num">Transformation 3</span><h3>Intensity to temperature</h3><span class="ra-xform-chain">Relative intensity → temperature</span><p>Calibration epochs C0 – C4 and the assumptions behind a kelvin scale.</p><span class="ra-status ra-status--available">Available (DISH222)</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ra-portal-section ra-light" id="chain">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="section-kicker">Worked example</p>
+          <h2>The full DISH222 chain, step by step</h2>
+          <p>The three transformations above, followed through the steerable telescope's real data from native spectrum to Galactic map.</p>
+        </div>
       </div>
     </section>
 
@@ -132,29 +158,25 @@
         </article>
       </div>
     </section>
+
+    <section class="section ra-portal-section ra-light" aria-label="Continue to research">
+      <div class="wrap">
+        <div class="ra-note"><p><strong>Ready for a question of your own?</strong> The <a href="research.html">Research tracks</a> start from these same transformations: reproduce a reduction, test a calibration, or rebuild a map.</p></div>
+      </div>
+    </section>
     <section class="section ra-portal-section" aria-label="Learning path">
-      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="data.html"><span>Previous step</span><strong>&larr; Data Library</strong></a><a class="is-next" href="calibration.html"><span>Next step</span><strong>Calibration &rarr;</strong></a></nav></div>
+      <div class="wrap"><nav class="ra-np" aria-label="Previous and next step in the student path"><a href="data.html#archives"><span>Previous step</span><strong>&larr; Data Library</strong></a><a class="is-next" href="time-to-ra.html"><span>Next step</span><strong>Solar Time → Right Ascension &rarr;</strong></a></nav></div>
     </section>
   </main>
-  <footer class="site-footer ra-portal-footer">
-    <div class="wrap ra-footer-grid">
-      <div class="ra-footer-branding">
-        <a class="brand footer-brand" href="index.html" aria-label="Radio Astronomy overview"><span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span><span class="ra-brand-divider" aria-hidden="true">/</span><span class="ra-portal-name">Radio Astronomy</span></a>
-        <p>Radio Astronomy — EMXplore</p>
-      </div>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer explore links">
-        <h4>Explore</h4>
-        <p><a href="index.html">Overview</a> · <a href="start-here.html">Start Here</a> · <a href="telescopes.html">Telescopes</a> · <a href="data.html">Data Library</a> · <a href="data-to-science.html">Data to Science</a> · <a href="calibration.html">Calibration</a></p>
-      </nav>
-      <nav class="ra-footer-col" aria-label="Radio Astronomy footer research links">
-        <h4>Research &amp; learning</h4>
-        <p><a href="research.html">Student Research</a> · <a href="log.html">Project Log</a> · <a href="lecture.html">Lecture</a> · <a href="publications.html">Publication</a> · <a href="software.html">Software</a> · <a href="resources.html">Resources</a></p>
-      </nav>
-      <div class="ra-footer-col">
-        <h4>EMXplore</h4>
-        <p><a href="../index.html">Home</a> · <a href="../about.html">About</a> · <a href="../projects.html">Projects</a> · <a href="https://courses.emxplore.com/">Courses</a></p>
-        <p class="copyright">&copy; 2026 Walid Dyab</p>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap footer-simple">
+      <a class="brand footer-brand" href="../index.html" aria-label="EMXplore home">
+        <span class="brand-mark" aria-hidden="true">EM</span><span class="brand-name">Xplore</span>
+      </a>
+      <p class="footer-tagline">Discover · Learn · Experiment</p>
+    </div>
+    <div class="wrap">
+      <p class="copyright">&copy; <span id="year">2026</span> Walid Dyab</p>
     </div>
   </footer>
   <script src="../assets/js/main.js"></script>
