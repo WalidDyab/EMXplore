@@ -130,10 +130,25 @@
           <h2>What actual files and products exist</h2>
           <p>Archives are organised by telescope, then by processing stage. Placeholders mark stages whose files are not yet ingested. Nothing is downloadable unless it says so.</p>
         </div>
-        <ul class="ra-legend" aria-label="Status key"><li><span class="ra-status ra-status--available">Available</span></li><li><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></li><li><span class="ra-status ra-status--planned">Planned</span></li></ul>
+        <div class="ra-explorer" id="psu-fixed-explorer">
+          <p class="ra-explorer-kicker"><span class="ra-explorer-live">Live archive</span><span>Live data explorer</span></p>
+          <h3>PSU fixed radio telescope archive</h3>
+          <p class="ra-explorer-lead">Historical observations from the 5 m zenith-pointing telescope at Prince Sultan University.</p>
+          <p>Browse saved spectra, complete observing sessions, time&ndash;frequency views, available historical Right Ascension products, and original archived data files. This is the primary interface for exploring the fixed-telescope data.</p>
+          <ul aria-label="What the Explorer offers">
+            <li>Real saved spectra</li>
+            <li>Full observing sessions</li>
+            <li>Time&ndash;frequency views</li>
+            <li>Historical Right Ascension products</li>
+            <li>Original archived files, downloadable</li>
+          </ul>
+          <p class="ra-explorer-actions"><a class="button button-primary" href="https://radio-tel-data.emxplore.com">Explore the live archive &rarr;</a></p>
+          <p class="ra-explorer-note">The archive is hosted separately from this portal; no observation files are duplicated here.</p>
+        </div>
+        <ul class="ra-legend" aria-label="Status key"><li><span class="ra-status ra-status--live">Live explorer</span></li><li><span class="ra-status ra-status--available">Available</span></li><li><span class="ra-status ra-status--awaiting">Awaiting ingestion</span></li><li><span class="ra-status ra-status--planned">Planned</span></li></ul>
         <ul class="ra-rows" style="margin-top:14px">
-          <li><div><strong><a href="archive-psu-fixed.html">PSU Fixed Telescope</a></strong><span class="ra-status ra-status--awaiting">Awaiting ingestion</span><span class="ra-row-sub">Fixed · historical</span></div>
-              <div>Archive lineage from original spectra to a planned modern archive:
+          <li><div><strong><a href="archive-psu-fixed.html">PSU Fixed Telescope</a></strong><span class="ra-status ra-status--live">Live explorer</span><span class="ra-row-sub">Fixed · historical</span></div>
+              <div>Historical observations are browsable in the <a href="https://radio-tel-data.emxplore.com">fixed-telescope Explorer</a>. Archive lineage from original spectra to a planned modern archive:
                 <ul><li>TXT spectra</li><li>MAT bundles</li><li>RA/LST-corrected MAT bundles</li><li>master MATLAB structure</li><li>future FITS / CSV / JSON</li></ul></div></li>
           <li><div><strong><a href="archive-pnu-fixed.html">PNU Fixed Telescope</a></strong><span class="ra-status ra-status--awaiting">Awaiting ingestion</span><span class="ra-row-sub">Fixed · historical</span></div>
               <div>The same archive structure as a set of placeholders: original, aggregated and processed data, FITS, metadata and derived products.</div></li>
